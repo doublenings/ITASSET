@@ -1,0 +1,70 @@
+﻿@model IEnumerable<IT_ASSET.Models.View_req_af_register>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+    <h2>แบบฟอร์มการขอสิทธิและยกเลิกสิทธิ ALFRESCO</h2>
+
+<table class="table table-bordered table-hover text-nowrap">
+    <thead class="headTable" style="background-color:#50575D; color:white">
+        <tr>
+            <th>เลขที่เอกสาร</th>
+            <th>รหัสพนักงาน</th>
+            <th>ชื่อ-สกุล</th>
+            <th>ชื่อผู้แจ้ง</th>
+            <th>วันที่แจ้ง</th>
+            <th>สิทธิการใช้งาน</th>
+            <th>ผู้ของสิทธิ</th>
+
+            <th>Site</th>
+            <th>Folder</th>
+            <th>สถานะสิทธิ</th>
+            <th>สถานะของงาน</th>
+
+
+        </tr>
+        </thead>
+        @foreach (var item in Model)
+        {
+<tr>
+    <td>
+       @Html.DisplayFor(modelItem => item.AF_CODE)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.MEM_NO)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.NAME_TH)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.USER_NAME)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.AF_DATE)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ALLOW_DESC)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.APPLICANT_DESC)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.AF_SITE)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.AF_FOLDER)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.AF_STATUS_NAME)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.STA_DESC)
+    </td>
+
+
+
+</tr>
+        }
+
+</table>

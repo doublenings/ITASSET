@@ -1,0 +1,1489 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="IT_ASSET_MANAGEMENTModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tbl_assesories">
+    <Key>
+      <PropertyRef Name="ASS_ID" />
+    </Key>
+    <Property Name="ASS_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ASSESORIES" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="ASS_DESCRIPTION" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tbl_buy_reason">
+    <Key>
+      <PropertyRef Name="REASON_ID" />
+    </Key>
+    <Property Name="REASON_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="REASON_DESCRIPTION" Type="nvarchar" MaxLength="15" />
+  </EntityType>
+  <EntityType Name="tbl_categories">
+    <Key>
+      <PropertyRef Name="INC_CATEGORIES" />
+    </Key>
+    <Property Name="INC_CATEGORIES" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="CATE_DESC" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'IT_ASSET_SERVER.dbo.tbl_configure' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="tbl_configure">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="INC_NO_RUN" />
+      <PropertyRef Name="REQ_NO_RUN" />
+      <PropertyRef Name="AUD_NO_RUN" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DOC_LOCATION" Type="ntext" />
+    <Property Name="PIC_LOCATION" Type="ntext" />
+    <Property Name="AUD_LOCATION" Type="ntext" />
+    <Property Name="INC_NO_PRF" Type="nvarchar" MaxLength="5" />
+    <Property Name="INC_NO_YEAR" Type="nvarchar" MaxLength="4" />
+    <Property Name="REQ_NO_PRF" Type="nvarchar" MaxLength="5" />
+    <Property Name="REQ_NO_YEAR" Type="nvarchar" MaxLength="4" />
+    <Property Name="AUD_NO_PRF" Type="nvarchar" MaxLength="5" />
+    <Property Name="AUD_NO_YEAR" Type="nvarchar" MaxLength="4" />
+    <Property Name="INC_NO_RUN" Type="int" Nullable="false" />
+    <Property Name="REQ_NO_RUN" Type="int" Nullable="false" />
+    <Property Name="AUD_NO_RUN" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_cost_section">
+    <Key>
+      <PropertyRef Name="COST_ID" />
+      <PropertyRef Name="COST_SECTION" />
+    </Key>
+    <Property Name="COST_ID" Type="nvarchar" MaxLength="12" Nullable="false" />
+    <Property Name="COST_SECTION" Type="nvarchar" MaxLength="12" Nullable="false" />
+    <Property Name="COST_DESC2" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tbl_costcenter">
+    <Key>
+      <PropertyRef Name="COST_ID" />
+    </Key>
+    <Property Name="COST_ID" Type="nvarchar" MaxLength="12" Nullable="false" />
+    <Property Name="COSTCENTER" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="tbl_device_types">
+    <Key>
+      <PropertyRef Name="DEV_CODE" />
+    </Key>
+    <Property Name="DEV_ID" Type="int" Nullable="false" />
+    <Property Name="DEV_CODE" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="DEV_DESCRIPTION" Type="nvarchar" MaxLength="30" />
+    <Property Name="PREFIX" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="LAST_DIGIT" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_doc_group">
+    <Key>
+      <PropertyRef Name="DOC_GROUP" />
+    </Key>
+    <Property Name="DOC_GROUP" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="GRO_DESCRIPTION" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tbl_doc_type">
+    <Key>
+      <PropertyRef Name="DOC_TYPE" />
+    </Key>
+    <Property Name="DOC_TYPE" Type="nvarchar" MaxLength="1" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="DOC_TYPE_DESC" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="DOC_LOCATION" Type="ntext" />
+    <Property Name="upsize_ts" Type="binary" MaxLength="1" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="tbl_document">
+    <Key>
+      <PropertyRef Name="DOC_NO" />
+    </Key>
+    <Property Name="DOC_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DOC_NO" Type="nvarchar" MaxLength="40" Nullable="false" />
+    <Property Name="DOC_DATE" Type="datetime" />
+    <Property Name="DOC_YEAR" Type="nvarchar" MaxLength="4" Nullable="false" />
+    <Property Name="DOC_DESCRIPTION" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="DOC_TYPE" Type="int" Nullable="false" />
+    <Property Name="SUPPLIER" Type="nvarchar" MaxLength="20" />
+    <Property Name="DOC_START_DATE" Type="datetime" />
+    <Property Name="DOC_END_DATE" Type="datetime" />
+    <Property Name="COST_ID" Type="nvarchar" MaxLength="12" />
+    <Property Name="DOC_LOCATION_REF" Type="nvarchar" MaxLength="50" />
+    <Property Name="DOC_REFERENCE_COM" Type="nvarchar" MaxLength="50" />
+    <Property Name="DOC_REFERENCE_DOC" Type="nvarchar" MaxLength="50" />
+    <Property Name="DOC_ATTACH" Type="ntext" />
+    <Property Name="DOC_REMARK" Type="ntext" />
+    <Property Name="DOC_STATUS" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="USER_CREATE" Type="nvarchar" MaxLength="10" />
+    <Property Name="USER_UPDATE" Type="nvarchar" MaxLength="10" />
+    <Property Name="CREATE_DATE" Type="datetime" />
+    <Property Name="UPDATE_DATE" Type="datetime" />
+    <Property Name="HW_WARANTEE" Type="int" Nullable="false" />
+    <Property Name="HW_WAR_YEAR" Type="int" Nullable="false" />
+    <Property Name="DOC_GROUP" Type="nvarchar" MaxLength="10" />
+    <Property Name="COST_SECTION" Type="nvarchar" MaxLength="12" />
+    <Property Name="upsize_ts" Type="timestamp" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="tbl_hw_ass">
+    <Key>
+      <PropertyRef Name="HW_CODE" />
+    </Key>
+    <Property Name="HW_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HW_CODE" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="DEV_CODE" Type="nvarchar" MaxLength="2" Nullable="false" />
+    <Property Name="HW_ASSET" Type="nvarchar" MaxLength="50" />
+    <Property Name="HW_ASSET_NAME" Type="nvarchar" MaxLength="50" />
+    <Property Name="HW_YEAR" Type="nvarchar" MaxLength="4" Nullable="false" />
+    <Property Name="HW_START_DATE" Type="datetime" />
+    <Property Name="HW_END_DATE" Type="datetime" />
+    <Property Name="HW_BRAND" Type="nvarchar" MaxLength="20" />
+    <Property Name="HW_MODEL" Type="nvarchar" MaxLength="50" />
+    <Property Name="HW_SERIAL" Type="nvarchar" MaxLength="50" />
+    <Property Name="PC_CODE" Type="nvarchar" MaxLength="30" />
+    <Property Name="COST_ID" Type="nvarchar" MaxLength="12" Nullable="false" />
+    <Property Name="HW_SERVICE_TAG" Type="nvarchar" MaxLength="50" />
+    <Property Name="HW_DESC_SHORT" Type="nvarchar" MaxLength="50" />
+    <Property Name="HW_DESCRIPT_LONG" Type="ntext" />
+    <Property Name="HW_PURCHASE_NO" Type="nvarchar" MaxLength="20" />
+    <Property Name="HW_PURCHASE_DATE" Type="datetime" />
+    <Property Name="HW_PICTURE" Type="nvarchar" MaxLength="50" />
+    <Property Name="SUPPLIER" Type="nvarchar" MaxLength="20" />
+    <Property Name="HW_WARANTEE" Type="int" Nullable="false" />
+    <Property Name="HW_WAR_YEAR" Type="int" Nullable="false" />
+    <Property Name="HW_WAR_END_DATE" Type="datetime" />
+    <Property Name="DOC_NO" Type="nvarchar" MaxLength="40" />
+    <Property Name="HW_RENT" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="ST_ID" Type="int" Nullable="false" />
+    <Property Name="HW_REMARK" Type="ntext" />
+    <Property Name="HW_IP" Type="nvarchar" MaxLength="20" />
+    <Property Name="HW_MAX_ADDRESS" Type="nvarchar" MaxLength="20" />
+    <Property Name="USER_CREATE" Type="nvarchar" MaxLength="10" />
+    <Property Name="USER_UPDATE" Type="nvarchar" MaxLength="10" />
+    <Property Name="CREATE_DATE" Type="datetime" />
+    <Property Name="UPDATE_DATE" Type="datetime" />
+    <Property Name="HW_DEPT_NAME" Type="nvarchar" MaxLength="20" />
+    <Property Name="HW_INSTALL_DATE" Type="datetime" />
+    <Property Name="HW_OWNNER" Type="nvarchar" MaxLength="6" />
+    <Property Name="COST_SECTION" Type="nvarchar" MaxLength="12" />
+    <Property Name="upsize_ts" Type="timestamp" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="tbl_hw_assets">
+    <Key>
+      <PropertyRef Name="HW_CODE" />
+    </Key>
+    <Property Name="HW_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HW_CODE" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="DEV_CODE" Type="nvarchar" MaxLength="2" Nullable="false" />
+    <Property Name="HW_ASSET" Type="nvarchar" MaxLength="50" />
+    <Property Name="HW_ASSET_NAME" Type="nvarchar" MaxLength="50" />
+    <Property Name="HW_YEAR" Type="nvarchar" MaxLength="4" Nullable="false" />
+    <Property Name="HW_START_DATE" Type="datetime" />
+    <Property Name="HW_END_DATE" Type="datetime" />
+    <Property Name="HW_BRAND" Type="nvarchar" MaxLength="20" />
+    <Property Name="HW_MODEL" Type="nvarchar" MaxLength="50" />
+    <Property Name="HW_SERIAL" Type="nvarchar" MaxLength="50" />
+    <Property Name="PC_CODE" Type="nvarchar" MaxLength="30" />
+    <Property Name="COST_ID" Type="nvarchar" MaxLength="12" Nullable="false" />
+    <Property Name="HW_SERVICE_TAG" Type="nvarchar" MaxLength="50" />
+    <Property Name="HW_DESC_SHORT" Type="nvarchar" MaxLength="50" />
+    <Property Name="HW_DESCRIPT_LONG" Type="ntext" />
+    <Property Name="HW_PURCHASE_NO" Type="nvarchar" MaxLength="20" />
+    <Property Name="HW_PURCHASE_DATE" Type="datetime" />
+    <Property Name="HW_PICTURE" Type="nvarchar" MaxLength="50" />
+    <Property Name="SUPPLIER" Type="nvarchar" MaxLength="20" />
+    <Property Name="HW_WARANTEE" Type="int" Nullable="false" />
+    <Property Name="HW_WAR_YEAR" Type="int" Nullable="false" />
+    <Property Name="HW_WAR_END_DATE" Type="datetime" />
+    <Property Name="DOC_NO" Type="nvarchar" MaxLength="40" />
+    <Property Name="HW_RENT" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="ST_ID" Type="int" Nullable="false" />
+    <Property Name="HW_REMARK" Type="ntext" />
+    <Property Name="HW_IP" Type="nvarchar" MaxLength="20" />
+    <Property Name="HW_MAX_ADDRESS" Type="nvarchar" MaxLength="20" />
+    <Property Name="USER_CREATE" Type="nvarchar" MaxLength="10" />
+    <Property Name="USER_UPDATE" Type="nvarchar" MaxLength="10" />
+    <Property Name="CREATE_DATE" Type="datetime" />
+    <Property Name="UPDATE_DATE" Type="datetime" />
+    <Property Name="HW_DEPT_NAME" Type="nvarchar" MaxLength="20" />
+    <Property Name="HW_INSTALL_DATE" Type="datetime" />
+    <Property Name="HW_OWNNER" Type="nvarchar" MaxLength="6" />
+    <Property Name="COST_SECTION" Type="nvarchar" MaxLength="12" />
+    <Property Name="upsize_ts" Type="timestamp" StoreGeneratedPattern="Computed" />
+    <Property Name="HW_PRQUOTES_NO" Type="nvarchar" MaxLength="20" />
+    <Property Name="HW_PRQUOTES_DATE" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tbl_hw_log_case">
+    <Key>
+      <PropertyRef Name="HW_CODE" />
+      <PropertyRef Name="HW_TX_DATE" />
+    </Key>
+    <Property Name="HW_CODE" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="HW_TX_DATE" Type="datetime" Nullable="false" />
+    <Property Name="HW_LOG_CASE" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="HW_LOG_DESCRIPTION" Type="ntext" />
+    <Property Name="USER_CREATE" Type="nvarchar" MaxLength="10" />
+    <Property Name="USER_UPDATE" Type="nvarchar" MaxLength="10" />
+    <Property Name="CREATE_DATE" Type="nvarchar" MaxLength="10" />
+    <Property Name="UPDATE_DATE" Type="nvarchar" MaxLength="10" />
+    <Property Name="upsize_ts" Type="binary" MaxLength="1" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="tbl_hw_options_addon">
+    <Key>
+      <PropertyRef Name="HW_CODE" />
+      <PropertyRef Name="SEQ" />
+    </Key>
+    <Property Name="HW_CODE" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="SEQ" Type="int" Nullable="false" />
+    <Property Name="ASSESORIES" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="REMARK" Type="nvarchar" MaxLength="100" />
+    <Property Name="ADD_DATE" Type="nvarchar" MaxLength="10" />
+    <Property Name="USER_CREATE" Type="nvarchar" MaxLength="10" />
+    <Property Name="USER_UPDATE" Type="nvarchar" MaxLength="10" />
+    <Property Name="CREATE_DATE" Type="nvarchar" MaxLength="10" />
+    <Property Name="UPDATE_DATE" Type="nvarchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="tbl_hw_sw_standard">
+    <Key>
+      <PropertyRef Name="HW_CODE" />
+      <PropertyRef Name="PC_CODE" />
+      <PropertyRef Name="DEV_SW_CODE" />
+    </Key>
+    <Property Name="HW_CODE" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="PC_CODE" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="DEV_SW_CODE" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="DEV_SW_DESCRIPTION" Type="nvarchar" MaxLength="50" />
+    <Property Name="SW_CODE" Type="nvarchar" MaxLength="20" />
+    <Property Name="SW_START_DATE" Type="nvarchar" MaxLength="10" />
+    <Property Name="SW_END_DATE" Type="nvarchar" MaxLength="10" />
+    <Property Name="HW_SW_REMARK" Type="ntext" />
+  </EntityType>
+  <EntityType Name="tbl_hw_terminate">
+    <Key>
+      <PropertyRef Name="HW_CODE" />
+    </Key>
+    <Property Name="HW_CODE" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="HW_TERMIANATE" Type="nvarchar" MaxLength="2" Nullable="false" />
+    <Property Name="HW_TERM_DATE" Type="nvarchar" MaxLength="10" />
+    <Property Name="HW_REASON_REMARK" Type="ntext" />
+    <Property Name="HW_TERM_APPROVE" Type="nvarchar" MaxLength="6" />
+    <Property Name="USER_CREATE" Type="nvarchar" MaxLength="10" />
+    <Property Name="USER_UPDATE" Type="nvarchar" MaxLength="10" />
+    <Property Name="CREATE_DATE" Type="nvarchar" MaxLength="10" />
+    <Property Name="UPDATE_DATE" Type="nvarchar" MaxLength="10" />
+    <Property Name="upsize_ts" Type="binary" MaxLength="1" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="tbl_incident_case">
+    <Key>
+      <PropertyRef Name="INC_CODE" />
+    </Key>
+    <Property Name="INC_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="INC_CODE" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="INC_DATE" Type="datetime" Nullable="false" />
+    <Property Name="INC_TOPIC" Type="nvarchar" MaxLength="150" />
+    <Property Name="INC_REQUESTER" Type="nvarchar" MaxLength="6" />
+    <Property Name="INC_OPEN_BY" Type="nvarchar" MaxLength="6" />
+    <Property Name="INC_ASSIGN_TO" Type="nvarchar" MaxLength="6" />
+    <Property Name="INC_STATUS" Type="nvarchar" MaxLength="2" />
+    <Property Name="INC_CATEGORIES" Type="nvarchar" MaxLength="3" />
+    <Property Name="INC_PRIORITY" Type="nvarchar" MaxLength="1" />
+    <Property Name="INC_BILL_NO" Type="nvarchar" MaxLength="15" />
+    <Property Name="INC_BILL_DATE" Type="datetime" />
+    <Property Name="INC_OPEN_DATE" Type="datetime" />
+    <Property Name="INC_DUE_DATE" Type="datetime" />
+    <Property Name="INC_RESOLVE_DATE" Type="datetime" />
+    <Property Name="INC_COST" Type="real" />
+    <Property Name="INC_WARANTEE" Type="nvarchar" MaxLength="1" />
+    <Property Name="INC_DESCRIPTION" Type="ntext" />
+    <Property Name="INC_COMMENTS" Type="ntext" />
+    <Property Name="USER_CREATE" Type="nvarchar" MaxLength="10" />
+    <Property Name="USER_UPDATE" Type="nvarchar" MaxLength="10" />
+    <Property Name="CREATE_DATE" Type="datetime" />
+    <Property Name="UPDATE_DATE" Type="datetime" />
+    <Property Name="upsize_ts" Type="binary" MaxLength="1" StoreGeneratedPattern="Computed" />
+    <Property Name="HW_CODE" Type="nvarchar" MaxLength="20" />
+    <Property Name="INC_CLOSE_DATE" Type="datetime" />
+    <Property Name="COST_ID" Type="nvarchar" MaxLength="12" />
+    <Property Name="INC_SUBMIT_DATE" Type="datetime" />
+    <Property Name="INC_ASSIGN_DATE" Type="datetime" />
+    <Property Name="COST_SECTION" Type="nvarchar" MaxLength="12" />
+    <Property Name="INC_CANCEL_DATE" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tbl_incident_part">
+    <Key>
+      <PropertyRef Name="IS_ID" />
+    </Key>
+    <Property Name="IS_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IS_PICTURE_PART" Type="nvarchar" MaxLength="250" />
+    <Property Name="IS_PURCHASE_PART" Type="nvarchar" MaxLength="250" />
+    <Property Name="IS_MA_PART" Type="nvarchar" MaxLength="250" />
+    <Property Name="IS_MANUAL_PART" Type="nvarchar" MaxLength="250" />
+    <Property Name="IS_CONTRACT_PART" Type="nvarchar" MaxLength="250" />
+    <Property Name="IS_OTH_PART" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="tbl_Incident_status">
+    <Key>
+      <PropertyRef Name="INC_STATUS" />
+    </Key>
+    <Property Name="INC_STATUS" Type="nvarchar" MaxLength="2" Nullable="false" />
+    <Property Name="STA_DESCRIPTION" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tbl_it_staff">
+    <Key>
+      <PropertyRef Name="EMP_NO" />
+    </Key>
+    <Property Name="EMP_NO" Type="nvarchar" MaxLength="6" Nullable="false" />
+    <Property Name="IT_NAME" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="IT_SURNAME" Type="nvarchar" MaxLength="50" />
+    <Property Name="IT_SECTION" Type="nvarchar" MaxLength="50" />
+    <Property Name="IT_EXTENSION" Type="nvarchar" MaxLength="10" />
+    <Property Name="IT_EMAIL" Type="nvarchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="tbl_pc_standards">
+    <Key>
+      <PropertyRef Name="PC_CODE" />
+    </Key>
+    <Property Name="PC_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PC_CODE" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="PC_YEAR" Type="nvarchar" MaxLength="4" Nullable="false" />
+    <Property Name="PC_DESCRIPTION" Type="nvarchar(max)" />
+    <Property Name="PC_REMARK" Type="nvarchar" MaxLength="100" />
+    <Property Name="upsize_ts" Type="binary" MaxLength="1" StoreGeneratedPattern="Computed" />
+    <Property Name="PC_PICTURE" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tbl_pc_sw_standard">
+    <Key>
+      <PropertyRef Name="PC_CODE" />
+      <PropertyRef Name="DEV_SW_CODE" />
+    </Key>
+    <Property Name="PC_CODE" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="DEV_SW_CODE" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="DEV_SW_DESCRIPTION" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tbl_req_af">
+    <Key>
+      <PropertyRef Name="AF_CODE" />
+    </Key>
+    <Property Name="AF_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AF_CODE" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="MEM_NO" Type="nvarchar" MaxLength="10" />
+    <Property Name="AF_DATE" Type="datetime" />
+    <Property Name="ALLOW_STATUS" Type="nvarchar" MaxLength="2" />
+    <Property Name="ID_APPLICANT" Type="nvarchar" MaxLength="2" />
+    <Property Name="AF_SITE" Type="nvarchar" MaxLength="50" />
+    <Property Name="AF_FOLDER" Type="nvarchar" MaxLength="100" />
+    <Property Name="AF_STATUS" Type="nvarchar" MaxLength="2" />
+    <Property Name="AF_NOTE" Type="nvarchar" MaxLength="50" />
+    <Property Name="AF_REQUESTER" Type="nvarchar" MaxLength="50" />
+    <Property Name="AF_APPROVE_OWNER" Type="nvarchar" MaxLength="100" />
+    <Property Name="AF_APPROVE_OWNER_DATE" Type="datetime" />
+    <Property Name="AF_APPROVE" Type="nvarchar" MaxLength="100" />
+    <Property Name="AF_APPROVE_DATE" Type="datetime" />
+    <Property Name="AF_OPEN_BY" Type="nvarchar" MaxLength="6" />
+    <Property Name="AF_OPEN_DATE" Type="datetime" />
+    <Property Name="AF_ASSIGN_TO" Type="nvarchar" MaxLength="6" />
+    <Property Name="AF_ASSIGN_DATE" Type="datetime" />
+    <Property Name="AF_SUBMIT_DATE" Type="datetime" />
+    <Property Name="AF_CLOSE" Type="nvarchar" MaxLength="6" />
+    <Property Name="AF_CLOSE_DATE" Type="datetime" />
+    <Property Name="REQ_STATUS" Type="nvarchar" MaxLength="2" />
+    <Property Name="AF_BILL_NO" Type="nvarchar" MaxLength="50" />
+    <Property Name="AF_BILL_DATE" Type="datetime" />
+    <Property Name="AF_COST" Type="real" />
+    <Property Name="USER_CREATE" Type="nvarchar" MaxLength="100" />
+    <Property Name="USER_UPDATE" Type="nvarchar" MaxLength="100" />
+    <Property Name="CREATE_DATE" Type="datetime" />
+    <Property Name="UPDATE_DATE" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tbl_req_af_status">
+    <Key>
+      <PropertyRef Name="AF_STATUS" />
+    </Key>
+    <Property Name="AF_STATUS" Type="nvarchar" MaxLength="2" Nullable="false" />
+    <Property Name="AF_STATUS_NAME" Type="nvarchar" MaxLength="50" />
+    <Property Name="AF_STATUS_DESC" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="tbl_req_allow_status">
+    <Key>
+      <PropertyRef Name="ALLOW_STATUS" />
+    </Key>
+    <Property Name="ALLOW_STATUS" Type="nvarchar" MaxLength="2" Nullable="false" />
+    <Property Name="ALLOW_DESC" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tbl_req_applicant">
+    <Key>
+      <PropertyRef Name="ID_APPLICANT" />
+    </Key>
+    <Property Name="ID_APPLICANT" Type="nvarchar" MaxLength="2" Nullable="false" />
+    <Property Name="APPLICANT_DESC" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tbl_req_member">
+    <Key>
+      <PropertyRef Name="MEM_NO" />
+    </Key>
+    <Property Name="MEM_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MEM_NO" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="NAME_TH" Type="nvarchar" MaxLength="100" />
+    <Property Name="NAME_EN" Type="nvarchar" MaxLength="100" />
+    <Property Name="MEM_POSITION" Type="nvarchar" MaxLength="50" />
+    <Property Name="MEM_DEPARTMENT" Type="nvarchar" MaxLength="50" />
+    <Property Name="MEM_EXTENSION" Type="nvarchar" MaxLength="4" />
+  </EntityType>
+  <EntityType Name="tbl_req_status">
+    <Key>
+      <PropertyRef Name="REQ_STATUS" />
+    </Key>
+    <Property Name="REQ_STATUS" Type="nvarchar" MaxLength="2" Nullable="false" />
+    <Property Name="STA_DESC" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tbl_req_types">
+    <Key>
+      <PropertyRef Name="REQ_TYPE" />
+    </Key>
+    <Property Name="REQ_TYPE" Type="nvarchar" MaxLength="2" Nullable="false" />
+    <Property Name="REQ_TYPE_DESC" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="REQ_PREFIX" Type="nvarchar" MaxLength="5" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_staff_member">
+    <Key>
+      <PropertyRef Name="EMP_NO" />
+    </Key>
+    <Property Name="EMP_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EMP_NO" Type="nvarchar" MaxLength="6" Nullable="false" />
+    <Property Name="EMP_NAME" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="EMP_SURNAME" Type="nvarchar" MaxLength="50" />
+    <Property Name="COST_ID" Type="nvarchar" MaxLength="12" Nullable="false" />
+    <Property Name="EMP_SECTION" Type="nvarchar" MaxLength="50" />
+    <Property Name="EMP_EXTENSION" Type="nvarchar" MaxLength="10" />
+    <Property Name="EMP_LOCATION" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tbl_status_hw">
+    <Key>
+      <PropertyRef Name="ST_ID" />
+    </Key>
+    <Property Name="ST_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ST_DESCRIPTION" Type="nvarchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="tbl_supplier">
+    <Key>
+      <PropertyRef Name="SUPPLIER" />
+    </Key>
+    <Property Name="SUPPLIER" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="SUPPLIER_NAME" Type="nvarchar" MaxLength="50" />
+    <Property Name="SUPPLIER_TYPE" Type="nvarchar" MaxLength="10" />
+    <Property Name="SUPPLIER_CONTACT" Type="nvarchar" MaxLength="50" />
+    <Property Name="SUPPLIER_PHONE_1" Type="nvarchar" MaxLength="15" />
+    <Property Name="SUPPLIER_PHONE_2" Type="nvarchar" MaxLength="15" />
+    <Property Name="SUPPLIER_NOTE" Type="ntext" />
+    <Property Name="SUPPLIER_STATUS" Type="nvarchar" MaxLength="1" />
+    <Property Name="SUPPLIER_ADDRESS" Type="ntext" />
+    <Property Name="SUPPLIER_SHORT" Type="nvarchar" MaxLength="10" />
+    <Property Name="SUPPLIER_AREA" Type="nvarchar" MaxLength="15" />
+    <Property Name="SUPPLIER_MAIL" Type="nvarchar" MaxLength="50" />
+    <Property Name="upsize_ts" Type="timestamp" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="tbl_supplier_type">
+    <Key>
+      <PropertyRef Name="SUPPLIER_TYPE" />
+    </Key>
+    <Property Name="SUPPLIER_TYPE" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="SUP_TYPE_DESCRIP" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tbl_sw_assets">
+    <Key>
+      <PropertyRef Name="SW_CODE" />
+    </Key>
+    <Property Name="SW_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SW_CODE" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="DEV_SW_CODE" Type="nvarchar" MaxLength="2" Nullable="false" />
+    <Property Name="SW_ASSET" Type="nvarchar" MaxLength="50" />
+    <Property Name="SW_ASSET_NAME" Type="nvarchar" MaxLength="50" />
+    <Property Name="SW_YEAR" Type="nvarchar" MaxLength="4" Nullable="false" />
+    <Property Name="SW_START_DATE" Type="datetime" />
+    <Property Name="SW_END_DATE" Type="datetime" />
+    <Property Name="SW_BRAND" Type="nvarchar" MaxLength="20" />
+    <Property Name="HW_SERIAL" Type="nvarchar" MaxLength="50" />
+    <Property Name="COST_ID" Type="nvarchar" MaxLength="12" Nullable="false" />
+    <Property Name="SW_SERVICE_TAG" Type="nvarchar" MaxLength="50" />
+    <Property Name="SW_DESC_SHORT" Type="nvarchar" MaxLength="50" />
+    <Property Name="SW_DESCRIPT_LONG" Type="ntext" />
+    <Property Name="SW_PURCHASE_NO" Type="nvarchar" MaxLength="20" />
+    <Property Name="SW_PURCHASE_DATE" Type="datetime" />
+    <Property Name="SW_PICTURE" Type="nvarchar" MaxLength="30" />
+    <Property Name="SW_QTY" Type="decimal" Precision="6" Scale="0" Nullable="false" />
+    <Property Name="SUPPLIER" Type="nvarchar" MaxLength="20" />
+    <Property Name="SW_WARANTEE" Type="int" Nullable="false" />
+    <Property Name="DOC_NO" Type="nvarchar" MaxLength="40" />
+    <Property Name="SW_RENT" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="ST_ID" Type="int" Nullable="false" />
+    <Property Name="SW_REMARK" Type="ntext" />
+    <Property Name="USER_CREATE" Type="nvarchar" MaxLength="10" />
+    <Property Name="USER_UPDATE" Type="nvarchar" MaxLength="10" />
+    <Property Name="CREATE_DATE" Type="datetime" />
+    <Property Name="UPDATE_DATE" Type="datetime" />
+    <Property Name="upsize_ts" Type="binary" MaxLength="1" StoreGeneratedPattern="Computed" />
+    <Property Name="COST_SECTION" Type="nvarchar" MaxLength="12" />
+    <Property Name="SW_PRICE" Type="numeric" Precision="10" Scale="2" />
+  </EntityType>
+  <EntityType Name="tbl_sw_type">
+    <Key>
+      <PropertyRef Name="DEV_SW_CODE" />
+    </Key>
+    <Property Name="DEV_SW_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DEV_SW_CODE" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="DEV_SW_DESCRIPTION" Type="nvarchar" MaxLength="50" />
+    <Property Name="DEV_SW_EST_PRICE" Type="money" />
+  </EntityType>
+  <EntityType Name="tbl_user">
+    <Key>
+      <PropertyRef Name="USER_NO" />
+    </Key>
+    <Property Name="USER_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="USER_NO" Type="nvarchar" MaxLength="6" Nullable="false" />
+    <Property Name="USER_PASSWORD" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="USER_NAME" Type="nvarchar" MaxLength="100" />
+    <Property Name="USER_NAME_EN" Type="nvarchar" MaxLength="100" />
+    <Property Name="USER_POSITION" Type="nvarchar" MaxLength="50" />
+    <Property Name="USER_DEPARTMENT" Type="nvarchar" MaxLength="50" />
+    <Property Name="USER_LOGIN_TIME" Type="datetime" />
+    <Property Name="USER_LOGIN_FLAG" Type="nvarchar" MaxLength="1" />
+    <Property Name="USER_STATUS" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="USER_EXTENSION" Type="nvarchar" MaxLength="15" />
+    <Property Name="USER_EMAIL" Type="nvarchar" MaxLength="50" />
+    <Property Name="USER_ROLE" Type="nvarchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="tbl_year_document_number">
+    <Key>
+      <PropertyRef Name="Year" />
+      <PropertyRef Name="DocType" />
+    </Key>
+    <Property Name="Year" Type="nvarchar" MaxLength="4" Nullable="false" />
+    <Property Name="DocType" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="PrefixText" Type="nvarchar" MaxLength="10" />
+    <Property Name="StartNumber" Type="real" />
+    <Property Name="LastNumber" Type="real" />
+    <Property Name="Description" Type="nvarchar" MaxLength="255" />
+    <Property Name="CREATE_DATE" Type="datetime" />
+    <Property Name="UPDATE_DATE" Type="datetime" />
+    <Property Name="USER_CREATE" Type="nvarchar" MaxLength="15" />
+    <Property Name="USER_UPDATE" Type="nvarchar" MaxLength="15" />
+    <Property Name="upsize_ts" Type="binary" MaxLength="1" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'IT_ASSET_SERVER.dbo.View_costcenter' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_costcenter">
+    <Key>
+      <PropertyRef Name="COST_ID" />
+    </Key>
+    <Property Name="COST_ID" Type="nvarchar" MaxLength="12" Nullable="false" />
+    <Property Name="COSTCENTER" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'IT_ASSET_SERVER.dbo.View_device_type' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_device_type">
+    <Key>
+      <PropertyRef Name="DEV_ID" />
+      <PropertyRef Name="DEV_CODE" />
+      <PropertyRef Name="PREFIX" />
+      <PropertyRef Name="LAST_DIGIT" />
+    </Key>
+    <Property Name="DEV_ID" Type="int" Nullable="false" />
+    <Property Name="DEV_CODE" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="DEV_DESCRIPTION" Type="nvarchar" MaxLength="30" />
+    <Property Name="PREFIX" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="LAST_DIGIT" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'IT_ASSET_SERVER.dbo.View_document' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_document">
+    <Key>
+      <PropertyRef Name="DOC_ID" />
+      <PropertyRef Name="DOC_NO" />
+      <PropertyRef Name="DOC_YEAR" />
+      <PropertyRef Name="DOC_DESCRIPTION" />
+      <PropertyRef Name="DOC_TYPE" />
+      <PropertyRef Name="DOC_STATUS" />
+      <PropertyRef Name="HW_WARANTEE" />
+      <PropertyRef Name="HW_WAR_YEAR" />
+      <PropertyRef Name="DOC_TYPE_DESC" />
+    </Key>
+    <Property Name="DOC_ID" Type="int" Nullable="false" />
+    <Property Name="DOC_NO" Type="nvarchar" MaxLength="40" Nullable="false" />
+    <Property Name="DOC_DATE" Type="datetime" />
+    <Property Name="DOC_YEAR" Type="nvarchar" MaxLength="4" Nullable="false" />
+    <Property Name="DOC_DESCRIPTION" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="DOC_TYPE" Type="int" Nullable="false" />
+    <Property Name="SUPPLIER" Type="nvarchar" MaxLength="20" />
+    <Property Name="DOC_START_DATE" Type="datetime" />
+    <Property Name="DOC_END_DATE" Type="datetime" />
+    <Property Name="COST_ID" Type="nvarchar" MaxLength="12" />
+    <Property Name="DOC_LOCATION_REF" Type="nvarchar" MaxLength="50" />
+    <Property Name="DOC_REFERENCE_COM" Type="nvarchar" MaxLength="50" />
+    <Property Name="DOC_REFERENCE_DOC" Type="nvarchar" MaxLength="50" />
+    <Property Name="DOC_ATTACH" Type="ntext" />
+    <Property Name="DOC_REMARK" Type="ntext" />
+    <Property Name="DOC_STATUS" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="USER_CREATE" Type="nvarchar" MaxLength="10" />
+    <Property Name="USER_UPDATE" Type="nvarchar" MaxLength="10" />
+    <Property Name="CREATE_DATE" Type="datetime" />
+    <Property Name="UPDATE_DATE" Type="datetime" />
+    <Property Name="HW_WARANTEE" Type="int" Nullable="false" />
+    <Property Name="HW_WAR_YEAR" Type="int" Nullable="false" />
+    <Property Name="DOC_TYPE_DESC" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="DOC_GROUP" Type="nvarchar" MaxLength="10" />
+    <Property Name="COST_SECTION" Type="nvarchar" MaxLength="12" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'IT_ASSET_SERVER.dbo.View_hw_assets' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_hw_assets">
+    <Key>
+      <PropertyRef Name="HW_ID" />
+      <PropertyRef Name="HW_CODE" />
+      <PropertyRef Name="DEV_CODE" />
+      <PropertyRef Name="HW_YEAR" />
+      <PropertyRef Name="COST_ID" />
+      <PropertyRef Name="HW_WARANTEE" />
+      <PropertyRef Name="HW_WAR_YEAR" />
+      <PropertyRef Name="HW_RENT" />
+      <PropertyRef Name="ST_ID" />
+    </Key>
+    <Property Name="HW_ID" Type="int" Nullable="false" />
+    <Property Name="HW_CODE" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="DEV_CODE" Type="nvarchar" MaxLength="2" Nullable="false" />
+    <Property Name="HW_ASSET" Type="nvarchar" MaxLength="50" />
+    <Property Name="HW_ASSET_NAME" Type="nvarchar" MaxLength="50" />
+    <Property Name="HW_YEAR" Type="nvarchar" MaxLength="4" Nullable="false" />
+    <Property Name="HW_START_DATE" Type="datetime" />
+    <Property Name="HW_END_DATE" Type="datetime" />
+    <Property Name="HW_BRAND" Type="nvarchar" MaxLength="20" />
+    <Property Name="HW_MODEL" Type="nvarchar" MaxLength="50" />
+    <Property Name="HW_SERIAL" Type="nvarchar" MaxLength="50" />
+    <Property Name="PC_CODE" Type="nvarchar" MaxLength="30" />
+    <Property Name="COST_ID" Type="nvarchar" MaxLength="12" Nullable="false" />
+    <Property Name="HW_SERVICE_TAG" Type="nvarchar" MaxLength="50" />
+    <Property Name="HW_DESC_SHORT" Type="nvarchar" MaxLength="50" />
+    <Property Name="HW_DESCRIPT_LONG" Type="ntext" />
+    <Property Name="HW_PURCHASE_NO" Type="nvarchar" MaxLength="20" />
+    <Property Name="HW_PURCHASE_DATE" Type="datetime" />
+    <Property Name="HW_PICTURE" Type="nvarchar" MaxLength="50" />
+    <Property Name="SUPPLIER" Type="nvarchar" MaxLength="20" />
+    <Property Name="HW_WARANTEE" Type="int" Nullable="false" />
+    <Property Name="HW_WAR_YEAR" Type="int" Nullable="false" />
+    <Property Name="HW_WAR_END_DATE" Type="datetime" />
+    <Property Name="DOC_NO" Type="nvarchar" MaxLength="40" />
+    <Property Name="HW_RENT" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="ST_ID" Type="int" Nullable="false" />
+    <Property Name="HW_REMARK" Type="ntext" />
+    <Property Name="HW_IP" Type="nvarchar" MaxLength="20" />
+    <Property Name="HW_MAX_ADDRESS" Type="nvarchar" MaxLength="20" />
+    <Property Name="USER_CREATE" Type="nvarchar" MaxLength="10" />
+    <Property Name="USER_UPDATE" Type="nvarchar" MaxLength="10" />
+    <Property Name="CREATE_DATE" Type="datetime" />
+    <Property Name="UPDATE_DATE" Type="datetime" />
+    <Property Name="HW_DEPT_NAME" Type="nvarchar" MaxLength="20" />
+    <Property Name="DEV_DESCRIPTION" Type="nvarchar" MaxLength="30" />
+    <Property Name="PC_REMARK" Type="nvarchar" MaxLength="100" />
+    <Property Name="PC_DESCRIPTION" Type="nvarchar(max)" />
+    <Property Name="COSTCENTER" Type="nvarchar" MaxLength="100" />
+    <Property Name="ST_DESCRIPTION" Type="nvarchar" MaxLength="30" />
+    <Property Name="HW_INSTALL_DATE" Type="datetime" />
+    <Property Name="HW_OWNNER" Type="nvarchar" MaxLength="6" />
+    <Property Name="COST_SECTION" Type="nvarchar" MaxLength="12" />
+    <Property Name="HW_PRQUOTES_NO" Type="nvarchar" MaxLength="20" />
+    <Property Name="HW_PRQUOTES_DATE" Type="datetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'IT_ASSET_SERVER.dbo.View_hw_options_addon' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_hw_options_addon">
+    <Key>
+      <PropertyRef Name="HW_CODE" />
+      <PropertyRef Name="SEQ" />
+      <PropertyRef Name="ASSESORIES" />
+    </Key>
+    <Property Name="HW_CODE" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="SEQ" Type="int" Nullable="false" />
+    <Property Name="ASSESORIES" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="REMARK" Type="nvarchar" MaxLength="100" />
+    <Property Name="ADD_DATE" Type="nvarchar" MaxLength="10" />
+    <Property Name="USER_CREATE" Type="nvarchar" MaxLength="10" />
+    <Property Name="USER_UPDATE" Type="nvarchar" MaxLength="10" />
+    <Property Name="CREATE_DATE" Type="nvarchar" MaxLength="10" />
+    <Property Name="UPDATE_DATE" Type="nvarchar" MaxLength="10" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'IT_ASSET_SERVER.dbo.View_hw_sw_standard' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_hw_sw_standard">
+    <Key>
+      <PropertyRef Name="HW_CODE" />
+      <PropertyRef Name="DEV_SW_CODE" />
+    </Key>
+    <Property Name="HW_CODE" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="DEV_SW_CODE" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="DEV_SW_DESCRIPTION" Type="nvarchar" MaxLength="50" />
+    <Property Name="SW_CODE" Type="nvarchar" MaxLength="20" />
+    <Property Name="SW_START_DATE" Type="nvarchar" MaxLength="10" />
+    <Property Name="SW_END_DATE" Type="nvarchar" MaxLength="10" />
+    <Property Name="HW_SW_REMARK" Type="ntext" />
+    <Property Name="DEV_SW_EST_PRICE" Type="money" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'IT_ASSET_SERVER.dbo.View_inc_status' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_inc_status">
+    <Key>
+      <PropertyRef Name="INC_CODE" />
+      <PropertyRef Name="INC_DATE" />
+      <PropertyRef Name="USER_NO" />
+    </Key>
+    <Property Name="INC_CODE" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="INC_DATE" Type="datetime" Nullable="false" />
+    <Property Name="INC_TOPIC" Type="nvarchar" MaxLength="150" />
+    <Property Name="INC_REQUESTER" Type="nvarchar" MaxLength="6" />
+    <Property Name="INC_STATUS" Type="nvarchar" MaxLength="2" />
+    <Property Name="STA_DESCRIPTION" Type="nvarchar" MaxLength="50" />
+    <Property Name="INC_DESCRIPTION" Type="ntext" />
+    <Property Name="USER_NO" Type="nvarchar" MaxLength="6" Nullable="false" />
+    <Property Name="USER_NAME" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'IT_ASSET_SERVER.dbo.View_incident_all' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_incident_all">
+    <Key>
+      <PropertyRef Name="INC_CODE" />
+      <PropertyRef Name="INC_DATE" />
+    </Key>
+    <Property Name="INC_CODE" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="INC_DATE" Type="datetime" Nullable="false" />
+    <Property Name="INC_TOPIC" Type="nvarchar" MaxLength="150" />
+    <Property Name="INC_REQUESTER" Type="nvarchar" MaxLength="6" />
+    <Property Name="INC_OPEN_BY" Type="nvarchar" MaxLength="6" />
+    <Property Name="INC_ASSIGN_TO" Type="nvarchar" MaxLength="6" />
+    <Property Name="INC_STATUS" Type="nvarchar" MaxLength="2" />
+    <Property Name="INC_CATEGORIES" Type="nvarchar" MaxLength="3" />
+    <Property Name="INC_BILL_NO" Type="nvarchar" MaxLength="15" />
+    <Property Name="INC_BILL_DATE" Type="datetime" />
+    <Property Name="INC_OPEN_DATE" Type="datetime" />
+    <Property Name="INC_DUE_DATE" Type="datetime" />
+    <Property Name="INC_RESOLVE_DATE" Type="datetime" />
+    <Property Name="INC_DESCRIPTION" Type="ntext" />
+    <Property Name="HW_CODE" Type="nvarchar" MaxLength="20" />
+    <Property Name="INC_CLOSE_DATE" Type="datetime" />
+    <Property Name="COST_ID" Type="nvarchar" MaxLength="12" />
+    <Property Name="INC_SUBMIT_DATE" Type="datetime" />
+    <Property Name="INC_ASSIGN_DATE" Type="datetime" />
+    <Property Name="COST_SECTION" Type="nvarchar" MaxLength="12" />
+    <Property Name="INC_CANCEL_DATE" Type="datetime" />
+    <Property Name="STA_DESCRIPTION" Type="nvarchar" MaxLength="50" />
+    <Property Name="EMP_NO" Type="nvarchar" MaxLength="6" />
+    <Property Name="IT_NAME" Type="nvarchar" MaxLength="50" />
+    <Property Name="IT_SURNAME" Type="nvarchar" MaxLength="50" />
+    <Property Name="EMP_ASSIGN" Type="nvarchar" MaxLength="6" />
+    <Property Name="EMP_ASSIGN_NAME" Type="nvarchar" MaxLength="50" />
+    <Property Name="EMP_ASSIGN_SURNAME" Type="nvarchar" MaxLength="50" />
+    <Property Name="Expr1" Type="nvarchar" MaxLength="20" />
+    <Property Name="HW_ASSET" Type="nvarchar" MaxLength="50" />
+    <Property Name="HW_ASSET_NAME" Type="nvarchar" MaxLength="50" />
+    <Property Name="USER_NAME" Type="nvarchar" MaxLength="100" />
+    <Property Name="USER_NO" Type="nvarchar" MaxLength="6" />
+    <Property Name="INC_COMMENTS" Type="ntext" />
+    <Property Name="CATE_DESC" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'IT_ASSET_SERVER.dbo.View_incident_case' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_incident_case">
+    <Key>
+      <PropertyRef Name="INC_ID" />
+      <PropertyRef Name="INC_CODE" />
+      <PropertyRef Name="INC_DATE" />
+    </Key>
+    <Property Name="INC_ID" Type="int" Nullable="false" />
+    <Property Name="INC_CODE" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="INC_DATE" Type="datetime" Nullable="false" />
+    <Property Name="INC_TOPIC" Type="nvarchar" MaxLength="150" />
+    <Property Name="INC_REQUESTER" Type="nvarchar" MaxLength="6" />
+    <Property Name="INC_OPEN_BY" Type="nvarchar" MaxLength="6" />
+    <Property Name="INC_ASSIGN_TO" Type="nvarchar" MaxLength="6" />
+    <Property Name="INC_STATUS" Type="nvarchar" MaxLength="2" />
+    <Property Name="INC_CATEGORIES" Type="nvarchar" MaxLength="3" />
+    <Property Name="INC_PRIORITY" Type="nvarchar" MaxLength="1" />
+    <Property Name="INC_BILL_NO" Type="nvarchar" MaxLength="15" />
+    <Property Name="INC_BILL_DATE" Type="datetime" />
+    <Property Name="INC_OPEN_DATE" Type="datetime" />
+    <Property Name="INC_DUE_DATE" Type="datetime" />
+    <Property Name="INC_RESOLVE_DATE" Type="datetime" />
+    <Property Name="INC_COST" Type="real" />
+    <Property Name="INC_WARANTEE" Type="nvarchar" MaxLength="1" />
+    <Property Name="INC_DESCRIPTION" Type="ntext" />
+    <Property Name="INC_COMMENTS" Type="ntext" />
+    <Property Name="USER_CREATE" Type="nvarchar" MaxLength="10" />
+    <Property Name="USER_UPDATE" Type="nvarchar" MaxLength="10" />
+    <Property Name="CREATE_DATE" Type="datetime" />
+    <Property Name="UPDATE_DATE" Type="datetime" Nullable="false" />
+    <Property Name="REQUESTER" Type="nvarchar" MaxLength="101" />
+    <Property Name="CATE_DESC" Type="nvarchar" MaxLength="50" />
+    <Property Name="HW_CODE" Type="nvarchar" MaxLength="20" />
+    <Property Name="STA_DESCRIPTION" Type="nvarchar" MaxLength="50" />
+    <Property Name="INC_CLOSE_DATE" Type="datetime" />
+    <Property Name="COST_ID" Type="nvarchar" MaxLength="12" />
+    <Property Name="NAME2" Type="nvarchar" MaxLength="117" />
+    <Property Name="INC_SUBMIT_DATE" Type="datetime" />
+    <Property Name="INC_ASSIGN_DATE" Type="datetime" />
+    <Property Name="COST_SECTION" Type="nvarchar" MaxLength="12" />
+    <Property Name="INC_CANCEL_DATE" Type="datetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'IT_ASSET_SERVER.dbo.View_pc_standards' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_pc_standards">
+    <Key>
+      <PropertyRef Name="PC_ID" />
+      <PropertyRef Name="PC_CODE" />
+      <PropertyRef Name="PC_YEAR" />
+    </Key>
+    <Property Name="PC_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PC_CODE" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="PC_YEAR" Type="nvarchar" MaxLength="4" Nullable="false" />
+    <Property Name="PC_DESCRIPTION" Type="nvarchar(max)" />
+    <Property Name="PC_REMARK" Type="nvarchar" MaxLength="100" />
+    <Property Name="PC_PICTURE" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'IT_ASSET_SERVER.dbo.View_pc_sw_standard' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_pc_sw_standard">
+    <Key>
+      <PropertyRef Name="PC_CODE" />
+      <PropertyRef Name="DEV_SW_CODE" />
+    </Key>
+    <Property Name="PC_CODE" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="DEV_SW_CODE" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="DEV_SW_DESCRIPTION" Type="nvarchar" MaxLength="50" />
+    <Property Name="DEV_SW_EST_PRICE" Type="money" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'IT_ASSET_SERVER.dbo.View_req_af_follow' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_req_af_follow">
+    <Key>
+      <PropertyRef Name="AF_CODE" />
+      <PropertyRef Name="APPLICANT_NO" />
+      <PropertyRef Name="USER_NO" />
+      <PropertyRef Name="APPROVE_NO" />
+    </Key>
+    <Property Name="AF_CODE" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="MEM_NO" Type="nvarchar" MaxLength="10" />
+    <Property Name="APPLICANT_NO" Type="nvarchar" MaxLength="6" Nullable="false" />
+    <Property Name="APPLICANT_NAME" Type="nvarchar" MaxLength="100" />
+    <Property Name="APPLICANT_NAME_EN" Type="nvarchar" MaxLength="100" />
+    <Property Name="APPLICANT_POSITION" Type="nvarchar" MaxLength="50" />
+    <Property Name="APPLICANT_DEPARTMENT" Type="nvarchar" MaxLength="50" />
+    <Property Name="APPLICANT_EXTENSION" Type="nvarchar" MaxLength="15" />
+    <Property Name="APPLICANT_EMAIL" Type="nvarchar" MaxLength="50" />
+    <Property Name="APPLICANT_ROLE" Type="nvarchar" MaxLength="10" />
+    <Property Name="AF_DATE" Type="datetime" />
+    <Property Name="ALLOW_STATUS" Type="nvarchar" MaxLength="2" />
+    <Property Name="ALLOW_DESC" Type="nvarchar" MaxLength="50" />
+    <Property Name="ID_APPLICANT" Type="nvarchar" MaxLength="2" />
+    <Property Name="APPLICANT_DESC" Type="nvarchar" MaxLength="50" />
+    <Property Name="AF_SITE" Type="nvarchar" MaxLength="50" />
+    <Property Name="AF_FOLDER" Type="nvarchar" MaxLength="100" />
+    <Property Name="AF_STATUS" Type="nvarchar" MaxLength="2" />
+    <Property Name="AF_STATUS_NAME" Type="nvarchar" MaxLength="50" />
+    <Property Name="AF_NOTE" Type="nvarchar" MaxLength="50" />
+    <Property Name="AF_REQUESTER" Type="nvarchar" MaxLength="50" />
+    <Property Name="USER_NO" Type="nvarchar" MaxLength="6" Nullable="false" />
+    <Property Name="USER_NAME" Type="nvarchar" MaxLength="100" />
+    <Property Name="USER_NAME_EN" Type="nvarchar" MaxLength="100" />
+    <Property Name="USER_POSITION" Type="nvarchar" MaxLength="50" />
+    <Property Name="USER_DEPARTMENT" Type="nvarchar" MaxLength="50" />
+    <Property Name="USER_EXTENSION" Type="nvarchar" MaxLength="15" />
+    <Property Name="USER_EMAIL" Type="nvarchar" MaxLength="50" />
+    <Property Name="USER_ROLE" Type="nvarchar" MaxLength="10" />
+    <Property Name="AF_APPROVE_OWNER" Type="nvarchar" MaxLength="100" />
+    <Property Name="REQ_STATUS" Type="nvarchar" MaxLength="2" />
+    <Property Name="STA_DESC" Type="nvarchar" MaxLength="50" />
+    <Property Name="AF_APPROVE_OWNER_DATE" Type="datetime" />
+    <Property Name="AF_APPROVE" Type="nvarchar" MaxLength="100" />
+    <Property Name="AF_APPROVE_DATE" Type="datetime" />
+    <Property Name="APPROVE_NO" Type="nvarchar" MaxLength="6" Nullable="false" />
+    <Property Name="APPROVE_NAME" Type="nvarchar" MaxLength="100" />
+    <Property Name="APPROVE_NAME_EN" Type="nvarchar" MaxLength="100" />
+    <Property Name="APPROVE_POSITION" Type="nvarchar" MaxLength="50" />
+    <Property Name="APPROVE_DEPARTMENT" Type="nvarchar" MaxLength="50" />
+    <Property Name="APPROVE_EXTENSION" Type="nvarchar" MaxLength="15" />
+    <Property Name="APPROVE_EMAIL" Type="nvarchar" MaxLength="50" />
+    <Property Name="APPROVE_ROLE" Type="nvarchar" MaxLength="10" />
+    <Property Name="AF_OPEN_BY" Type="nvarchar" MaxLength="6" />
+    <Property Name="IT_OPEN_BY_NAME" Type="nvarchar" MaxLength="50" />
+    <Property Name="IT_OPEN_BY_SURNAME" Type="nvarchar" MaxLength="50" />
+    <Property Name="AF_OPEN_DATE" Type="datetime" />
+    <Property Name="AF_ASSIGN_TO" Type="nvarchar" MaxLength="6" />
+    <Property Name="IT_ASSIGN_NAME" Type="nvarchar" MaxLength="50" />
+    <Property Name="IT_ASSIGN_SURMANE" Type="nvarchar" MaxLength="50" />
+    <Property Name="AF_ASSIGN_DATE" Type="datetime" />
+    <Property Name="AF_CLOSE" Type="nvarchar" MaxLength="6" />
+    <Property Name="AF_CLOSE_DATE" Type="datetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'IT_ASSET_SERVER.dbo.View_req_af_register' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_req_af_register">
+    <Key>
+      <PropertyRef Name="AF_CODE" />
+      <PropertyRef Name="USER_NO" />
+    </Key>
+    <Property Name="AF_CODE" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="MEM_NO" Type="nvarchar" MaxLength="10" />
+    <Property Name="USER_NO" Type="nvarchar" MaxLength="6" Nullable="false" />
+    <Property Name="MEM_NAME" Type="nvarchar" MaxLength="100" />
+    <Property Name="MEM_NAME_EN" Type="nvarchar" MaxLength="100" />
+    <Property Name="MEM_POSITION" Type="nvarchar" MaxLength="50" />
+    <Property Name="MEM_DEPARTMENT" Type="nvarchar" MaxLength="50" />
+    <Property Name="MEM_EXTENSION" Type="nvarchar" MaxLength="15" />
+    <Property Name="MEM_EMAIL" Type="nvarchar" MaxLength="50" />
+    <Property Name="MEM_ROLE" Type="nvarchar" MaxLength="10" />
+    <Property Name="AF_DATE" Type="datetime" />
+    <Property Name="ALLOW_STATUS" Type="nvarchar" MaxLength="2" />
+    <Property Name="ALLOW_DESC" Type="nvarchar" MaxLength="50" />
+    <Property Name="ID_APPLICANT" Type="nvarchar" MaxLength="2" />
+    <Property Name="APPLICANT_DESC" Type="nvarchar" MaxLength="50" />
+    <Property Name="AF_SITE" Type="nvarchar" MaxLength="50" />
+    <Property Name="AF_FOLDER" Type="nvarchar" MaxLength="100" />
+    <Property Name="AF_STATUS" Type="nvarchar" MaxLength="2" />
+    <Property Name="AF_STATUS_NAME" Type="nvarchar" MaxLength="50" />
+    <Property Name="AF_NOTE" Type="nvarchar" MaxLength="50" />
+    <Property Name="AF_REQUESTER" Type="nvarchar" MaxLength="50" />
+    <Property Name="USER_NAME" Type="nvarchar" MaxLength="100" />
+    <Property Name="USER_EXTENSION" Type="nvarchar" MaxLength="15" />
+    <Property Name="USER_EMAIL" Type="nvarchar" MaxLength="50" />
+    <Property Name="REQ_STATUS" Type="nvarchar" MaxLength="2" />
+    <Property Name="STA_DESC" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'IT_ASSET_SERVER.dbo.View_staff_member' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_staff_member">
+    <Key>
+      <PropertyRef Name="EMP_ID" />
+      <PropertyRef Name="EMP_NO" />
+      <PropertyRef Name="EMP_NAME" />
+      <PropertyRef Name="COST_ID" />
+    </Key>
+    <Property Name="EMP_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EMP_NO" Type="nvarchar" MaxLength="6" Nullable="false" />
+    <Property Name="EMP_NAME" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="EMP_SURNAME" Type="nvarchar" MaxLength="50" />
+    <Property Name="COST_ID" Type="nvarchar" MaxLength="12" Nullable="false" />
+    <Property Name="EMP_SECTION" Type="nvarchar" MaxLength="50" />
+    <Property Name="EMP_EXTENSION" Type="nvarchar" MaxLength="10" />
+    <Property Name="EMP_LOCATION" Type="nvarchar" MaxLength="50" />
+    <Property Name="NAME" Type="nvarchar" MaxLength="101" />
+    <Property Name="NAME2" Type="nvarchar" MaxLength="117" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'IT_ASSET_SERVER.dbo.View_supplier' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_supplier">
+    <Key>
+      <PropertyRef Name="SUPPLIER" />
+    </Key>
+    <Property Name="SUPPLIER" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="SUPPLIER_NAME" Type="nvarchar" MaxLength="50" />
+    <Property Name="SUPPLIER_TYPE" Type="nvarchar" MaxLength="10" />
+    <Property Name="SUPPLIER_CONTACT" Type="nvarchar" MaxLength="50" />
+    <Property Name="SUPPLIER_AREA" Type="nvarchar" MaxLength="15" />
+    <Property Name="SUPPLIER_SHORT" Type="nvarchar" MaxLength="10" />
+    <Property Name="SUPPLIER_MAIL" Type="nvarchar" MaxLength="50" />
+    <Property Name="SUPPLIER_ADDRESS" Type="ntext" />
+    <Property Name="SUPPLIER_STATUS" Type="nvarchar" MaxLength="1" />
+    <Property Name="SUPPLIER_NOTE" Type="ntext" />
+    <Property Name="SUPPLIER_PHONE_2" Type="nvarchar" MaxLength="15" />
+    <Property Name="SUPPLIER_PHONE_1" Type="nvarchar" MaxLength="15" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'IT_ASSET_SERVER.dbo.View_sw_assets' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_sw_assets">
+    <Key>
+      <PropertyRef Name="SW_ID" />
+      <PropertyRef Name="SW_CODE" />
+      <PropertyRef Name="DEV_SW_CODE" />
+      <PropertyRef Name="SW_YEAR" />
+      <PropertyRef Name="COST_ID" />
+      <PropertyRef Name="SW_QTY" />
+      <PropertyRef Name="SW_WARANTEE" />
+      <PropertyRef Name="SW_RENT" />
+      <PropertyRef Name="ST_ID" />
+    </Key>
+    <Property Name="SW_ID" Type="int" Nullable="false" />
+    <Property Name="SW_CODE" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="DEV_SW_CODE" Type="nvarchar" MaxLength="2" Nullable="false" />
+    <Property Name="SW_ASSET" Type="nvarchar" MaxLength="50" />
+    <Property Name="SW_ASSET_NAME" Type="nvarchar" MaxLength="50" />
+    <Property Name="SW_YEAR" Type="nvarchar" MaxLength="4" Nullable="false" />
+    <Property Name="SW_START_DATE" Type="datetime" />
+    <Property Name="SW_END_DATE" Type="datetime" />
+    <Property Name="SW_BRAND" Type="nvarchar" MaxLength="20" />
+    <Property Name="HW_SERIAL" Type="nvarchar" MaxLength="50" />
+    <Property Name="COST_ID" Type="nvarchar" MaxLength="12" Nullable="false" />
+    <Property Name="SW_SERVICE_TAG" Type="nvarchar" MaxLength="50" />
+    <Property Name="SW_DESC_SHORT" Type="nvarchar" MaxLength="50" />
+    <Property Name="SW_DESCRIPT_LONG" Type="ntext" />
+    <Property Name="SW_PURCHASE_NO" Type="nvarchar" MaxLength="20" />
+    <Property Name="SW_PURCHASE_DATE" Type="datetime" />
+    <Property Name="SW_PICTURE" Type="nvarchar" MaxLength="30" />
+    <Property Name="SW_QTY" Type="decimal" Precision="6" Scale="0" Nullable="false" />
+    <Property Name="SUPPLIER" Type="nvarchar" MaxLength="20" />
+    <Property Name="SW_WARANTEE" Type="int" Nullable="false" />
+    <Property Name="DOC_NO" Type="nvarchar" MaxLength="40" />
+    <Property Name="SW_RENT" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="ST_ID" Type="int" Nullable="false" />
+    <Property Name="SW_REMARK" Type="ntext" />
+    <Property Name="USER_CREATE" Type="nvarchar" MaxLength="10" />
+    <Property Name="USER_UPDATE" Type="nvarchar" MaxLength="10" />
+    <Property Name="CREATE_DATE" Type="datetime" />
+    <Property Name="UPDATE_DATE" Type="datetime" />
+    <Property Name="DEV_SW_DESCRIPTION" Type="nvarchar" MaxLength="50" />
+    <Property Name="COSTCENTER" Type="nvarchar" MaxLength="100" />
+    <Property Name="COST_SECTION" Type="nvarchar" MaxLength="12" />
+    <Property Name="SW_PRICE" Type="numeric" Precision="10" Scale="2" />
+  </EntityType>
+  <Function Name="AddIncident" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="INC_CODE" Type="nvarchar" Mode="InOut" />
+    <Parameter Name="INC_DATE" Type="datetime" Mode="In" />
+    <Parameter Name="INC_REQUESTER" Type="nvarchar" Mode="In" />
+    <Parameter Name="INC_TOPIC" Type="nvarchar" Mode="In" />
+    <Parameter Name="INC_STATUS" Type="nvarchar" Mode="In" />
+    <Parameter Name="INC_DESCRIPTION" Type="nvarchar(max)" Mode="In" />
+  </Function>
+  <Function Name="AddReqAF" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="AF_CODE" Type="nvarchar" Mode="InOut" />
+    <Parameter Name="MEM_NO" Type="nvarchar" Mode="In" />
+    <Parameter Name="AF_DATE" Type="datetime" Mode="In" />
+    <Parameter Name="ALLOW_STATUS" Type="nvarchar" Mode="In" />
+    <Parameter Name="ID_APPLICANT" Type="nvarchar" Mode="In" />
+    <Parameter Name="AF_SITE" Type="nvarchar" Mode="In" />
+    <Parameter Name="AF_FOLDER" Type="nvarchar" Mode="In" />
+    <Parameter Name="AF_STATUS" Type="nvarchar" Mode="In" />
+    <Parameter Name="AF_NOTE" Type="nvarchar" Mode="In" />
+    <Parameter Name="AF_REQUESTER" Type="nvarchar" Mode="In" />
+    <Parameter Name="REQ_STATUS" Type="nvarchar" Mode="In" />
+  </Function>
+  <EntityContainer Name="IT_ASSET_MANAGEMENTModelStoreContainer">
+    <EntitySet Name="tbl_assesories" EntityType="Self.tbl_assesories" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_buy_reason" EntityType="Self.tbl_buy_reason" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_categories" EntityType="Self.tbl_categories" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_cost_section" EntityType="Self.tbl_cost_section" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_costcenter" EntityType="Self.tbl_costcenter" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_device_types" EntityType="Self.tbl_device_types" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_doc_group" EntityType="Self.tbl_doc_group" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_doc_type" EntityType="Self.tbl_doc_type" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_document" EntityType="Self.tbl_document" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_hw_ass" EntityType="Self.tbl_hw_ass" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_hw_assets" EntityType="Self.tbl_hw_assets" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_hw_log_case" EntityType="Self.tbl_hw_log_case" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_hw_options_addon" EntityType="Self.tbl_hw_options_addon" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_hw_sw_standard" EntityType="Self.tbl_hw_sw_standard" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_hw_terminate" EntityType="Self.tbl_hw_terminate" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_incident_case" EntityType="Self.tbl_incident_case" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_incident_part" EntityType="Self.tbl_incident_part" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Incident_status" EntityType="Self.tbl_Incident_status" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_it_staff" EntityType="Self.tbl_it_staff" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_pc_standards" EntityType="Self.tbl_pc_standards" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_pc_sw_standard" EntityType="Self.tbl_pc_sw_standard" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_req_af" EntityType="Self.tbl_req_af" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_req_af_status" EntityType="Self.tbl_req_af_status" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_req_allow_status" EntityType="Self.tbl_req_allow_status" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_req_applicant" EntityType="Self.tbl_req_applicant" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_req_member" EntityType="Self.tbl_req_member" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_req_status" EntityType="Self.tbl_req_status" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_req_types" EntityType="Self.tbl_req_types" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_staff_member" EntityType="Self.tbl_staff_member" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_status_hw" EntityType="Self.tbl_status_hw" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_supplier" EntityType="Self.tbl_supplier" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_supplier_type" EntityType="Self.tbl_supplier_type" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_sw_assets" EntityType="Self.tbl_sw_assets" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_sw_type" EntityType="Self.tbl_sw_type" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_user" EntityType="Self.tbl_user" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_year_document_number" EntityType="Self.tbl_year_document_number" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_configure" EntityType="Self.tbl_configure" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [tbl_configure].[ID] AS [ID], 
+    [tbl_configure].[DOC_LOCATION] AS [DOC_LOCATION], 
+    [tbl_configure].[PIC_LOCATION] AS [PIC_LOCATION], 
+    [tbl_configure].[AUD_LOCATION] AS [AUD_LOCATION], 
+    [tbl_configure].[INC_NO_PRF] AS [INC_NO_PRF], 
+    [tbl_configure].[INC_NO_YEAR] AS [INC_NO_YEAR], 
+    [tbl_configure].[REQ_NO_PRF] AS [REQ_NO_PRF], 
+    [tbl_configure].[REQ_NO_YEAR] AS [REQ_NO_YEAR], 
+    [tbl_configure].[AUD_NO_PRF] AS [AUD_NO_PRF], 
+    [tbl_configure].[AUD_NO_YEAR] AS [AUD_NO_YEAR], 
+    [tbl_configure].[INC_NO_RUN] AS [INC_NO_RUN], 
+    [tbl_configure].[REQ_NO_RUN] AS [REQ_NO_RUN], 
+    [tbl_configure].[AUD_NO_RUN] AS [AUD_NO_RUN]
+    FROM [dbo].[tbl_configure] AS [tbl_configure]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View_costcenter" EntityType="Self.View_costcenter" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [View_costcenter].[COST_ID] AS [COST_ID], 
+    [View_costcenter].[COSTCENTER] AS [COSTCENTER]
+    FROM [dbo].[View_costcenter] AS [View_costcenter]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View_device_type" EntityType="Self.View_device_type" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [View_device_type].[DEV_ID] AS [DEV_ID], 
+    [View_device_type].[DEV_CODE] AS [DEV_CODE], 
+    [View_device_type].[DEV_DESCRIPTION] AS [DEV_DESCRIPTION], 
+    [View_device_type].[PREFIX] AS [PREFIX], 
+    [View_device_type].[LAST_DIGIT] AS [LAST_DIGIT]
+    FROM [dbo].[View_device_type] AS [View_device_type]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View_document" EntityType="Self.View_document" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [View_document].[DOC_ID] AS [DOC_ID], 
+    [View_document].[DOC_NO] AS [DOC_NO], 
+    [View_document].[DOC_DATE] AS [DOC_DATE], 
+    [View_document].[DOC_YEAR] AS [DOC_YEAR], 
+    [View_document].[DOC_DESCRIPTION] AS [DOC_DESCRIPTION], 
+    [View_document].[DOC_TYPE] AS [DOC_TYPE], 
+    [View_document].[SUPPLIER] AS [SUPPLIER], 
+    [View_document].[DOC_START_DATE] AS [DOC_START_DATE], 
+    [View_document].[DOC_END_DATE] AS [DOC_END_DATE], 
+    [View_document].[COST_ID] AS [COST_ID], 
+    [View_document].[DOC_LOCATION_REF] AS [DOC_LOCATION_REF], 
+    [View_document].[DOC_REFERENCE_COM] AS [DOC_REFERENCE_COM], 
+    [View_document].[DOC_REFERENCE_DOC] AS [DOC_REFERENCE_DOC], 
+    [View_document].[DOC_ATTACH] AS [DOC_ATTACH], 
+    [View_document].[DOC_REMARK] AS [DOC_REMARK], 
+    [View_document].[DOC_STATUS] AS [DOC_STATUS], 
+    [View_document].[USER_CREATE] AS [USER_CREATE], 
+    [View_document].[USER_UPDATE] AS [USER_UPDATE], 
+    [View_document].[CREATE_DATE] AS [CREATE_DATE], 
+    [View_document].[UPDATE_DATE] AS [UPDATE_DATE], 
+    [View_document].[HW_WARANTEE] AS [HW_WARANTEE], 
+    [View_document].[HW_WAR_YEAR] AS [HW_WAR_YEAR], 
+    [View_document].[DOC_TYPE_DESC] AS [DOC_TYPE_DESC], 
+    [View_document].[DOC_GROUP] AS [DOC_GROUP], 
+    [View_document].[COST_SECTION] AS [COST_SECTION]
+    FROM [dbo].[View_document] AS [View_document]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View_hw_assets" EntityType="Self.View_hw_assets" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [View_hw_assets].[HW_ID] AS [HW_ID], 
+    [View_hw_assets].[HW_CODE] AS [HW_CODE], 
+    [View_hw_assets].[DEV_CODE] AS [DEV_CODE], 
+    [View_hw_assets].[HW_ASSET] AS [HW_ASSET], 
+    [View_hw_assets].[HW_ASSET_NAME] AS [HW_ASSET_NAME], 
+    [View_hw_assets].[HW_YEAR] AS [HW_YEAR], 
+    [View_hw_assets].[HW_START_DATE] AS [HW_START_DATE], 
+    [View_hw_assets].[HW_END_DATE] AS [HW_END_DATE], 
+    [View_hw_assets].[HW_BRAND] AS [HW_BRAND], 
+    [View_hw_assets].[HW_MODEL] AS [HW_MODEL], 
+    [View_hw_assets].[HW_SERIAL] AS [HW_SERIAL], 
+    [View_hw_assets].[PC_CODE] AS [PC_CODE], 
+    [View_hw_assets].[COST_ID] AS [COST_ID], 
+    [View_hw_assets].[HW_SERVICE_TAG] AS [HW_SERVICE_TAG], 
+    [View_hw_assets].[HW_DESC_SHORT] AS [HW_DESC_SHORT], 
+    [View_hw_assets].[HW_DESCRIPT_LONG] AS [HW_DESCRIPT_LONG], 
+    [View_hw_assets].[HW_PURCHASE_NO] AS [HW_PURCHASE_NO], 
+    [View_hw_assets].[HW_PURCHASE_DATE] AS [HW_PURCHASE_DATE], 
+    [View_hw_assets].[HW_PICTURE] AS [HW_PICTURE], 
+    [View_hw_assets].[SUPPLIER] AS [SUPPLIER], 
+    [View_hw_assets].[HW_WARANTEE] AS [HW_WARANTEE], 
+    [View_hw_assets].[HW_WAR_YEAR] AS [HW_WAR_YEAR], 
+    [View_hw_assets].[HW_WAR_END_DATE] AS [HW_WAR_END_DATE], 
+    [View_hw_assets].[DOC_NO] AS [DOC_NO], 
+    [View_hw_assets].[HW_RENT] AS [HW_RENT], 
+    [View_hw_assets].[ST_ID] AS [ST_ID], 
+    [View_hw_assets].[HW_REMARK] AS [HW_REMARK], 
+    [View_hw_assets].[HW_IP] AS [HW_IP], 
+    [View_hw_assets].[HW_MAX_ADDRESS] AS [HW_MAX_ADDRESS], 
+    [View_hw_assets].[USER_CREATE] AS [USER_CREATE], 
+    [View_hw_assets].[USER_UPDATE] AS [USER_UPDATE], 
+    [View_hw_assets].[CREATE_DATE] AS [CREATE_DATE], 
+    [View_hw_assets].[UPDATE_DATE] AS [UPDATE_DATE], 
+    [View_hw_assets].[HW_DEPT_NAME] AS [HW_DEPT_NAME], 
+    [View_hw_assets].[DEV_DESCRIPTION] AS [DEV_DESCRIPTION], 
+    [View_hw_assets].[PC_REMARK] AS [PC_REMARK], 
+    [View_hw_assets].[PC_DESCRIPTION] AS [PC_DESCRIPTION], 
+    [View_hw_assets].[COSTCENTER] AS [COSTCENTER], 
+    [View_hw_assets].[ST_DESCRIPTION] AS [ST_DESCRIPTION], 
+    [View_hw_assets].[HW_INSTALL_DATE] AS [HW_INSTALL_DATE], 
+    [View_hw_assets].[HW_OWNNER] AS [HW_OWNNER], 
+    [View_hw_assets].[COST_SECTION] AS [COST_SECTION], 
+    [View_hw_assets].[HW_PRQUOTES_NO] AS [HW_PRQUOTES_NO], 
+    [View_hw_assets].[HW_PRQUOTES_DATE] AS [HW_PRQUOTES_DATE]
+    FROM [dbo].[View_hw_assets] AS [View_hw_assets]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View_hw_options_addon" EntityType="Self.View_hw_options_addon" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [View_hw_options_addon].[HW_CODE] AS [HW_CODE], 
+    [View_hw_options_addon].[SEQ] AS [SEQ], 
+    [View_hw_options_addon].[ASSESORIES] AS [ASSESORIES], 
+    [View_hw_options_addon].[REMARK] AS [REMARK], 
+    [View_hw_options_addon].[ADD_DATE] AS [ADD_DATE], 
+    [View_hw_options_addon].[USER_CREATE] AS [USER_CREATE], 
+    [View_hw_options_addon].[USER_UPDATE] AS [USER_UPDATE], 
+    [View_hw_options_addon].[CREATE_DATE] AS [CREATE_DATE], 
+    [View_hw_options_addon].[UPDATE_DATE] AS [UPDATE_DATE]
+    FROM [dbo].[View_hw_options_addon] AS [View_hw_options_addon]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View_hw_sw_standard" EntityType="Self.View_hw_sw_standard" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [View_hw_sw_standard].[HW_CODE] AS [HW_CODE], 
+    [View_hw_sw_standard].[DEV_SW_CODE] AS [DEV_SW_CODE], 
+    [View_hw_sw_standard].[DEV_SW_DESCRIPTION] AS [DEV_SW_DESCRIPTION], 
+    [View_hw_sw_standard].[SW_CODE] AS [SW_CODE], 
+    [View_hw_sw_standard].[SW_START_DATE] AS [SW_START_DATE], 
+    [View_hw_sw_standard].[SW_END_DATE] AS [SW_END_DATE], 
+    [View_hw_sw_standard].[HW_SW_REMARK] AS [HW_SW_REMARK], 
+    [View_hw_sw_standard].[DEV_SW_EST_PRICE] AS [DEV_SW_EST_PRICE]
+    FROM [dbo].[View_hw_sw_standard] AS [View_hw_sw_standard]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View_inc_status" EntityType="Self.View_inc_status" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [View_inc_status].[INC_CODE] AS [INC_CODE], 
+    [View_inc_status].[INC_DATE] AS [INC_DATE], 
+    [View_inc_status].[INC_TOPIC] AS [INC_TOPIC], 
+    [View_inc_status].[INC_REQUESTER] AS [INC_REQUESTER], 
+    [View_inc_status].[INC_STATUS] AS [INC_STATUS], 
+    [View_inc_status].[STA_DESCRIPTION] AS [STA_DESCRIPTION], 
+    [View_inc_status].[INC_DESCRIPTION] AS [INC_DESCRIPTION], 
+    [View_inc_status].[USER_NO] AS [USER_NO], 
+    [View_inc_status].[USER_NAME] AS [USER_NAME]
+    FROM [dbo].[View_inc_status] AS [View_inc_status]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View_incident_all" EntityType="Self.View_incident_all" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [View_incident_all].[INC_CODE] AS [INC_CODE], 
+    [View_incident_all].[INC_DATE] AS [INC_DATE], 
+    [View_incident_all].[INC_TOPIC] AS [INC_TOPIC], 
+    [View_incident_all].[INC_REQUESTER] AS [INC_REQUESTER], 
+    [View_incident_all].[INC_OPEN_BY] AS [INC_OPEN_BY], 
+    [View_incident_all].[INC_ASSIGN_TO] AS [INC_ASSIGN_TO], 
+    [View_incident_all].[INC_STATUS] AS [INC_STATUS], 
+    [View_incident_all].[INC_CATEGORIES] AS [INC_CATEGORIES], 
+    [View_incident_all].[INC_BILL_NO] AS [INC_BILL_NO], 
+    [View_incident_all].[INC_BILL_DATE] AS [INC_BILL_DATE], 
+    [View_incident_all].[INC_OPEN_DATE] AS [INC_OPEN_DATE], 
+    [View_incident_all].[INC_DUE_DATE] AS [INC_DUE_DATE], 
+    [View_incident_all].[INC_RESOLVE_DATE] AS [INC_RESOLVE_DATE], 
+    [View_incident_all].[INC_DESCRIPTION] AS [INC_DESCRIPTION], 
+    [View_incident_all].[HW_CODE] AS [HW_CODE], 
+    [View_incident_all].[INC_CLOSE_DATE] AS [INC_CLOSE_DATE], 
+    [View_incident_all].[COST_ID] AS [COST_ID], 
+    [View_incident_all].[INC_SUBMIT_DATE] AS [INC_SUBMIT_DATE], 
+    [View_incident_all].[INC_ASSIGN_DATE] AS [INC_ASSIGN_DATE], 
+    [View_incident_all].[COST_SECTION] AS [COST_SECTION], 
+    [View_incident_all].[INC_CANCEL_DATE] AS [INC_CANCEL_DATE], 
+    [View_incident_all].[STA_DESCRIPTION] AS [STA_DESCRIPTION], 
+    [View_incident_all].[EMP_NO] AS [EMP_NO], 
+    [View_incident_all].[IT_NAME] AS [IT_NAME], 
+    [View_incident_all].[IT_SURNAME] AS [IT_SURNAME], 
+    [View_incident_all].[EMP_ASSIGN] AS [EMP_ASSIGN], 
+    [View_incident_all].[EMP_ASSIGN_NAME] AS [EMP_ASSIGN_NAME], 
+    [View_incident_all].[EMP_ASSIGN_SURNAME] AS [EMP_ASSIGN_SURNAME], 
+    [View_incident_all].[Expr1] AS [Expr1], 
+    [View_incident_all].[HW_ASSET] AS [HW_ASSET], 
+    [View_incident_all].[HW_ASSET_NAME] AS [HW_ASSET_NAME], 
+    [View_incident_all].[USER_NAME] AS [USER_NAME], 
+    [View_incident_all].[USER_NO] AS [USER_NO], 
+    [View_incident_all].[INC_COMMENTS] AS [INC_COMMENTS], 
+    [View_incident_all].[CATE_DESC] AS [CATE_DESC]
+    FROM [dbo].[View_incident_all] AS [View_incident_all]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View_incident_case" EntityType="Self.View_incident_case" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [View_incident_case].[INC_ID] AS [INC_ID], 
+    [View_incident_case].[INC_CODE] AS [INC_CODE], 
+    [View_incident_case].[INC_DATE] AS [INC_DATE], 
+    [View_incident_case].[INC_TOPIC] AS [INC_TOPIC], 
+    [View_incident_case].[INC_REQUESTER] AS [INC_REQUESTER], 
+    [View_incident_case].[INC_OPEN_BY] AS [INC_OPEN_BY], 
+    [View_incident_case].[INC_ASSIGN_TO] AS [INC_ASSIGN_TO], 
+    [View_incident_case].[INC_STATUS] AS [INC_STATUS], 
+    [View_incident_case].[INC_CATEGORIES] AS [INC_CATEGORIES], 
+    [View_incident_case].[INC_PRIORITY] AS [INC_PRIORITY], 
+    [View_incident_case].[INC_BILL_NO] AS [INC_BILL_NO], 
+    [View_incident_case].[INC_BILL_DATE] AS [INC_BILL_DATE], 
+    [View_incident_case].[INC_OPEN_DATE] AS [INC_OPEN_DATE], 
+    [View_incident_case].[INC_DUE_DATE] AS [INC_DUE_DATE], 
+    [View_incident_case].[INC_RESOLVE_DATE] AS [INC_RESOLVE_DATE], 
+    [View_incident_case].[INC_COST] AS [INC_COST], 
+    [View_incident_case].[INC_WARANTEE] AS [INC_WARANTEE], 
+    [View_incident_case].[INC_DESCRIPTION] AS [INC_DESCRIPTION], 
+    [View_incident_case].[INC_COMMENTS] AS [INC_COMMENTS], 
+    [View_incident_case].[USER_CREATE] AS [USER_CREATE], 
+    [View_incident_case].[USER_UPDATE] AS [USER_UPDATE], 
+    [View_incident_case].[CREATE_DATE] AS [CREATE_DATE], 
+    [View_incident_case].[UPDATE_DATE] AS [UPDATE_DATE], 
+    [View_incident_case].[REQUESTER] AS [REQUESTER], 
+    [View_incident_case].[CATE_DESC] AS [CATE_DESC], 
+    [View_incident_case].[HW_CODE] AS [HW_CODE], 
+    [View_incident_case].[STA_DESCRIPTION] AS [STA_DESCRIPTION], 
+    [View_incident_case].[INC_CLOSE_DATE] AS [INC_CLOSE_DATE], 
+    [View_incident_case].[COST_ID] AS [COST_ID], 
+    [View_incident_case].[NAME2] AS [NAME2], 
+    [View_incident_case].[INC_SUBMIT_DATE] AS [INC_SUBMIT_DATE], 
+    [View_incident_case].[INC_ASSIGN_DATE] AS [INC_ASSIGN_DATE], 
+    [View_incident_case].[COST_SECTION] AS [COST_SECTION], 
+    [View_incident_case].[INC_CANCEL_DATE] AS [INC_CANCEL_DATE]
+    FROM [dbo].[View_incident_case] AS [View_incident_case]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View_pc_standards" EntityType="Self.View_pc_standards" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [View_pc_standards].[PC_ID] AS [PC_ID], 
+    [View_pc_standards].[PC_CODE] AS [PC_CODE], 
+    [View_pc_standards].[PC_YEAR] AS [PC_YEAR], 
+    [View_pc_standards].[PC_DESCRIPTION] AS [PC_DESCRIPTION], 
+    [View_pc_standards].[PC_REMARK] AS [PC_REMARK], 
+    [View_pc_standards].[PC_PICTURE] AS [PC_PICTURE]
+    FROM [dbo].[View_pc_standards] AS [View_pc_standards]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View_pc_sw_standard" EntityType="Self.View_pc_sw_standard" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [View_pc_sw_standard].[PC_CODE] AS [PC_CODE], 
+    [View_pc_sw_standard].[DEV_SW_CODE] AS [DEV_SW_CODE], 
+    [View_pc_sw_standard].[DEV_SW_DESCRIPTION] AS [DEV_SW_DESCRIPTION], 
+    [View_pc_sw_standard].[DEV_SW_EST_PRICE] AS [DEV_SW_EST_PRICE]
+    FROM [dbo].[View_pc_sw_standard] AS [View_pc_sw_standard]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View_req_af_follow" EntityType="Self.View_req_af_follow" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [View_req_af_follow].[AF_CODE] AS [AF_CODE], 
+    [View_req_af_follow].[MEM_NO] AS [MEM_NO], 
+    [View_req_af_follow].[APPLICANT_NO] AS [APPLICANT_NO], 
+    [View_req_af_follow].[APPLICANT_NAME] AS [APPLICANT_NAME], 
+    [View_req_af_follow].[APPLICANT_NAME_EN] AS [APPLICANT_NAME_EN], 
+    [View_req_af_follow].[APPLICANT_POSITION] AS [APPLICANT_POSITION], 
+    [View_req_af_follow].[APPLICANT_DEPARTMENT] AS [APPLICANT_DEPARTMENT], 
+    [View_req_af_follow].[APPLICANT_EXTENSION] AS [APPLICANT_EXTENSION], 
+    [View_req_af_follow].[APPLICANT_EMAIL] AS [APPLICANT_EMAIL], 
+    [View_req_af_follow].[APPLICANT_ROLE] AS [APPLICANT_ROLE], 
+    [View_req_af_follow].[AF_DATE] AS [AF_DATE], 
+    [View_req_af_follow].[ALLOW_STATUS] AS [ALLOW_STATUS], 
+    [View_req_af_follow].[ALLOW_DESC] AS [ALLOW_DESC], 
+    [View_req_af_follow].[ID_APPLICANT] AS [ID_APPLICANT], 
+    [View_req_af_follow].[APPLICANT_DESC] AS [APPLICANT_DESC], 
+    [View_req_af_follow].[AF_SITE] AS [AF_SITE], 
+    [View_req_af_follow].[AF_FOLDER] AS [AF_FOLDER], 
+    [View_req_af_follow].[AF_STATUS] AS [AF_STATUS], 
+    [View_req_af_follow].[AF_STATUS_NAME] AS [AF_STATUS_NAME], 
+    [View_req_af_follow].[AF_NOTE] AS [AF_NOTE], 
+    [View_req_af_follow].[AF_REQUESTER] AS [AF_REQUESTER], 
+    [View_req_af_follow].[USER_NO] AS [USER_NO], 
+    [View_req_af_follow].[USER_NAME] AS [USER_NAME], 
+    [View_req_af_follow].[USER_NAME_EN] AS [USER_NAME_EN], 
+    [View_req_af_follow].[USER_POSITION] AS [USER_POSITION], 
+    [View_req_af_follow].[USER_DEPARTMENT] AS [USER_DEPARTMENT], 
+    [View_req_af_follow].[USER_EXTENSION] AS [USER_EXTENSION], 
+    [View_req_af_follow].[USER_EMAIL] AS [USER_EMAIL], 
+    [View_req_af_follow].[USER_ROLE] AS [USER_ROLE], 
+    [View_req_af_follow].[AF_APPROVE_OWNER] AS [AF_APPROVE_OWNER], 
+    [View_req_af_follow].[REQ_STATUS] AS [REQ_STATUS], 
+    [View_req_af_follow].[STA_DESC] AS [STA_DESC], 
+    [View_req_af_follow].[AF_APPROVE_OWNER_DATE] AS [AF_APPROVE_OWNER_DATE], 
+    [View_req_af_follow].[AF_APPROVE] AS [AF_APPROVE], 
+    [View_req_af_follow].[AF_APPROVE_DATE] AS [AF_APPROVE_DATE], 
+    [View_req_af_follow].[APPROVE_NO] AS [APPROVE_NO], 
+    [View_req_af_follow].[APPROVE_NAME] AS [APPROVE_NAME], 
+    [View_req_af_follow].[APPROVE_NAME_EN] AS [APPROVE_NAME_EN], 
+    [View_req_af_follow].[APPROVE_POSITION] AS [APPROVE_POSITION], 
+    [View_req_af_follow].[APPROVE_DEPARTMENT] AS [APPROVE_DEPARTMENT], 
+    [View_req_af_follow].[APPROVE_EXTENSION] AS [APPROVE_EXTENSION], 
+    [View_req_af_follow].[APPROVE_EMAIL] AS [APPROVE_EMAIL], 
+    [View_req_af_follow].[APPROVE_ROLE] AS [APPROVE_ROLE], 
+    [View_req_af_follow].[AF_OPEN_BY] AS [AF_OPEN_BY], 
+    [View_req_af_follow].[IT_OPEN_BY_NAME] AS [IT_OPEN_BY_NAME], 
+    [View_req_af_follow].[IT_OPEN_BY_SURNAME] AS [IT_OPEN_BY_SURNAME], 
+    [View_req_af_follow].[AF_OPEN_DATE] AS [AF_OPEN_DATE], 
+    [View_req_af_follow].[AF_ASSIGN_TO] AS [AF_ASSIGN_TO], 
+    [View_req_af_follow].[IT_ASSIGN_NAME] AS [IT_ASSIGN_NAME], 
+    [View_req_af_follow].[IT_ASSIGN_SURMANE] AS [IT_ASSIGN_SURMANE], 
+    [View_req_af_follow].[AF_ASSIGN_DATE] AS [AF_ASSIGN_DATE], 
+    [View_req_af_follow].[AF_CLOSE] AS [AF_CLOSE], 
+    [View_req_af_follow].[AF_CLOSE_DATE] AS [AF_CLOSE_DATE]
+    FROM [dbo].[View_req_af_follow] AS [View_req_af_follow]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View_req_af_register" EntityType="Self.View_req_af_register" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [View_req_af_register].[AF_CODE] AS [AF_CODE], 
+    [View_req_af_register].[MEM_NO] AS [MEM_NO], 
+    [View_req_af_register].[USER_NO] AS [USER_NO], 
+    [View_req_af_register].[MEM_NAME] AS [MEM_NAME], 
+    [View_req_af_register].[MEM_NAME_EN] AS [MEM_NAME_EN], 
+    [View_req_af_register].[MEM_POSITION] AS [MEM_POSITION], 
+    [View_req_af_register].[MEM_DEPARTMENT] AS [MEM_DEPARTMENT], 
+    [View_req_af_register].[MEM_EXTENSION] AS [MEM_EXTENSION], 
+    [View_req_af_register].[MEM_EMAIL] AS [MEM_EMAIL], 
+    [View_req_af_register].[MEM_ROLE] AS [MEM_ROLE], 
+    [View_req_af_register].[AF_DATE] AS [AF_DATE], 
+    [View_req_af_register].[ALLOW_STATUS] AS [ALLOW_STATUS], 
+    [View_req_af_register].[ALLOW_DESC] AS [ALLOW_DESC], 
+    [View_req_af_register].[ID_APPLICANT] AS [ID_APPLICANT], 
+    [View_req_af_register].[APPLICANT_DESC] AS [APPLICANT_DESC], 
+    [View_req_af_register].[AF_SITE] AS [AF_SITE], 
+    [View_req_af_register].[AF_FOLDER] AS [AF_FOLDER], 
+    [View_req_af_register].[AF_STATUS] AS [AF_STATUS], 
+    [View_req_af_register].[AF_STATUS_NAME] AS [AF_STATUS_NAME], 
+    [View_req_af_register].[AF_NOTE] AS [AF_NOTE], 
+    [View_req_af_register].[AF_REQUESTER] AS [AF_REQUESTER], 
+    [View_req_af_register].[USER_NAME] AS [USER_NAME], 
+    [View_req_af_register].[USER_EXTENSION] AS [USER_EXTENSION], 
+    [View_req_af_register].[USER_EMAIL] AS [USER_EMAIL], 
+    [View_req_af_register].[REQ_STATUS] AS [REQ_STATUS], 
+    [View_req_af_register].[STA_DESC] AS [STA_DESC]
+    FROM [dbo].[View_req_af_register] AS [View_req_af_register]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View_staff_member" EntityType="Self.View_staff_member" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [View_staff_member].[EMP_ID] AS [EMP_ID], 
+    [View_staff_member].[EMP_NO] AS [EMP_NO], 
+    [View_staff_member].[EMP_NAME] AS [EMP_NAME], 
+    [View_staff_member].[EMP_SURNAME] AS [EMP_SURNAME], 
+    [View_staff_member].[COST_ID] AS [COST_ID], 
+    [View_staff_member].[EMP_SECTION] AS [EMP_SECTION], 
+    [View_staff_member].[EMP_EXTENSION] AS [EMP_EXTENSION], 
+    [View_staff_member].[EMP_LOCATION] AS [EMP_LOCATION], 
+    [View_staff_member].[NAME] AS [NAME], 
+    [View_staff_member].[NAME2] AS [NAME2]
+    FROM [dbo].[View_staff_member] AS [View_staff_member]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View_supplier" EntityType="Self.View_supplier" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [View_supplier].[SUPPLIER] AS [SUPPLIER], 
+    [View_supplier].[SUPPLIER_NAME] AS [SUPPLIER_NAME], 
+    [View_supplier].[SUPPLIER_TYPE] AS [SUPPLIER_TYPE], 
+    [View_supplier].[SUPPLIER_CONTACT] AS [SUPPLIER_CONTACT], 
+    [View_supplier].[SUPPLIER_AREA] AS [SUPPLIER_AREA], 
+    [View_supplier].[SUPPLIER_SHORT] AS [SUPPLIER_SHORT], 
+    [View_supplier].[SUPPLIER_MAIL] AS [SUPPLIER_MAIL], 
+    [View_supplier].[SUPPLIER_ADDRESS] AS [SUPPLIER_ADDRESS], 
+    [View_supplier].[SUPPLIER_STATUS] AS [SUPPLIER_STATUS], 
+    [View_supplier].[SUPPLIER_NOTE] AS [SUPPLIER_NOTE], 
+    [View_supplier].[SUPPLIER_PHONE_2] AS [SUPPLIER_PHONE_2], 
+    [View_supplier].[SUPPLIER_PHONE_1] AS [SUPPLIER_PHONE_1]
+    FROM [dbo].[View_supplier] AS [View_supplier]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View_sw_assets" EntityType="Self.View_sw_assets" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [View_sw_assets].[SW_ID] AS [SW_ID], 
+    [View_sw_assets].[SW_CODE] AS [SW_CODE], 
+    [View_sw_assets].[DEV_SW_CODE] AS [DEV_SW_CODE], 
+    [View_sw_assets].[SW_ASSET] AS [SW_ASSET], 
+    [View_sw_assets].[SW_ASSET_NAME] AS [SW_ASSET_NAME], 
+    [View_sw_assets].[SW_YEAR] AS [SW_YEAR], 
+    [View_sw_assets].[SW_START_DATE] AS [SW_START_DATE], 
+    [View_sw_assets].[SW_END_DATE] AS [SW_END_DATE], 
+    [View_sw_assets].[SW_BRAND] AS [SW_BRAND], 
+    [View_sw_assets].[HW_SERIAL] AS [HW_SERIAL], 
+    [View_sw_assets].[COST_ID] AS [COST_ID], 
+    [View_sw_assets].[SW_SERVICE_TAG] AS [SW_SERVICE_TAG], 
+    [View_sw_assets].[SW_DESC_SHORT] AS [SW_DESC_SHORT], 
+    [View_sw_assets].[SW_DESCRIPT_LONG] AS [SW_DESCRIPT_LONG], 
+    [View_sw_assets].[SW_PURCHASE_NO] AS [SW_PURCHASE_NO], 
+    [View_sw_assets].[SW_PURCHASE_DATE] AS [SW_PURCHASE_DATE], 
+    [View_sw_assets].[SW_PICTURE] AS [SW_PICTURE], 
+    [View_sw_assets].[SW_QTY] AS [SW_QTY], 
+    [View_sw_assets].[SUPPLIER] AS [SUPPLIER], 
+    [View_sw_assets].[SW_WARANTEE] AS [SW_WARANTEE], 
+    [View_sw_assets].[DOC_NO] AS [DOC_NO], 
+    [View_sw_assets].[SW_RENT] AS [SW_RENT], 
+    [View_sw_assets].[ST_ID] AS [ST_ID], 
+    [View_sw_assets].[SW_REMARK] AS [SW_REMARK], 
+    [View_sw_assets].[USER_CREATE] AS [USER_CREATE], 
+    [View_sw_assets].[USER_UPDATE] AS [USER_UPDATE], 
+    [View_sw_assets].[CREATE_DATE] AS [CREATE_DATE], 
+    [View_sw_assets].[UPDATE_DATE] AS [UPDATE_DATE], 
+    [View_sw_assets].[DEV_SW_DESCRIPTION] AS [DEV_SW_DESCRIPTION], 
+    [View_sw_assets].[COSTCENTER] AS [COSTCENTER], 
+    [View_sw_assets].[COST_SECTION] AS [COST_SECTION], 
+    [View_sw_assets].[SW_PRICE] AS [SW_PRICE]
+    FROM [dbo].[View_sw_assets] AS [View_sw_assets]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

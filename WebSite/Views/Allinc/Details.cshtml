@@ -1,0 +1,125 @@
+﻿@model IT_ASSET.Models.View_incident_all
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>รายละเอียดของการซ่อม</h2>
+<table id="myTable" class="table table-bordered table-hover">
+    <tbody>
+        <tr>
+            <td>
+                เลขที่ใบแจ้ง
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.INC_CODE)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                หัวข้อเรื่อง
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.INC_TOPIC)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                วันที่แจ้ง
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.INC_DATE)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                ผู้แจ้ง
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.USER_NAME)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                เปิดงานโดย
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.IT_NAME)
+                @Html.DisplayFor(model => model.IT_SURNAME)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                วันที่เปิดงาน
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.INC_OPEN_DATE)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                รับงานโดย
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.EMP_ASSIGN_NAME)
+                @Html.DisplayFor(model => model.EMP_ASSIGN_SURNAME)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                สถานะของงาน
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.STA_DESCRIPTION)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                รหัสเครื่อง VNC
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.HW_CODE)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                วันที่ครบกำหนด
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.INC_DUE_DATE)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                วันที่ดำเนินการ
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.INC_RESOLVE_DATE)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                รายละเอียดของงาน
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.INC_DESCRIPTION)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                รายละเอียดของงาน (ส่วนฝ่ายไอที)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.INC_COMMENTS)
+            </td>
+        </tr>
+    </tbody>
+
+
+
+
+
+</table>
+@Html.ActionLink("กลับไปที่การลงทะเบียน", "Index", "IncStatus", "IncStatus", new { @class = "btn btn-success" })
+
+@Html.ActionLink("ย้อนกลับ", "Index","Allinc","Allinc", new { @class = "btn btn-primary" })

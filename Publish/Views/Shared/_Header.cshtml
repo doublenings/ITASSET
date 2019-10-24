@@ -1,0 +1,30 @@
+﻿<section class="sidebar">
+    <ul class="sidebar-menu" data-widget="tree">
+        <li class="active treeview">
+            <a href="#">
+                <i class="fa fa-cogs"></i> <span>ระบบแจ้งปัญหา</span>
+                <span class="pull-right-container">
+                    <i class="fa fa-angle-left pull-right"></i>
+                </span>
+            </a>
+            <ul class="treeview-menu">
+                <li class="active"><a href="@Url.Action("Index", "IncStatus")"><i class="fa fa-pencil"></i> <span>ลงทะเบียนการซ่อม</span></a></li>
+                <li><a href="@Url.Action("Index", "Allinc")"><i class="fa fa-info"></i><span>ติดตามปัญหาการซ่อม</span></a></li>
+            </ul>
+        </li>
+        <li class="active treeview">
+            <a href="#">
+                <i class="fa fa-cogs"></i> <span>ระบบคำร้องขอ</span>
+                <span class="pull-right-container">
+                    <i class="fa fa-angle-left pull-right"></i>
+                </span>
+            </a>
+            <ul class="treeview-menu">
+                <li class="active"><a href="@Url.Action("Create", "ReqAFRegister")"><i class="fa fa-pencil"></i> <span>ลงทะเบียนการร้องขอสิทธิ AFESCO</span></a></li>
+                <li><a href="@Url.Action("FollowAF", "ReqAFRegister")"><i class="fa fa-info"></i><span>ติดตามปัญหาการซ่อม</span></a></li>
+            </ul>
+        </li>
+
+
+    </ul>
+</section>

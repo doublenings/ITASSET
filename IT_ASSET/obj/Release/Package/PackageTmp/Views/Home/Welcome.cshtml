@@ -1,0 +1,14 @@
+﻿
+@{
+    ViewBag.Title = "Welcome";
+}
+@if (Session["USER_NAME"] != null)
+{
+    <h2>Welcome @Session["USER_NAME"].ToString()</h2>
+
+
+}
+else
+{
+    Response.Redirect("Login");
+}

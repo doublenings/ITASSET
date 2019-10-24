@@ -1,0 +1,688 @@
+D:\IT\IT_ASSET\IT_ASSET\bin\IT_ASSET.dll.config
+D:\IT\IT_ASSET\IT_ASSET\bin\IT_ASSET.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\IT_ASSET.pdb
+D:\IT\IT_ASSET\IT_ASSET\bin\roslyn\csc.exe
+D:\IT\IT_ASSET\IT_ASSET\bin\roslyn\csc.exe.config
+D:\IT\IT_ASSET\IT_ASSET\bin\roslyn\csc.rsp
+D:\IT\IT_ASSET\IT_ASSET\bin\roslyn\csi.exe
+D:\IT\IT_ASSET\IT_ASSET\bin\roslyn\csi.exe.config
+D:\IT\IT_ASSET\IT_ASSET\bin\roslyn\csi.rsp
+D:\IT\IT_ASSET\IT_ASSET\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\IT\IT_ASSET\IT_ASSET\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\roslyn\Microsoft.Managed.Core.targets
+D:\IT\IT_ASSET\IT_ASSET\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\IT\IT_ASSET\IT_ASSET\bin\roslyn\System.AppContext.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\roslyn\System.Collections.Immutable.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\roslyn\System.Console.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\roslyn\System.IO.Compression.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\roslyn\System.IO.FileSystem.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\roslyn\System.IO.Pipes.AccessControl.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\roslyn\System.IO.Pipes.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\roslyn\System.Reflection.Metadata.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\roslyn\System.Security.AccessControl.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\roslyn\System.Security.Claims.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\roslyn\System.Security.Principal.Windows.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\roslyn\System.ValueTuple.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\roslyn\System.Xml.XmlDocument.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\roslyn\System.Xml.XPath.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\roslyn\vbc.exe
+D:\IT\IT_ASSET\IT_ASSET\bin\roslyn\vbc.exe.config
+D:\IT\IT_ASSET\IT_ASSET\bin\roslyn\vbc.rsp
+D:\IT\IT_ASSET\IT_ASSET\bin\roslyn\VBCSCompiler.exe
+D:\IT\IT_ASSET\IT_ASSET\bin\roslyn\VBCSCompiler.exe.config
+D:\IT\IT_ASSET\IT_ASSET\bin\Antlr3.Runtime.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\dotnet-aspnet-codegenerator-design.exe
+D:\IT\IT_ASSET\IT_ASSET\bin\EntityFramework.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\EntityFramework.SqlServer.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\Microsoft.AspNetCore.Razor.Language.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\Microsoft.CodeAnalysis.CSharp.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\Microsoft.CodeAnalysis.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\Microsoft.CodeAnalysis.Workspaces.Desktop.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\Microsoft.CodeAnalysis.Workspaces.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\Microsoft.EntityFrameworkCore.Design.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\Microsoft.EntityFrameworkCore.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\Microsoft.EntityFrameworkCore.Relational.Design.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\Microsoft.EntityFrameworkCore.Relational.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\Microsoft.Extensions.Caching.Abstractions.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\Microsoft.Extensions.Caching.Memory.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\Microsoft.Extensions.Configuration.Binder.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\Microsoft.Extensions.Configuration.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\Microsoft.Extensions.DependencyInjection.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\Microsoft.Extensions.Logging.Abstractions.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\Microsoft.Extensions.Logging.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\Microsoft.Extensions.Options.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\Microsoft.Extensions.Primitives.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\Microsoft.VisualStudio.Web.CodeGeneration.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\Microsoft.Web.Infrastructure.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\moment.net.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\Newtonsoft.Json.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\NuGet.Frameworks.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\Remotion.Linq.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\RouteJs.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\RouteJs.Mvc5.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\System.Buffers.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\System.Collections.Immutable.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\System.ComponentModel.Annotations.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\System.Composition.AttributedModel.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\System.Composition.Convention.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\System.Composition.Hosting.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\System.Composition.Runtime.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\System.Composition.TypedParts.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\System.Data.SqlClient.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\System.Diagnostics.DiagnosticSource.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\System.Interactive.Async.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\System.Memory.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\System.Numerics.Vectors.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\System.Reflection.Metadata.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\System.Runtime.CompilerServices.Unsafe.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\System.Text.Encoding.CodePages.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\System.Web.Helpers.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\System.Web.Mvc.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\System.Web.Optimization.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\System.Web.Razor.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\System.Web.WebPages.Deployment.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\System.Web.WebPages.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\System.Web.WebPages.Razor.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\WebActivatorEx.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\WebGrease.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\WebHelpers.Mvc5.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\Microsoft.Build.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\Microsoft.Build.Framework.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\Microsoft.Build.Tasks.Core.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\System.Threading.Tasks.Dataflow.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\Microsoft.Build.Utilities.Core.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\dotnet-aspnet-codegenerator-design.xml
+D:\IT\IT_ASSET\IT_ASSET\bin\EntityFramework.xml
+D:\IT\IT_ASSET\IT_ASSET\bin\EntityFramework.SqlServer.xml
+D:\IT\IT_ASSET\IT_ASSET\bin\Microsoft.AspNetCore.Razor.Language.xml
+D:\IT\IT_ASSET\IT_ASSET\bin\Microsoft.CodeAnalysis.pdb
+D:\IT\IT_ASSET\IT_ASSET\bin\Microsoft.CodeAnalysis.xml
+D:\IT\IT_ASSET\IT_ASSET\bin\Microsoft.CodeAnalysis.CSharp.pdb
+D:\IT\IT_ASSET\IT_ASSET\bin\Microsoft.CodeAnalysis.CSharp.xml
+D:\IT\IT_ASSET\IT_ASSET\bin\Microsoft.CodeAnalysis.CSharp.Workspaces.pdb
+D:\IT\IT_ASSET\IT_ASSET\bin\Microsoft.CodeAnalysis.CSharp.Workspaces.xml
+D:\IT\IT_ASSET\IT_ASSET\bin\Microsoft.CodeAnalysis.Workspaces.pdb
+D:\IT\IT_ASSET\IT_ASSET\bin\Microsoft.CodeAnalysis.Workspaces.xml
+D:\IT\IT_ASSET\IT_ASSET\bin\Microsoft.CodeAnalysis.Workspaces.Desktop.pdb
+D:\IT\IT_ASSET\IT_ASSET\bin\Microsoft.CodeAnalysis.Workspaces.Desktop.xml
+D:\IT\IT_ASSET\IT_ASSET\bin\Microsoft.EntityFrameworkCore.xml
+D:\IT\IT_ASSET\IT_ASSET\bin\Microsoft.EntityFrameworkCore.Abstractions.xml
+D:\IT\IT_ASSET\IT_ASSET\bin\Microsoft.EntityFrameworkCore.Design.xml
+D:\IT\IT_ASSET\IT_ASSET\bin\Microsoft.EntityFrameworkCore.Relational.xml
+D:\IT\IT_ASSET\IT_ASSET\bin\Microsoft.EntityFrameworkCore.Relational.Design.xml
+D:\IT\IT_ASSET\IT_ASSET\bin\Microsoft.EntityFrameworkCore.SqlServer.xml
+D:\IT\IT_ASSET\IT_ASSET\bin\Microsoft.Extensions.Caching.Abstractions.xml
+D:\IT\IT_ASSET\IT_ASSET\bin\Microsoft.Extensions.Caching.Memory.xml
+D:\IT\IT_ASSET\IT_ASSET\bin\Microsoft.Extensions.Configuration.xml
+D:\IT\IT_ASSET\IT_ASSET\bin\Microsoft.Extensions.Configuration.Abstractions.xml
+D:\IT\IT_ASSET\IT_ASSET\bin\Microsoft.Extensions.Configuration.Binder.xml
+D:\IT\IT_ASSET\IT_ASSET\bin\Microsoft.Extensions.DependencyInjection.xml
+D:\IT\IT_ASSET\IT_ASSET\bin\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+D:\IT\IT_ASSET\IT_ASSET\bin\Microsoft.Extensions.Logging.xml
+D:\IT\IT_ASSET\IT_ASSET\bin\Microsoft.Extensions.Logging.Abstractions.xml
+D:\IT\IT_ASSET\IT_ASSET\bin\Microsoft.Extensions.Options.xml
+D:\IT\IT_ASSET\IT_ASSET\bin\Microsoft.Extensions.Primitives.xml
+D:\IT\IT_ASSET\IT_ASSET\bin\Microsoft.VisualStudio.Web.CodeGeneration.xml
+D:\IT\IT_ASSET\IT_ASSET\bin\Microsoft.VisualStudio.Web.CodeGeneration.Contracts.xml
+D:\IT\IT_ASSET\IT_ASSET\bin\Microsoft.VisualStudio.Web.CodeGeneration.Core.xml
+D:\IT\IT_ASSET\IT_ASSET\bin\Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.xml
+D:\IT\IT_ASSET\IT_ASSET\bin\Microsoft.VisualStudio.Web.CodeGeneration.Templating.xml
+D:\IT\IT_ASSET\IT_ASSET\bin\Microsoft.VisualStudio.Web.CodeGeneration.Utils.xml
+D:\IT\IT_ASSET\IT_ASSET\bin\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.xml
+D:\IT\IT_ASSET\IT_ASSET\bin\Newtonsoft.Json.xml
+D:\IT\IT_ASSET\IT_ASSET\bin\NuGet.Frameworks.xml
+D:\IT\IT_ASSET\IT_ASSET\bin\Remotion.Linq.xml
+D:\IT\IT_ASSET\IT_ASSET\bin\System.Buffers.xml
+D:\IT\IT_ASSET\IT_ASSET\bin\System.Collections.Immutable.xml
+D:\IT\IT_ASSET\IT_ASSET\bin\System.Diagnostics.DiagnosticSource.xml
+D:\IT\IT_ASSET\IT_ASSET\bin\System.Interactive.Async.xml
+D:\IT\IT_ASSET\IT_ASSET\bin\System.Memory.xml
+D:\IT\IT_ASSET\IT_ASSET\bin\System.Numerics.Vectors.xml
+D:\IT\IT_ASSET\IT_ASSET\bin\System.Reflection.Metadata.xml
+D:\IT\IT_ASSET\IT_ASSET\bin\System.Runtime.CompilerServices.Unsafe.xml
+D:\IT\IT_ASSET\IT_ASSET\bin\System.Web.Helpers.xml
+D:\IT\IT_ASSET\IT_ASSET\bin\System.Web.Mvc.xml
+D:\IT\IT_ASSET\IT_ASSET\bin\System.Web.Optimization.xml
+D:\IT\IT_ASSET\IT_ASSET\bin\System.Web.Razor.xml
+D:\IT\IT_ASSET\IT_ASSET\bin\System.Web.WebPages.xml
+D:\IT\IT_ASSET\IT_ASSET\bin\System.Web.WebPages.Deployment.xml
+D:\IT\IT_ASSET\IT_ASSET\bin\System.Web.WebPages.Razor.xml
+D:\IT\IT_ASSET\IT_ASSET\bin\Antlr3.Runtime.pdb
+D:\IT\IT_ASSET\IT_ASSET\bin\WebHelpers.Mvc5.xml
+D:\IT\IT_ASSET\IT_ASSET\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\IT\IT_ASSET\IT_ASSET\bin\cs\Microsoft.Build.resources.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\de\Microsoft.Build.resources.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\en\Microsoft.Build.resources.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\es\Microsoft.Build.resources.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\fr\Microsoft.Build.resources.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\it\Microsoft.Build.resources.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\ja\Microsoft.Build.resources.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\ko\Microsoft.Build.resources.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\pl\Microsoft.Build.resources.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\pt-BR\Microsoft.Build.resources.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\ru\Microsoft.Build.resources.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\tr\Microsoft.Build.resources.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\zh-Hans\Microsoft.Build.resources.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\zh-Hant\Microsoft.Build.resources.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\cs\Microsoft.Build.Tasks.Core.resources.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\de\Microsoft.Build.Tasks.Core.resources.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\en\Microsoft.Build.Tasks.Core.resources.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\es\Microsoft.Build.Tasks.Core.resources.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\fr\Microsoft.Build.Tasks.Core.resources.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\it\Microsoft.Build.Tasks.Core.resources.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\ja\Microsoft.Build.Tasks.Core.resources.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\ko\Microsoft.Build.Tasks.Core.resources.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\pl\Microsoft.Build.Tasks.Core.resources.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\pt-BR\Microsoft.Build.Tasks.Core.resources.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\ru\Microsoft.Build.Tasks.Core.resources.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\tr\Microsoft.Build.Tasks.Core.resources.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\zh-Hans\Microsoft.Build.Tasks.Core.resources.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\zh-Hant\Microsoft.Build.Tasks.Core.resources.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\cs\Microsoft.Build.Utilities.Core.resources.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\de\Microsoft.Build.Utilities.Core.resources.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\en\Microsoft.Build.Utilities.Core.resources.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\es\Microsoft.Build.Utilities.Core.resources.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\fr\Microsoft.Build.Utilities.Core.resources.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\it\Microsoft.Build.Utilities.Core.resources.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\ja\Microsoft.Build.Utilities.Core.resources.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\ko\Microsoft.Build.Utilities.Core.resources.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\pl\Microsoft.Build.Utilities.Core.resources.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\pt-BR\Microsoft.Build.Utilities.Core.resources.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\ru\Microsoft.Build.Utilities.Core.resources.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\tr\Microsoft.Build.Utilities.Core.resources.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\zh-Hans\Microsoft.Build.Utilities.Core.resources.dll
+D:\IT\IT_ASSET\IT_ASSET\bin\zh-Hant\Microsoft.Build.Utilities.Core.resources.dll
+D:\IT\IT_ASSET\IT_ASSET\obj\Debug\IT_ASSET.csproj.CoreCompileInputs.cache
+D:\IT\IT_ASSET\IT_ASSET\obj\Debug\IT_ASSET.csproj.CopyComplete
+D:\IT\IT_ASSET\IT_ASSET\obj\Debug\IT_ASSET.dll
+D:\IT\IT_ASSET\IT_ASSET\obj\Debug\IT_ASSET.pdb
+D:\IT\IT_ASSET\IT_ASSET\obj\Debug\IT_ASSET.csprojAssemblyReference.cache
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\IT_ASSET.dll.config
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\IT_ASSET.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\IT_ASSET.pdb
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\roslyn\csc.exe
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\roslyn\csc.exe.config
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\roslyn\csc.rsp
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\roslyn\csi.exe
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\roslyn\csi.exe.config
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\roslyn\csi.rsp
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\roslyn\Microsoft.Managed.Core.targets
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\roslyn\System.AppContext.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\roslyn\System.Collections.Immutable.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\roslyn\System.Console.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\roslyn\System.IO.Compression.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\roslyn\System.IO.FileSystem.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\roslyn\System.IO.Pipes.AccessControl.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\roslyn\System.IO.Pipes.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\roslyn\System.Reflection.Metadata.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\roslyn\System.Security.AccessControl.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\roslyn\System.Security.Claims.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\roslyn\System.Security.Principal.Windows.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\roslyn\System.ValueTuple.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\roslyn\System.Xml.XmlDocument.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\roslyn\System.Xml.XPath.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\roslyn\vbc.exe
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\roslyn\vbc.exe.config
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\roslyn\vbc.rsp
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\roslyn\VBCSCompiler.exe
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\roslyn\VBCSCompiler.exe.config
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\Antlr3.Runtime.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\dotnet-aspnet-codegenerator-design.exe
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\EntityFramework.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\EntityFramework.SqlServer.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\Microsoft.AspNetCore.Razor.Language.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\Microsoft.CodeAnalysis.CSharp.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\Microsoft.CodeAnalysis.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\Microsoft.CodeAnalysis.Workspaces.Desktop.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\Microsoft.CodeAnalysis.Workspaces.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\Microsoft.EntityFrameworkCore.Design.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\Microsoft.EntityFrameworkCore.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\Microsoft.EntityFrameworkCore.Relational.Design.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\Microsoft.EntityFrameworkCore.Relational.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\Microsoft.Extensions.Caching.Abstractions.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\Microsoft.Extensions.Caching.Memory.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\Microsoft.Extensions.Configuration.Binder.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\Microsoft.Extensions.Configuration.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\Microsoft.Extensions.DependencyInjection.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\Microsoft.Extensions.Logging.Abstractions.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\Microsoft.Extensions.Logging.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\Microsoft.Extensions.Options.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\Microsoft.Extensions.Primitives.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\Microsoft.VisualStudio.Web.CodeGeneration.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\Microsoft.Web.Infrastructure.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\moment.net.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\Newtonsoft.Json.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\NuGet.Frameworks.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\Remotion.Linq.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\RouteJs.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\RouteJs.Mvc5.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\System.Buffers.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\System.Collections.Immutable.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\System.ComponentModel.Annotations.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\System.Composition.AttributedModel.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\System.Composition.Convention.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\System.Composition.Hosting.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\System.Composition.Runtime.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\System.Composition.TypedParts.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\System.Data.SqlClient.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\System.Diagnostics.DiagnosticSource.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\System.Interactive.Async.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\System.Memory.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\System.Numerics.Vectors.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\System.Reflection.Metadata.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\System.Runtime.CompilerServices.Unsafe.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\System.Text.Encoding.CodePages.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\System.Web.Helpers.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\System.Web.Mvc.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\System.Web.Optimization.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\System.Web.Razor.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\System.Web.WebPages.Deployment.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\System.Web.WebPages.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\System.Web.WebPages.Razor.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\WebActivatorEx.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\WebGrease.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\WebHelpers.Mvc5.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\Microsoft.Build.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\Microsoft.Build.Framework.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\Microsoft.Build.Tasks.Core.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\System.Threading.Tasks.Dataflow.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\Microsoft.Build.Utilities.Core.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\dotnet-aspnet-codegenerator-design.xml
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\EntityFramework.xml
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\EntityFramework.SqlServer.xml
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\Microsoft.AspNetCore.Razor.Language.xml
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\Microsoft.CodeAnalysis.pdb
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\Microsoft.CodeAnalysis.xml
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\Microsoft.CodeAnalysis.CSharp.pdb
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\Microsoft.CodeAnalysis.CSharp.xml
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\Microsoft.CodeAnalysis.CSharp.Workspaces.pdb
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\Microsoft.CodeAnalysis.CSharp.Workspaces.xml
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\Microsoft.CodeAnalysis.Workspaces.pdb
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\Microsoft.CodeAnalysis.Workspaces.xml
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\Microsoft.CodeAnalysis.Workspaces.Desktop.pdb
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\Microsoft.CodeAnalysis.Workspaces.Desktop.xml
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\Microsoft.EntityFrameworkCore.xml
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\Microsoft.EntityFrameworkCore.Abstractions.xml
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\Microsoft.EntityFrameworkCore.Design.xml
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\Microsoft.EntityFrameworkCore.Relational.xml
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\Microsoft.EntityFrameworkCore.Relational.Design.xml
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\Microsoft.EntityFrameworkCore.SqlServer.xml
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\Microsoft.Extensions.Caching.Abstractions.xml
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\Microsoft.Extensions.Caching.Memory.xml
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\Microsoft.Extensions.Configuration.xml
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\Microsoft.Extensions.Configuration.Abstractions.xml
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\Microsoft.Extensions.Configuration.Binder.xml
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\Microsoft.Extensions.DependencyInjection.xml
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\Microsoft.Extensions.Logging.xml
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\Microsoft.Extensions.Logging.Abstractions.xml
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\Microsoft.Extensions.Options.xml
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\Microsoft.Extensions.Primitives.xml
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\Microsoft.VisualStudio.Web.CodeGeneration.xml
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\Microsoft.VisualStudio.Web.CodeGeneration.Contracts.xml
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\Microsoft.VisualStudio.Web.CodeGeneration.Core.xml
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.xml
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\Microsoft.VisualStudio.Web.CodeGeneration.Templating.xml
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\Microsoft.VisualStudio.Web.CodeGeneration.Utils.xml
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.xml
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\Newtonsoft.Json.xml
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\NuGet.Frameworks.xml
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\Remotion.Linq.xml
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\System.Buffers.xml
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\System.Collections.Immutable.xml
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\System.Diagnostics.DiagnosticSource.xml
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\System.Interactive.Async.xml
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\System.Memory.xml
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\System.Numerics.Vectors.xml
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\System.Reflection.Metadata.xml
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\System.Runtime.CompilerServices.Unsafe.xml
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\System.Web.Helpers.xml
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\System.Web.Mvc.xml
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\System.Web.Optimization.xml
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\System.Web.Razor.xml
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\System.Web.WebPages.xml
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\System.Web.WebPages.Deployment.xml
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\System.Web.WebPages.Razor.xml
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\Antlr3.Runtime.pdb
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\WebHelpers.Mvc5.xml
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\cs\Microsoft.Build.resources.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\de\Microsoft.Build.resources.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\en\Microsoft.Build.resources.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\es\Microsoft.Build.resources.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\fr\Microsoft.Build.resources.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\it\Microsoft.Build.resources.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\ja\Microsoft.Build.resources.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\ko\Microsoft.Build.resources.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\pl\Microsoft.Build.resources.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\pt-BR\Microsoft.Build.resources.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\ru\Microsoft.Build.resources.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\tr\Microsoft.Build.resources.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\zh-Hans\Microsoft.Build.resources.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\zh-Hant\Microsoft.Build.resources.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\cs\Microsoft.Build.Tasks.Core.resources.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\de\Microsoft.Build.Tasks.Core.resources.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\en\Microsoft.Build.Tasks.Core.resources.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\es\Microsoft.Build.Tasks.Core.resources.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\fr\Microsoft.Build.Tasks.Core.resources.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\it\Microsoft.Build.Tasks.Core.resources.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\ja\Microsoft.Build.Tasks.Core.resources.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\ko\Microsoft.Build.Tasks.Core.resources.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\pl\Microsoft.Build.Tasks.Core.resources.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\pt-BR\Microsoft.Build.Tasks.Core.resources.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\ru\Microsoft.Build.Tasks.Core.resources.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\tr\Microsoft.Build.Tasks.Core.resources.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\zh-Hans\Microsoft.Build.Tasks.Core.resources.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\zh-Hant\Microsoft.Build.Tasks.Core.resources.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\cs\Microsoft.Build.Utilities.Core.resources.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\de\Microsoft.Build.Utilities.Core.resources.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\en\Microsoft.Build.Utilities.Core.resources.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\es\Microsoft.Build.Utilities.Core.resources.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\fr\Microsoft.Build.Utilities.Core.resources.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\it\Microsoft.Build.Utilities.Core.resources.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\ja\Microsoft.Build.Utilities.Core.resources.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\ko\Microsoft.Build.Utilities.Core.resources.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\pl\Microsoft.Build.Utilities.Core.resources.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\pt-BR\Microsoft.Build.Utilities.Core.resources.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\ru\Microsoft.Build.Utilities.Core.resources.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\tr\Microsoft.Build.Utilities.Core.resources.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\zh-Hans\Microsoft.Build.Utilities.Core.resources.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\bin\zh-Hant\Microsoft.Build.Utilities.Core.resources.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\obj\Debug\IT_ASSET.csprojAssemblyReference.cache
+D:\New folder (2)\IT_ASSET\IT_ASSET\obj\Debug\IT_ASSET.csproj.CoreCompileInputs.cache
+D:\New folder (2)\IT_ASSET\IT_ASSET\obj\Debug\IT_ASSET.csproj.CopyComplete
+D:\New folder (2)\IT_ASSET\IT_ASSET\obj\Debug\IT_ASSET.dll
+D:\New folder (2)\IT_ASSET\IT_ASSET\obj\Debug\IT_ASSET.pdb
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\IT_ASSET.dll.config
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\IT_ASSET.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\IT_ASSET.pdb
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\roslyn\csc.exe
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\roslyn\csc.exe.config
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\roslyn\csc.rsp
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\roslyn\csi.exe
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\roslyn\csi.exe.config
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\roslyn\csi.rsp
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\roslyn\Microsoft.Managed.Core.targets
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\roslyn\System.AppContext.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\roslyn\System.Collections.Immutable.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\roslyn\System.Console.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\roslyn\System.IO.Compression.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\roslyn\System.IO.FileSystem.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\roslyn\System.IO.Pipes.AccessControl.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\roslyn\System.IO.Pipes.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\roslyn\System.Reflection.Metadata.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\roslyn\System.Security.AccessControl.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\roslyn\System.Security.Claims.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\roslyn\System.Security.Principal.Windows.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\roslyn\System.ValueTuple.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\roslyn\System.Xml.XmlDocument.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\roslyn\System.Xml.XPath.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\roslyn\vbc.exe
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\roslyn\vbc.exe.config
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\roslyn\vbc.rsp
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\roslyn\VBCSCompiler.exe
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\roslyn\VBCSCompiler.exe.config
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\Antlr3.Runtime.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\dotnet-aspnet-codegenerator-design.exe
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\EntityFramework.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\EntityFramework.SqlServer.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\Microsoft.AspNetCore.Razor.Language.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\Microsoft.CodeAnalysis.CSharp.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\Microsoft.CodeAnalysis.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\Microsoft.CodeAnalysis.Workspaces.Desktop.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\Microsoft.CodeAnalysis.Workspaces.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\Microsoft.EntityFrameworkCore.Design.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\Microsoft.EntityFrameworkCore.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\Microsoft.EntityFrameworkCore.Relational.Design.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\Microsoft.EntityFrameworkCore.Relational.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\Microsoft.Extensions.Caching.Abstractions.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\Microsoft.Extensions.Caching.Memory.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\Microsoft.Extensions.Configuration.Binder.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\Microsoft.Extensions.Configuration.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\Microsoft.Extensions.DependencyInjection.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\Microsoft.Extensions.Logging.Abstractions.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\Microsoft.Extensions.Logging.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\Microsoft.Extensions.Options.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\Microsoft.Extensions.Primitives.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\Microsoft.VisualStudio.Web.CodeGeneration.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\Microsoft.Web.Infrastructure.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\moment.net.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\Newtonsoft.Json.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\NuGet.Frameworks.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\Remotion.Linq.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\RouteJs.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\RouteJs.Mvc5.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\System.Buffers.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\System.Collections.Immutable.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\System.ComponentModel.Annotations.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\System.Composition.AttributedModel.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\System.Composition.Convention.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\System.Composition.Hosting.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\System.Composition.Runtime.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\System.Composition.TypedParts.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\System.Data.SqlClient.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\System.Diagnostics.DiagnosticSource.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\System.Interactive.Async.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\System.Memory.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\System.Numerics.Vectors.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\System.Reflection.Metadata.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\System.Runtime.CompilerServices.Unsafe.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\System.Text.Encoding.CodePages.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\System.Web.Helpers.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\System.Web.Mvc.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\System.Web.Optimization.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\System.Web.Razor.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\System.Web.WebPages.Deployment.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\System.Web.WebPages.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\System.Web.WebPages.Razor.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\WebActivatorEx.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\WebGrease.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\WebHelpers.Mvc5.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\Microsoft.Build.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\Microsoft.Build.Framework.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\Microsoft.Build.Tasks.Core.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\System.Threading.Tasks.Dataflow.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\Microsoft.Build.Utilities.Core.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\dotnet-aspnet-codegenerator-design.xml
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\EntityFramework.xml
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\EntityFramework.SqlServer.xml
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\Microsoft.AspNetCore.Razor.Language.xml
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\Microsoft.CodeAnalysis.pdb
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\Microsoft.CodeAnalysis.xml
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\Microsoft.CodeAnalysis.CSharp.pdb
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\Microsoft.CodeAnalysis.CSharp.xml
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\Microsoft.CodeAnalysis.CSharp.Workspaces.pdb
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\Microsoft.CodeAnalysis.CSharp.Workspaces.xml
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\Microsoft.CodeAnalysis.Workspaces.pdb
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\Microsoft.CodeAnalysis.Workspaces.xml
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\Microsoft.CodeAnalysis.Workspaces.Desktop.pdb
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\Microsoft.CodeAnalysis.Workspaces.Desktop.xml
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\Microsoft.EntityFrameworkCore.xml
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\Microsoft.EntityFrameworkCore.Abstractions.xml
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\Microsoft.EntityFrameworkCore.Design.xml
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\Microsoft.EntityFrameworkCore.Relational.xml
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\Microsoft.EntityFrameworkCore.Relational.Design.xml
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\Microsoft.EntityFrameworkCore.SqlServer.xml
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\Microsoft.Extensions.Caching.Abstractions.xml
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\Microsoft.Extensions.Caching.Memory.xml
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\Microsoft.Extensions.Configuration.xml
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\Microsoft.Extensions.Configuration.Abstractions.xml
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\Microsoft.Extensions.Configuration.Binder.xml
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\Microsoft.Extensions.DependencyInjection.xml
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\Microsoft.Extensions.Logging.xml
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\Microsoft.Extensions.Logging.Abstractions.xml
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\Microsoft.Extensions.Options.xml
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\Microsoft.Extensions.Primitives.xml
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\Microsoft.VisualStudio.Web.CodeGeneration.xml
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\Microsoft.VisualStudio.Web.CodeGeneration.Contracts.xml
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\Microsoft.VisualStudio.Web.CodeGeneration.Core.xml
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.xml
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\Microsoft.VisualStudio.Web.CodeGeneration.Templating.xml
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\Microsoft.VisualStudio.Web.CodeGeneration.Utils.xml
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.xml
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\Newtonsoft.Json.xml
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\NuGet.Frameworks.xml
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\Remotion.Linq.xml
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\System.Buffers.xml
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\System.Collections.Immutable.xml
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\System.Diagnostics.DiagnosticSource.xml
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\System.Interactive.Async.xml
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\System.Memory.xml
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\System.Numerics.Vectors.xml
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\System.Reflection.Metadata.xml
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\System.Runtime.CompilerServices.Unsafe.xml
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\System.Web.Helpers.xml
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\System.Web.Mvc.xml
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\System.Web.Optimization.xml
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\System.Web.Razor.xml
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\System.Web.WebPages.xml
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\System.Web.WebPages.Deployment.xml
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\System.Web.WebPages.Razor.xml
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\Antlr3.Runtime.pdb
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\WebHelpers.Mvc5.xml
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\cs\Microsoft.Build.resources.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\de\Microsoft.Build.resources.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\en\Microsoft.Build.resources.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\es\Microsoft.Build.resources.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\fr\Microsoft.Build.resources.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\it\Microsoft.Build.resources.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\ja\Microsoft.Build.resources.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\ko\Microsoft.Build.resources.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\pl\Microsoft.Build.resources.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\pt-BR\Microsoft.Build.resources.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\ru\Microsoft.Build.resources.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\tr\Microsoft.Build.resources.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\zh-Hans\Microsoft.Build.resources.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\zh-Hant\Microsoft.Build.resources.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\cs\Microsoft.Build.Tasks.Core.resources.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\de\Microsoft.Build.Tasks.Core.resources.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\en\Microsoft.Build.Tasks.Core.resources.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\es\Microsoft.Build.Tasks.Core.resources.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\fr\Microsoft.Build.Tasks.Core.resources.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\it\Microsoft.Build.Tasks.Core.resources.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\ja\Microsoft.Build.Tasks.Core.resources.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\ko\Microsoft.Build.Tasks.Core.resources.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\pl\Microsoft.Build.Tasks.Core.resources.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\pt-BR\Microsoft.Build.Tasks.Core.resources.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\ru\Microsoft.Build.Tasks.Core.resources.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\tr\Microsoft.Build.Tasks.Core.resources.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\zh-Hans\Microsoft.Build.Tasks.Core.resources.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\zh-Hant\Microsoft.Build.Tasks.Core.resources.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\cs\Microsoft.Build.Utilities.Core.resources.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\de\Microsoft.Build.Utilities.Core.resources.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\en\Microsoft.Build.Utilities.Core.resources.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\es\Microsoft.Build.Utilities.Core.resources.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\fr\Microsoft.Build.Utilities.Core.resources.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\it\Microsoft.Build.Utilities.Core.resources.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\ja\Microsoft.Build.Utilities.Core.resources.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\ko\Microsoft.Build.Utilities.Core.resources.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\pl\Microsoft.Build.Utilities.Core.resources.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\pt-BR\Microsoft.Build.Utilities.Core.resources.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\ru\Microsoft.Build.Utilities.Core.resources.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\tr\Microsoft.Build.Utilities.Core.resources.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\zh-Hans\Microsoft.Build.Utilities.Core.resources.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\zh-Hant\Microsoft.Build.Utilities.Core.resources.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\obj\Debug\IT_ASSET.csproj.CoreCompileInputs.cache
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\obj\Debug\IT_ASSET.csproj.CopyComplete
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\obj\Debug\IT_ASSET.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\obj\Debug\IT_ASSET.pdb
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\PagedList.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\PagedList.Mvc.dll
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\PagedList.xml
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\bin\PagedList.Mvc.xml
+D:\IT_ASSET_TEST\IT_ASSET3_09_19\IT_ASSET\IT_ASSET\obj\Debug\IT_ASSET.csprojAssemblyReference.cache

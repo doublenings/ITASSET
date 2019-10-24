@@ -1,0 +1,64 @@
+﻿@model IT_ASSET.Models.View_inc_status
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>View_inc_status</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.INC_TOPIC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.INC_TOPIC)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.INC_REQUESTER)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.INC_REQUESTER)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.INC_STATUS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.INC_STATUS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.STA_DESCRIPTION)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.STA_DESCRIPTION)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.INC_DESCRIPTION)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.INC_DESCRIPTION)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

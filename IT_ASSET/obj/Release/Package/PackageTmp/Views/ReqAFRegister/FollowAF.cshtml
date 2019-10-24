@@ -1,0 +1,117 @@
+﻿@model IEnumerable<IT_ASSET.Models.View_req_af_follow>
+
+@{
+    ViewBag.Title = "FollowAF";
+}
+
+<h2>ติดตามการขอสิทธิ ALFRESCO</h2>
+
+
+<table class="table table-bordered table-hover text-nowrap fixed">
+    <thead style="background-color:#50575D; color:white">
+        <tr>
+            <th>
+                เลขที่เอกสาร
+            </th>
+            <th>
+                รหัสพนักงานของผู้ขอสิทธิ
+            </th>
+
+            <th>
+                วันที่แจ้ง
+            </th>
+
+            <th>
+                สิทธิการใช้งาน
+            </th>
+
+            <th>
+                ผู้ขอสิทธิ
+            </th>
+            <th>
+                Site
+            </th>
+            <th>
+                Folder
+            </th>
+
+            <th>
+                สถานะสิทธิ
+            </th>
+            <th>
+                ชื่อผู้แจ้ง
+            </th>
+            <th>
+                ผู้อนุมัติจากเจ้าของเอกสาร
+            </th>
+            <th>
+                วันที่อนุมัติจากเจ้าของเอกสาร
+            </th>
+            <th>
+                ผู้อนุมิติ(ผู้จัดการฝ่ายขึ้นไป)
+            </th>
+            <th>
+                วันที่อนุมัติ
+            </th>
+            <th>
+                สถานะของงาน
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>
+        <a href="@Url.Action("Details", "ReqAFRegister", new { id = item.AF_CODE })" style="color:black;"> @Html.DisplayFor(modelItem => item.AF_CODE)</a>
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.MEM_NO)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.AF_DATE)
+    </td>
+
+    <td>
+        @Html.DisplayFor(modelItem => item.ALLOW_DESC)
+    </td>
+
+    <td>
+        @Html.DisplayFor(modelItem => item.APPLICANT_DESC)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.AF_SITE)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.AF_FOLDER)
+    </td>
+
+    <td>
+        @Html.DisplayFor(modelItem => item.AF_STATUS_NAME)
+    </td>
+
+    <td>
+        @Html.DisplayFor(modelItem => item.AF_REQUESTER)
+    </td>
+
+    <td>
+        @Html.DisplayFor(modelItem => item.AF_APPROVE_OWNER)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.AF_APPROVE_OWNER_DATE)
+    </td>
+
+    <td>
+        @Html.DisplayFor(modelItem => item.AF_APPROVE)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.AF_APPROVE_DATE)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.STA_DESC)
+    </td>
+
+</tr>
+    }
+
+</table>

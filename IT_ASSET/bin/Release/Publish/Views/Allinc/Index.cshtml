@@ -1,0 +1,86 @@
+﻿@model IPagedList<IT_ASSET.Models.View_incident_all>
+
+@{
+    ViewBag.Title = "Index";
+}
+@using PagedList.Mvc;
+@using PagedList;
+<h2>ติดตามปัญหา</h2>
+@using (Html.BeginForm("Index", "Allinc"))
+{
+    <div class="col-md-12 pull-left" style="font-size:16px;color:red;">
+        @Html.ActionLink(" ", "Create", null, new { @class = "btn btn-danger btn-sm glyphicon glyphicon-plus" })
+        แจ้งปัญหา
+        <div class=" float-right pull-right col-md-4">
+            <form class="navbar-form pull-right" role="search">
+                <div class="input-group pull-right">
+                    @Html.TextBox("Search", null, new { @class = "form-control", @placeholder = "Search..." })
+                    <div class="input-group-btn">
+                        <button class="btn btn-default pull-right" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <br />
+}
+<br/>
+<table class="table table-bordered table-hover text-nowrap fixed">
+    <thead class="headTable" style="background-color:#50575D; color:white">
+        <tr>
+            <th></th>
+            <th>เลขที่ใบแจ้ง</th>
+            <th>เรื่องการแจ้ง</th>
+            <th>ชื่อผู้แจ้ง</th>
+            <th>วันที่แจ้ง</th>
+            <th>เปิดงานโดย</th>
+            <th>วันที่เปิดงาน</th>
+            <th>รับงานโดย</th>
+            <th>สถานะของงาน</th>
+            <th>วันที่ดำเนินการ</th>
+            <th>วันที่ครบกำหนด</th>
+            <th>รายละเอียดของงาน</th>
+            <th></th>
+        </tr>
+    </thead>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+
+            <td>@Html.ActionLink(" ", "Details", new { id = item.INC_CODE }, new { @class = "fa fa-eye", Style = "color:Black;" })</td>
+
+            <td>@Html.DisplayFor(modelItem => item.INC_CODE)</td>
+            <td>@Html.DisplayFor(modelItem => item.INC_TOPIC)</td>
+            <td>@Html.DisplayFor(modelItem => item.USER_NAME)</td>
+            <td>@Html.DisplayFor(modelItem => item.INC_DATE)</td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IT_NAME)
+                @Html.DisplayFor(modelItem => item.IT_SURNAME)
+            </td>
+            <td>@Html.DisplayFor(modelItem => item.INC_OPEN_DATE)</td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EMP_ASSIGN_NAME)
+                @Html.DisplayFor(modelItem => item.EMP_ASSIGN_SURNAME)
+            </td>
+            <td>@Html.DisplayFor(modelItem => item.STA_DESCRIPTION)</td>
+            <td>@Html.DisplayFor(modelItem => item.INC_RESOLVE_DATE)</td>
+            <td>@Html.DisplayFor(modelItem => item.INC_DUE_DATE)</td>
+            <td>@Html.DisplayFor(modelItem => item.INC_DESCRIPTION)</td>
+            @if (item.INC_STATUS == "06")
+            {
+                <td>
+                    @Html.ActionLink(" ", "Edit", new { id = item.INC_CODE }, new { @class = "btn btn-danger btn-sm glyphicon glyphicon-remove", @style = "color:white;" })
+                </td>
+
+            }
+
+        </tr>
+
+    }
+
+</table>
+
+<br />
+@Html.ActionLink("กลับไปที่การลงทะเบียน", "Index", "IncStatus", "IncStatus", new { @class = "btn btn-primary btn-large" })
+@Html.PagedListPager(Model, i => Url.Action("Index", "Allinc", new { i }))
