@@ -363,10 +363,9 @@ warning 6002: The table/view 'IT_ASSET_SERVER.dbo.tbl_configure' does not have a
           </Key>
           <Property Name="AF_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="AF_CODE" Type="nvarchar" MaxLength="20" Nullable="false" />
-          <Property Name="MEM_NO" Type="nvarchar" MaxLength="10" />
+          <Property Name="USER_NO" Type="nvarchar" MaxLength="10" />
           <Property Name="AF_DATE" Type="datetime" />
           <Property Name="ALLOW_STATUS" Type="nvarchar" MaxLength="2" />
-          <Property Name="ID_APPLICANT" Type="nvarchar" MaxLength="2" />
           <Property Name="AF_SITE" Type="nvarchar" MaxLength="50" />
           <Property Name="AF_FOLDER" Type="nvarchar" MaxLength="100" />
           <Property Name="AF_STATUS" Type="nvarchar" MaxLength="2" />
@@ -406,25 +405,6 @@ warning 6002: The table/view 'IT_ASSET_SERVER.dbo.tbl_configure' does not have a
           </Key>
           <Property Name="ALLOW_STATUS" Type="nvarchar" MaxLength="2" Nullable="false" />
           <Property Name="ALLOW_DESC" Type="nvarchar" MaxLength="50" />
-        </EntityType>
-        <EntityType Name="tbl_req_applicant">
-          <Key>
-            <PropertyRef Name="ID_APPLICANT" />
-          </Key>
-          <Property Name="ID_APPLICANT" Type="nvarchar" MaxLength="2" Nullable="false" />
-          <Property Name="APPLICANT_DESC" Type="nvarchar" MaxLength="50" />
-        </EntityType>
-        <EntityType Name="tbl_req_member">
-          <Key>
-            <PropertyRef Name="MEM_NO" />
-          </Key>
-          <Property Name="MEM_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="MEM_NO" Type="nvarchar" MaxLength="10" Nullable="false" />
-          <Property Name="NAME_TH" Type="nvarchar" MaxLength="100" />
-          <Property Name="NAME_EN" Type="nvarchar" MaxLength="100" />
-          <Property Name="MEM_POSITION" Type="nvarchar" MaxLength="50" />
-          <Property Name="MEM_DEPARTMENT" Type="nvarchar" MaxLength="50" />
-          <Property Name="MEM_EXTENSION" Type="nvarchar" MaxLength="4" />
         </EntityType>
         <EntityType Name="tbl_req_status">
           <Key>
@@ -860,32 +840,12 @@ warning 6002: The table/view 'IT_ASSET_SERVER.dbo.View_req_af_follow' does not h
         <EntityType Name="View_req_af_follow">
           <Key>
             <PropertyRef Name="AF_CODE" />
-            <PropertyRef Name="APPLICANT_NO" />
-            <PropertyRef Name="USER_NO" />
-            <PropertyRef Name="APPROVE_NO" />
+            <PropertyRef Name="IT_NAME" />
+            <PropertyRef Name="ASSIGN_NAME" />
           </Key>
           <Property Name="AF_CODE" Type="nvarchar" MaxLength="20" Nullable="false" />
-          <Property Name="MEM_NO" Type="nvarchar" MaxLength="10" />
-          <Property Name="APPLICANT_NO" Type="nvarchar" MaxLength="6" Nullable="false" />
-          <Property Name="APPLICANT_NAME" Type="nvarchar" MaxLength="100" />
-          <Property Name="APPLICANT_NAME_EN" Type="nvarchar" MaxLength="100" />
-          <Property Name="APPLICANT_POSITION" Type="nvarchar" MaxLength="50" />
-          <Property Name="APPLICANT_DEPARTMENT" Type="nvarchar" MaxLength="50" />
-          <Property Name="APPLICANT_EXTENSION" Type="nvarchar" MaxLength="15" />
-          <Property Name="APPLICANT_EMAIL" Type="nvarchar" MaxLength="50" />
-          <Property Name="APPLICANT_ROLE" Type="nvarchar" MaxLength="10" />
           <Property Name="AF_DATE" Type="datetime" />
-          <Property Name="ALLOW_STATUS" Type="nvarchar" MaxLength="2" />
-          <Property Name="ALLOW_DESC" Type="nvarchar" MaxLength="50" />
-          <Property Name="ID_APPLICANT" Type="nvarchar" MaxLength="2" />
-          <Property Name="APPLICANT_DESC" Type="nvarchar" MaxLength="50" />
-          <Property Name="AF_SITE" Type="nvarchar" MaxLength="50" />
-          <Property Name="AF_FOLDER" Type="nvarchar" MaxLength="100" />
-          <Property Name="AF_STATUS" Type="nvarchar" MaxLength="2" />
-          <Property Name="AF_STATUS_NAME" Type="nvarchar" MaxLength="50" />
-          <Property Name="AF_NOTE" Type="nvarchar" MaxLength="50" />
-          <Property Name="AF_REQUESTER" Type="nvarchar" MaxLength="50" />
-          <Property Name="USER_NO" Type="nvarchar" MaxLength="6" Nullable="false" />
+          <Property Name="USER_NO" Type="nvarchar" MaxLength="10" />
           <Property Name="USER_NAME" Type="nvarchar" MaxLength="100" />
           <Property Name="USER_NAME_EN" Type="nvarchar" MaxLength="100" />
           <Property Name="USER_POSITION" Type="nvarchar" MaxLength="50" />
@@ -893,64 +853,105 @@ warning 6002: The table/view 'IT_ASSET_SERVER.dbo.View_req_af_follow' does not h
           <Property Name="USER_EXTENSION" Type="nvarchar" MaxLength="15" />
           <Property Name="USER_EMAIL" Type="nvarchar" MaxLength="50" />
           <Property Name="USER_ROLE" Type="nvarchar" MaxLength="10" />
+          <Property Name="ALLOW_STATUS" Type="nvarchar" MaxLength="2" />
+          <Property Name="ALLOW_DESC" Type="nvarchar" MaxLength="50" />
+          <Property Name="AF_SITE" Type="nvarchar" MaxLength="50" />
+          <Property Name="AF_FOLDER" Type="nvarchar" MaxLength="100" />
+          <Property Name="AF_STATUS_NAME" Type="nvarchar" MaxLength="50" />
+          <Property Name="AF_STATUS_DESC" Type="nvarchar(max)" />
+          <Property Name="AF_STATUS" Type="nvarchar" MaxLength="2" />
+          <Property Name="AF_NOTE" Type="nvarchar" MaxLength="50" />
+          <Property Name="AF_REQUESTER" Type="nvarchar" MaxLength="50" />
+          <Property Name="NAME_REQUESTER" Type="nvarchar" MaxLength="100" />
+          <Property Name="NAME_EN_REQUESTER" Type="nvarchar" MaxLength="100" />
+          <Property Name="POSITION_REQUESTER" Type="nvarchar" MaxLength="50" />
+          <Property Name="DEPARTMENT_REQUESTER" Type="nvarchar" MaxLength="50" />
+          <Property Name="EXTENSION_REQUESTER" Type="nvarchar" MaxLength="15" />
+          <Property Name="EMAIL_REQUESTER" Type="nvarchar" MaxLength="50" />
+          <Property Name="ROLE_REQUESTER" Type="nvarchar" MaxLength="10" />
           <Property Name="AF_APPROVE_OWNER" Type="nvarchar" MaxLength="100" />
+          <Property Name="AF_APPROVE_OWNER_DATE" Type="datetime" />
+          <Property Name="OWNER_NAME" Type="nvarchar" MaxLength="100" />
+          <Property Name="OWNER_NAME_EN" Type="nvarchar" MaxLength="100" />
+          <Property Name="OWNER_POSITION" Type="nvarchar" MaxLength="50" />
+          <Property Name="OWNER_DEPARTMENT" Type="nvarchar" MaxLength="50" />
+          <Property Name="OWNER_EXTENSION" Type="nvarchar" MaxLength="15" />
+          <Property Name="OWNER_EMAIL" Type="nvarchar" MaxLength="50" />
           <Property Name="REQ_STATUS" Type="nvarchar" MaxLength="2" />
           <Property Name="STA_DESC" Type="nvarchar" MaxLength="50" />
-          <Property Name="AF_APPROVE_OWNER_DATE" Type="datetime" />
           <Property Name="AF_APPROVE" Type="nvarchar" MaxLength="100" />
           <Property Name="AF_APPROVE_DATE" Type="datetime" />
-          <Property Name="APPROVE_NO" Type="nvarchar" MaxLength="6" Nullable="false" />
           <Property Name="APPROVE_NAME" Type="nvarchar" MaxLength="100" />
-          <Property Name="APPROVE_NAME_EN" Type="nvarchar" MaxLength="100" />
+          <Property Name="APPROVE_EN_NAME" Type="nvarchar" MaxLength="100" />
           <Property Name="APPROVE_POSITION" Type="nvarchar" MaxLength="50" />
           <Property Name="APPROVE_DEPARTMENT" Type="nvarchar" MaxLength="50" />
           <Property Name="APPROVE_EXTENSION" Type="nvarchar" MaxLength="15" />
           <Property Name="APPROVE_EMAIL" Type="nvarchar" MaxLength="50" />
-          <Property Name="APPROVE_ROLE" Type="nvarchar" MaxLength="10" />
           <Property Name="AF_OPEN_BY" Type="nvarchar" MaxLength="6" />
-          <Property Name="IT_OPEN_BY_NAME" Type="nvarchar" MaxLength="50" />
-          <Property Name="IT_OPEN_BY_SURNAME" Type="nvarchar" MaxLength="50" />
+          <Property Name="IT_NAME" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="IT_SURNAME" Type="nvarchar" MaxLength="50" />
+          <Property Name="IT_SECTION" Type="nvarchar" MaxLength="50" />
+          <Property Name="IT_EXTENSION" Type="nvarchar" MaxLength="10" />
+          <Property Name="IT_EMAIL" Type="nvarchar" MaxLength="30" />
           <Property Name="AF_OPEN_DATE" Type="datetime" />
           <Property Name="AF_ASSIGN_TO" Type="nvarchar" MaxLength="6" />
-          <Property Name="IT_ASSIGN_NAME" Type="nvarchar" MaxLength="50" />
-          <Property Name="IT_ASSIGN_SURMANE" Type="nvarchar" MaxLength="50" />
+          <Property Name="ASSIGN_NAME" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ASSIGN_SURNAME" Type="nvarchar" MaxLength="50" />
+          <Property Name="ASSIGN_SECTION" Type="nvarchar" MaxLength="50" />
+          <Property Name="ASSIGN_EXTENSION" Type="nvarchar" MaxLength="10" />
+          <Property Name="ASSIGN_EMAIL" Type="nvarchar" MaxLength="30" />
           <Property Name="AF_ASSIGN_DATE" Type="datetime" />
           <Property Name="AF_CLOSE" Type="nvarchar" MaxLength="6" />
           <Property Name="AF_CLOSE_DATE" Type="datetime" />
+          <Property Name="CLOSE_NAME" Type="nvarchar" MaxLength="50" />
+          <Property Name="CLOSE_SURNAME" Type="nvarchar" MaxLength="50" />
+          <Property Name="CLOSE_SECTION" Type="nvarchar" MaxLength="50" />
+          <Property Name="CLOSE_EXTENSION" Type="nvarchar" MaxLength="10" />
+          <Property Name="CLOSE_EMAIL" Type="nvarchar" MaxLength="30" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'IT_ASSET_SERVER.dbo.View_req_af_register' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="View_req_af_register">
           <Key>
             <PropertyRef Name="AF_CODE" />
-            <PropertyRef Name="USER_NO" />
           </Key>
           <Property Name="AF_CODE" Type="nvarchar" MaxLength="20" Nullable="false" />
-          <Property Name="MEM_NO" Type="nvarchar" MaxLength="10" />
-          <Property Name="USER_NO" Type="nvarchar" MaxLength="6" Nullable="false" />
-          <Property Name="MEM_NAME" Type="nvarchar" MaxLength="100" />
-          <Property Name="MEM_NAME_EN" Type="nvarchar" MaxLength="100" />
-          <Property Name="MEM_POSITION" Type="nvarchar" MaxLength="50" />
-          <Property Name="MEM_DEPARTMENT" Type="nvarchar" MaxLength="50" />
-          <Property Name="MEM_EXTENSION" Type="nvarchar" MaxLength="15" />
-          <Property Name="MEM_EMAIL" Type="nvarchar" MaxLength="50" />
-          <Property Name="MEM_ROLE" Type="nvarchar" MaxLength="10" />
+          <Property Name="USER_NO" Type="nvarchar" MaxLength="10" />
+          <Property Name="USER_NAME" Type="nvarchar" MaxLength="100" />
+          <Property Name="USER_NAME_EN" Type="nvarchar" MaxLength="100" />
+          <Property Name="USER_POSITION" Type="nvarchar" MaxLength="50" />
+          <Property Name="USER_DEPARTMENT" Type="nvarchar" MaxLength="50" />
+          <Property Name="USER_EXTENSION" Type="nvarchar" MaxLength="15" />
+          <Property Name="USER_EMAIL" Type="nvarchar" MaxLength="50" />
+          <Property Name="USER_ROLE" Type="nvarchar" MaxLength="10" />
           <Property Name="AF_DATE" Type="datetime" />
           <Property Name="ALLOW_STATUS" Type="nvarchar" MaxLength="2" />
           <Property Name="ALLOW_DESC" Type="nvarchar" MaxLength="50" />
-          <Property Name="ID_APPLICANT" Type="nvarchar" MaxLength="2" />
-          <Property Name="APPLICANT_DESC" Type="nvarchar" MaxLength="50" />
           <Property Name="AF_SITE" Type="nvarchar" MaxLength="50" />
           <Property Name="AF_FOLDER" Type="nvarchar" MaxLength="100" />
           <Property Name="AF_STATUS" Type="nvarchar" MaxLength="2" />
           <Property Name="AF_STATUS_NAME" Type="nvarchar" MaxLength="50" />
+          <Property Name="AF_STATUS_DESC" Type="nvarchar(max)" />
           <Property Name="AF_NOTE" Type="nvarchar" MaxLength="50" />
           <Property Name="AF_REQUESTER" Type="nvarchar" MaxLength="50" />
-          <Property Name="USER_NAME" Type="nvarchar" MaxLength="100" />
-          <Property Name="USER_EXTENSION" Type="nvarchar" MaxLength="15" />
-          <Property Name="USER_EMAIL" Type="nvarchar" MaxLength="50" />
+          <Property Name="NAME_REQUESTER" Type="nvarchar" MaxLength="100" />
+          <Property Name="NAME_EN_REQUESTER" Type="nvarchar" MaxLength="100" />
+          <Property Name="POSITION_REQUESTER" Type="nvarchar" MaxLength="50" />
+          <Property Name="DEPARTMENT_REQUESTER" Type="nvarchar" MaxLength="50" />
+          <Property Name="EXTENSION_REQUESTER" Type="nvarchar" MaxLength="15" />
+          <Property Name="EMAIL_REQUESTER" Type="nvarchar" MaxLength="50" />
+          <Property Name="ROLE_REQUESTER" Type="nvarchar" MaxLength="10" />
           <Property Name="REQ_STATUS" Type="nvarchar" MaxLength="2" />
           <Property Name="STA_DESC" Type="nvarchar" MaxLength="50" />
+          <Property Name="AF_APPROVE" Type="nvarchar" MaxLength="100" />
+          <Property Name="AF_APPROVE_DATE" Type="datetime" />
+          <Property Name="APPROVE_NAME" Type="nvarchar" MaxLength="100" />
+          <Property Name="APPROVE_EN_NAME" Type="nvarchar" MaxLength="100" />
+          <Property Name="APPROVE_POSITION" Type="nvarchar" MaxLength="50" />
+          <Property Name="APPROVE_DEPARTMENT" Type="nvarchar" MaxLength="50" />
+          <Property Name="APPROVE_EXTENSION" Type="nvarchar" MaxLength="15" />
+          <Property Name="APPROVE_EMAIL" Type="nvarchar" MaxLength="50" />
+          <Property Name="APPROVE_ROLE" Type="nvarchar" MaxLength="10" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'IT_ASSET_SERVER.dbo.View_staff_member' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -1048,10 +1049,9 @@ warning 6002: The table/view 'IT_ASSET_SERVER.dbo.View_sw_assets' does not have 
         </Function>
         <Function Name="AddReqAF" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="AF_CODE" Type="nvarchar" Mode="InOut" />
-          <Parameter Name="MEM_NO" Type="nvarchar" Mode="In" />
+          <Parameter Name="USER_NO" Type="nvarchar" Mode="In" />
           <Parameter Name="AF_DATE" Type="datetime" Mode="In" />
           <Parameter Name="ALLOW_STATUS" Type="nvarchar" Mode="In" />
-          <Parameter Name="ID_APPLICANT" Type="nvarchar" Mode="In" />
           <Parameter Name="AF_SITE" Type="nvarchar" Mode="In" />
           <Parameter Name="AF_FOLDER" Type="nvarchar" Mode="In" />
           <Parameter Name="AF_STATUS" Type="nvarchar" Mode="In" />
@@ -1084,8 +1084,6 @@ warning 6002: The table/view 'IT_ASSET_SERVER.dbo.View_sw_assets' does not have 
           <EntitySet Name="tbl_req_af" EntityType="Self.tbl_req_af" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbl_req_af_status" EntityType="Self.tbl_req_af_status" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbl_req_allow_status" EntityType="Self.tbl_req_allow_status" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="tbl_req_applicant" EntityType="Self.tbl_req_applicant" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="tbl_req_member" EntityType="Self.tbl_req_member" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbl_req_status" EntityType="Self.tbl_req_status" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbl_req_types" EntityType="Self.tbl_req_types" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbl_staff_member" EntityType="Self.tbl_staff_member" Schema="dbo" store:Type="Tables" />
@@ -1341,26 +1339,7 @@ warning 6002: The table/view 'IT_ASSET_SERVER.dbo.View_sw_assets' does not have 
           <EntitySet Name="View_req_af_follow" EntityType="Self.View_req_af_follow" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [View_req_af_follow].[AF_CODE] AS [AF_CODE], 
-    [View_req_af_follow].[MEM_NO] AS [MEM_NO], 
-    [View_req_af_follow].[APPLICANT_NO] AS [APPLICANT_NO], 
-    [View_req_af_follow].[APPLICANT_NAME] AS [APPLICANT_NAME], 
-    [View_req_af_follow].[APPLICANT_NAME_EN] AS [APPLICANT_NAME_EN], 
-    [View_req_af_follow].[APPLICANT_POSITION] AS [APPLICANT_POSITION], 
-    [View_req_af_follow].[APPLICANT_DEPARTMENT] AS [APPLICANT_DEPARTMENT], 
-    [View_req_af_follow].[APPLICANT_EXTENSION] AS [APPLICANT_EXTENSION], 
-    [View_req_af_follow].[APPLICANT_EMAIL] AS [APPLICANT_EMAIL], 
-    [View_req_af_follow].[APPLICANT_ROLE] AS [APPLICANT_ROLE], 
     [View_req_af_follow].[AF_DATE] AS [AF_DATE], 
-    [View_req_af_follow].[ALLOW_STATUS] AS [ALLOW_STATUS], 
-    [View_req_af_follow].[ALLOW_DESC] AS [ALLOW_DESC], 
-    [View_req_af_follow].[ID_APPLICANT] AS [ID_APPLICANT], 
-    [View_req_af_follow].[APPLICANT_DESC] AS [APPLICANT_DESC], 
-    [View_req_af_follow].[AF_SITE] AS [AF_SITE], 
-    [View_req_af_follow].[AF_FOLDER] AS [AF_FOLDER], 
-    [View_req_af_follow].[AF_STATUS] AS [AF_STATUS], 
-    [View_req_af_follow].[AF_STATUS_NAME] AS [AF_STATUS_NAME], 
-    [View_req_af_follow].[AF_NOTE] AS [AF_NOTE], 
-    [View_req_af_follow].[AF_REQUESTER] AS [AF_REQUESTER], 
     [View_req_af_follow].[USER_NO] AS [USER_NO], 
     [View_req_af_follow].[USER_NAME] AS [USER_NAME], 
     [View_req_af_follow].[USER_NAME_EN] AS [USER_NAME_EN], 
@@ -1369,60 +1348,102 @@ warning 6002: The table/view 'IT_ASSET_SERVER.dbo.View_sw_assets' does not have 
     [View_req_af_follow].[USER_EXTENSION] AS [USER_EXTENSION], 
     [View_req_af_follow].[USER_EMAIL] AS [USER_EMAIL], 
     [View_req_af_follow].[USER_ROLE] AS [USER_ROLE], 
+    [View_req_af_follow].[ALLOW_STATUS] AS [ALLOW_STATUS], 
+    [View_req_af_follow].[ALLOW_DESC] AS [ALLOW_DESC], 
+    [View_req_af_follow].[AF_SITE] AS [AF_SITE], 
+    [View_req_af_follow].[AF_FOLDER] AS [AF_FOLDER], 
+    [View_req_af_follow].[AF_STATUS_NAME] AS [AF_STATUS_NAME], 
+    [View_req_af_follow].[AF_STATUS_DESC] AS [AF_STATUS_DESC], 
+    [View_req_af_follow].[AF_STATUS] AS [AF_STATUS], 
+    [View_req_af_follow].[AF_NOTE] AS [AF_NOTE], 
+    [View_req_af_follow].[AF_REQUESTER] AS [AF_REQUESTER], 
+    [View_req_af_follow].[NAME_REQUESTER] AS [NAME_REQUESTER], 
+    [View_req_af_follow].[NAME_EN_REQUESTER] AS [NAME_EN_REQUESTER], 
+    [View_req_af_follow].[POSITION_REQUESTER] AS [POSITION_REQUESTER], 
+    [View_req_af_follow].[DEPARTMENT_REQUESTER] AS [DEPARTMENT_REQUESTER], 
+    [View_req_af_follow].[EXTENSION_REQUESTER] AS [EXTENSION_REQUESTER], 
+    [View_req_af_follow].[EMAIL_REQUESTER] AS [EMAIL_REQUESTER], 
+    [View_req_af_follow].[ROLE_REQUESTER] AS [ROLE_REQUESTER], 
     [View_req_af_follow].[AF_APPROVE_OWNER] AS [AF_APPROVE_OWNER], 
+    [View_req_af_follow].[AF_APPROVE_OWNER_DATE] AS [AF_APPROVE_OWNER_DATE], 
+    [View_req_af_follow].[OWNER_NAME] AS [OWNER_NAME], 
+    [View_req_af_follow].[OWNER_NAME_EN] AS [OWNER_NAME_EN], 
+    [View_req_af_follow].[OWNER_POSITION] AS [OWNER_POSITION], 
+    [View_req_af_follow].[OWNER_DEPARTMENT] AS [OWNER_DEPARTMENT], 
+    [View_req_af_follow].[OWNER_EXTENSION] AS [OWNER_EXTENSION], 
+    [View_req_af_follow].[OWNER_EMAIL] AS [OWNER_EMAIL], 
     [View_req_af_follow].[REQ_STATUS] AS [REQ_STATUS], 
     [View_req_af_follow].[STA_DESC] AS [STA_DESC], 
-    [View_req_af_follow].[AF_APPROVE_OWNER_DATE] AS [AF_APPROVE_OWNER_DATE], 
     [View_req_af_follow].[AF_APPROVE] AS [AF_APPROVE], 
     [View_req_af_follow].[AF_APPROVE_DATE] AS [AF_APPROVE_DATE], 
-    [View_req_af_follow].[APPROVE_NO] AS [APPROVE_NO], 
     [View_req_af_follow].[APPROVE_NAME] AS [APPROVE_NAME], 
-    [View_req_af_follow].[APPROVE_NAME_EN] AS [APPROVE_NAME_EN], 
+    [View_req_af_follow].[APPROVE_EN_NAME] AS [APPROVE_EN_NAME], 
     [View_req_af_follow].[APPROVE_POSITION] AS [APPROVE_POSITION], 
     [View_req_af_follow].[APPROVE_DEPARTMENT] AS [APPROVE_DEPARTMENT], 
     [View_req_af_follow].[APPROVE_EXTENSION] AS [APPROVE_EXTENSION], 
     [View_req_af_follow].[APPROVE_EMAIL] AS [APPROVE_EMAIL], 
-    [View_req_af_follow].[APPROVE_ROLE] AS [APPROVE_ROLE], 
     [View_req_af_follow].[AF_OPEN_BY] AS [AF_OPEN_BY], 
-    [View_req_af_follow].[IT_OPEN_BY_NAME] AS [IT_OPEN_BY_NAME], 
-    [View_req_af_follow].[IT_OPEN_BY_SURNAME] AS [IT_OPEN_BY_SURNAME], 
+    [View_req_af_follow].[IT_NAME] AS [IT_NAME], 
+    [View_req_af_follow].[IT_SURNAME] AS [IT_SURNAME], 
+    [View_req_af_follow].[IT_SECTION] AS [IT_SECTION], 
+    [View_req_af_follow].[IT_EXTENSION] AS [IT_EXTENSION], 
+    [View_req_af_follow].[IT_EMAIL] AS [IT_EMAIL], 
     [View_req_af_follow].[AF_OPEN_DATE] AS [AF_OPEN_DATE], 
     [View_req_af_follow].[AF_ASSIGN_TO] AS [AF_ASSIGN_TO], 
-    [View_req_af_follow].[IT_ASSIGN_NAME] AS [IT_ASSIGN_NAME], 
-    [View_req_af_follow].[IT_ASSIGN_SURMANE] AS [IT_ASSIGN_SURMANE], 
+    [View_req_af_follow].[ASSIGN_NAME] AS [ASSIGN_NAME], 
+    [View_req_af_follow].[ASSIGN_SURNAME] AS [ASSIGN_SURNAME], 
+    [View_req_af_follow].[ASSIGN_SECTION] AS [ASSIGN_SECTION], 
+    [View_req_af_follow].[ASSIGN_EXTENSION] AS [ASSIGN_EXTENSION], 
+    [View_req_af_follow].[ASSIGN_EMAIL] AS [ASSIGN_EMAIL], 
     [View_req_af_follow].[AF_ASSIGN_DATE] AS [AF_ASSIGN_DATE], 
     [View_req_af_follow].[AF_CLOSE] AS [AF_CLOSE], 
-    [View_req_af_follow].[AF_CLOSE_DATE] AS [AF_CLOSE_DATE]
+    [View_req_af_follow].[AF_CLOSE_DATE] AS [AF_CLOSE_DATE], 
+    [View_req_af_follow].[CLOSE_NAME] AS [CLOSE_NAME], 
+    [View_req_af_follow].[CLOSE_SURNAME] AS [CLOSE_SURNAME], 
+    [View_req_af_follow].[CLOSE_SECTION] AS [CLOSE_SECTION], 
+    [View_req_af_follow].[CLOSE_EXTENSION] AS [CLOSE_EXTENSION], 
+    [View_req_af_follow].[CLOSE_EMAIL] AS [CLOSE_EMAIL]
     FROM [dbo].[View_req_af_follow] AS [View_req_af_follow]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="View_req_af_register" EntityType="Self.View_req_af_register" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [View_req_af_register].[AF_CODE] AS [AF_CODE], 
-    [View_req_af_register].[MEM_NO] AS [MEM_NO], 
     [View_req_af_register].[USER_NO] AS [USER_NO], 
-    [View_req_af_register].[MEM_NAME] AS [MEM_NAME], 
-    [View_req_af_register].[MEM_NAME_EN] AS [MEM_NAME_EN], 
-    [View_req_af_register].[MEM_POSITION] AS [MEM_POSITION], 
-    [View_req_af_register].[MEM_DEPARTMENT] AS [MEM_DEPARTMENT], 
-    [View_req_af_register].[MEM_EXTENSION] AS [MEM_EXTENSION], 
-    [View_req_af_register].[MEM_EMAIL] AS [MEM_EMAIL], 
-    [View_req_af_register].[MEM_ROLE] AS [MEM_ROLE], 
+    [View_req_af_register].[USER_NAME] AS [USER_NAME], 
+    [View_req_af_register].[USER_NAME_EN] AS [USER_NAME_EN], 
+    [View_req_af_register].[USER_POSITION] AS [USER_POSITION], 
+    [View_req_af_register].[USER_DEPARTMENT] AS [USER_DEPARTMENT], 
+    [View_req_af_register].[USER_EXTENSION] AS [USER_EXTENSION], 
+    [View_req_af_register].[USER_EMAIL] AS [USER_EMAIL], 
+    [View_req_af_register].[USER_ROLE] AS [USER_ROLE], 
     [View_req_af_register].[AF_DATE] AS [AF_DATE], 
     [View_req_af_register].[ALLOW_STATUS] AS [ALLOW_STATUS], 
     [View_req_af_register].[ALLOW_DESC] AS [ALLOW_DESC], 
-    [View_req_af_register].[ID_APPLICANT] AS [ID_APPLICANT], 
-    [View_req_af_register].[APPLICANT_DESC] AS [APPLICANT_DESC], 
     [View_req_af_register].[AF_SITE] AS [AF_SITE], 
     [View_req_af_register].[AF_FOLDER] AS [AF_FOLDER], 
     [View_req_af_register].[AF_STATUS] AS [AF_STATUS], 
     [View_req_af_register].[AF_STATUS_NAME] AS [AF_STATUS_NAME], 
+    [View_req_af_register].[AF_STATUS_DESC] AS [AF_STATUS_DESC], 
     [View_req_af_register].[AF_NOTE] AS [AF_NOTE], 
     [View_req_af_register].[AF_REQUESTER] AS [AF_REQUESTER], 
-    [View_req_af_register].[USER_NAME] AS [USER_NAME], 
-    [View_req_af_register].[USER_EXTENSION] AS [USER_EXTENSION], 
-    [View_req_af_register].[USER_EMAIL] AS [USER_EMAIL], 
+    [View_req_af_register].[NAME_REQUESTER] AS [NAME_REQUESTER], 
+    [View_req_af_register].[NAME_EN_REQUESTER] AS [NAME_EN_REQUESTER], 
+    [View_req_af_register].[POSITION_REQUESTER] AS [POSITION_REQUESTER], 
+    [View_req_af_register].[DEPARTMENT_REQUESTER] AS [DEPARTMENT_REQUESTER], 
+    [View_req_af_register].[EXTENSION_REQUESTER] AS [EXTENSION_REQUESTER], 
+    [View_req_af_register].[EMAIL_REQUESTER] AS [EMAIL_REQUESTER], 
+    [View_req_af_register].[ROLE_REQUESTER] AS [ROLE_REQUESTER], 
     [View_req_af_register].[REQ_STATUS] AS [REQ_STATUS], 
-    [View_req_af_register].[STA_DESC] AS [STA_DESC]
+    [View_req_af_register].[STA_DESC] AS [STA_DESC], 
+    [View_req_af_register].[AF_APPROVE] AS [AF_APPROVE], 
+    [View_req_af_register].[AF_APPROVE_DATE] AS [AF_APPROVE_DATE], 
+    [View_req_af_register].[APPROVE_NAME] AS [APPROVE_NAME], 
+    [View_req_af_register].[APPROVE_EN_NAME] AS [APPROVE_EN_NAME], 
+    [View_req_af_register].[APPROVE_POSITION] AS [APPROVE_POSITION], 
+    [View_req_af_register].[APPROVE_DEPARTMENT] AS [APPROVE_DEPARTMENT], 
+    [View_req_af_register].[APPROVE_EXTENSION] AS [APPROVE_EXTENSION], 
+    [View_req_af_register].[APPROVE_EMAIL] AS [APPROVE_EMAIL], 
+    [View_req_af_register].[APPROVE_ROLE] AS [APPROVE_ROLE]
     FROM [dbo].[View_req_af_register] AS [View_req_af_register]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="View_staff_member" EntityType="Self.View_staff_member" store:Type="Views" store:Schema="dbo">
@@ -2224,14 +2245,8 @@ warning 6002: The table/view 'IT_ASSET_SERVER.dbo.View_sw_assets' does not have 
           <EntitySet Name="tbl_user" EntityType="IT_ASSET_MANAGEMENTModel.tbl_user" />
           <EntitySet Name="View_pc_standards" EntityType="IT_ASSET_MANAGEMENTModel.View_pc_standards" />
           <EntitySet Name="View_incident_all" EntityType="IT_ASSET_MANAGEMENTModel.View_incident_all" />
-          <EntitySet Name="tbl_req_af" EntityType="IT_ASSET_MANAGEMENTModel.tbl_req_af" />
           <EntitySet Name="tbl_req_af_status" EntityType="IT_ASSET_MANAGEMENTModel.tbl_req_af_status" />
-          <EntitySet Name="tbl_req_applicant" EntityType="IT_ASSET_MANAGEMENTModel.tbl_req_applicant" />
-          <EntitySet Name="tbl_req_member" EntityType="IT_ASSET_MANAGEMENTModel.tbl_req_member" />
-          <EntitySet Name="tbl_req_allow_status" EntityType="IT_ASSET_MANAGEMENTModel.tbl_req_allow_status" />
           <EntitySet Name="tbl_req_status" EntityType="IT_ASSET_MANAGEMENTModel.tbl_req_status" />
-          <EntitySet Name="View_req_af_register" EntityType="IT_ASSET_MANAGEMENTModel.View_req_af_register" />
-          <EntitySet Name="View_req_af_follow" EntityType="IT_ASSET_MANAGEMENTModel.View_req_af_follow" />
           <FunctionImport Name="AddIncident1">
             <Parameter Name="INC_CODE" Mode="InOut" Type="String" />
             <Parameter Name="INC_DATE" Mode="In" Type="DateTime" />
@@ -2242,10 +2257,9 @@ warning 6002: The table/view 'IT_ASSET_SERVER.dbo.View_sw_assets' does not have 
           </FunctionImport>
           <FunctionImport Name="AddReqAF1">
             <Parameter Name="AF_CODE" Mode="InOut" Type="String" />
-            <Parameter Name="MEM_NO" Mode="In" Type="String" />
+            <Parameter Name="USER_NO" Mode="In" Type="String" />
             <Parameter Name="AF_DATE" Mode="In" Type="DateTime" />
             <Parameter Name="ALLOW_STATUS" Mode="In" Type="String" />
-            <Parameter Name="ID_APPLICANT" Mode="In" Type="String" />
             <Parameter Name="AF_SITE" Mode="In" Type="String" />
             <Parameter Name="AF_FOLDER" Mode="In" Type="String" />
             <Parameter Name="AF_STATUS" Mode="In" Type="String" />
@@ -2253,6 +2267,10 @@ warning 6002: The table/view 'IT_ASSET_SERVER.dbo.View_sw_assets' does not have 
             <Parameter Name="AF_REQUESTER" Mode="In" Type="String" />
             <Parameter Name="REQ_STATUS" Mode="In" Type="String" />
           </FunctionImport>
+          <EntitySet Name="tbl_req_af" EntityType="IT_ASSET_MANAGEMENTModel.tbl_req_af" />
+          <EntitySet Name="View_req_af_register" EntityType="IT_ASSET_MANAGEMENTModel.View_req_af_register" />
+          <EntitySet Name="View_req_af_follow" EntityType="IT_ASSET_MANAGEMENTModel.View_req_af_follow" />
+          <EntitySet Name="tbl_req_allow_status" EntityType="IT_ASSET_MANAGEMENTModel.tbl_req_allow_status" />
         </EntityContainer>
         <EntityType Name="View_inc_status">
           <Key>
@@ -2435,16 +2453,30 @@ warning 6002: The table/view 'IT_ASSET_SERVER.dbo.View_sw_assets' does not have 
           <Property Name="INC_COMMENTS" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="CATE_DESC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
+        <EntityType Name="tbl_req_af_status">
+          <Key>
+            <PropertyRef Name="AF_STATUS" />
+          </Key>
+          <Property Name="AF_STATUS" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="AF_STATUS_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AF_STATUS_DESC" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tbl_req_status">
+          <Key>
+            <PropertyRef Name="REQ_STATUS" />
+          </Key>
+          <Property Name="REQ_STATUS" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="STA_DESC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
         <EntityType Name="tbl_req_af">
           <Key>
             <PropertyRef Name="AF_CODE" />
           </Key>
           <Property Name="AF_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="AF_CODE" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="MEM_NO" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="USER_NO" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
           <Property Name="AF_DATE" Type="DateTime" Precision="3" />
           <Property Name="ALLOW_STATUS" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
-          <Property Name="ID_APPLICANT" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
           <Property Name="AF_SITE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="AF_FOLDER" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="AF_STATUS" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
@@ -2470,108 +2502,12 @@ warning 6002: The table/view 'IT_ASSET_SERVER.dbo.View_sw_assets' does not have 
           <Property Name="CREATE_DATE" Type="DateTime" Precision="3" />
           <Property Name="UPDATE_DATE" Type="DateTime" Precision="3" />
         </EntityType>
-        <EntityType Name="tbl_req_af_status">
-          <Key>
-            <PropertyRef Name="AF_STATUS" />
-          </Key>
-          <Property Name="AF_STATUS" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
-          <Property Name="AF_STATUS_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="AF_STATUS_DESC" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-        </EntityType>
-        <EntityType Name="tbl_req_applicant">
-          <Key>
-            <PropertyRef Name="ID_APPLICANT" />
-          </Key>
-          <Property Name="ID_APPLICANT" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
-          <Property Name="APPLICANT_DESC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-        </EntityType>
-        <EntityType Name="tbl_req_member">
-          <Key>
-            <PropertyRef Name="MEM_NO" />
-          </Key>
-          <Property Name="MEM_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="MEM_NO" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
-          <Property Name="NAME_TH" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="NAME_EN" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="MEM_POSITION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="MEM_DEPARTMENT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="MEM_EXTENSION" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
-        </EntityType>
-        <EntityType Name="tbl_req_allow_status">
-          <Key>
-            <PropertyRef Name="ALLOW_STATUS" />
-          </Key>
-          <Property Name="ALLOW_STATUS" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
-          <Property Name="ALLOW_DESC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-        </EntityType>
-        <EntityType Name="tbl_req_status">
-          <Key>
-            <PropertyRef Name="REQ_STATUS" />
-          </Key>
-          <Property Name="REQ_STATUS" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
-          <Property Name="STA_DESC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-        </EntityType>
         <EntityType Name="View_req_af_register">
           <Key>
             <PropertyRef Name="AF_CODE" />
-            <PropertyRef Name="USER_NO" />
           </Key>
           <Property Name="AF_CODE" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="MEM_NO" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
-          <Property Name="USER_NO" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="true" />
-          <Property Name="MEM_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="MEM_NAME_EN" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="MEM_POSITION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="MEM_DEPARTMENT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="MEM_EXTENSION" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
-          <Property Name="MEM_EMAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="MEM_ROLE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
-          <Property Name="AF_DATE" Type="DateTime" Precision="3" />
-          <Property Name="ALLOW_STATUS" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
-          <Property Name="ALLOW_DESC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="ID_APPLICANT" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
-          <Property Name="APPLICANT_DESC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="AF_SITE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="AF_FOLDER" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="AF_STATUS" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
-          <Property Name="AF_STATUS_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="AF_NOTE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="AF_REQUESTER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="USER_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="USER_EXTENSION" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
-          <Property Name="USER_EMAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="REQ_STATUS" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
-          <Property Name="STA_DESC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-        </EntityType>
-        <EntityType Name="View_req_af_follow">
-          <Key>
-            <PropertyRef Name="AF_CODE" />
-            <PropertyRef Name="APPLICANT_NO" />
-            <PropertyRef Name="USER_NO" />
-            <PropertyRef Name="APPROVE_NO" />
-          </Key>
-          <Property Name="AF_CODE" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="MEM_NO" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
-          <Property Name="APPLICANT_NO" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="true" />
-          <Property Name="APPLICANT_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="APPLICANT_NAME_EN" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="APPLICANT_POSITION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="APPLICANT_DEPARTMENT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="APPLICANT_EXTENSION" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
-          <Property Name="APPLICANT_EMAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="APPLICANT_ROLE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
-          <Property Name="AF_DATE" Type="DateTime" Precision="3" />
-          <Property Name="ALLOW_STATUS" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
-          <Property Name="ALLOW_DESC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="ID_APPLICANT" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
-          <Property Name="APPLICANT_DESC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="AF_SITE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="AF_FOLDER" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="AF_STATUS" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
-          <Property Name="AF_STATUS_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="AF_NOTE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="AF_REQUESTER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="USER_NO" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="USER_NO" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
           <Property Name="USER_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="USER_NAME_EN" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="USER_POSITION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -2579,30 +2515,113 @@ warning 6002: The table/view 'IT_ASSET_SERVER.dbo.View_sw_assets' does not have 
           <Property Name="USER_EXTENSION" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
           <Property Name="USER_EMAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="USER_ROLE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
-          <Property Name="AF_APPROVE_OWNER" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="AF_DATE" Type="DateTime" Precision="3" />
+          <Property Name="ALLOW_STATUS" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="ALLOW_DESC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AF_SITE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AF_FOLDER" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="AF_STATUS" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="AF_STATUS_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AF_STATUS_DESC" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AF_NOTE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AF_REQUESTER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NAME_REQUESTER" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="NAME_EN_REQUESTER" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="POSITION_REQUESTER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DEPARTMENT_REQUESTER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EXTENSION_REQUESTER" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="EMAIL_REQUESTER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ROLE_REQUESTER" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
           <Property Name="REQ_STATUS" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
           <Property Name="STA_DESC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="AF_APPROVE_OWNER_DATE" Type="DateTime" Precision="3" />
           <Property Name="AF_APPROVE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="AF_APPROVE_DATE" Type="DateTime" Precision="3" />
-          <Property Name="APPROVE_NO" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="true" />
           <Property Name="APPROVE_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="APPROVE_NAME_EN" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="APPROVE_EN_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="APPROVE_POSITION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="APPROVE_DEPARTMENT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="APPROVE_EXTENSION" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
           <Property Name="APPROVE_EMAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="APPROVE_ROLE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="View_req_af_follow">
+          <Key>
+            <PropertyRef Name="AF_CODE" />
+            <PropertyRef Name="IT_NAME" />
+            <PropertyRef Name="ASSIGN_NAME" />
+          </Key>
+          <Property Name="AF_CODE" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="AF_DATE" Type="DateTime" Precision="3" />
+          <Property Name="USER_NO" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="USER_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="USER_NAME_EN" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="USER_POSITION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="USER_DEPARTMENT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="USER_EXTENSION" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="USER_EMAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="USER_ROLE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="ALLOW_STATUS" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="ALLOW_DESC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AF_SITE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AF_FOLDER" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="AF_STATUS_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AF_STATUS_DESC" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AF_STATUS" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="AF_NOTE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AF_REQUESTER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NAME_REQUESTER" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="NAME_EN_REQUESTER" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="POSITION_REQUESTER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DEPARTMENT_REQUESTER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EXTENSION_REQUESTER" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="EMAIL_REQUESTER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ROLE_REQUESTER" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="AF_APPROVE_OWNER" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="AF_APPROVE_OWNER_DATE" Type="DateTime" Precision="3" />
+          <Property Name="OWNER_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="OWNER_NAME_EN" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="OWNER_POSITION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OWNER_DEPARTMENT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OWNER_EXTENSION" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="OWNER_EMAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="REQ_STATUS" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="STA_DESC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AF_APPROVE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="AF_APPROVE_DATE" Type="DateTime" Precision="3" />
+          <Property Name="APPROVE_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="APPROVE_EN_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="APPROVE_POSITION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="APPROVE_DEPARTMENT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="APPROVE_EXTENSION" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="APPROVE_EMAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="AF_OPEN_BY" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
-          <Property Name="IT_OPEN_BY_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="IT_OPEN_BY_SURNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IT_NAME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IT_SURNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IT_SECTION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IT_EXTENSION" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="IT_EMAIL" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="AF_OPEN_DATE" Type="DateTime" Precision="3" />
           <Property Name="AF_ASSIGN_TO" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
-          <Property Name="IT_ASSIGN_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="IT_ASSIGN_SURMANE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ASSIGN_NAME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ASSIGN_SURNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ASSIGN_SECTION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ASSIGN_EXTENSION" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="ASSIGN_EMAIL" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="AF_ASSIGN_DATE" Type="DateTime" Precision="3" />
           <Property Name="AF_CLOSE" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
           <Property Name="AF_CLOSE_DATE" Type="DateTime" Precision="3" />
+          <Property Name="CLOSE_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CLOSE_SURNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CLOSE_SECTION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CLOSE_EXTENSION" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="CLOSE_EMAIL" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tbl_req_allow_status">
+          <Key>
+            <PropertyRef Name="ALLOW_STATUS" />
+          </Key>
+          <Property Name="ALLOW_STATUS" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="ALLOW_DESC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -3433,6 +3452,25 @@ warning 6002: The table/view 'IT_ASSET_SERVER.dbo.View_sw_assets' does not have 
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="tbl_req_af_status">
+            <EntityTypeMapping TypeName="IT_ASSET_MANAGEMENTModel.tbl_req_af_status">
+              <MappingFragment StoreEntitySet="tbl_req_af_status">
+                <ScalarProperty Name="AF_STATUS_DESC" ColumnName="AF_STATUS_DESC" />
+                <ScalarProperty Name="AF_STATUS_NAME" ColumnName="AF_STATUS_NAME" />
+                <ScalarProperty Name="AF_STATUS" ColumnName="AF_STATUS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_req_status">
+            <EntityTypeMapping TypeName="IT_ASSET_MANAGEMENTModel.tbl_req_status">
+              <MappingFragment StoreEntitySet="tbl_req_status">
+                <ScalarProperty Name="STA_DESC" ColumnName="STA_DESC" />
+                <ScalarProperty Name="REQ_STATUS" ColumnName="REQ_STATUS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="AddIncident1" FunctionName="IT_ASSET_MANAGEMENTModel.Store.AddIncident" />
+          <FunctionImportMapping FunctionImportName="AddReqAF1" FunctionName="IT_ASSET_MANAGEMENTModel.Store.AddReqAF" />
           <EntitySetMapping Name="tbl_req_af">
             <EntityTypeMapping TypeName="IT_ASSET_MANAGEMENTModel.tbl_req_af">
               <MappingFragment StoreEntitySet="tbl_req_af">
@@ -3460,42 +3498,125 @@ warning 6002: The table/view 'IT_ASSET_SERVER.dbo.View_sw_assets' does not have 
                 <ScalarProperty Name="AF_STATUS" ColumnName="AF_STATUS" />
                 <ScalarProperty Name="AF_FOLDER" ColumnName="AF_FOLDER" />
                 <ScalarProperty Name="AF_SITE" ColumnName="AF_SITE" />
-                <ScalarProperty Name="ID_APPLICANT" ColumnName="ID_APPLICANT" />
                 <ScalarProperty Name="ALLOW_STATUS" ColumnName="ALLOW_STATUS" />
                 <ScalarProperty Name="AF_DATE" ColumnName="AF_DATE" />
-                <ScalarProperty Name="MEM_NO" ColumnName="MEM_NO" />
+                <ScalarProperty Name="USER_NO" ColumnName="USER_NO" />
                 <ScalarProperty Name="AF_CODE" ColumnName="AF_CODE" />
                 <ScalarProperty Name="AF_ID" ColumnName="AF_ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="tbl_req_af_status">
-            <EntityTypeMapping TypeName="IT_ASSET_MANAGEMENTModel.tbl_req_af_status">
-              <MappingFragment StoreEntitySet="tbl_req_af_status">
+          <EntitySetMapping Name="View_req_af_register">
+            <EntityTypeMapping TypeName="IT_ASSET_MANAGEMENTModel.View_req_af_register">
+              <MappingFragment StoreEntitySet="View_req_af_register">
+                <ScalarProperty Name="APPROVE_ROLE" ColumnName="APPROVE_ROLE" />
+                <ScalarProperty Name="APPROVE_EMAIL" ColumnName="APPROVE_EMAIL" />
+                <ScalarProperty Name="APPROVE_EXTENSION" ColumnName="APPROVE_EXTENSION" />
+                <ScalarProperty Name="APPROVE_DEPARTMENT" ColumnName="APPROVE_DEPARTMENT" />
+                <ScalarProperty Name="APPROVE_POSITION" ColumnName="APPROVE_POSITION" />
+                <ScalarProperty Name="APPROVE_EN_NAME" ColumnName="APPROVE_EN_NAME" />
+                <ScalarProperty Name="APPROVE_NAME" ColumnName="APPROVE_NAME" />
+                <ScalarProperty Name="AF_APPROVE_DATE" ColumnName="AF_APPROVE_DATE" />
+                <ScalarProperty Name="AF_APPROVE" ColumnName="AF_APPROVE" />
+                <ScalarProperty Name="STA_DESC" ColumnName="STA_DESC" />
+                <ScalarProperty Name="REQ_STATUS" ColumnName="REQ_STATUS" />
+                <ScalarProperty Name="ROLE_REQUESTER" ColumnName="ROLE_REQUESTER" />
+                <ScalarProperty Name="EMAIL_REQUESTER" ColumnName="EMAIL_REQUESTER" />
+                <ScalarProperty Name="EXTENSION_REQUESTER" ColumnName="EXTENSION_REQUESTER" />
+                <ScalarProperty Name="DEPARTMENT_REQUESTER" ColumnName="DEPARTMENT_REQUESTER" />
+                <ScalarProperty Name="POSITION_REQUESTER" ColumnName="POSITION_REQUESTER" />
+                <ScalarProperty Name="NAME_EN_REQUESTER" ColumnName="NAME_EN_REQUESTER" />
+                <ScalarProperty Name="NAME_REQUESTER" ColumnName="NAME_REQUESTER" />
+                <ScalarProperty Name="AF_REQUESTER" ColumnName="AF_REQUESTER" />
+                <ScalarProperty Name="AF_NOTE" ColumnName="AF_NOTE" />
                 <ScalarProperty Name="AF_STATUS_DESC" ColumnName="AF_STATUS_DESC" />
                 <ScalarProperty Name="AF_STATUS_NAME" ColumnName="AF_STATUS_NAME" />
                 <ScalarProperty Name="AF_STATUS" ColumnName="AF_STATUS" />
+                <ScalarProperty Name="AF_FOLDER" ColumnName="AF_FOLDER" />
+                <ScalarProperty Name="AF_SITE" ColumnName="AF_SITE" />
+                <ScalarProperty Name="ALLOW_DESC" ColumnName="ALLOW_DESC" />
+                <ScalarProperty Name="ALLOW_STATUS" ColumnName="ALLOW_STATUS" />
+                <ScalarProperty Name="AF_DATE" ColumnName="AF_DATE" />
+                <ScalarProperty Name="USER_ROLE" ColumnName="USER_ROLE" />
+                <ScalarProperty Name="USER_EMAIL" ColumnName="USER_EMAIL" />
+                <ScalarProperty Name="USER_EXTENSION" ColumnName="USER_EXTENSION" />
+                <ScalarProperty Name="USER_DEPARTMENT" ColumnName="USER_DEPARTMENT" />
+                <ScalarProperty Name="USER_POSITION" ColumnName="USER_POSITION" />
+                <ScalarProperty Name="USER_NAME_EN" ColumnName="USER_NAME_EN" />
+                <ScalarProperty Name="USER_NAME" ColumnName="USER_NAME" />
+                <ScalarProperty Name="USER_NO" ColumnName="USER_NO" />
+                <ScalarProperty Name="AF_CODE" ColumnName="AF_CODE" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="tbl_req_applicant">
-            <EntityTypeMapping TypeName="IT_ASSET_MANAGEMENTModel.tbl_req_applicant">
-              <MappingFragment StoreEntitySet="tbl_req_applicant">
-                <ScalarProperty Name="APPLICANT_DESC" ColumnName="APPLICANT_DESC" />
-                <ScalarProperty Name="ID_APPLICANT" ColumnName="ID_APPLICANT" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="tbl_req_member">
-            <EntityTypeMapping TypeName="IT_ASSET_MANAGEMENTModel.tbl_req_member">
-              <MappingFragment StoreEntitySet="tbl_req_member">
-                <ScalarProperty Name="MEM_EXTENSION" ColumnName="MEM_EXTENSION" />
-                <ScalarProperty Name="MEM_DEPARTMENT" ColumnName="MEM_DEPARTMENT" />
-                <ScalarProperty Name="MEM_POSITION" ColumnName="MEM_POSITION" />
-                <ScalarProperty Name="NAME_EN" ColumnName="NAME_EN" />
-                <ScalarProperty Name="NAME_TH" ColumnName="NAME_TH" />
-                <ScalarProperty Name="MEM_NO" ColumnName="MEM_NO" />
-                <ScalarProperty Name="MEM_ID" ColumnName="MEM_ID" />
+          <EntitySetMapping Name="View_req_af_follow">
+            <EntityTypeMapping TypeName="IT_ASSET_MANAGEMENTModel.View_req_af_follow">
+              <MappingFragment StoreEntitySet="View_req_af_follow">
+                <ScalarProperty Name="CLOSE_EMAIL" ColumnName="CLOSE_EMAIL" />
+                <ScalarProperty Name="CLOSE_EXTENSION" ColumnName="CLOSE_EXTENSION" />
+                <ScalarProperty Name="CLOSE_SECTION" ColumnName="CLOSE_SECTION" />
+                <ScalarProperty Name="CLOSE_SURNAME" ColumnName="CLOSE_SURNAME" />
+                <ScalarProperty Name="CLOSE_NAME" ColumnName="CLOSE_NAME" />
+                <ScalarProperty Name="AF_CLOSE_DATE" ColumnName="AF_CLOSE_DATE" />
+                <ScalarProperty Name="AF_CLOSE" ColumnName="AF_CLOSE" />
+                <ScalarProperty Name="AF_ASSIGN_DATE" ColumnName="AF_ASSIGN_DATE" />
+                <ScalarProperty Name="ASSIGN_EMAIL" ColumnName="ASSIGN_EMAIL" />
+                <ScalarProperty Name="ASSIGN_EXTENSION" ColumnName="ASSIGN_EXTENSION" />
+                <ScalarProperty Name="ASSIGN_SECTION" ColumnName="ASSIGN_SECTION" />
+                <ScalarProperty Name="ASSIGN_SURNAME" ColumnName="ASSIGN_SURNAME" />
+                <ScalarProperty Name="ASSIGN_NAME" ColumnName="ASSIGN_NAME" />
+                <ScalarProperty Name="AF_ASSIGN_TO" ColumnName="AF_ASSIGN_TO" />
+                <ScalarProperty Name="AF_OPEN_DATE" ColumnName="AF_OPEN_DATE" />
+                <ScalarProperty Name="IT_EMAIL" ColumnName="IT_EMAIL" />
+                <ScalarProperty Name="IT_EXTENSION" ColumnName="IT_EXTENSION" />
+                <ScalarProperty Name="IT_SECTION" ColumnName="IT_SECTION" />
+                <ScalarProperty Name="IT_SURNAME" ColumnName="IT_SURNAME" />
+                <ScalarProperty Name="IT_NAME" ColumnName="IT_NAME" />
+                <ScalarProperty Name="AF_OPEN_BY" ColumnName="AF_OPEN_BY" />
+                <ScalarProperty Name="APPROVE_EMAIL" ColumnName="APPROVE_EMAIL" />
+                <ScalarProperty Name="APPROVE_EXTENSION" ColumnName="APPROVE_EXTENSION" />
+                <ScalarProperty Name="APPROVE_DEPARTMENT" ColumnName="APPROVE_DEPARTMENT" />
+                <ScalarProperty Name="APPROVE_POSITION" ColumnName="APPROVE_POSITION" />
+                <ScalarProperty Name="APPROVE_EN_NAME" ColumnName="APPROVE_EN_NAME" />
+                <ScalarProperty Name="APPROVE_NAME" ColumnName="APPROVE_NAME" />
+                <ScalarProperty Name="AF_APPROVE_DATE" ColumnName="AF_APPROVE_DATE" />
+                <ScalarProperty Name="AF_APPROVE" ColumnName="AF_APPROVE" />
+                <ScalarProperty Name="STA_DESC" ColumnName="STA_DESC" />
+                <ScalarProperty Name="REQ_STATUS" ColumnName="REQ_STATUS" />
+                <ScalarProperty Name="OWNER_EMAIL" ColumnName="OWNER_EMAIL" />
+                <ScalarProperty Name="OWNER_EXTENSION" ColumnName="OWNER_EXTENSION" />
+                <ScalarProperty Name="OWNER_DEPARTMENT" ColumnName="OWNER_DEPARTMENT" />
+                <ScalarProperty Name="OWNER_POSITION" ColumnName="OWNER_POSITION" />
+                <ScalarProperty Name="OWNER_NAME_EN" ColumnName="OWNER_NAME_EN" />
+                <ScalarProperty Name="OWNER_NAME" ColumnName="OWNER_NAME" />
+                <ScalarProperty Name="AF_APPROVE_OWNER_DATE" ColumnName="AF_APPROVE_OWNER_DATE" />
+                <ScalarProperty Name="AF_APPROVE_OWNER" ColumnName="AF_APPROVE_OWNER" />
+                <ScalarProperty Name="ROLE_REQUESTER" ColumnName="ROLE_REQUESTER" />
+                <ScalarProperty Name="EMAIL_REQUESTER" ColumnName="EMAIL_REQUESTER" />
+                <ScalarProperty Name="EXTENSION_REQUESTER" ColumnName="EXTENSION_REQUESTER" />
+                <ScalarProperty Name="DEPARTMENT_REQUESTER" ColumnName="DEPARTMENT_REQUESTER" />
+                <ScalarProperty Name="POSITION_REQUESTER" ColumnName="POSITION_REQUESTER" />
+                <ScalarProperty Name="NAME_EN_REQUESTER" ColumnName="NAME_EN_REQUESTER" />
+                <ScalarProperty Name="NAME_REQUESTER" ColumnName="NAME_REQUESTER" />
+                <ScalarProperty Name="AF_REQUESTER" ColumnName="AF_REQUESTER" />
+                <ScalarProperty Name="AF_NOTE" ColumnName="AF_NOTE" />
+                <ScalarProperty Name="AF_STATUS" ColumnName="AF_STATUS" />
+                <ScalarProperty Name="AF_STATUS_DESC" ColumnName="AF_STATUS_DESC" />
+                <ScalarProperty Name="AF_STATUS_NAME" ColumnName="AF_STATUS_NAME" />
+                <ScalarProperty Name="AF_FOLDER" ColumnName="AF_FOLDER" />
+                <ScalarProperty Name="AF_SITE" ColumnName="AF_SITE" />
+                <ScalarProperty Name="ALLOW_DESC" ColumnName="ALLOW_DESC" />
+                <ScalarProperty Name="ALLOW_STATUS" ColumnName="ALLOW_STATUS" />
+                <ScalarProperty Name="USER_ROLE" ColumnName="USER_ROLE" />
+                <ScalarProperty Name="USER_EMAIL" ColumnName="USER_EMAIL" />
+                <ScalarProperty Name="USER_EXTENSION" ColumnName="USER_EXTENSION" />
+                <ScalarProperty Name="USER_DEPARTMENT" ColumnName="USER_DEPARTMENT" />
+                <ScalarProperty Name="USER_POSITION" ColumnName="USER_POSITION" />
+                <ScalarProperty Name="USER_NAME_EN" ColumnName="USER_NAME_EN" />
+                <ScalarProperty Name="USER_NAME" ColumnName="USER_NAME" />
+                <ScalarProperty Name="USER_NO" ColumnName="USER_NO" />
+                <ScalarProperty Name="AF_DATE" ColumnName="AF_DATE" />
+                <ScalarProperty Name="AF_CODE" ColumnName="AF_CODE" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -3507,107 +3628,6 @@ warning 6002: The table/view 'IT_ASSET_SERVER.dbo.View_sw_assets' does not have 
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="tbl_req_status">
-            <EntityTypeMapping TypeName="IT_ASSET_MANAGEMENTModel.tbl_req_status">
-              <MappingFragment StoreEntitySet="tbl_req_status">
-                <ScalarProperty Name="STA_DESC" ColumnName="STA_DESC" />
-                <ScalarProperty Name="REQ_STATUS" ColumnName="REQ_STATUS" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="View_req_af_register">
-            <EntityTypeMapping TypeName="IT_ASSET_MANAGEMENTModel.View_req_af_register">
-              <MappingFragment StoreEntitySet="View_req_af_register">
-                <ScalarProperty Name="STA_DESC" ColumnName="STA_DESC" />
-                <ScalarProperty Name="REQ_STATUS" ColumnName="REQ_STATUS" />
-                <ScalarProperty Name="USER_EMAIL" ColumnName="USER_EMAIL" />
-                <ScalarProperty Name="USER_EXTENSION" ColumnName="USER_EXTENSION" />
-                <ScalarProperty Name="USER_NAME" ColumnName="USER_NAME" />
-                <ScalarProperty Name="AF_REQUESTER" ColumnName="AF_REQUESTER" />
-                <ScalarProperty Name="AF_NOTE" ColumnName="AF_NOTE" />
-                <ScalarProperty Name="AF_STATUS_NAME" ColumnName="AF_STATUS_NAME" />
-                <ScalarProperty Name="AF_STATUS" ColumnName="AF_STATUS" />
-                <ScalarProperty Name="AF_FOLDER" ColumnName="AF_FOLDER" />
-                <ScalarProperty Name="AF_SITE" ColumnName="AF_SITE" />
-                <ScalarProperty Name="APPLICANT_DESC" ColumnName="APPLICANT_DESC" />
-                <ScalarProperty Name="ID_APPLICANT" ColumnName="ID_APPLICANT" />
-                <ScalarProperty Name="ALLOW_DESC" ColumnName="ALLOW_DESC" />
-                <ScalarProperty Name="ALLOW_STATUS" ColumnName="ALLOW_STATUS" />
-                <ScalarProperty Name="AF_DATE" ColumnName="AF_DATE" />
-                <ScalarProperty Name="MEM_ROLE" ColumnName="MEM_ROLE" />
-                <ScalarProperty Name="MEM_EMAIL" ColumnName="MEM_EMAIL" />
-                <ScalarProperty Name="MEM_EXTENSION" ColumnName="MEM_EXTENSION" />
-                <ScalarProperty Name="MEM_DEPARTMENT" ColumnName="MEM_DEPARTMENT" />
-                <ScalarProperty Name="MEM_POSITION" ColumnName="MEM_POSITION" />
-                <ScalarProperty Name="MEM_NAME_EN" ColumnName="MEM_NAME_EN" />
-                <ScalarProperty Name="MEM_NAME" ColumnName="MEM_NAME" />
-                <ScalarProperty Name="USER_NO" ColumnName="USER_NO" />
-                <ScalarProperty Name="MEM_NO" ColumnName="MEM_NO" />
-                <ScalarProperty Name="AF_CODE" ColumnName="AF_CODE" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="View_req_af_follow">
-            <EntityTypeMapping TypeName="IT_ASSET_MANAGEMENTModel.View_req_af_follow">
-              <MappingFragment StoreEntitySet="View_req_af_follow">
-                <ScalarProperty Name="AF_CLOSE_DATE" ColumnName="AF_CLOSE_DATE" />
-                <ScalarProperty Name="AF_CLOSE" ColumnName="AF_CLOSE" />
-                <ScalarProperty Name="AF_ASSIGN_DATE" ColumnName="AF_ASSIGN_DATE" />
-                <ScalarProperty Name="IT_ASSIGN_SURMANE" ColumnName="IT_ASSIGN_SURMANE" />
-                <ScalarProperty Name="IT_ASSIGN_NAME" ColumnName="IT_ASSIGN_NAME" />
-                <ScalarProperty Name="AF_ASSIGN_TO" ColumnName="AF_ASSIGN_TO" />
-                <ScalarProperty Name="AF_OPEN_DATE" ColumnName="AF_OPEN_DATE" />
-                <ScalarProperty Name="IT_OPEN_BY_SURNAME" ColumnName="IT_OPEN_BY_SURNAME" />
-                <ScalarProperty Name="IT_OPEN_BY_NAME" ColumnName="IT_OPEN_BY_NAME" />
-                <ScalarProperty Name="AF_OPEN_BY" ColumnName="AF_OPEN_BY" />
-                <ScalarProperty Name="APPROVE_ROLE" ColumnName="APPROVE_ROLE" />
-                <ScalarProperty Name="APPROVE_EMAIL" ColumnName="APPROVE_EMAIL" />
-                <ScalarProperty Name="APPROVE_EXTENSION" ColumnName="APPROVE_EXTENSION" />
-                <ScalarProperty Name="APPROVE_DEPARTMENT" ColumnName="APPROVE_DEPARTMENT" />
-                <ScalarProperty Name="APPROVE_POSITION" ColumnName="APPROVE_POSITION" />
-                <ScalarProperty Name="APPROVE_NAME_EN" ColumnName="APPROVE_NAME_EN" />
-                <ScalarProperty Name="APPROVE_NAME" ColumnName="APPROVE_NAME" />
-                <ScalarProperty Name="APPROVE_NO" ColumnName="APPROVE_NO" />
-                <ScalarProperty Name="AF_APPROVE_DATE" ColumnName="AF_APPROVE_DATE" />
-                <ScalarProperty Name="AF_APPROVE" ColumnName="AF_APPROVE" />
-                <ScalarProperty Name="AF_APPROVE_OWNER_DATE" ColumnName="AF_APPROVE_OWNER_DATE" />
-                <ScalarProperty Name="STA_DESC" ColumnName="STA_DESC" />
-                <ScalarProperty Name="REQ_STATUS" ColumnName="REQ_STATUS" />
-                <ScalarProperty Name="AF_APPROVE_OWNER" ColumnName="AF_APPROVE_OWNER" />
-                <ScalarProperty Name="USER_ROLE" ColumnName="USER_ROLE" />
-                <ScalarProperty Name="USER_EMAIL" ColumnName="USER_EMAIL" />
-                <ScalarProperty Name="USER_EXTENSION" ColumnName="USER_EXTENSION" />
-                <ScalarProperty Name="USER_DEPARTMENT" ColumnName="USER_DEPARTMENT" />
-                <ScalarProperty Name="USER_POSITION" ColumnName="USER_POSITION" />
-                <ScalarProperty Name="USER_NAME_EN" ColumnName="USER_NAME_EN" />
-                <ScalarProperty Name="USER_NAME" ColumnName="USER_NAME" />
-                <ScalarProperty Name="USER_NO" ColumnName="USER_NO" />
-                <ScalarProperty Name="AF_REQUESTER" ColumnName="AF_REQUESTER" />
-                <ScalarProperty Name="AF_NOTE" ColumnName="AF_NOTE" />
-                <ScalarProperty Name="AF_STATUS_NAME" ColumnName="AF_STATUS_NAME" />
-                <ScalarProperty Name="AF_STATUS" ColumnName="AF_STATUS" />
-                <ScalarProperty Name="AF_FOLDER" ColumnName="AF_FOLDER" />
-                <ScalarProperty Name="AF_SITE" ColumnName="AF_SITE" />
-                <ScalarProperty Name="APPLICANT_DESC" ColumnName="APPLICANT_DESC" />
-                <ScalarProperty Name="ID_APPLICANT" ColumnName="ID_APPLICANT" />
-                <ScalarProperty Name="ALLOW_DESC" ColumnName="ALLOW_DESC" />
-                <ScalarProperty Name="ALLOW_STATUS" ColumnName="ALLOW_STATUS" />
-                <ScalarProperty Name="AF_DATE" ColumnName="AF_DATE" />
-                <ScalarProperty Name="APPLICANT_ROLE" ColumnName="APPLICANT_ROLE" />
-                <ScalarProperty Name="APPLICANT_EMAIL" ColumnName="APPLICANT_EMAIL" />
-                <ScalarProperty Name="APPLICANT_EXTENSION" ColumnName="APPLICANT_EXTENSION" />
-                <ScalarProperty Name="APPLICANT_DEPARTMENT" ColumnName="APPLICANT_DEPARTMENT" />
-                <ScalarProperty Name="APPLICANT_POSITION" ColumnName="APPLICANT_POSITION" />
-                <ScalarProperty Name="APPLICANT_NAME_EN" ColumnName="APPLICANT_NAME_EN" />
-                <ScalarProperty Name="APPLICANT_NAME" ColumnName="APPLICANT_NAME" />
-                <ScalarProperty Name="APPLICANT_NO" ColumnName="APPLICANT_NO" />
-                <ScalarProperty Name="MEM_NO" ColumnName="MEM_NO" />
-                <ScalarProperty Name="AF_CODE" ColumnName="AF_CODE" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <FunctionImportMapping FunctionImportName="AddIncident1" FunctionName="IT_ASSET_MANAGEMENTModel.Store.AddIncident" />
-          <FunctionImportMapping FunctionImportName="AddReqAF1" FunctionName="IT_ASSET_MANAGEMENTModel.Store.AddReqAF" />
           </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

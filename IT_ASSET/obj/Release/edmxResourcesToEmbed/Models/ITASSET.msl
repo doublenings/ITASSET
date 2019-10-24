@@ -824,6 +824,25 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="tbl_req_af_status">
+      <EntityTypeMapping TypeName="IT_ASSET_MANAGEMENTModel.tbl_req_af_status">
+        <MappingFragment StoreEntitySet="tbl_req_af_status">
+          <ScalarProperty Name="AF_STATUS_DESC" ColumnName="AF_STATUS_DESC" />
+          <ScalarProperty Name="AF_STATUS_NAME" ColumnName="AF_STATUS_NAME" />
+          <ScalarProperty Name="AF_STATUS" ColumnName="AF_STATUS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_req_status">
+      <EntityTypeMapping TypeName="IT_ASSET_MANAGEMENTModel.tbl_req_status">
+        <MappingFragment StoreEntitySet="tbl_req_status">
+          <ScalarProperty Name="STA_DESC" ColumnName="STA_DESC" />
+          <ScalarProperty Name="REQ_STATUS" ColumnName="REQ_STATUS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="AddIncident1" FunctionName="IT_ASSET_MANAGEMENTModel.Store.AddIncident" />
+    <FunctionImportMapping FunctionImportName="AddReqAF1" FunctionName="IT_ASSET_MANAGEMENTModel.Store.AddReqAF" />
     <EntitySetMapping Name="tbl_req_af">
       <EntityTypeMapping TypeName="IT_ASSET_MANAGEMENTModel.tbl_req_af">
         <MappingFragment StoreEntitySet="tbl_req_af">
@@ -851,42 +870,125 @@
           <ScalarProperty Name="AF_STATUS" ColumnName="AF_STATUS" />
           <ScalarProperty Name="AF_FOLDER" ColumnName="AF_FOLDER" />
           <ScalarProperty Name="AF_SITE" ColumnName="AF_SITE" />
-          <ScalarProperty Name="ID_APPLICANT" ColumnName="ID_APPLICANT" />
           <ScalarProperty Name="ALLOW_STATUS" ColumnName="ALLOW_STATUS" />
           <ScalarProperty Name="AF_DATE" ColumnName="AF_DATE" />
-          <ScalarProperty Name="MEM_NO" ColumnName="MEM_NO" />
+          <ScalarProperty Name="USER_NO" ColumnName="USER_NO" />
           <ScalarProperty Name="AF_CODE" ColumnName="AF_CODE" />
           <ScalarProperty Name="AF_ID" ColumnName="AF_ID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="tbl_req_af_status">
-      <EntityTypeMapping TypeName="IT_ASSET_MANAGEMENTModel.tbl_req_af_status">
-        <MappingFragment StoreEntitySet="tbl_req_af_status">
+    <EntitySetMapping Name="View_req_af_register">
+      <EntityTypeMapping TypeName="IT_ASSET_MANAGEMENTModel.View_req_af_register">
+        <MappingFragment StoreEntitySet="View_req_af_register">
+          <ScalarProperty Name="APPROVE_ROLE" ColumnName="APPROVE_ROLE" />
+          <ScalarProperty Name="APPROVE_EMAIL" ColumnName="APPROVE_EMAIL" />
+          <ScalarProperty Name="APPROVE_EXTENSION" ColumnName="APPROVE_EXTENSION" />
+          <ScalarProperty Name="APPROVE_DEPARTMENT" ColumnName="APPROVE_DEPARTMENT" />
+          <ScalarProperty Name="APPROVE_POSITION" ColumnName="APPROVE_POSITION" />
+          <ScalarProperty Name="APPROVE_EN_NAME" ColumnName="APPROVE_EN_NAME" />
+          <ScalarProperty Name="APPROVE_NAME" ColumnName="APPROVE_NAME" />
+          <ScalarProperty Name="AF_APPROVE_DATE" ColumnName="AF_APPROVE_DATE" />
+          <ScalarProperty Name="AF_APPROVE" ColumnName="AF_APPROVE" />
+          <ScalarProperty Name="STA_DESC" ColumnName="STA_DESC" />
+          <ScalarProperty Name="REQ_STATUS" ColumnName="REQ_STATUS" />
+          <ScalarProperty Name="ROLE_REQUESTER" ColumnName="ROLE_REQUESTER" />
+          <ScalarProperty Name="EMAIL_REQUESTER" ColumnName="EMAIL_REQUESTER" />
+          <ScalarProperty Name="EXTENSION_REQUESTER" ColumnName="EXTENSION_REQUESTER" />
+          <ScalarProperty Name="DEPARTMENT_REQUESTER" ColumnName="DEPARTMENT_REQUESTER" />
+          <ScalarProperty Name="POSITION_REQUESTER" ColumnName="POSITION_REQUESTER" />
+          <ScalarProperty Name="NAME_EN_REQUESTER" ColumnName="NAME_EN_REQUESTER" />
+          <ScalarProperty Name="NAME_REQUESTER" ColumnName="NAME_REQUESTER" />
+          <ScalarProperty Name="AF_REQUESTER" ColumnName="AF_REQUESTER" />
+          <ScalarProperty Name="AF_NOTE" ColumnName="AF_NOTE" />
           <ScalarProperty Name="AF_STATUS_DESC" ColumnName="AF_STATUS_DESC" />
           <ScalarProperty Name="AF_STATUS_NAME" ColumnName="AF_STATUS_NAME" />
           <ScalarProperty Name="AF_STATUS" ColumnName="AF_STATUS" />
+          <ScalarProperty Name="AF_FOLDER" ColumnName="AF_FOLDER" />
+          <ScalarProperty Name="AF_SITE" ColumnName="AF_SITE" />
+          <ScalarProperty Name="ALLOW_DESC" ColumnName="ALLOW_DESC" />
+          <ScalarProperty Name="ALLOW_STATUS" ColumnName="ALLOW_STATUS" />
+          <ScalarProperty Name="AF_DATE" ColumnName="AF_DATE" />
+          <ScalarProperty Name="USER_ROLE" ColumnName="USER_ROLE" />
+          <ScalarProperty Name="USER_EMAIL" ColumnName="USER_EMAIL" />
+          <ScalarProperty Name="USER_EXTENSION" ColumnName="USER_EXTENSION" />
+          <ScalarProperty Name="USER_DEPARTMENT" ColumnName="USER_DEPARTMENT" />
+          <ScalarProperty Name="USER_POSITION" ColumnName="USER_POSITION" />
+          <ScalarProperty Name="USER_NAME_EN" ColumnName="USER_NAME_EN" />
+          <ScalarProperty Name="USER_NAME" ColumnName="USER_NAME" />
+          <ScalarProperty Name="USER_NO" ColumnName="USER_NO" />
+          <ScalarProperty Name="AF_CODE" ColumnName="AF_CODE" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="tbl_req_applicant">
-      <EntityTypeMapping TypeName="IT_ASSET_MANAGEMENTModel.tbl_req_applicant">
-        <MappingFragment StoreEntitySet="tbl_req_applicant">
-          <ScalarProperty Name="APPLICANT_DESC" ColumnName="APPLICANT_DESC" />
-          <ScalarProperty Name="ID_APPLICANT" ColumnName="ID_APPLICANT" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="tbl_req_member">
-      <EntityTypeMapping TypeName="IT_ASSET_MANAGEMENTModel.tbl_req_member">
-        <MappingFragment StoreEntitySet="tbl_req_member">
-          <ScalarProperty Name="MEM_EXTENSION" ColumnName="MEM_EXTENSION" />
-          <ScalarProperty Name="MEM_DEPARTMENT" ColumnName="MEM_DEPARTMENT" />
-          <ScalarProperty Name="MEM_POSITION" ColumnName="MEM_POSITION" />
-          <ScalarProperty Name="NAME_EN" ColumnName="NAME_EN" />
-          <ScalarProperty Name="NAME_TH" ColumnName="NAME_TH" />
-          <ScalarProperty Name="MEM_NO" ColumnName="MEM_NO" />
-          <ScalarProperty Name="MEM_ID" ColumnName="MEM_ID" />
+    <EntitySetMapping Name="View_req_af_follow">
+      <EntityTypeMapping TypeName="IT_ASSET_MANAGEMENTModel.View_req_af_follow">
+        <MappingFragment StoreEntitySet="View_req_af_follow">
+          <ScalarProperty Name="CLOSE_EMAIL" ColumnName="CLOSE_EMAIL" />
+          <ScalarProperty Name="CLOSE_EXTENSION" ColumnName="CLOSE_EXTENSION" />
+          <ScalarProperty Name="CLOSE_SECTION" ColumnName="CLOSE_SECTION" />
+          <ScalarProperty Name="CLOSE_SURNAME" ColumnName="CLOSE_SURNAME" />
+          <ScalarProperty Name="CLOSE_NAME" ColumnName="CLOSE_NAME" />
+          <ScalarProperty Name="AF_CLOSE_DATE" ColumnName="AF_CLOSE_DATE" />
+          <ScalarProperty Name="AF_CLOSE" ColumnName="AF_CLOSE" />
+          <ScalarProperty Name="AF_ASSIGN_DATE" ColumnName="AF_ASSIGN_DATE" />
+          <ScalarProperty Name="ASSIGN_EMAIL" ColumnName="ASSIGN_EMAIL" />
+          <ScalarProperty Name="ASSIGN_EXTENSION" ColumnName="ASSIGN_EXTENSION" />
+          <ScalarProperty Name="ASSIGN_SECTION" ColumnName="ASSIGN_SECTION" />
+          <ScalarProperty Name="ASSIGN_SURNAME" ColumnName="ASSIGN_SURNAME" />
+          <ScalarProperty Name="ASSIGN_NAME" ColumnName="ASSIGN_NAME" />
+          <ScalarProperty Name="AF_ASSIGN_TO" ColumnName="AF_ASSIGN_TO" />
+          <ScalarProperty Name="AF_OPEN_DATE" ColumnName="AF_OPEN_DATE" />
+          <ScalarProperty Name="IT_EMAIL" ColumnName="IT_EMAIL" />
+          <ScalarProperty Name="IT_EXTENSION" ColumnName="IT_EXTENSION" />
+          <ScalarProperty Name="IT_SECTION" ColumnName="IT_SECTION" />
+          <ScalarProperty Name="IT_SURNAME" ColumnName="IT_SURNAME" />
+          <ScalarProperty Name="IT_NAME" ColumnName="IT_NAME" />
+          <ScalarProperty Name="AF_OPEN_BY" ColumnName="AF_OPEN_BY" />
+          <ScalarProperty Name="APPROVE_EMAIL" ColumnName="APPROVE_EMAIL" />
+          <ScalarProperty Name="APPROVE_EXTENSION" ColumnName="APPROVE_EXTENSION" />
+          <ScalarProperty Name="APPROVE_DEPARTMENT" ColumnName="APPROVE_DEPARTMENT" />
+          <ScalarProperty Name="APPROVE_POSITION" ColumnName="APPROVE_POSITION" />
+          <ScalarProperty Name="APPROVE_EN_NAME" ColumnName="APPROVE_EN_NAME" />
+          <ScalarProperty Name="APPROVE_NAME" ColumnName="APPROVE_NAME" />
+          <ScalarProperty Name="AF_APPROVE_DATE" ColumnName="AF_APPROVE_DATE" />
+          <ScalarProperty Name="AF_APPROVE" ColumnName="AF_APPROVE" />
+          <ScalarProperty Name="STA_DESC" ColumnName="STA_DESC" />
+          <ScalarProperty Name="REQ_STATUS" ColumnName="REQ_STATUS" />
+          <ScalarProperty Name="OWNER_EMAIL" ColumnName="OWNER_EMAIL" />
+          <ScalarProperty Name="OWNER_EXTENSION" ColumnName="OWNER_EXTENSION" />
+          <ScalarProperty Name="OWNER_DEPARTMENT" ColumnName="OWNER_DEPARTMENT" />
+          <ScalarProperty Name="OWNER_POSITION" ColumnName="OWNER_POSITION" />
+          <ScalarProperty Name="OWNER_NAME_EN" ColumnName="OWNER_NAME_EN" />
+          <ScalarProperty Name="OWNER_NAME" ColumnName="OWNER_NAME" />
+          <ScalarProperty Name="AF_APPROVE_OWNER_DATE" ColumnName="AF_APPROVE_OWNER_DATE" />
+          <ScalarProperty Name="AF_APPROVE_OWNER" ColumnName="AF_APPROVE_OWNER" />
+          <ScalarProperty Name="ROLE_REQUESTER" ColumnName="ROLE_REQUESTER" />
+          <ScalarProperty Name="EMAIL_REQUESTER" ColumnName="EMAIL_REQUESTER" />
+          <ScalarProperty Name="EXTENSION_REQUESTER" ColumnName="EXTENSION_REQUESTER" />
+          <ScalarProperty Name="DEPARTMENT_REQUESTER" ColumnName="DEPARTMENT_REQUESTER" />
+          <ScalarProperty Name="POSITION_REQUESTER" ColumnName="POSITION_REQUESTER" />
+          <ScalarProperty Name="NAME_EN_REQUESTER" ColumnName="NAME_EN_REQUESTER" />
+          <ScalarProperty Name="NAME_REQUESTER" ColumnName="NAME_REQUESTER" />
+          <ScalarProperty Name="AF_REQUESTER" ColumnName="AF_REQUESTER" />
+          <ScalarProperty Name="AF_NOTE" ColumnName="AF_NOTE" />
+          <ScalarProperty Name="AF_STATUS" ColumnName="AF_STATUS" />
+          <ScalarProperty Name="AF_STATUS_DESC" ColumnName="AF_STATUS_DESC" />
+          <ScalarProperty Name="AF_STATUS_NAME" ColumnName="AF_STATUS_NAME" />
+          <ScalarProperty Name="AF_FOLDER" ColumnName="AF_FOLDER" />
+          <ScalarProperty Name="AF_SITE" ColumnName="AF_SITE" />
+          <ScalarProperty Name="ALLOW_DESC" ColumnName="ALLOW_DESC" />
+          <ScalarProperty Name="ALLOW_STATUS" ColumnName="ALLOW_STATUS" />
+          <ScalarProperty Name="USER_ROLE" ColumnName="USER_ROLE" />
+          <ScalarProperty Name="USER_EMAIL" ColumnName="USER_EMAIL" />
+          <ScalarProperty Name="USER_EXTENSION" ColumnName="USER_EXTENSION" />
+          <ScalarProperty Name="USER_DEPARTMENT" ColumnName="USER_DEPARTMENT" />
+          <ScalarProperty Name="USER_POSITION" ColumnName="USER_POSITION" />
+          <ScalarProperty Name="USER_NAME_EN" ColumnName="USER_NAME_EN" />
+          <ScalarProperty Name="USER_NAME" ColumnName="USER_NAME" />
+          <ScalarProperty Name="USER_NO" ColumnName="USER_NO" />
+          <ScalarProperty Name="AF_DATE" ColumnName="AF_DATE" />
+          <ScalarProperty Name="AF_CODE" ColumnName="AF_CODE" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -898,106 +1000,5 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="tbl_req_status">
-      <EntityTypeMapping TypeName="IT_ASSET_MANAGEMENTModel.tbl_req_status">
-        <MappingFragment StoreEntitySet="tbl_req_status">
-          <ScalarProperty Name="STA_DESC" ColumnName="STA_DESC" />
-          <ScalarProperty Name="REQ_STATUS" ColumnName="REQ_STATUS" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="View_req_af_register">
-      <EntityTypeMapping TypeName="IT_ASSET_MANAGEMENTModel.View_req_af_register">
-        <MappingFragment StoreEntitySet="View_req_af_register">
-          <ScalarProperty Name="STA_DESC" ColumnName="STA_DESC" />
-          <ScalarProperty Name="REQ_STATUS" ColumnName="REQ_STATUS" />
-          <ScalarProperty Name="USER_EMAIL" ColumnName="USER_EMAIL" />
-          <ScalarProperty Name="USER_EXTENSION" ColumnName="USER_EXTENSION" />
-          <ScalarProperty Name="USER_NAME" ColumnName="USER_NAME" />
-          <ScalarProperty Name="AF_REQUESTER" ColumnName="AF_REQUESTER" />
-          <ScalarProperty Name="AF_NOTE" ColumnName="AF_NOTE" />
-          <ScalarProperty Name="AF_STATUS_NAME" ColumnName="AF_STATUS_NAME" />
-          <ScalarProperty Name="AF_STATUS" ColumnName="AF_STATUS" />
-          <ScalarProperty Name="AF_FOLDER" ColumnName="AF_FOLDER" />
-          <ScalarProperty Name="AF_SITE" ColumnName="AF_SITE" />
-          <ScalarProperty Name="APPLICANT_DESC" ColumnName="APPLICANT_DESC" />
-          <ScalarProperty Name="ID_APPLICANT" ColumnName="ID_APPLICANT" />
-          <ScalarProperty Name="ALLOW_DESC" ColumnName="ALLOW_DESC" />
-          <ScalarProperty Name="ALLOW_STATUS" ColumnName="ALLOW_STATUS" />
-          <ScalarProperty Name="AF_DATE" ColumnName="AF_DATE" />
-          <ScalarProperty Name="MEM_ROLE" ColumnName="MEM_ROLE" />
-          <ScalarProperty Name="MEM_EMAIL" ColumnName="MEM_EMAIL" />
-          <ScalarProperty Name="MEM_EXTENSION" ColumnName="MEM_EXTENSION" />
-          <ScalarProperty Name="MEM_DEPARTMENT" ColumnName="MEM_DEPARTMENT" />
-          <ScalarProperty Name="MEM_POSITION" ColumnName="MEM_POSITION" />
-          <ScalarProperty Name="MEM_NAME_EN" ColumnName="MEM_NAME_EN" />
-          <ScalarProperty Name="MEM_NAME" ColumnName="MEM_NAME" />
-          <ScalarProperty Name="USER_NO" ColumnName="USER_NO" />
-          <ScalarProperty Name="MEM_NO" ColumnName="MEM_NO" />
-          <ScalarProperty Name="AF_CODE" ColumnName="AF_CODE" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="View_req_af_follow">
-      <EntityTypeMapping TypeName="IT_ASSET_MANAGEMENTModel.View_req_af_follow">
-        <MappingFragment StoreEntitySet="View_req_af_follow">
-          <ScalarProperty Name="AF_CLOSE_DATE" ColumnName="AF_CLOSE_DATE" />
-          <ScalarProperty Name="AF_CLOSE" ColumnName="AF_CLOSE" />
-          <ScalarProperty Name="AF_ASSIGN_DATE" ColumnName="AF_ASSIGN_DATE" />
-          <ScalarProperty Name="IT_ASSIGN_SURMANE" ColumnName="IT_ASSIGN_SURMANE" />
-          <ScalarProperty Name="IT_ASSIGN_NAME" ColumnName="IT_ASSIGN_NAME" />
-          <ScalarProperty Name="AF_ASSIGN_TO" ColumnName="AF_ASSIGN_TO" />
-          <ScalarProperty Name="AF_OPEN_DATE" ColumnName="AF_OPEN_DATE" />
-          <ScalarProperty Name="IT_OPEN_BY_SURNAME" ColumnName="IT_OPEN_BY_SURNAME" />
-          <ScalarProperty Name="IT_OPEN_BY_NAME" ColumnName="IT_OPEN_BY_NAME" />
-          <ScalarProperty Name="AF_OPEN_BY" ColumnName="AF_OPEN_BY" />
-          <ScalarProperty Name="APPROVE_ROLE" ColumnName="APPROVE_ROLE" />
-          <ScalarProperty Name="APPROVE_EMAIL" ColumnName="APPROVE_EMAIL" />
-          <ScalarProperty Name="APPROVE_EXTENSION" ColumnName="APPROVE_EXTENSION" />
-          <ScalarProperty Name="APPROVE_DEPARTMENT" ColumnName="APPROVE_DEPARTMENT" />
-          <ScalarProperty Name="APPROVE_POSITION" ColumnName="APPROVE_POSITION" />
-          <ScalarProperty Name="APPROVE_NAME_EN" ColumnName="APPROVE_NAME_EN" />
-          <ScalarProperty Name="APPROVE_NAME" ColumnName="APPROVE_NAME" />
-          <ScalarProperty Name="APPROVE_NO" ColumnName="APPROVE_NO" />
-          <ScalarProperty Name="AF_APPROVE_DATE" ColumnName="AF_APPROVE_DATE" />
-          <ScalarProperty Name="AF_APPROVE" ColumnName="AF_APPROVE" />
-          <ScalarProperty Name="AF_APPROVE_OWNER_DATE" ColumnName="AF_APPROVE_OWNER_DATE" />
-          <ScalarProperty Name="STA_DESC" ColumnName="STA_DESC" />
-          <ScalarProperty Name="REQ_STATUS" ColumnName="REQ_STATUS" />
-          <ScalarProperty Name="AF_APPROVE_OWNER" ColumnName="AF_APPROVE_OWNER" />
-          <ScalarProperty Name="USER_ROLE" ColumnName="USER_ROLE" />
-          <ScalarProperty Name="USER_EMAIL" ColumnName="USER_EMAIL" />
-          <ScalarProperty Name="USER_EXTENSION" ColumnName="USER_EXTENSION" />
-          <ScalarProperty Name="USER_DEPARTMENT" ColumnName="USER_DEPARTMENT" />
-          <ScalarProperty Name="USER_POSITION" ColumnName="USER_POSITION" />
-          <ScalarProperty Name="USER_NAME_EN" ColumnName="USER_NAME_EN" />
-          <ScalarProperty Name="USER_NAME" ColumnName="USER_NAME" />
-          <ScalarProperty Name="USER_NO" ColumnName="USER_NO" />
-          <ScalarProperty Name="AF_REQUESTER" ColumnName="AF_REQUESTER" />
-          <ScalarProperty Name="AF_NOTE" ColumnName="AF_NOTE" />
-          <ScalarProperty Name="AF_STATUS_NAME" ColumnName="AF_STATUS_NAME" />
-          <ScalarProperty Name="AF_STATUS" ColumnName="AF_STATUS" />
-          <ScalarProperty Name="AF_FOLDER" ColumnName="AF_FOLDER" />
-          <ScalarProperty Name="AF_SITE" ColumnName="AF_SITE" />
-          <ScalarProperty Name="APPLICANT_DESC" ColumnName="APPLICANT_DESC" />
-          <ScalarProperty Name="ID_APPLICANT" ColumnName="ID_APPLICANT" />
-          <ScalarProperty Name="ALLOW_DESC" ColumnName="ALLOW_DESC" />
-          <ScalarProperty Name="ALLOW_STATUS" ColumnName="ALLOW_STATUS" />
-          <ScalarProperty Name="AF_DATE" ColumnName="AF_DATE" />
-          <ScalarProperty Name="APPLICANT_ROLE" ColumnName="APPLICANT_ROLE" />
-          <ScalarProperty Name="APPLICANT_EMAIL" ColumnName="APPLICANT_EMAIL" />
-          <ScalarProperty Name="APPLICANT_EXTENSION" ColumnName="APPLICANT_EXTENSION" />
-          <ScalarProperty Name="APPLICANT_DEPARTMENT" ColumnName="APPLICANT_DEPARTMENT" />
-          <ScalarProperty Name="APPLICANT_POSITION" ColumnName="APPLICANT_POSITION" />
-          <ScalarProperty Name="APPLICANT_NAME_EN" ColumnName="APPLICANT_NAME_EN" />
-          <ScalarProperty Name="APPLICANT_NAME" ColumnName="APPLICANT_NAME" />
-          <ScalarProperty Name="APPLICANT_NO" ColumnName="APPLICANT_NO" />
-          <ScalarProperty Name="MEM_NO" ColumnName="MEM_NO" />
-          <ScalarProperty Name="AF_CODE" ColumnName="AF_CODE" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <FunctionImportMapping FunctionImportName="AddIncident1" FunctionName="IT_ASSET_MANAGEMENTModel.Store.AddIncident" />
-    <FunctionImportMapping FunctionImportName="AddReqAF1" FunctionName="IT_ASSET_MANAGEMENTModel.Store.AddReqAF" />
   </EntityContainerMapping>
 </Mapping>

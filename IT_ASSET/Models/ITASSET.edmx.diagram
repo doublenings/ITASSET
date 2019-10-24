@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="a528a59bd9dc44c2956a64bc7d6b3533" Name="Diagram1" ZoomLevel="41">
+      <Diagram DiagramId="a528a59bd9dc44c2956a64bc7d6b3533" Name="Diagram1" ZoomLevel="74">
         <EntityTypeShape EntityType="IT_ASSET_MANAGEMENTModel.tbl_assesories" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="IT_ASSET_MANAGEMENTModel.tbl_buy_reason" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="IT_ASSET_MANAGEMENTModel.tbl_categories" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
@@ -50,14 +50,12 @@
         <EntityTypeShape EntityType="IT_ASSET_MANAGEMENTModel.tbl_user" Width="1.5" PointX="3.375" PointY="17.75" />
         <EntityTypeShape EntityType="IT_ASSET_MANAGEMENTModel.View_pc_standards" Width="1.5" PointX="9.375" PointY="13.75" />
         <EntityTypeShape EntityType="IT_ASSET_MANAGEMENTModel.View_incident_all" Width="1.5" PointX="10.375" PointY="23.75" />
-        <EntityTypeShape EntityType="IT_ASSET_MANAGEMENTModel.tbl_req_af" Width="1.5" PointX="0.75" PointY="24.75" />
         <EntityTypeShape EntityType="IT_ASSET_MANAGEMENTModel.tbl_req_af_status" Width="1.5" PointX="5.375" PointY="18.75" />
-        <EntityTypeShape EntityType="IT_ASSET_MANAGEMENTModel.tbl_req_applicant" Width="1.5" PointX="7.375" PointY="18.75" />
-        <EntityTypeShape EntityType="IT_ASSET_MANAGEMENTModel.tbl_req_member" Width="1.5" PointX="13.375" PointY="20.75" />
-        <EntityTypeShape EntityType="IT_ASSET_MANAGEMENTModel.tbl_req_allow_status" Width="1.5" PointX="0.75" PointY="21.75" />
         <EntityTypeShape EntityType="IT_ASSET_MANAGEMENTModel.tbl_req_status" Width="1.5" PointX="2.75" PointY="21.75" />
-        <EntityTypeShape EntityType="IT_ASSET_MANAGEMENTModel.View_req_af_register" Width="1.5" PointX="21.375" PointY="4.75" />
-        <EntityTypeShape EntityType="IT_ASSET_MANAGEMENTModel.View_req_af_follow" Width="1.5" PointX="5.375" PointY="21.75" />
+        <EntityTypeShape EntityType="IT_ASSET_MANAGEMENTModel.tbl_req_af" Width="1.5" PointX="7.375" PointY="21.75" />
+        <EntityTypeShape EntityType="IT_ASSET_MANAGEMENTModel.View_req_af_register" Width="1.5" PointX="15.375" PointY="22.75" />
+        <EntityTypeShape EntityType="IT_ASSET_MANAGEMENTModel.View_req_af_follow" Width="1.5" PointX="0.75" PointY="24.75" />
+        <EntityTypeShape EntityType="IT_ASSET_MANAGEMENTModel.tbl_req_allow_status" Width="1.5" PointX="7.375" PointY="18.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

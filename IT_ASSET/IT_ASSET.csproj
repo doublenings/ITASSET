@@ -484,7 +484,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ITASSET.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\model.cs" />
     <Compile Include="Models\tbl_assesories.cs">
       <DependentUpon>ITASSET.tt</DependentUpon>
     </Compile>
@@ -558,12 +557,6 @@
       <DependentUpon>ITASSET.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\tbl_req_allow_status.cs">
-      <DependentUpon>ITASSET.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\tbl_req_applicant.cs">
-      <DependentUpon>ITASSET.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\tbl_req_member.cs">
       <DependentUpon>ITASSET.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\tbl_req_status.cs">
@@ -7794,8 +7787,8 @@
     <Content Include="Views\ReqAFRegister\Index.cshtml" />
     <Content Include="Views\ReqAFRegister\Create.cshtml" />
     <Content Include="Views\ReqAFRegister\FollowAF.cshtml" />
-    <Content Include="Views\ReqAFRegister\Detail_AF.cshtml" />
     <Content Include="Views\Home\Welcome.cshtml" />
+    <Content Include="Views\ReqAFRegister\Details_AF.cshtml" />
     <Content Include="Views\ReqAFRegister\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>

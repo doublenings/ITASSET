@@ -15,26 +15,7 @@ namespace IT_ASSET.Models
     public partial class View_req_af_follow
     {
         public string AF_CODE { get; set; }
-        public string MEM_NO { get; set; }
-        public string APPLICANT_NO { get; set; }
-        public string APPLICANT_NAME { get; set; }
-        public string APPLICANT_NAME_EN { get; set; }
-        public string APPLICANT_POSITION { get; set; }
-        public string APPLICANT_DEPARTMENT { get; set; }
-        public string APPLICANT_EXTENSION { get; set; }
-        public string APPLICANT_EMAIL { get; set; }
-        public string APPLICANT_ROLE { get; set; }
         public Nullable<System.DateTime> AF_DATE { get; set; }
-        public string ALLOW_STATUS { get; set; }
-        public string ALLOW_DESC { get; set; }
-        public string ID_APPLICANT { get; set; }
-        public string APPLICANT_DESC { get; set; }
-        public string AF_SITE { get; set; }
-        public string AF_FOLDER { get; set; }
-        public string AF_STATUS { get; set; }
-        public string AF_STATUS_NAME { get; set; }
-        public string AF_NOTE { get; set; }
-        public string AF_REQUESTER { get; set; }
         public string USER_NO { get; set; }
         public string USER_NAME { get; set; }
         public string USER_NAME_EN { get; set; }
@@ -43,29 +24,60 @@ namespace IT_ASSET.Models
         public string USER_EXTENSION { get; set; }
         public string USER_EMAIL { get; set; }
         public string USER_ROLE { get; set; }
+        public string ALLOW_STATUS { get; set; }
+        public string ALLOW_DESC { get; set; }
+        public string AF_SITE { get; set; }
+        public string AF_FOLDER { get; set; }
+        public string AF_STATUS_NAME { get; set; }
+        public string AF_STATUS_DESC { get; set; }
+        public string AF_STATUS { get; set; }
+        public string AF_NOTE { get; set; }
+        public string AF_REQUESTER { get; set; }
+        public string NAME_REQUESTER { get; set; }
+        public string NAME_EN_REQUESTER { get; set; }
+        public string POSITION_REQUESTER { get; set; }
+        public string DEPARTMENT_REQUESTER { get; set; }
+        public string EXTENSION_REQUESTER { get; set; }
+        public string EMAIL_REQUESTER { get; set; }
+        public string ROLE_REQUESTER { get; set; }
         public string AF_APPROVE_OWNER { get; set; }
+        public Nullable<System.DateTime> AF_APPROVE_OWNER_DATE { get; set; }
+        public string OWNER_NAME { get; set; }
+        public string OWNER_NAME_EN { get; set; }
+        public string OWNER_POSITION { get; set; }
+        public string OWNER_DEPARTMENT { get; set; }
+        public string OWNER_EXTENSION { get; set; }
+        public string OWNER_EMAIL { get; set; }
         public string REQ_STATUS { get; set; }
         public string STA_DESC { get; set; }
-        public Nullable<System.DateTime> AF_APPROVE_OWNER_DATE { get; set; }
         public string AF_APPROVE { get; set; }
         public Nullable<System.DateTime> AF_APPROVE_DATE { get; set; }
-        public string APPROVE_NO { get; set; }
         public string APPROVE_NAME { get; set; }
-        public string APPROVE_NAME_EN { get; set; }
+        public string APPROVE_EN_NAME { get; set; }
         public string APPROVE_POSITION { get; set; }
         public string APPROVE_DEPARTMENT { get; set; }
         public string APPROVE_EXTENSION { get; set; }
         public string APPROVE_EMAIL { get; set; }
-        public string APPROVE_ROLE { get; set; }
         public string AF_OPEN_BY { get; set; }
-        public string IT_OPEN_BY_NAME { get; set; }
-        public string IT_OPEN_BY_SURNAME { get; set; }
+        public string IT_NAME { get; set; }
+        public string IT_SURNAME { get; set; }
+        public string IT_SECTION { get; set; }
+        public string IT_EXTENSION { get; set; }
+        public string IT_EMAIL { get; set; }
         public Nullable<System.DateTime> AF_OPEN_DATE { get; set; }
         public string AF_ASSIGN_TO { get; set; }
-        public string IT_ASSIGN_NAME { get; set; }
-        public string IT_ASSIGN_SURMANE { get; set; }
+        public string ASSIGN_NAME { get; set; }
+        public string ASSIGN_SURNAME { get; set; }
+        public string ASSIGN_SECTION { get; set; }
+        public string ASSIGN_EXTENSION { get; set; }
+        public string ASSIGN_EMAIL { get; set; }
         public Nullable<System.DateTime> AF_ASSIGN_DATE { get; set; }
         public string AF_CLOSE { get; set; }
         public Nullable<System.DateTime> AF_CLOSE_DATE { get; set; }
+        public string CLOSE_NAME { get; set; }
+        public string CLOSE_SURNAME { get; set; }
+        public string CLOSE_SECTION { get; set; }
+        public string CLOSE_EXTENSION { get; set; }
+        public string CLOSE_EMAIL { get; set; }
     }
 }

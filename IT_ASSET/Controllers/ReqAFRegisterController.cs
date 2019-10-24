@@ -30,7 +30,7 @@ namespace IT_ASSET.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            View_req_af_follow tbl_req_af = db.View_req_af_follow.SingleOrDefault(m => m.AF_CODE == id);
+            View_req_af_register tbl_req_af = db.View_req_af_register.SingleOrDefault(m => m.AF_CODE == id);
             if (tbl_req_af == null)
             {
                 return HttpNotFound();
@@ -42,7 +42,7 @@ namespace IT_ASSET.Controllers
         public ActionResult Create()
         {
             ViewData["ALLOW_STATUS"] = new SelectList(db.tbl_req_allow_status, "ALLOW_STATUS", "ALLOW_DESC");
-            ViewData["ID_APPLICANT"] = new SelectList(db.tbl_req_applicant, "ID_APPLICANT", "APPLICANT_DESC");
+            
             ViewData["AF_STATUS"] = new SelectList(db.tbl_req_af_status, "AF_STATUS", "AF_STATUS_NAME");
             return View();
         }
@@ -61,8 +61,7 @@ namespace IT_ASSET.Controllers
                     SqlCommand cmd = new SqlCommand("AddReqAF", con);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@Allow_STATUS", tbl_req_af.ALLOW_STATUS);
-                    cmd.Parameters.AddWithValue("@ID_Applicant ", tbl_req_af.ID_APPLICANT);
-                    cmd.Parameters.AddWithValue("@Mem_No", tbl_req_af.MEM_NO);
+                    cmd.Parameters.AddWithValue("@USER_NO", tbl_req_af.USER_NO);
                     cmd.Parameters.AddWithValue("@AF_Site", tbl_req_af.AF_SITE);
                     cmd.Parameters.AddWithValue("@AF_Folder", tbl_req_af.AF_FOLDER);
                     cmd.Parameters.AddWithValue("@AF_Status", tbl_req_af.AF_STATUS);
@@ -115,7 +114,7 @@ namespace IT_ASSET.Controllers
                
             }
             ViewData["ALLOW_STATUS"] = new SelectList(db.tbl_req_allow_status, "ALLOW_STATUS", "ALLOW_DESC", tbl_req_af.ALLOW_STATUS);
-            ViewData["ID_APPLICANT"] = new SelectList(db.tbl_req_applicant, "ID_APPLICANT", "APPLICANT_DESC", tbl_req_af.ID_APPLICANT);
+          
             ViewData["AF_STATUS"] = new SelectList(db.tbl_req_af_status, "AF_STATUS", "AF_STATUS_NAME",tbl_req_af.AF_STATUS);
             return View(tbl_req_af);
         }
@@ -144,7 +143,7 @@ namespace IT_ASSET.Controllers
             {
                 return HttpNotFound();
             }
-            ViewData["ID_APPLICANT"] = new SelectList(db.tbl_req_applicant, "ID_APPLICANT", "APPLICANT_DESC");
+           
             return View(tbl_req_af);
         }
 
@@ -161,7 +160,7 @@ namespace IT_ASSET.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewData["ID_APPLICANT"] = new SelectList(db.tbl_req_applicant, "ID_APPLICANT", "APPLICANT_DESC", tbl_req_af.ID_APPLICANT);
+           
             return View(tbl_req_af);
         }
 

@@ -16,10 +16,9 @@ namespace IT_ASSET.Models
     {
         public int AF_ID { get; set; }
         public string AF_CODE { get; set; }
-        public string MEM_NO { get; set; }
+        public string USER_NO { get; set; }
         public Nullable<System.DateTime> AF_DATE { get; set; }
         public string ALLOW_STATUS { get; set; }
-        public string ID_APPLICANT { get; set; }
         public string AF_SITE { get; set; }
         public string AF_FOLDER { get; set; }
         public string AF_STATUS { get; set; }

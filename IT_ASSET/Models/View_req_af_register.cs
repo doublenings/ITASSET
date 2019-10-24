@@ -15,30 +15,41 @@ namespace IT_ASSET.Models
     public partial class View_req_af_register
     {
         public string AF_CODE { get; set; }
-        public string MEM_NO { get; set; }
         public string USER_NO { get; set; }
-        public string MEM_NAME { get; set; }
-        public string MEM_NAME_EN { get; set; }
-        public string MEM_POSITION { get; set; }
-        public string MEM_DEPARTMENT { get; set; }
-        public string MEM_EXTENSION { get; set; }
-        public string MEM_EMAIL { get; set; }
-        public string MEM_ROLE { get; set; }
+        public string USER_NAME { get; set; }
+        public string USER_NAME_EN { get; set; }
+        public string USER_POSITION { get; set; }
+        public string USER_DEPARTMENT { get; set; }
+        public string USER_EXTENSION { get; set; }
+        public string USER_EMAIL { get; set; }
+        public string USER_ROLE { get; set; }
         public Nullable<System.DateTime> AF_DATE { get; set; }
         public string ALLOW_STATUS { get; set; }
         public string ALLOW_DESC { get; set; }
-        public string ID_APPLICANT { get; set; }
-        public string APPLICANT_DESC { get; set; }
         public string AF_SITE { get; set; }
         public string AF_FOLDER { get; set; }
         public string AF_STATUS { get; set; }
         public string AF_STATUS_NAME { get; set; }
+        public string AF_STATUS_DESC { get; set; }
         public string AF_NOTE { get; set; }
         public string AF_REQUESTER { get; set; }
-        public string USER_NAME { get; set; }
-        public string USER_EXTENSION { get; set; }
-        public string USER_EMAIL { get; set; }
+        public string NAME_REQUESTER { get; set; }
+        public string NAME_EN_REQUESTER { get; set; }
+        public string POSITION_REQUESTER { get; set; }
+        public string DEPARTMENT_REQUESTER { get; set; }
+        public string EXTENSION_REQUESTER { get; set; }
+        public string EMAIL_REQUESTER { get; set; }
+        public string ROLE_REQUESTER { get; set; }
         public string REQ_STATUS { get; set; }
         public string STA_DESC { get; set; }
+        public string AF_APPROVE { get; set; }
+        public Nullable<System.DateTime> AF_APPROVE_DATE { get; set; }
+        public string APPROVE_NAME { get; set; }
+        public string APPROVE_EN_NAME { get; set; }
+        public string APPROVE_POSITION { get; set; }
+        public string APPROVE_DEPARTMENT { get; set; }
+        public string APPROVE_EXTENSION { get; set; }
+        public string APPROVE_EMAIL { get; set; }
+        public string APPROVE_ROLE { get; set; }
     }
 }

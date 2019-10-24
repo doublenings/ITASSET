@@ -72,14 +72,12 @@ namespace IT_ASSET.Models
         public virtual DbSet<tbl_user> tbl_user { get; set; }
         public virtual DbSet<View_pc_standards> View_pc_standards { get; set; }
         public virtual DbSet<View_incident_all> View_incident_all { get; set; }
-        public virtual DbSet<tbl_req_af> tbl_req_af { get; set; }
         public virtual DbSet<tbl_req_af_status> tbl_req_af_status { get; set; }
-        public virtual DbSet<tbl_req_applicant> tbl_req_applicant { get; set; }
-        public virtual DbSet<tbl_req_member> tbl_req_member { get; set; }
-        public virtual DbSet<tbl_req_allow_status> tbl_req_allow_status { get; set; }
         public virtual DbSet<tbl_req_status> tbl_req_status { get; set; }
+        public virtual DbSet<tbl_req_af> tbl_req_af { get; set; }
         public virtual DbSet<View_req_af_register> View_req_af_register { get; set; }
         public virtual DbSet<View_req_af_follow> View_req_af_follow { get; set; }
+        public virtual DbSet<tbl_req_allow_status> tbl_req_allow_status { get; set; }
     
         public virtual int AddIncident(ObjectParameter iNC_CODE, Nullable<System.DateTime> iNC_DATE, string iNC_REQUESTER, string iNC_TOPIC, string iNC_STATUS, string iNC_DESCRIPTION)
         {
@@ -207,11 +205,11 @@ namespace IT_ASSET.Models
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("AddIncident1", iNC_CODE, iNC_DATEParameter, iNC_REQUESTERParameter, iNC_TOPICParameter, iNC_STATUSParameter, iNC_DESCRIPTIONParameter);
         }
     
-        public virtual int AddReqAF1(ObjectParameter aF_CODE, string mEM_NO, Nullable<System.DateTime> aF_DATE, string aLLOW_STATUS, string iD_APPLICANT, string aF_SITE, string aF_FOLDER, string aF_STATUS, string aF_NOTE, string aF_REQUESTER, string rEQ_STATUS)
+        public virtual int AddReqAF1(ObjectParameter aF_CODE, string uSER_NO, Nullable<System.DateTime> aF_DATE, string aLLOW_STATUS, string aF_SITE, string aF_FOLDER, string aF_STATUS, string aF_NOTE, string aF_REQUESTER, string rEQ_STATUS)
         {
-            var mEM_NOParameter = mEM_NO != null ?
-                new ObjectParameter("MEM_NO", mEM_NO) :
-                new ObjectParameter("MEM_NO", typeof(string));
+            var uSER_NOParameter = uSER_NO != null ?
+                new ObjectParameter("USER_NO", uSER_NO) :
+                new ObjectParameter("USER_NO", typeof(string));
     
             var aF_DATEParameter = aF_DATE.HasValue ?
                 new ObjectParameter("AF_DATE", aF_DATE) :
@@ -220,10 +218,6 @@ namespace IT_ASSET.Models
             var aLLOW_STATUSParameter = aLLOW_STATUS != null ?
                 new ObjectParameter("ALLOW_STATUS", aLLOW_STATUS) :
                 new ObjectParameter("ALLOW_STATUS", typeof(string));
-    
-            var iD_APPLICANTParameter = iD_APPLICANT != null ?
-                new ObjectParameter("ID_APPLICANT", iD_APPLICANT) :
-                new ObjectParameter("ID_APPLICANT", typeof(string));
     
             var aF_SITEParameter = aF_SITE != null ?
                 new ObjectParameter("AF_SITE", aF_SITE) :
@@ -249,7 +243,7 @@ namespace IT_ASSET.Models
                 new ObjectParameter("REQ_STATUS", rEQ_STATUS) :
                 new ObjectParameter("REQ_STATUS", typeof(string));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("AddReqAF1", aF_CODE, mEM_NOParameter, aF_DATEParameter, aLLOW_STATUSParameter, iD_APPLICANTParameter, aF_SITEParameter, aF_FOLDERParameter, aF_STATUSParameter, aF_NOTEParameter, aF_REQUESTERParameter, rEQ_STATUSParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("AddReqAF1", aF_CODE, uSER_NOParameter, aF_DATEParameter, aLLOW_STATUSParameter, aF_SITEParameter, aF_FOLDERParameter, aF_STATUSParameter, aF_NOTEParameter, aF_REQUESTERParameter, rEQ_STATUSParameter);
         }
     }
 }
