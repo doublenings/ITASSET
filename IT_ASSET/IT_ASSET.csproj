@@ -567,6 +567,12 @@
     <Compile Include="Models\tbl_req_allow_status.cs">
       <DependentUpon>ITASSET.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\tbl_req_auth.cs">
+      <DependentUpon>ITASSET.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_req_sd.cs">
+      <DependentUpon>ITASSET.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\tbl_req_status.cs">
       <DependentUpon>ITASSET.tt</DependentUpon>
     </Compile>

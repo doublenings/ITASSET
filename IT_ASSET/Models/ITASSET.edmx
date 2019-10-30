@@ -370,10 +370,10 @@ warning 6002: The table/view 'IT_ASSET_SERVER.dbo.tbl_configure' does not have a
           <Property Name="AF_FOLDER" Type="nvarchar" MaxLength="100" />
           <Property Name="AF_STATUS" Type="nvarchar" MaxLength="2" />
           <Property Name="AF_NOTE" Type="nvarchar" MaxLength="50" />
-          <Property Name="AF_REQUESTER" Type="nvarchar" MaxLength="50" />
-          <Property Name="AF_APPROVE_OWNER" Type="nvarchar" MaxLength="100" />
+          <Property Name="AF_REQUESTER" Type="nvarchar" MaxLength="6" />
+          <Property Name="AF_APPROVE_OWNER" Type="nvarchar" MaxLength="6" />
           <Property Name="AF_APPROVE_OWNER_DATE" Type="datetime" />
-          <Property Name="AF_APPROVE" Type="nvarchar" MaxLength="100" />
+          <Property Name="AF_APPROVE" Type="nvarchar" MaxLength="6" />
           <Property Name="AF_APPROVE_DATE" Type="datetime" />
           <Property Name="AF_OPEN_BY" Type="nvarchar" MaxLength="6" />
           <Property Name="AF_OPEN_DATE" Type="datetime" />
@@ -409,6 +409,48 @@ warning 6002: The table/view 'IT_ASSET_SERVER.dbo.tbl_configure' does not have a
           </Key>
           <Property Name="ALLOW_STATUS" Type="nvarchar" MaxLength="2" Nullable="false" />
           <Property Name="ALLOW_DESC" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tbl_req_auth">
+          <Key>
+            <PropertyRef Name="REQ_AUTH" />
+          </Key>
+          <Property Name="REQ_AUTH" Type="nvarchar" MaxLength="2" Nullable="false" />
+          <Property Name="AUTH_DESC" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="tbl_req_sd">
+          <Key>
+            <PropertyRef Name="SD_CODE" />
+          </Key>
+          <Property Name="SD_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SD_CODE" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="USER_NO" Type="nvarchar" MaxLength="10" />
+          <Property Name="SD_DATE" Type="datetime" />
+          <Property Name="ALLOW_STATUS" Type="nvarchar" MaxLength="2" />
+          <Property Name="SD_DRIVE" Type="nvarchar" MaxLength="50" />
+          <Property Name="SD_FOLDER" Type="nvarchar" MaxLength="100" />
+          <Property Name="SD_NOTE" Type="nvarchar(max)" />
+          <Property Name="REQ_AUTH" Type="nvarchar" MaxLength="2" />
+          <Property Name="SD_REQUESTER" Type="nvarchar" MaxLength="6" />
+          <Property Name="SD_APPROVE_OWNER" Type="nvarchar" MaxLength="6" />
+          <Property Name="SD_APPROVE_OWNER_DATE" Type="datetime" />
+          <Property Name="SD_APPROVE" Type="nvarchar" MaxLength="6" />
+          <Property Name="SD_APPROVE_DATE" Type="datetime" />
+          <Property Name="SD_OPEN_BY" Type="nvarchar" MaxLength="6" />
+          <Property Name="SD_OPEN_DATE" Type="datetime" />
+          <Property Name="SD_ASSIGN_TO" Type="nvarchar" MaxLength="6" />
+          <Property Name="SD_ASSIGN_DATE" Type="datetime" />
+          <Property Name="SD_SUBMIT_DATE" Type="datetime" />
+          <Property Name="SD_CLOSE" Type="nvarchar" MaxLength="6" />
+          <Property Name="AF_CLOSE_DATE" Type="datetime" />
+          <Property Name="REQ_STATUS" Type="nvarchar" MaxLength="2" />
+          <Property Name="USER_CREATE" Type="nvarchar" MaxLength="100" />
+          <Property Name="USER_UPDATE" Type="nvarchar" MaxLength="100" />
+          <Property Name="CREATE_DATE" Type="datetime" />
+          <Property Name="UPDATE_DATE" Type="datetime" />
+          <Property Name="AF_IT_COMMENT" Type="nvarchar(max)" />
+          <Property Name="AF_IT_COMMENTER" Type="nvarchar" MaxLength="50" />
+          <Property Name="AF_IT_MANAGER" Type="nvarchar" MaxLength="50" />
+          <Property Name="AF_IT_DATE" Type="datetime" />
         </EntityType>
         <EntityType Name="tbl_req_status">
           <Key>
@@ -1086,6 +1128,8 @@ warning 6002: The table/view 'IT_ASSET_SERVER.dbo.View_sw_assets' does not have 
           <EntitySet Name="tbl_req_af" EntityType="Self.tbl_req_af" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbl_req_af_status" EntityType="Self.tbl_req_af_status" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbl_req_allow_status" EntityType="Self.tbl_req_allow_status" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_req_auth" EntityType="Self.tbl_req_auth" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_req_sd" EntityType="Self.tbl_req_sd" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbl_req_status" EntityType="Self.tbl_req_status" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbl_req_types" EntityType="Self.tbl_req_types" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbl_staff_member" EntityType="Self.tbl_staff_member" Schema="dbo" store:Type="Tables" />
@@ -2273,6 +2317,8 @@ warning 6002: The table/view 'IT_ASSET_SERVER.dbo.View_sw_assets' does not have 
           <EntitySet Name="View_req_af_register" EntityType="IT_ASSET_MANAGEMENTModel.View_req_af_register" />
           <EntitySet Name="tbl_req_allow_status" EntityType="IT_ASSET_MANAGEMENTModel.tbl_req_allow_status" />
           <EntitySet Name="View_req_af_follow" EntityType="IT_ASSET_MANAGEMENTModel.View_req_af_follow" />
+          <EntitySet Name="tbl_req_auth" EntityType="IT_ASSET_MANAGEMENTModel.tbl_req_auth" />
+          <EntitySet Name="tbl_req_sd" EntityType="IT_ASSET_MANAGEMENTModel.tbl_req_sd" />
         </EntityContainer>
         <EntityType Name="View_inc_status">
           <Key>
@@ -2483,10 +2529,10 @@ warning 6002: The table/view 'IT_ASSET_SERVER.dbo.View_sw_assets' does not have 
           <Property Name="AF_FOLDER" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="AF_STATUS" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
           <Property Name="AF_NOTE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="AF_REQUESTER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="AF_APPROVE_OWNER" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="AF_REQUESTER" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="AF_APPROVE_OWNER" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
           <Property Name="AF_APPROVE_OWNER_DATE" Type="DateTime" Precision="3" />
-          <Property Name="AF_APPROVE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="AF_APPROVE" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
           <Property Name="AF_APPROVE_DATE" Type="DateTime" Precision="3" />
           <Property Name="AF_OPEN_BY" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
           <Property Name="AF_OPEN_DATE" Type="DateTime" Precision="3" />
@@ -2626,6 +2672,48 @@ warning 6002: The table/view 'IT_ASSET_SERVER.dbo.View_sw_assets' does not have 
           <Property Name="CLOSE_SECTION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="CLOSE_EXTENSION" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
           <Property Name="CLOSE_EMAIL" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tbl_req_auth">
+          <Key>
+            <PropertyRef Name="REQ_AUTH" />
+          </Key>
+          <Property Name="REQ_AUTH" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="AUTH_DESC" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tbl_req_sd">
+          <Key>
+            <PropertyRef Name="SD_CODE" />
+          </Key>
+          <Property Name="SD_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SD_CODE" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="USER_NO" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="SD_DATE" Type="DateTime" Precision="3" />
+          <Property Name="ALLOW_STATUS" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="SD_DRIVE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SD_FOLDER" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="SD_NOTE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="REQ_AUTH" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="SD_REQUESTER" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="SD_APPROVE_OWNER" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="SD_APPROVE_OWNER_DATE" Type="DateTime" Precision="3" />
+          <Property Name="SD_APPROVE" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="SD_APPROVE_DATE" Type="DateTime" Precision="3" />
+          <Property Name="SD_OPEN_BY" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="SD_OPEN_DATE" Type="DateTime" Precision="3" />
+          <Property Name="SD_ASSIGN_TO" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="SD_ASSIGN_DATE" Type="DateTime" Precision="3" />
+          <Property Name="SD_SUBMIT_DATE" Type="DateTime" Precision="3" />
+          <Property Name="SD_CLOSE" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="AF_CLOSE_DATE" Type="DateTime" Precision="3" />
+          <Property Name="REQ_STATUS" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="USER_CREATE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="USER_UPDATE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CREATE_DATE" Type="DateTime" Precision="3" />
+          <Property Name="UPDATE_DATE" Type="DateTime" Precision="3" />
+          <Property Name="AF_IT_COMMENT" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AF_IT_COMMENTER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AF_IT_MANAGER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AF_IT_DATE" Type="DateTime" Precision="3" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -3633,6 +3721,50 @@ warning 6002: The table/view 'IT_ASSET_SERVER.dbo.View_sw_assets' does not have 
                 <ScalarProperty Name="USER_NO" ColumnName="USER_NO" />
                 <ScalarProperty Name="AF_DATE" ColumnName="AF_DATE" />
                 <ScalarProperty Name="AF_CODE" ColumnName="AF_CODE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_req_auth">
+            <EntityTypeMapping TypeName="IT_ASSET_MANAGEMENTModel.tbl_req_auth">
+              <MappingFragment StoreEntitySet="tbl_req_auth">
+                <ScalarProperty Name="AUTH_DESC" ColumnName="AUTH_DESC" />
+                <ScalarProperty Name="REQ_AUTH" ColumnName="REQ_AUTH" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_req_sd">
+            <EntityTypeMapping TypeName="IT_ASSET_MANAGEMENTModel.tbl_req_sd">
+              <MappingFragment StoreEntitySet="tbl_req_sd">
+                <ScalarProperty Name="AF_IT_DATE" ColumnName="AF_IT_DATE" />
+                <ScalarProperty Name="AF_IT_MANAGER" ColumnName="AF_IT_MANAGER" />
+                <ScalarProperty Name="AF_IT_COMMENTER" ColumnName="AF_IT_COMMENTER" />
+                <ScalarProperty Name="AF_IT_COMMENT" ColumnName="AF_IT_COMMENT" />
+                <ScalarProperty Name="UPDATE_DATE" ColumnName="UPDATE_DATE" />
+                <ScalarProperty Name="CREATE_DATE" ColumnName="CREATE_DATE" />
+                <ScalarProperty Name="USER_UPDATE" ColumnName="USER_UPDATE" />
+                <ScalarProperty Name="USER_CREATE" ColumnName="USER_CREATE" />
+                <ScalarProperty Name="REQ_STATUS" ColumnName="REQ_STATUS" />
+                <ScalarProperty Name="AF_CLOSE_DATE" ColumnName="AF_CLOSE_DATE" />
+                <ScalarProperty Name="SD_CLOSE" ColumnName="SD_CLOSE" />
+                <ScalarProperty Name="SD_SUBMIT_DATE" ColumnName="SD_SUBMIT_DATE" />
+                <ScalarProperty Name="SD_ASSIGN_DATE" ColumnName="SD_ASSIGN_DATE" />
+                <ScalarProperty Name="SD_ASSIGN_TO" ColumnName="SD_ASSIGN_TO" />
+                <ScalarProperty Name="SD_OPEN_DATE" ColumnName="SD_OPEN_DATE" />
+                <ScalarProperty Name="SD_OPEN_BY" ColumnName="SD_OPEN_BY" />
+                <ScalarProperty Name="SD_APPROVE_DATE" ColumnName="SD_APPROVE_DATE" />
+                <ScalarProperty Name="SD_APPROVE" ColumnName="SD_APPROVE" />
+                <ScalarProperty Name="SD_APPROVE_OWNER_DATE" ColumnName="SD_APPROVE_OWNER_DATE" />
+                <ScalarProperty Name="SD_APPROVE_OWNER" ColumnName="SD_APPROVE_OWNER" />
+                <ScalarProperty Name="SD_REQUESTER" ColumnName="SD_REQUESTER" />
+                <ScalarProperty Name="REQ_AUTH" ColumnName="REQ_AUTH" />
+                <ScalarProperty Name="SD_NOTE" ColumnName="SD_NOTE" />
+                <ScalarProperty Name="SD_FOLDER" ColumnName="SD_FOLDER" />
+                <ScalarProperty Name="SD_DRIVE" ColumnName="SD_DRIVE" />
+                <ScalarProperty Name="ALLOW_STATUS" ColumnName="ALLOW_STATUS" />
+                <ScalarProperty Name="SD_DATE" ColumnName="SD_DATE" />
+                <ScalarProperty Name="USER_NO" ColumnName="USER_NO" />
+                <ScalarProperty Name="SD_CODE" ColumnName="SD_CODE" />
+                <ScalarProperty Name="SD_ID" ColumnName="SD_ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
