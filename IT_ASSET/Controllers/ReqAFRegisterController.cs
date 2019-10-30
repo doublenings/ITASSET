@@ -3,12 +3,18 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Mail;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.UI;
+using System.Web.UI.WebControls;
 using IT_ASSET.Models;
+using OfficeOpenXml;
+using PagedList;
+using Rotativa;
 
 namespace IT_ASSET.Controllers
 {
@@ -17,11 +23,15 @@ namespace IT_ASSET.Controllers
         private IT_ASSET_MANAGEMENTEntities db = new IT_ASSET_MANAGEMENTEntities();
         string connectionString = "Data Source= COMP05\\SQLEXPRESS;Initial Catalog=IT_ASSET_SERVER;Integrated Security=True";
         // GET: ReqAFRegister
-        public ActionResult Index()
+        public ActionResult Index(int? i, string search)
         {
-            return View(db.View_req_af_register.OrderByDescending(s => s.AF_CODE).ToList());
+            return View(db.View_req_af_register.OrderByDescending(s => s.AF_CODE).Where(s => s.AF_CODE.Contains(search) || s.USER_NO.Contains(search)|| s.AF_REQUESTER.Contains(search)|| search == null).ToList().ToPagedList(i ?? 1, 12));
         }
-     
+        public ActionResult IndexAF(int? i, string search)
+        {
+            return View(db.View_req_af_follow.OrderByDescending(s => s.AF_CODE).Where(s => s.AF_CODE.Contains(search) || s.USER_NO.Contains(search) || s.AF_REQUESTER.Contains(search) || search == null).ToList().ToPagedList(i ?? 1, 12));
+        }
+
 
         // GET: ReqAFRegister/Details/5
         public ActionResult Details(string id)
@@ -42,7 +52,7 @@ namespace IT_ASSET.Controllers
         public ActionResult Create()
         {
             ViewData["ALLOW_STATUS"] = new SelectList(db.tbl_req_allow_status, "ALLOW_STATUS", "ALLOW_DESC");
-            
+
             ViewData["AF_STATUS"] = new SelectList(db.tbl_req_af_status, "AF_STATUS", "AF_STATUS_NAME");
             return View();
         }
@@ -52,7 +62,7 @@ namespace IT_ASSET.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create( tbl_req_af tbl_req_af)
+        public ActionResult Create(AF tbl_req_af)
         {
             if (ModelState.IsValid)
             {
@@ -75,10 +85,11 @@ namespace IT_ASSET.Controllers
                     cmd.Parameters.Add("@AF_CODE", SqlDbType.NVarChar, 20);
                     cmd.Parameters["@AF_CODE"].Direction = ParameterDirection.Output;
 
-
+                    TempData["msg"] = "<script>alert('Saved succesfully');</script>";
                     con.Open();
                     cmd.ExecuteNonQuery();
                     con.Close();
+                   
                     ViewBag.EmpCount = cmd.Parameters["@AF_CODE"].Value.ToString();
 
 
@@ -107,21 +118,21 @@ namespace IT_ASSET.Controllers
                     };
 
                     smtp.Send(mm);
-                    TempData["msg"] = "<script>alert('Change succesfully');</script>";
+                  
                     return RedirectToAction("Index");
- 
+
                 }
-               
+
             }
             ViewData["ALLOW_STATUS"] = new SelectList(db.tbl_req_allow_status, "ALLOW_STATUS", "ALLOW_DESC", tbl_req_af.ALLOW_STATUS);
-          
-            ViewData["AF_STATUS"] = new SelectList(db.tbl_req_af_status, "AF_STATUS", "AF_STATUS_NAME",tbl_req_af.AF_STATUS);
+
+            ViewData["AF_STATUS"] = new SelectList(db.tbl_req_af_status, "AF_STATUS", "AF_STATUS_NAME", tbl_req_af.AF_STATUS);
             return View(tbl_req_af);
         }
         private string GetFormattedMessageHTML()
         {
 
-            return "<b> เรียน IT SUPPORT </b>" + "</br>" + 
+            return "<b> เรียน IT SUPPORT </b>" + "</br>" +
                 "การขอสิทธิ ALFRESCO : " + Session["USER_NAME"].ToString() + "<br />" +
                  "รหัสพนักงาน : " + Session["USER_NO"].ToString() + "<br />" +
                  "เลขที่เอกสาร : " + ViewBag.EmpCount + "<br />" +
@@ -143,7 +154,7 @@ namespace IT_ASSET.Controllers
             {
                 return HttpNotFound();
             }
-           
+
             return View(tbl_req_af);
         }
 
@@ -152,15 +163,15 @@ namespace IT_ASSET.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "AF_ID,AF_CODE,MEM_NO,AF_DATE,ALLOW_STATUS,ID_APPLICANT,AF_SITE,AF_FOLDER,AF_STATUS,AF_NOTE,AF_REQUESTER,AF_APPROVE_OWNER,AF_APPROVE_OWNER_DATE,AF_APPROVE,AF_APPROVE_DATE,AF_OPEN_BY,AF_OPEN_DATE,AF_ASSIGN_TO,AF_ASSIGN_DATE,AF_SUBMIT_DATE,AF_CLOSE,AF_CLOSE_DATE,REQ_STATUS,AF_BILL_NO,AF_BILL_DATE,AF_COST,USER_CREATE,USER_UPDATE,CREATE_DATE,UPDATE_DATE")] tbl_req_af tbl_req_af)
+        public ActionResult Edit(tbl_req_af tbl_req_af)
         {
             if (ModelState.IsValid)
             {
                 db.Entry(tbl_req_af).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("IndexAF");
             }
-           
+
             return View(tbl_req_af);
         }
 
@@ -198,23 +209,78 @@ namespace IT_ASSET.Controllers
             }
             base.Dispose(disposing);
         }
-        public ActionResult FollowAF()
-        {
-            return View(db.View_req_af_follow.ToList());
-        }
-        public ActionResult Detail_AF(string id)
+
+        public ActionResult Details_AF(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            View_req_af_follow view_Req_Af_Follow= db.View_req_af_follow.Find(id);
+            View_req_af_follow view_Req_Af_Follow = db.View_req_af_follow.Find(id);
             if (view_Req_Af_Follow == null)
             {
                 return HttpNotFound();
             }
             return View(view_Req_Af_Follow);
         }
-      
+        public ActionResult Report()
+
+        {
+            Response.ClearContent();
+            Response.ContentType = "application/fore-download";
+            Response.AddHeader("content-disposition", " attachment; Filename=" + "REPORT_AF"+ DateTime.Now.ToString("ddMMyyyy") + ".xls");
+            Response.Write("<html xmlns:x=\"urn:schemas-microsoft-com:office:excel\">");
+            Response.Write("<head>");
+            Response.Write("<META http-equiv=\"content-Type\" content=\"text/html; charset=utf-8\">");
+            Response.Write("<!--[if gte mso 9]><xml>");
+            Response.Write("<x:ExcelWorkbook>");
+            Response.Write("<x:ExcelWorksheets>");
+            Response.Write("<x:ExcelWorksheet>");
+            Response.Write("<x:Name>Report Data</x:Name>");
+            Response.Write("<x:WorksheetOptions>");
+            Response.Write("<x:Print>");
+            Response.Write("<x:ValidprinterInfo/>");
+            Response.Write("<x:Print>");
+            Response.Write("<x:WorksheetOptions>");
+            Response.Write("<x:ExcelWorksheet>");
+            Response.Write("<x:ExcelWorksheets>");
+            Response.Write("<x:ExcelWorkbook>");
+            Response.Write("</xml>");
+            Response.Write("<![endif] --> ");
+
+
+            View("~/Views/ReqAFRegister/Report.cshtml", db.View_req_af_follow.ToList()).ExecuteResult(this.ControllerContext);
+            Response.Flush();
+            Response.End();
+            return View();
+
+
+        }
+        public ActionResult Details_Print(string id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            View_req_af_follow view_Req_Af_Follow = db.View_req_af_follow.Find(id);
+            if (view_Req_Af_Follow == null)
+            {
+                return HttpNotFound();
+            }
+            return View(view_Req_Af_Follow);
+        }
+        public ActionResult PrintPartialViewToPdf(string id)
+        {
+            using (IT_ASSET_MANAGEMENTEntities db = new IT_ASSET_MANAGEMENTEntities())
+            {
+                View_req_af_follow customer = db.View_req_af_follow.FirstOrDefault(c => c.AF_CODE == id);
+
+                var report = new PartialViewAsPdf("~/Views/ReqAFRegister/Details_Print.cshtml", customer);
+                return report;
+            }
+
+        }
     }
-}
+
+    }
+

@@ -752,8 +752,8 @@
     </FunctionImport>
     <EntitySet Name="tbl_req_af" EntityType="IT_ASSET_MANAGEMENTModel.tbl_req_af" />
     <EntitySet Name="View_req_af_register" EntityType="IT_ASSET_MANAGEMENTModel.View_req_af_register" />
-    <EntitySet Name="View_req_af_follow" EntityType="IT_ASSET_MANAGEMENTModel.View_req_af_follow" />
     <EntitySet Name="tbl_req_allow_status" EntityType="IT_ASSET_MANAGEMENTModel.tbl_req_allow_status" />
+    <EntitySet Name="View_req_af_follow" EntityType="IT_ASSET_MANAGEMENTModel.View_req_af_follow" />
   </EntityContainer>
   <EntityType Name="View_inc_status">
     <Key>
@@ -984,6 +984,10 @@
     <Property Name="USER_UPDATE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="CREATE_DATE" Type="DateTime" Precision="3" />
     <Property Name="UPDATE_DATE" Type="DateTime" Precision="3" />
+    <Property Name="AF_IT_COMMENT" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="AF_IT_COMMENTER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AF_IT_MANAGER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AF_IT_DATE" Type="DateTime" Precision="3" />
   </EntityType>
   <EntityType Name="View_req_af_register">
     <Key>
@@ -1027,11 +1031,16 @@
     <Property Name="APPROVE_EMAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="APPROVE_ROLE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
   </EntityType>
+  <EntityType Name="tbl_req_allow_status">
+    <Key>
+      <PropertyRef Name="ALLOW_STATUS" />
+    </Key>
+    <Property Name="ALLOW_STATUS" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="ALLOW_DESC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
   <EntityType Name="View_req_af_follow">
     <Key>
       <PropertyRef Name="AF_CODE" />
-      <PropertyRef Name="IT_NAME" />
-      <PropertyRef Name="ASSIGN_NAME" />
     </Key>
     <Property Name="AF_CODE" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
     <Property Name="AF_DATE" Type="DateTime" Precision="3" />
@@ -1078,14 +1087,14 @@
     <Property Name="APPROVE_EXTENSION" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
     <Property Name="APPROVE_EMAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="AF_OPEN_BY" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
-    <Property Name="IT_NAME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IT_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="IT_SURNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="IT_SECTION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="IT_EXTENSION" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
     <Property Name="IT_EMAIL" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
     <Property Name="AF_OPEN_DATE" Type="DateTime" Precision="3" />
     <Property Name="AF_ASSIGN_TO" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
-    <Property Name="ASSIGN_NAME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ASSIGN_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="ASSIGN_SURNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="ASSIGN_SECTION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="ASSIGN_EXTENSION" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
@@ -1098,12 +1107,5 @@
     <Property Name="CLOSE_SECTION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="CLOSE_EXTENSION" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
     <Property Name="CLOSE_EMAIL" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
-  </EntityType>
-  <EntityType Name="tbl_req_allow_status">
-    <Key>
-      <PropertyRef Name="ALLOW_STATUS" />
-    </Key>
-    <Property Name="ALLOW_STATUS" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
-    <Property Name="ALLOW_DESC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
   </EntityType>
 </Schema>

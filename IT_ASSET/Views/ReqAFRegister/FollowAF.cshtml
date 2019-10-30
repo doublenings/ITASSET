@@ -4,110 +4,396 @@
     ViewBag.Title = "FollowAF";
 }
 
-<h2>ติดตามการขอสิทธิ ALFRESCO</h2>
+<h2>FollowAF</h2>
 
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.AF_DATE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.USER_NO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.USER_NAME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.USER_NAME_EN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.USER_POSITION)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.USER_DEPARTMENT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.USER_EXTENSION)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.USER_EMAIL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.USER_ROLE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ALLOW_STATUS)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ALLOW_DESC)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AF_SITE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AF_FOLDER)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AF_STATUS_NAME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AF_STATUS_DESC)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AF_STATUS)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AF_NOTE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AF_REQUESTER)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NAME_REQUESTER)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NAME_EN_REQUESTER)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.POSITION_REQUESTER)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DEPARTMENT_REQUESTER)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EXTENSION_REQUESTER)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EMAIL_REQUESTER)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ROLE_REQUESTER)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AF_APPROVE_OWNER)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AF_APPROVE_OWNER_DATE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OWNER_NAME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OWNER_NAME_EN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OWNER_POSITION)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OWNER_DEPARTMENT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OWNER_EXTENSION)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OWNER_EMAIL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.REQ_STATUS)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.STA_DESC)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AF_APPROVE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AF_APPROVE_DATE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.APPROVE_NAME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.APPROVE_EN_NAME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.APPROVE_POSITION)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.APPROVE_DEPARTMENT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.APPROVE_EXTENSION)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.APPROVE_EMAIL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AF_OPEN_BY)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IT_SURNAME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IT_SECTION)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IT_EXTENSION)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IT_EMAIL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AF_OPEN_DATE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AF_ASSIGN_TO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ASSIGN_SURNAME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ASSIGN_SECTION)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ASSIGN_EXTENSION)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ASSIGN_EMAIL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AF_ASSIGN_DATE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AF_CLOSE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AF_CLOSE_DATE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CLOSE_NAME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CLOSE_SURNAME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CLOSE_SECTION)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CLOSE_EXTENSION)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CLOSE_EMAIL)
+        </th>
+        <th></th>
+    </tr>
 
-<table class="table table-bordered table-hover text-nowrap fixed">
-    <thead style="background-color:#50575D; color:white">
-        <tr>
-            <th>
-                เลขที่เอกสาร
-            </th>
-            <th>
-                รหัสพนักงานของผู้ขอสิทธิ
-            </th>
-
-            <th>
-                วันที่แจ้ง
-            </th>
-
-            <th>
-                สิทธิการใช้งาน
-            </th>
-
-            
-            <th>
-                Site
-            </th>
-            <th>
-                Folder
-            </th>
-
-            <th>
-                สถานะสิทธิ
-            </th>
-            <th>
-                ชื่อผู้แจ้ง
-            </th>
-            <th>
-                ผู้อนุมัติจากเจ้าของเอกสาร
-            </th>
-            <th>
-                วันที่อนุมัติจากเจ้าของเอกสาร
-            </th>
-            <th>
-                ผู้อนุมิติ(ผู้จัดการฝ่ายขึ้นไป)
-            </th>
-            <th>
-                วันที่อนุมัติ
-            </th>
-            <th>
-                สถานะของงาน
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    @foreach (var item in Model)
-    {
-<tr>
-    <td>
-        <a href="@Url.Action("Details_AF", "ReqAFRegister", new { id = item.AF_CODE })" style="color:black;"> @Html.DisplayFor(modelItem => item.AF_CODE)</a>
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.USER_NO)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.AF_DATE)
-    </td>
-
-    <td>
-        @Html.DisplayFor(modelItem => item.ALLOW_DESC)
-    </td>
-
-  
-    <td>
-        @Html.DisplayFor(modelItem => item.AF_SITE)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.AF_FOLDER)
-    </td>
-
-    <td>
-        @Html.DisplayFor(modelItem => item.AF_STATUS_NAME)
-    </td>
-
-    <td>
-        @Html.DisplayFor(modelItem => item.AF_REQUESTER)
-    </td>
-
-    <td>
-        @Html.DisplayFor(modelItem => item.AF_APPROVE_OWNER)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.AF_APPROVE_OWNER_DATE)
-    </td>
-
-    <td>
-        @Html.DisplayFor(modelItem => item.AF_APPROVE)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.AF_APPROVE_DATE)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.STA_DESC)
-    </td>
-
-</tr>
-    }
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.AF_DATE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.USER_NO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.USER_NAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.USER_NAME_EN)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.USER_POSITION)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.USER_DEPARTMENT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.USER_EXTENSION)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.USER_EMAIL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.USER_ROLE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ALLOW_STATUS)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ALLOW_DESC)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AF_SITE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AF_FOLDER)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AF_STATUS_NAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AF_STATUS_DESC)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AF_STATUS)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AF_NOTE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AF_REQUESTER)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NAME_REQUESTER)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NAME_EN_REQUESTER)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.POSITION_REQUESTER)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DEPARTMENT_REQUESTER)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EXTENSION_REQUESTER)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EMAIL_REQUESTER)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ROLE_REQUESTER)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AF_APPROVE_OWNER)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AF_APPROVE_OWNER_DATE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OWNER_NAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OWNER_NAME_EN)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OWNER_POSITION)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OWNER_DEPARTMENT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OWNER_EXTENSION)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OWNER_EMAIL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.REQ_STATUS)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.STA_DESC)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AF_APPROVE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AF_APPROVE_DATE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.APPROVE_NAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.APPROVE_EN_NAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.APPROVE_POSITION)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.APPROVE_DEPARTMENT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.APPROVE_EXTENSION)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.APPROVE_EMAIL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AF_OPEN_BY)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IT_SURNAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IT_SECTION)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IT_EXTENSION)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IT_EMAIL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AF_OPEN_DATE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AF_ASSIGN_TO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ASSIGN_SURNAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ASSIGN_SECTION)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ASSIGN_EXTENSION)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ASSIGN_EMAIL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AF_ASSIGN_DATE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AF_CLOSE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AF_CLOSE_DATE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CLOSE_NAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CLOSE_SURNAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CLOSE_SECTION)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CLOSE_EXTENSION)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CLOSE_EMAIL)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
 
 </table>

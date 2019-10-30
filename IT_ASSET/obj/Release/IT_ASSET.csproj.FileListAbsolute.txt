@@ -514,6 +514,7 @@ I:\IT_ASSET\IT_ASSET\IT_ASSET\IT_ASSET\bin\Antlr3.Runtime.dll
 I:\IT_ASSET\IT_ASSET\IT_ASSET\IT_ASSET\bin\dotnet-aspnet-codegenerator-design.exe
 I:\IT_ASSET\IT_ASSET\IT_ASSET\IT_ASSET\bin\EntityFramework.dll
 I:\IT_ASSET\IT_ASSET\IT_ASSET\IT_ASSET\bin\EntityFramework.SqlServer.dll
+I:\IT_ASSET\IT_ASSET\IT_ASSET\IT_ASSET\bin\EPPlus.dll
 I:\IT_ASSET\IT_ASSET\IT_ASSET\IT_ASSET\bin\Microsoft.AspNetCore.Razor.Language.dll
 I:\IT_ASSET\IT_ASSET\IT_ASSET\IT_ASSET\bin\Microsoft.CodeAnalysis.CSharp.dll
 I:\IT_ASSET\IT_ASSET\IT_ASSET\IT_ASSET\bin\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
@@ -552,6 +553,7 @@ I:\IT_ASSET\IT_ASSET\IT_ASSET\IT_ASSET\bin\NuGet.Frameworks.dll
 I:\IT_ASSET\IT_ASSET\IT_ASSET\IT_ASSET\bin\PagedList.dll
 I:\IT_ASSET\IT_ASSET\IT_ASSET\IT_ASSET\bin\PagedList.Mvc.dll
 I:\IT_ASSET\IT_ASSET\IT_ASSET\IT_ASSET\bin\Remotion.Linq.dll
+I:\IT_ASSET\IT_ASSET\IT_ASSET\IT_ASSET\bin\Rotativa.dll
 I:\IT_ASSET\IT_ASSET\IT_ASSET\IT_ASSET\bin\RouteJs.dll
 I:\IT_ASSET\IT_ASSET\IT_ASSET\IT_ASSET\bin\RouteJs.Mvc5.dll
 I:\IT_ASSET\IT_ASSET\IT_ASSET\IT_ASSET\bin\System.Buffers.dll
@@ -588,6 +590,7 @@ I:\IT_ASSET\IT_ASSET\IT_ASSET\IT_ASSET\bin\Microsoft.Build.Utilities.Core.dll
 I:\IT_ASSET\IT_ASSET\IT_ASSET\IT_ASSET\bin\dotnet-aspnet-codegenerator-design.xml
 I:\IT_ASSET\IT_ASSET\IT_ASSET\IT_ASSET\bin\EntityFramework.xml
 I:\IT_ASSET\IT_ASSET\IT_ASSET\IT_ASSET\bin\EntityFramework.SqlServer.xml
+I:\IT_ASSET\IT_ASSET\IT_ASSET\IT_ASSET\bin\EPPlus.xml
 I:\IT_ASSET\IT_ASSET\IT_ASSET\IT_ASSET\bin\Microsoft.AspNetCore.Razor.Language.xml
 I:\IT_ASSET\IT_ASSET\IT_ASSET\IT_ASSET\bin\Microsoft.CodeAnalysis.pdb
 I:\IT_ASSET\IT_ASSET\IT_ASSET\IT_ASSET\bin\Microsoft.CodeAnalysis.xml
@@ -692,4 +695,3 @@ I:\IT_ASSET\IT_ASSET\IT_ASSET\IT_ASSET\obj\Release\IT_ASSET.csproj.CoreCompileIn
 I:\IT_ASSET\IT_ASSET\IT_ASSET\IT_ASSET\obj\Release\IT_ASSET.csproj.CopyComplete
 I:\IT_ASSET\IT_ASSET\IT_ASSET\IT_ASSET\obj\Release\IT_ASSET.dll
 I:\IT_ASSET\IT_ASSET\IT_ASSET\IT_ASSET\obj\Release\IT_ASSET.pdb
-I:\IT_ASSET\IT_ASSET\IT_ASSET\IT_ASSET\obj\Release\IT_ASSET.csprojAssemblyReference.cache

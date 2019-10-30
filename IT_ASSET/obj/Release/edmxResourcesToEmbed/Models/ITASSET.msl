@@ -846,6 +846,10 @@
     <EntitySetMapping Name="tbl_req_af">
       <EntityTypeMapping TypeName="IT_ASSET_MANAGEMENTModel.tbl_req_af">
         <MappingFragment StoreEntitySet="tbl_req_af">
+          <ScalarProperty Name="AF_IT_DATE" ColumnName="AF_IT_DATE" />
+          <ScalarProperty Name="AF_IT_MANAGER" ColumnName="AF_IT_MANAGER" />
+          <ScalarProperty Name="AF_IT_COMMENTER" ColumnName="AF_IT_COMMENTER" />
+          <ScalarProperty Name="AF_IT_COMMENT" ColumnName="AF_IT_COMMENT" />
           <ScalarProperty Name="UPDATE_DATE" ColumnName="UPDATE_DATE" />
           <ScalarProperty Name="CREATE_DATE" ColumnName="CREATE_DATE" />
           <ScalarProperty Name="USER_UPDATE" ColumnName="USER_UPDATE" />
@@ -921,6 +925,14 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="tbl_req_allow_status">
+      <EntityTypeMapping TypeName="IT_ASSET_MANAGEMENTModel.tbl_req_allow_status">
+        <MappingFragment StoreEntitySet="tbl_req_allow_status">
+          <ScalarProperty Name="ALLOW_DESC" ColumnName="ALLOW_DESC" />
+          <ScalarProperty Name="ALLOW_STATUS" ColumnName="ALLOW_STATUS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="View_req_af_follow">
       <EntityTypeMapping TypeName="IT_ASSET_MANAGEMENTModel.View_req_af_follow">
         <MappingFragment StoreEntitySet="View_req_af_follow">
@@ -989,14 +1001,6 @@
           <ScalarProperty Name="USER_NO" ColumnName="USER_NO" />
           <ScalarProperty Name="AF_DATE" ColumnName="AF_DATE" />
           <ScalarProperty Name="AF_CODE" ColumnName="AF_CODE" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="tbl_req_allow_status">
-      <EntityTypeMapping TypeName="IT_ASSET_MANAGEMENTModel.tbl_req_allow_status">
-        <MappingFragment StoreEntitySet="tbl_req_allow_status">
-          <ScalarProperty Name="ALLOW_DESC" ColumnName="ALLOW_DESC" />
-          <ScalarProperty Name="ALLOW_STATUS" ColumnName="ALLOW_STATUS" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

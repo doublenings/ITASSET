@@ -76,8 +76,8 @@ namespace IT_ASSET.Models
         public virtual DbSet<tbl_req_status> tbl_req_status { get; set; }
         public virtual DbSet<tbl_req_af> tbl_req_af { get; set; }
         public virtual DbSet<View_req_af_register> View_req_af_register { get; set; }
-        public virtual DbSet<View_req_af_follow> View_req_af_follow { get; set; }
         public virtual DbSet<tbl_req_allow_status> tbl_req_allow_status { get; set; }
+        public virtual DbSet<View_req_af_follow> View_req_af_follow { get; set; }
     
         public virtual int AddIncident(ObjectParameter iNC_CODE, Nullable<System.DateTime> iNC_DATE, string iNC_REQUESTER, string iNC_TOPIC, string iNC_STATUS, string iNC_DESCRIPTION)
         {

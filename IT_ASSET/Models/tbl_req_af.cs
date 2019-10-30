@@ -43,5 +43,9 @@ namespace IT_ASSET.Models
         public string USER_UPDATE { get; set; }
         public Nullable<System.DateTime> CREATE_DATE { get; set; }
         public Nullable<System.DateTime> UPDATE_DATE { get; set; }
+        public string AF_IT_COMMENT { get; set; }
+        public string AF_IT_COMMENTER { get; set; }
+        public string AF_IT_MANAGER { get; set; }
+        public Nullable<System.DateTime> AF_IT_DATE { get; set; }
     }
 }

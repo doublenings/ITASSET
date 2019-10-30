@@ -56,6 +56,9 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="EPPlus, Version=4.5.3.2, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.4.5.3.2\lib\net40\EPPlus.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.AspNetCore.Razor.Language, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNetCore.Razor.Language.2.2.0\lib\net46\Microsoft.AspNetCore.Razor.Language.dll</HintPath>
     </Reference>
@@ -168,8 +171,12 @@
     <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
       <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationCore" />
     <Reference Include="Remotion.Linq, Version=2.2.0.0, Culture=neutral, PublicKeyToken=fee00910d6e5f53b, processorArchitecture=MSIL">
       <HintPath>..\packages\Remotion.Linq.2.2.0\lib\net45\Remotion.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="Rotativa, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Rotativa.1.7.3\lib\net461\Rotativa.dll</HintPath>
     </Reference>
     <Reference Include="RouteJs, Version=2.2.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\RouteJs.Mvc5.2.2.0\lib\net45\RouteJs.dll</HintPath>
@@ -468,6 +475,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\AF.cs" />
     <Compile Include="Models\incident_case.cs" />
     <Compile Include="Models\ITASSET.Context.cs">
       <AutoGen>True</AutoGen>
@@ -6962,6 +6970,7 @@
     <Content Include="Content\dist\js\demo.js" />
     <Content Include="Content\dist\js\pages\dashboard.js" />
     <Content Include="Content\dist\js\pages\dashboard2.js" />
+    <Content Include="Content\img\Logo-01.png" />
     <Content Include="Content\img\Logo.jpg" />
     <Content Include="Content\PagedList.css" />
     <Content Include="Content\plugins\bootstrap-slider\bootstrap-slider.js" />
@@ -7173,6 +7182,7 @@
     <Content Include="Content\plugins\timepicker\bootstrap-timepicker.js" />
     <Content Include="Content\plugins\timepicker\bootstrap-timepicker.min.css" />
     <Content Include="Content\plugins\timepicker\bootstrap-timepicker.min.js" />
+    <Content Include="Content\Style.css" />
     <Content Include="Content\themes\base\accordion.css" />
     <Content Include="Content\themes\base\all.css" />
     <Content Include="Content\themes\base\autocomplete.css" />
@@ -7228,6 +7238,10 @@
       <DependentUpon>ITASSET.edmx</DependentUpon>
       <LastGenOutput>ITASSET.cs</LastGenOutput>
     </Content>
+    <Content Include="Rotativa\help-wkhtmltoimage.txt" />
+    <Content Include="Rotativa\help-wkhtmltopdf.txt" />
+    <Content Include="Rotativa\wkhtmltoimage.exe" />
+    <Content Include="Rotativa\wkhtmltopdf.exe" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <EntityDeploy Include="Models\ITASSET.edmx">
@@ -7720,6 +7734,7 @@
     <Content Include="Content\plugins\dist\css\adminlte.min.css.map" />
     <Content Include="Content\plugins\input-mask\phone-codes\phone-be.json" />
     <Content Include="Content\plugins\input-mask\phone-codes\phone-codes.json" />
+    <Content Include="App_Browsers\qt.browser" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Properties\PublishProfiles\CustomProfile1.pubxml" />
     <None Include="Properties\PublishProfiles\CustomProfile2.pubxml" />
@@ -7783,13 +7798,16 @@
     <Content Include="Views\tbl_incident_case\Edit.cshtml" />
     <Content Include="Views\tbl_incident_case\Index.cshtml" />
     <Content Include="Views\ReqAFRegister\Delete.cshtml" />
-    <Content Include="Views\ReqAFRegister\Edit.cshtml" />
     <Content Include="Views\ReqAFRegister\Index.cshtml" />
     <Content Include="Views\ReqAFRegister\Create.cshtml" />
-    <Content Include="Views\ReqAFRegister\FollowAF.cshtml" />
     <Content Include="Views\Home\Welcome.cshtml" />
     <Content Include="Views\ReqAFRegister\Details_AF.cshtml" />
     <Content Include="Views\ReqAFRegister\Details.cshtml" />
+    <Content Include="Views\ReqAFRegister\Edit.cshtml" />
+    <Content Include="Views\ReqAFRegister\FollowAF.cshtml" />
+    <Content Include="Views\ReqAFRegister\IndexAF.cshtml" />
+    <Content Include="Views\ReqAFRegister\Report.cshtml" />
+    <Content Include="Views\ReqAFRegister\Details_Print.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

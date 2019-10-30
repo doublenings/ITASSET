@@ -4,236 +4,139 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<h2>รายละเอียดติดตามการขอสิทธิ ALFRESCO</h2>
+<hr />
 
-<div>
-    <h4>View_req_af_register</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.USER_NO)
-        </dt>
+<table class="table table-bordered table-hover">
+    <tbody>
+        <tr>
+            <td>
+                <b>เลขที่เอกสาร</b>
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.AF_CODE)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>รหัสพนักงานของผู้ขอสิทธิ</b>
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.USER_NO)
+            </td>
+        </tr>
 
-        <dd>
-            @Html.DisplayFor(model => model.USER_NO)
-        </dd>
+        <tr>
+            <td>
+                <b>วันที่แจ้ง</b>
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.AF_DATE)
+            </td>
+        <tr>
+            <td>
+                <b>สิทธิการใช้งาน</b>
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.ALLOW_DESC)
+            </td>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.USER_NAME)
-        </dt>
+        <tr>
+            <td>
+                <b>Site</b>
+            <td>
+                @Html.DisplayFor(model => model.AF_SITE)
+            </td>
+        <tr>
+            <td>
+                <b>Folder</b>
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.AF_FOLDER)
+            </td>
+        <tr>
+            <td>
+                <b>สถานะสิทธิ</b>
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.AF_STATUS_NAME)
+            </td>
+        <tr>
+            <td>
+                <b>หมายเหตุ</b>
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.AF_NOTE)
+            </td>
+        <tr>
+            <td>
+                <b>รหัสพนักงานผู้แจ้ง</b>
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.AF_REQUESTER)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>ชื่อผู้แจ้ง </b>
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.USER_NAME)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>  เบอร์ผู้แจ้ง </b>
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.USER_EXTENSION)
+            </td>
+        </tr>
 
-        <dd>
-            @Html.DisplayFor(model => model.USER_NAME)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.USER_NAME_EN)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.USER_NAME_EN)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.USER_POSITION)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.USER_POSITION)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.USER_DEPARTMENT)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.USER_DEPARTMENT)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.USER_EXTENSION)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.USER_EXTENSION)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.USER_EMAIL)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.USER_EMAIL)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.USER_ROLE)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.USER_ROLE)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.AF_DATE)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.AF_DATE)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ALLOW_STATUS)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ALLOW_STATUS)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ALLOW_DESC)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ALLOW_DESC)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.AF_SITE)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.AF_SITE)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.AF_FOLDER)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.AF_FOLDER)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.AF_STATUS)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.AF_STATUS)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.AF_STATUS_NAME)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.AF_STATUS_NAME)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.AF_STATUS_DESC)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.AF_STATUS_DESC)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.AF_NOTE)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.AF_NOTE)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.AF_REQUESTER)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.AF_REQUESTER)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.NAME_REQUESTER)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.NAME_REQUESTER)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.NAME_EN_REQUESTER)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.NAME_EN_REQUESTER)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.POSITION_REQUESTER)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.POSITION_REQUESTER)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.DEPARTMENT_REQUESTER)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.DEPARTMENT_REQUESTER)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.EXTENSION_REQUESTER)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.EXTENSION_REQUESTER)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.EMAIL_REQUESTER)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.EMAIL_REQUESTER)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ROLE_REQUESTER)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ROLE_REQUESTER)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.REQ_STATUS)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.REQ_STATUS)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.STA_DESC)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.STA_DESC)
-        </dd>
-        <dd>@Html.DisplayFor(model => model.AF_APPROVE)</dd>
-        <dd>@Html.DisplayFor(model => model.AF_APPROVE_DATE)</dd>
-        <dd>@Html.DisplayFor(model => model.APPROVE_NAME)</dd>
-        <dd>
-            @Html.DisplayFor(model => model.APPROVE_POSITION)
-    </dd>
-
-    </dl>
-</div>
+     
+        <tr>
+            <td>
+                <b>รหัสพนักงานผู้อนุมัติ (ผู้จัดการฝ่ายขึ้นไป)</b>
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.AF_APPROVE)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>ชื่อ-สกุลพนักงานผู้อนุมัติ (ผู้จัดการฝ่ายขึ้นไป)</b>
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.APPROVE_NAME)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>ตำแหน่งพนักงานผู้อนุมัติ (ผู้จัดการฝ่ายขึ้นไป)</b>
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.APPROVE_POSITION)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>เบอร์ติดต่อภายในพนักงานผู้อนุมัติ (ผู้จัดการฝ่ายขึ้นไป)</b>
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.APPROVE_EXTENSION)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>สถานะของงาน</b>
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.STA_DESC)
+            </td>
+        </tr>
+       
+       
+</table>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.AF_CODE }) |
     @Html.ActionLink("Back to List", "Index")

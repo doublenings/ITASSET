@@ -8,10 +8,10 @@
 <div class="col-md-12 pull-left" style="font-size:16px;color:red;">
     @Html.ActionLink(" ", "Create", null, new { @class = "btn btn-danger btn-sm glyphicon glyphicon-plus" })
     แจ้งปัญหา
-    <div class="pull-right col-md-12 col-md-4">
+    <div class="pull-right col-md-12 col-md-6">
         <form class="pull-right" role="search">
             <div class="input-group pull-right">
-                @Html.TextBox("Search", null, new { @class = "form-control", @placeholder = "Search..." })
+                @Html.TextBox("Search", null, new { @class = "form-control", @placeholder = "เลขที่เอกสาร/หัวข้อการแจ้ง/รหัสพนักงานผู้แจ้ง" })
                 <div class="input-group-btn">
                     <button class="btn btn-default pull-right" type="submit"><i class="glyphicon glyphicon-search"></i></button>
                 </div>

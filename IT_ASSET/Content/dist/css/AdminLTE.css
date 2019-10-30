@@ -19,10 +19,10 @@ body {
   height: 100%;
 }
 body {
-  font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-weight: 400;
-  overflow-x: hidden;
-  overflow-y: auto;
+    font-family: 'Sarabun', sans-serif;
+    font-weight: 400;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 /* Layout */
 .wrapper {
@@ -164,7 +164,7 @@ h6,
 .h4,
 .h5,
 .h6 {
-  font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Sarabun', sans-serif;
 }
 /* General Links */
 a {
@@ -268,9 +268,9 @@ a:focus {
 .main-header .sidebar-toggle:active {
   background: transparent;
 }
-.main-header .sidebar-toggle.fa5 {
-  font-family: "Font Awesome\ 5 Free";
-}
+    .main-header .sidebar-toggle.fa5 {
+        font-family: 'Sarabun', sans-serif;
+    }
 .main-header .sidebar-toggle.fa5:before {
   content: "\f0c9";
   font-weight: 900;
@@ -293,20 +293,20 @@ a:focus {
   line-height: .9;
 }
 .main-header .logo {
-  -webkit-transition: width 0.3s ease-in-out;
-  -o-transition: width 0.3s ease-in-out;
-  transition: width 0.3s ease-in-out;
-  display: block;
-  float: left;
-  height: 50px;
-  font-size: 20px;
-  line-height: 50px;
-  text-align: center;
-  width: 230px;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  padding: 0 15px;
-  font-weight: 300;
-  overflow: hidden;
+    -webkit-transition: width 0.3s ease-in-out;
+    -o-transition: width 0.3s ease-in-out;
+    transition: width 0.3s ease-in-out;
+    display: block;
+    float: left;
+    height: 50px;
+    font-size: 20px;
+    line-height: 50px;
+    text-align: center;
+    width: 230px;
+    font-family: 'Sarabun', sans-serif;
+    padding: 0 15px;
+    font-weight: 300;
+    overflow: hidden;
 }
 .main-header .logo img {
   padding: 4px;
