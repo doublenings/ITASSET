@@ -1004,5 +1004,84 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="tbl_req_auth">
+      <EntityTypeMapping TypeName="IT_ASSET_MANAGEMENTModel.tbl_req_auth">
+        <MappingFragment StoreEntitySet="tbl_req_auth">
+          <ScalarProperty Name="AUTH_DESC" ColumnName="AUTH_DESC" />
+          <ScalarProperty Name="REQ_AUTH" ColumnName="REQ_AUTH" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_req_sd">
+      <EntityTypeMapping TypeName="IT_ASSET_MANAGEMENTModel.tbl_req_sd">
+        <MappingFragment StoreEntitySet="tbl_req_sd">
+          <ScalarProperty Name="AF_IT_DATE" ColumnName="AF_IT_DATE" />
+          <ScalarProperty Name="AF_IT_MANAGER" ColumnName="AF_IT_MANAGER" />
+          <ScalarProperty Name="AF_IT_COMMENTER" ColumnName="AF_IT_COMMENTER" />
+          <ScalarProperty Name="AF_IT_COMMENT" ColumnName="AF_IT_COMMENT" />
+          <ScalarProperty Name="UPDATE_DATE" ColumnName="UPDATE_DATE" />
+          <ScalarProperty Name="CREATE_DATE" ColumnName="CREATE_DATE" />
+          <ScalarProperty Name="USER_UPDATE" ColumnName="USER_UPDATE" />
+          <ScalarProperty Name="USER_CREATE" ColumnName="USER_CREATE" />
+          <ScalarProperty Name="REQ_STATUS" ColumnName="REQ_STATUS" />
+          <ScalarProperty Name="AF_CLOSE_DATE" ColumnName="AF_CLOSE_DATE" />
+          <ScalarProperty Name="SD_CLOSE" ColumnName="SD_CLOSE" />
+          <ScalarProperty Name="SD_SUBMIT_DATE" ColumnName="SD_SUBMIT_DATE" />
+          <ScalarProperty Name="SD_ASSIGN_DATE" ColumnName="SD_ASSIGN_DATE" />
+          <ScalarProperty Name="SD_ASSIGN_TO" ColumnName="SD_ASSIGN_TO" />
+          <ScalarProperty Name="SD_OPEN_DATE" ColumnName="SD_OPEN_DATE" />
+          <ScalarProperty Name="SD_OPEN_BY" ColumnName="SD_OPEN_BY" />
+          <ScalarProperty Name="SD_APPROVE_DATE" ColumnName="SD_APPROVE_DATE" />
+          <ScalarProperty Name="SD_APPROVE" ColumnName="SD_APPROVE" />
+          <ScalarProperty Name="SD_APPROVE_OWNER_DATE" ColumnName="SD_APPROVE_OWNER_DATE" />
+          <ScalarProperty Name="SD_APPROVE_OWNER" ColumnName="SD_APPROVE_OWNER" />
+          <ScalarProperty Name="SD_REQUESTER" ColumnName="SD_REQUESTER" />
+          <ScalarProperty Name="REQ_AUTH" ColumnName="REQ_AUTH" />
+          <ScalarProperty Name="SD_NOTE" ColumnName="SD_NOTE" />
+          <ScalarProperty Name="SD_FOLDER" ColumnName="SD_FOLDER" />
+          <ScalarProperty Name="SD_DRIVE" ColumnName="SD_DRIVE" />
+          <ScalarProperty Name="ALLOW_STATUS" ColumnName="ALLOW_STATUS" />
+          <ScalarProperty Name="SD_DATE" ColumnName="SD_DATE" />
+          <ScalarProperty Name="USER_NO" ColumnName="USER_NO" />
+          <ScalarProperty Name="SD_CODE" ColumnName="SD_CODE" />
+          <ScalarProperty Name="SD_ID" ColumnName="SD_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_req_sd">
+      <EntityTypeMapping TypeName="IT_ASSET_MANAGEMENTModel.View_req_sd">
+        <MappingFragment StoreEntitySet="View_req_sd">
+          <ScalarProperty Name="STA_DESC" ColumnName="STA_DESC" />
+          <ScalarProperty Name="REQ_STATUS" ColumnName="REQ_STATUS" />
+          <ScalarProperty Name="SD_APPROVE_DATE" ColumnName="SD_APPROVE_DATE" />
+          <ScalarProperty Name="SD_APPROVE" ColumnName="SD_APPROVE" />
+          <ScalarProperty Name="SD_APPROVE_OWNER_DATE" ColumnName="SD_APPROVE_OWNER_DATE" />
+          <ScalarProperty Name="SD_APPROVE_OWNER" ColumnName="SD_APPROVE_OWNER" />
+          <ScalarProperty Name="REQUESTER_EMAIL" ColumnName="REQUESTER_EMAIL" />
+          <ScalarProperty Name="REQUESTER_EXTENSION" ColumnName="REQUESTER_EXTENSION" />
+          <ScalarProperty Name="REQUESTER_DEPARTMENT" ColumnName="REQUESTER_DEPARTMENT" />
+          <ScalarProperty Name="REQUESTER_POSITION" ColumnName="REQUESTER_POSITION" />
+          <ScalarProperty Name="REQUESTER_EN_NAME" ColumnName="REQUESTER_EN_NAME" />
+          <ScalarProperty Name="REQUESTER_NAME" ColumnName="REQUESTER_NAME" />
+          <ScalarProperty Name="SD_REQUESTER" ColumnName="SD_REQUESTER" />
+          <ScalarProperty Name="AUTH_DESC" ColumnName="AUTH_DESC" />
+          <ScalarProperty Name="REQ_AUTH" ColumnName="REQ_AUTH" />
+          <ScalarProperty Name="SD_NOTE" ColumnName="SD_NOTE" />
+          <ScalarProperty Name="SD_FOLDER" ColumnName="SD_FOLDER" />
+          <ScalarProperty Name="SD_DRIVE" ColumnName="SD_DRIVE" />
+          <ScalarProperty Name="ALLOW_DESC" ColumnName="ALLOW_DESC" />
+          <ScalarProperty Name="ALLOW_STATUS" ColumnName="ALLOW_STATUS" />
+          <ScalarProperty Name="SD_DATE" ColumnName="SD_DATE" />
+          <ScalarProperty Name="USER_EMAIL" ColumnName="USER_EMAIL" />
+          <ScalarProperty Name="USER_EXTENSION" ColumnName="USER_EXTENSION" />
+          <ScalarProperty Name="USER_DEPARTMENT" ColumnName="USER_DEPARTMENT" />
+          <ScalarProperty Name="USER_POSITION" ColumnName="USER_POSITION" />
+          <ScalarProperty Name="USER_NAME_EN" ColumnName="USER_NAME_EN" />
+          <ScalarProperty Name="USER_NAME" ColumnName="USER_NAME" />
+          <ScalarProperty Name="USER_NO" ColumnName="USER_NO" />
+          <ScalarProperty Name="SD_CODE" ColumnName="SD_CODE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

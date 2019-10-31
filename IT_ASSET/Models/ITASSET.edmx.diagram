@@ -58,6 +58,7 @@
         <EntityTypeShape EntityType="IT_ASSET_MANAGEMENTModel.View_req_af_follow" Width="1.5" PointX="12.375" PointY="23.75" />
         <EntityTypeShape EntityType="IT_ASSET_MANAGEMENTModel.tbl_req_auth" Width="1.5" PointX="21.375" PointY="4.75" />
         <EntityTypeShape EntityType="IT_ASSET_MANAGEMENTModel.tbl_req_sd" Width="1.5" PointX="23.375" PointY="3.75" />
+        <EntityTypeShape EntityType="IT_ASSET_MANAGEMENTModel.View_req_sd" Width="1.5" PointX="0.75" PointY="24.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

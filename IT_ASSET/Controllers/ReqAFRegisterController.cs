@@ -95,7 +95,7 @@ namespace IT_ASSET.Controllers
 
                     var email = Session["USER_EMAIL"].ToString();
                     MailMessage mm = new MailMessage();
-                    mm.To.Add("itservice@pranda.co.th");
+                    mm.To.Add("testuser@pranda.co.th");
                     mm.From = new MailAddress(email);
                     mm.Subject = "แบบฟอร์มการขอสิทธิ ALFRESCO";
 
@@ -131,11 +131,24 @@ namespace IT_ASSET.Controllers
         }
         private string GetFormattedMessageHTML()
         {
+            var link = "สามารถกดอนุมัติได้จาก <a href=https://localhost:44321/ >คลิกที่นี่"+"</a>";
+            return "<b> เรียนผู้จัดการฝ่าย  </b>" + "</br>" +
+                "การขอสิทธิ ALFRESCO : " + Session["USER_NAME"].ToString() + "<br />" +
+                 "รหัสพนักงาน : " + Session["USER_NO"].ToString() + "<br />" +
+                 "เลขที่เอกสาร : " + ViewBag.EmpCount + "<br />" +
+                 link + "<br />" +
+                 "สามารถติดต่อสอบถาม ติดต่อเบอร์" + " " + Session["USER_EXTENSION"].ToString() + "<br/>" +
+                 "<p>" + "จึงเรียนมาเพื่อทราบ" + "</p>";
 
+        }
+
+        private string GetFormattedMessageIT()
+        {
             return "<b> เรียน IT SUPPORT </b>" + "</br>" +
                 "การขอสิทธิ ALFRESCO : " + Session["USER_NAME"].ToString() + "<br />" +
                  "รหัสพนักงาน : " + Session["USER_NO"].ToString() + "<br />" +
                  "เลขที่เอกสาร : " + ViewBag.EmpCount + "<br />" +
+                 "ได้รับการอนุมัติจากผุ้จัดการฝ่ายเรียบร้อยแล้ว" + "<br/>" +
                  "สามารถติดต่อสอบถาม ติดต่อเบอร์" + " " + Session["USER_EXTENSION"].ToString() + "<br/>" +
                  "<p>" + "จึงเรียนมาเพื่อทราบ" + "</p>";
 
@@ -169,6 +182,33 @@ namespace IT_ASSET.Controllers
             {
                 db.Entry(tbl_req_af).State = EntityState.Modified;
                 db.SaveChanges();
+
+                ViewBag.EmpCount = tbl_req_af.AF_CODE.ToString();
+                var email = Session["USER_EMAIL"].ToString();
+                MailMessage mm = new MailMessage();
+                mm.To.Add("ITservice@pranda.co.th");
+                mm.From = new MailAddress(email);
+                mm.Subject = "แบบฟอร์มการขอสิทธิ ALFRESCO";
+
+                mm.IsBodyHtml = true;
+                mm.Body = GetFormattedMessageIT();
+
+                SmtpClient smtp = new SmtpClient();
+                smtp.Host = "mail01.pranda.co.th";
+                smtp.Port = 25;
+                smtp.EnableSsl = false;
+                smtp.UseDefaultCredentials = true;
+                smtp.Credentials = new System.Net.NetworkCredential();
+
+                System.Net.ServicePointManager.ServerCertificateValidationCallback = delegate (object s,
+                    System.Security.Cryptography.X509Certificates.X509Certificate certificate,
+                    System.Security.Cryptography.X509Certificates.X509Chain chain,
+                    System.Net.Security.SslPolicyErrors sslPolicyErrors)
+                {
+                    return true;
+                };
+
+                smtp.Send(mm);
                 return RedirectToAction("IndexAF");
             }
 

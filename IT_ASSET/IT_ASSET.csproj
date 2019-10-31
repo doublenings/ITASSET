@@ -471,6 +471,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IncStatusController.cs" />
     <Compile Include="Controllers\ReqAFRegisterController.cs" />
+    <Compile Include="Controllers\ReqSDController.cs" />
     <Compile Include="Controllers\tbl_incident_caseController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -644,6 +645,9 @@
       <DependentUpon>ITASSET.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\View_req_af_register.cs">
+      <DependentUpon>ITASSET.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\View_req_sd.cs">
       <DependentUpon>ITASSET.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\View_staff_member.cs">
@@ -7814,6 +7818,11 @@
     <Content Include="Views\ReqAFRegister\IndexAF.cshtml" />
     <Content Include="Views\ReqAFRegister\Report.cshtml" />
     <Content Include="Views\ReqAFRegister\Details_Print.cshtml" />
+    <Content Include="Views\ReqSD\Create.cshtml" />
+    <Content Include="Views\ReqSD\Delete.cshtml" />
+    <Content Include="Views\ReqSD\Details.cshtml" />
+    <Content Include="Views\ReqSD\Edit.cshtml" />
+    <Content Include="Views\ReqSD\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

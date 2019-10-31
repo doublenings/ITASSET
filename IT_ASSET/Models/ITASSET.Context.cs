@@ -80,6 +80,7 @@ namespace IT_ASSET.Models
         public virtual DbSet<View_req_af_follow> View_req_af_follow { get; set; }
         public virtual DbSet<tbl_req_auth> tbl_req_auth { get; set; }
         public virtual DbSet<tbl_req_sd> tbl_req_sd { get; set; }
+        public virtual DbSet<View_req_sd> View_req_sd { get; set; }
     
         public virtual int AddIncident(ObjectParameter iNC_CODE, Nullable<System.DateTime> iNC_DATE, string iNC_REQUESTER, string iNC_TOPIC, string iNC_STATUS, string iNC_DESCRIPTION)
         {

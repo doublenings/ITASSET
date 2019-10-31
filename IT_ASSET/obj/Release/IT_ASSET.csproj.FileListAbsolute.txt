@@ -695,3 +695,4 @@ I:\IT_ASSET\IT_ASSET\IT_ASSET\IT_ASSET\obj\Release\IT_ASSET.csproj.CoreCompileIn
 I:\IT_ASSET\IT_ASSET\IT_ASSET\IT_ASSET\obj\Release\IT_ASSET.csproj.CopyComplete
 I:\IT_ASSET\IT_ASSET\IT_ASSET\IT_ASSET\obj\Release\IT_ASSET.dll
 I:\IT_ASSET\IT_ASSET\IT_ASSET\IT_ASSET\obj\Release\IT_ASSET.pdb
+I:\IT_ASSET\IT_ASSET\IT_ASSET\IT_ASSET\obj\Release\IT_ASSET.csprojAssemblyReference.cache

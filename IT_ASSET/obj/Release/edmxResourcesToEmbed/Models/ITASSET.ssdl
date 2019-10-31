@@ -365,10 +365,10 @@ warning 6002: The table/view 'IT_ASSET_SERVER.dbo.tbl_configure' does not have a
     <Property Name="AF_FOLDER" Type="nvarchar" MaxLength="100" />
     <Property Name="AF_STATUS" Type="nvarchar" MaxLength="2" />
     <Property Name="AF_NOTE" Type="nvarchar" MaxLength="50" />
-    <Property Name="AF_REQUESTER" Type="nvarchar" MaxLength="50" />
-    <Property Name="AF_APPROVE_OWNER" Type="nvarchar" MaxLength="100" />
+    <Property Name="AF_REQUESTER" Type="nvarchar" MaxLength="6" />
+    <Property Name="AF_APPROVE_OWNER" Type="nvarchar" MaxLength="6" />
     <Property Name="AF_APPROVE_OWNER_DATE" Type="datetime" />
-    <Property Name="AF_APPROVE" Type="nvarchar" MaxLength="100" />
+    <Property Name="AF_APPROVE" Type="nvarchar" MaxLength="6" />
     <Property Name="AF_APPROVE_DATE" Type="datetime" />
     <Property Name="AF_OPEN_BY" Type="nvarchar" MaxLength="6" />
     <Property Name="AF_OPEN_DATE" Type="datetime" />
@@ -404,6 +404,48 @@ warning 6002: The table/view 'IT_ASSET_SERVER.dbo.tbl_configure' does not have a
     </Key>
     <Property Name="ALLOW_STATUS" Type="nvarchar" MaxLength="2" Nullable="false" />
     <Property Name="ALLOW_DESC" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tbl_req_auth">
+    <Key>
+      <PropertyRef Name="REQ_AUTH" />
+    </Key>
+    <Property Name="REQ_AUTH" Type="nvarchar" MaxLength="2" Nullable="false" />
+    <Property Name="AUTH_DESC" Type="nvarchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="tbl_req_sd">
+    <Key>
+      <PropertyRef Name="SD_CODE" />
+    </Key>
+    <Property Name="SD_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SD_CODE" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="USER_NO" Type="nvarchar" MaxLength="10" />
+    <Property Name="SD_DATE" Type="datetime" />
+    <Property Name="ALLOW_STATUS" Type="nvarchar" MaxLength="2" />
+    <Property Name="SD_DRIVE" Type="nvarchar" MaxLength="50" />
+    <Property Name="SD_FOLDER" Type="nvarchar" MaxLength="100" />
+    <Property Name="SD_NOTE" Type="nvarchar(max)" />
+    <Property Name="REQ_AUTH" Type="nvarchar" MaxLength="2" />
+    <Property Name="SD_REQUESTER" Type="nvarchar" MaxLength="6" />
+    <Property Name="SD_APPROVE_OWNER" Type="nvarchar" MaxLength="6" />
+    <Property Name="SD_APPROVE_OWNER_DATE" Type="datetime" />
+    <Property Name="SD_APPROVE" Type="nvarchar" MaxLength="6" />
+    <Property Name="SD_APPROVE_DATE" Type="datetime" />
+    <Property Name="SD_OPEN_BY" Type="nvarchar" MaxLength="6" />
+    <Property Name="SD_OPEN_DATE" Type="datetime" />
+    <Property Name="SD_ASSIGN_TO" Type="nvarchar" MaxLength="6" />
+    <Property Name="SD_ASSIGN_DATE" Type="datetime" />
+    <Property Name="SD_SUBMIT_DATE" Type="datetime" />
+    <Property Name="SD_CLOSE" Type="nvarchar" MaxLength="6" />
+    <Property Name="AF_CLOSE_DATE" Type="datetime" />
+    <Property Name="REQ_STATUS" Type="nvarchar" MaxLength="2" />
+    <Property Name="USER_CREATE" Type="nvarchar" MaxLength="100" />
+    <Property Name="USER_UPDATE" Type="nvarchar" MaxLength="100" />
+    <Property Name="CREATE_DATE" Type="datetime" />
+    <Property Name="UPDATE_DATE" Type="datetime" />
+    <Property Name="AF_IT_COMMENT" Type="nvarchar(max)" />
+    <Property Name="AF_IT_COMMENTER" Type="nvarchar" MaxLength="50" />
+    <Property Name="AF_IT_MANAGER" Type="nvarchar" MaxLength="50" />
+    <Property Name="AF_IT_DATE" Type="datetime" />
   </EntityType>
   <EntityType Name="tbl_req_status">
     <Key>
@@ -950,6 +992,42 @@ warning 6002: The table/view 'IT_ASSET_SERVER.dbo.View_req_af_register' does not
     <Property Name="APPROVE_ROLE" Type="nvarchar" MaxLength="10" />
   </EntityType>
   <!--Errors Found During Generation:
+warning 6002: The table/view 'IT_ASSET_SERVER.dbo.View_req_sd' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_req_sd">
+    <Key>
+      <PropertyRef Name="SD_CODE" />
+    </Key>
+    <Property Name="SD_CODE" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="USER_NO" Type="nvarchar" MaxLength="10" />
+    <Property Name="USER_NAME" Type="nvarchar" MaxLength="100" />
+    <Property Name="USER_NAME_EN" Type="nvarchar" MaxLength="100" />
+    <Property Name="USER_POSITION" Type="nvarchar" MaxLength="50" />
+    <Property Name="USER_DEPARTMENT" Type="nvarchar" MaxLength="50" />
+    <Property Name="USER_EXTENSION" Type="nvarchar" MaxLength="15" />
+    <Property Name="USER_EMAIL" Type="nvarchar" MaxLength="50" />
+    <Property Name="SD_DATE" Type="datetime" />
+    <Property Name="ALLOW_STATUS" Type="nvarchar" MaxLength="2" />
+    <Property Name="ALLOW_DESC" Type="nvarchar" MaxLength="50" />
+    <Property Name="SD_DRIVE" Type="nvarchar" MaxLength="50" />
+    <Property Name="SD_FOLDER" Type="nvarchar" MaxLength="100" />
+    <Property Name="SD_NOTE" Type="nvarchar(max)" />
+    <Property Name="REQ_AUTH" Type="nvarchar" MaxLength="2" />
+    <Property Name="AUTH_DESC" Type="nvarchar" MaxLength="10" />
+    <Property Name="SD_REQUESTER" Type="nvarchar" MaxLength="6" />
+    <Property Name="REQUESTER_NAME" Type="nvarchar" MaxLength="100" />
+    <Property Name="REQUESTER_EN_NAME" Type="nvarchar" MaxLength="100" />
+    <Property Name="REQUESTER_POSITION" Type="nvarchar" MaxLength="50" />
+    <Property Name="REQUESTER_DEPARTMENT" Type="nvarchar" MaxLength="50" />
+    <Property Name="REQUESTER_EXTENSION" Type="nvarchar" MaxLength="15" />
+    <Property Name="REQUESTER_EMAIL" Type="nvarchar" MaxLength="50" />
+    <Property Name="SD_APPROVE_OWNER" Type="nvarchar" MaxLength="6" />
+    <Property Name="SD_APPROVE_OWNER_DATE" Type="datetime" />
+    <Property Name="SD_APPROVE" Type="nvarchar" MaxLength="6" />
+    <Property Name="SD_APPROVE_DATE" Type="datetime" />
+    <Property Name="REQ_STATUS" Type="nvarchar" MaxLength="2" />
+    <Property Name="STA_DESC" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
 warning 6002: The table/view 'IT_ASSET_SERVER.dbo.View_staff_member' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="View_staff_member">
     <Key>
@@ -1080,6 +1158,8 @@ warning 6002: The table/view 'IT_ASSET_SERVER.dbo.View_sw_assets' does not have 
     <EntitySet Name="tbl_req_af" EntityType="Self.tbl_req_af" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tbl_req_af_status" EntityType="Self.tbl_req_af_status" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tbl_req_allow_status" EntityType="Self.tbl_req_allow_status" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_req_auth" EntityType="Self.tbl_req_auth" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_req_sd" EntityType="Self.tbl_req_sd" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tbl_req_status" EntityType="Self.tbl_req_status" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tbl_req_types" EntityType="Self.tbl_req_types" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tbl_staff_member" EntityType="Self.tbl_staff_member" Schema="dbo" store:Type="Tables" />
@@ -1441,6 +1521,39 @@ warning 6002: The table/view 'IT_ASSET_SERVER.dbo.View_sw_assets' does not have 
     [View_req_af_register].[APPROVE_EMAIL] AS [APPROVE_EMAIL], 
     [View_req_af_register].[APPROVE_ROLE] AS [APPROVE_ROLE]
     FROM [dbo].[View_req_af_register] AS [View_req_af_register]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View_req_sd" EntityType="Self.View_req_sd" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [View_req_sd].[SD_CODE] AS [SD_CODE], 
+    [View_req_sd].[USER_NO] AS [USER_NO], 
+    [View_req_sd].[USER_NAME] AS [USER_NAME], 
+    [View_req_sd].[USER_NAME_EN] AS [USER_NAME_EN], 
+    [View_req_sd].[USER_POSITION] AS [USER_POSITION], 
+    [View_req_sd].[USER_DEPARTMENT] AS [USER_DEPARTMENT], 
+    [View_req_sd].[USER_EXTENSION] AS [USER_EXTENSION], 
+    [View_req_sd].[USER_EMAIL] AS [USER_EMAIL], 
+    [View_req_sd].[SD_DATE] AS [SD_DATE], 
+    [View_req_sd].[ALLOW_STATUS] AS [ALLOW_STATUS], 
+    [View_req_sd].[ALLOW_DESC] AS [ALLOW_DESC], 
+    [View_req_sd].[SD_DRIVE] AS [SD_DRIVE], 
+    [View_req_sd].[SD_FOLDER] AS [SD_FOLDER], 
+    [View_req_sd].[SD_NOTE] AS [SD_NOTE], 
+    [View_req_sd].[REQ_AUTH] AS [REQ_AUTH], 
+    [View_req_sd].[AUTH_DESC] AS [AUTH_DESC], 
+    [View_req_sd].[SD_REQUESTER] AS [SD_REQUESTER], 
+    [View_req_sd].[REQUESTER_NAME] AS [REQUESTER_NAME], 
+    [View_req_sd].[REQUESTER_EN_NAME] AS [REQUESTER_EN_NAME], 
+    [View_req_sd].[REQUESTER_POSITION] AS [REQUESTER_POSITION], 
+    [View_req_sd].[REQUESTER_DEPARTMENT] AS [REQUESTER_DEPARTMENT], 
+    [View_req_sd].[REQUESTER_EXTENSION] AS [REQUESTER_EXTENSION], 
+    [View_req_sd].[REQUESTER_EMAIL] AS [REQUESTER_EMAIL], 
+    [View_req_sd].[SD_APPROVE_OWNER] AS [SD_APPROVE_OWNER], 
+    [View_req_sd].[SD_APPROVE_OWNER_DATE] AS [SD_APPROVE_OWNER_DATE], 
+    [View_req_sd].[SD_APPROVE] AS [SD_APPROVE], 
+    [View_req_sd].[SD_APPROVE_DATE] AS [SD_APPROVE_DATE], 
+    [View_req_sd].[REQ_STATUS] AS [REQ_STATUS], 
+    [View_req_sd].[STA_DESC] AS [STA_DESC]
+    FROM [dbo].[View_req_sd] AS [View_req_sd]</DefiningQuery>
     </EntitySet>
     <EntitySet Name="View_staff_member" EntityType="Self.View_staff_member" store:Type="Views" store:Schema="dbo">
       <DefiningQuery>SELECT 
