@@ -30,7 +30,7 @@ namespace IT_ASSET.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            tbl_req_sd tbl_req_sd = db.tbl_req_sd.Find(id);
+            View_req_sd tbl_req_sd = db.View_req_sd.Find(id);
             if (tbl_req_sd == null)
             {
                 return HttpNotFound();

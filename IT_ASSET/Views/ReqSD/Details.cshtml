@@ -1,249 +1,114 @@
-﻿@model IT_ASSET.Models.tbl_req_sd
+﻿@model IT_ASSET.Models.View_req_sd
 
 @{
     ViewBag.Title = "Details";
 }
 
 <h2>Details</h2>
+<table class="table table-bordered table-hover">
+    <tbody>
+        <tr>
+            <td>
+                <b>เลขที่เอกสาร</b>
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.SD_CODE)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>รหัสพนักงานของผู้ขอสิทธิ</b>
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.USER_NO)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>ชื่อพนักงานของผู้ขอสิทธิ</b>
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.USER_NAME)
+            </td>
+        </tr>
 
-<div>
-    <h4>tbl_req_sd</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.SD_ID)
-        </dt>
+        <tr>
+            <td>
+                <b>วันที่แจ้ง</b>
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.SD_DATE)
+            </td>
+        <tr>
+            <td>
+                <b>สิทธิการใช้งาน</b>
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.ALLOW_DESC)
+            </td>
 
-        <dd>
-            @Html.DisplayFor(model => model.SD_ID)
-        </dd>
+        <tr>
+            <td>
+                <b>Drive</b>
+            <td>
+                @Html.DisplayFor(model => model.SD_DRIVE)
+            </td>
+        <tr>
+            <td>
+                <b>Folder</b>
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.SD_FOLDER)
+            </td>
+        <tr>
+            <td>
+                <b>สิทธิ</b>
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.AUTH_DESC)
+            </td>
+        <tr>
+            <td>
+                <b>หมายเหตุ</b>
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.SD_NOTE)
+            </td>
+        <tr>
+            <td>
+                <b>รหัสพนักงานผู้แจ้ง</b>
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.SD_REQUESTER)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>ชื่อผู้แจ้ง </b>
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.REQUESTER_NAME)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>  เบอร์ผู้แจ้ง </b>
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.REQUESTER_EXTENSION)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>สถานะของงาน</b>
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.STA_DESC)
+            </td>
+        </tr>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.USER_NO)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.USER_NO)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.SD_DATE)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.SD_DATE)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ALLOW_STATUS)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ALLOW_STATUS)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.SD_DRIVE)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.SD_DRIVE)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.SD_FOLDER)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.SD_FOLDER)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.SD_NOTE)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.SD_NOTE)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.REQ_AUTH)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.REQ_AUTH)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.SD_REQUESTER)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.SD_REQUESTER)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.SD_APPROVE_OWNER)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.SD_APPROVE_OWNER)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.SD_APPROVE_OWNER_DATE)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.SD_APPROVE_OWNER_DATE)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.SD_APPROVE)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.SD_APPROVE)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.SD_APPROVE_DATE)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.SD_APPROVE_DATE)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.SD_OPEN_BY)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.SD_OPEN_BY)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.SD_OPEN_DATE)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.SD_OPEN_DATE)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.SD_ASSIGN_TO)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.SD_ASSIGN_TO)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.SD_ASSIGN_DATE)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.SD_ASSIGN_DATE)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.SD_SUBMIT_DATE)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.SD_SUBMIT_DATE)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.SD_CLOSE)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.SD_CLOSE)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.AF_CLOSE_DATE)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.AF_CLOSE_DATE)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.REQ_STATUS)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.REQ_STATUS)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.USER_CREATE)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.USER_CREATE)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.USER_UPDATE)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.USER_UPDATE)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.CREATE_DATE)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.CREATE_DATE)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.UPDATE_DATE)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.UPDATE_DATE)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.AF_IT_COMMENT)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.AF_IT_COMMENT)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.AF_IT_COMMENTER)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.AF_IT_COMMENTER)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.AF_IT_MANAGER)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.AF_IT_MANAGER)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.AF_IT_DATE)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.AF_IT_DATE)
-        </dd>
-
-    </dl>
-</div>
+</table>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.SD_CODE }) |
     @Html.ActionLink("Back to List", "Index")
