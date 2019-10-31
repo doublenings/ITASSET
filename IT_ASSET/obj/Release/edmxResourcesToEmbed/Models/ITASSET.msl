@@ -755,6 +755,7 @@
     <EntitySetMapping Name="tbl_user">
       <EntityTypeMapping TypeName="IT_ASSET_MANAGEMENTModel.tbl_user">
         <MappingFragment StoreEntitySet="tbl_user">
+          <ScalarProperty Name="USER_EMAIL_APPROVE" ColumnName="USER_EMAIL_APPROVE" />
           <ScalarProperty Name="USER_ROLE" ColumnName="USER_ROLE" />
           <ScalarProperty Name="USER_DEPARTMENT" ColumnName="USER_DEPARTMENT" />
           <ScalarProperty Name="USER_POSITION" ColumnName="USER_POSITION" />
@@ -1083,5 +1084,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="AddReqShareDrive" FunctionName="IT_ASSET_MANAGEMENTModel.Store.AddReqShareDrive" />
   </EntityContainerMapping>
 </Mapping>

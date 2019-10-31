@@ -568,6 +568,7 @@ warning 6002: The table/view 'IT_ASSET_SERVER.dbo.tbl_configure' does not have a
     <Property Name="USER_STATUS" Type="nvarchar" MaxLength="10" Nullable="false" />
     <Property Name="USER_EXTENSION" Type="nvarchar" MaxLength="15" />
     <Property Name="USER_EMAIL" Type="nvarchar" MaxLength="50" />
+    <Property Name="USER_EMAIL_APPROVE" Type="nvarchar" MaxLength="50" />
     <Property Name="USER_ROLE" Type="nvarchar" MaxLength="10" />
   </EntityType>
   <EntityType Name="tbl_year_document_number">
@@ -1131,6 +1132,18 @@ warning 6002: The table/view 'IT_ASSET_SERVER.dbo.View_sw_assets' does not have 
     <Parameter Name="AF_STATUS" Type="nvarchar" Mode="In" />
     <Parameter Name="AF_NOTE" Type="nvarchar" Mode="In" />
     <Parameter Name="AF_REQUESTER" Type="nvarchar" Mode="In" />
+    <Parameter Name="REQ_STATUS" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="AddReqShareDrive" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="SD_CODE" Type="nvarchar" Mode="InOut" />
+    <Parameter Name="USER_NO" Type="nvarchar" Mode="In" />
+    <Parameter Name="SD_DATE" Type="datetime" Mode="In" />
+    <Parameter Name="ALLOW_STATUS" Type="nvarchar" Mode="In" />
+    <Parameter Name="SD_DRIVE" Type="nvarchar" Mode="In" />
+    <Parameter Name="SD_FOLDER" Type="nvarchar" Mode="In" />
+    <Parameter Name="SD_NOTE" Type="nvarchar" Mode="In" />
+    <Parameter Name="REQ_AUTH" Type="nvarchar" Mode="In" />
+    <Parameter Name="SD_REQUESTER" Type="nvarchar" Mode="In" />
     <Parameter Name="REQ_STATUS" Type="nvarchar" Mode="In" />
   </Function>
   <EntityContainer Name="IT_ASSET_MANAGEMENTModelStoreContainer">

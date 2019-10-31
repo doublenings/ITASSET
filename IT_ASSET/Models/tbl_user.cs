@@ -27,5 +27,6 @@ namespace IT_ASSET.Models
         public string USER_POSITION { get; set; }
         public string USER_DEPARTMENT { get; set; }
         public string USER_ROLE { get; set; }
+        public string USER_EMAIL_APPROVE { get; set; }
     }
 }

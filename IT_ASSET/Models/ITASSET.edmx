@@ -573,6 +573,7 @@ warning 6002: The table/view 'IT_ASSET_SERVER.dbo.tbl_configure' does not have a
           <Property Name="USER_STATUS" Type="nvarchar" MaxLength="10" Nullable="false" />
           <Property Name="USER_EXTENSION" Type="nvarchar" MaxLength="15" />
           <Property Name="USER_EMAIL" Type="nvarchar" MaxLength="50" />
+          <Property Name="USER_EMAIL_APPROVE" Type="nvarchar" MaxLength="50" />
           <Property Name="USER_ROLE" Type="nvarchar" MaxLength="10" />
         </EntityType>
         <EntityType Name="tbl_year_document_number">
@@ -1137,6 +1138,18 @@ warning 6002: The table/view 'IT_ASSET_SERVER.dbo.View_sw_assets' does not have 
           <Parameter Name="AF_STATUS" Type="nvarchar" Mode="In" />
           <Parameter Name="AF_NOTE" Type="nvarchar" Mode="In" />
           <Parameter Name="AF_REQUESTER" Type="nvarchar" Mode="In" />
+          <Parameter Name="REQ_STATUS" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="AddReqShareDrive" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="SD_CODE" Type="nvarchar" Mode="InOut" />
+          <Parameter Name="USER_NO" Type="nvarchar" Mode="In" />
+          <Parameter Name="SD_DATE" Type="datetime" Mode="In" />
+          <Parameter Name="ALLOW_STATUS" Type="nvarchar" Mode="In" />
+          <Parameter Name="SD_DRIVE" Type="nvarchar" Mode="In" />
+          <Parameter Name="SD_FOLDER" Type="nvarchar" Mode="In" />
+          <Parameter Name="SD_NOTE" Type="nvarchar" Mode="In" />
+          <Parameter Name="REQ_AUTH" Type="nvarchar" Mode="In" />
+          <Parameter Name="SD_REQUESTER" Type="nvarchar" Mode="In" />
           <Parameter Name="REQ_STATUS" Type="nvarchar" Mode="In" />
         </Function>
         <EntityContainer Name="IT_ASSET_MANAGEMENTModelStoreContainer">
@@ -2389,6 +2402,18 @@ warning 6002: The table/view 'IT_ASSET_SERVER.dbo.View_sw_assets' does not have 
           <EntitySet Name="tbl_req_auth" EntityType="IT_ASSET_MANAGEMENTModel.tbl_req_auth" />
           <EntitySet Name="tbl_req_sd" EntityType="IT_ASSET_MANAGEMENTModel.tbl_req_sd" />
           <EntitySet Name="View_req_sd" EntityType="IT_ASSET_MANAGEMENTModel.View_req_sd" />
+          <FunctionImport Name="AddReqShareDrive">
+            <Parameter Name="SD_CODE" Mode="InOut" Type="String" />
+            <Parameter Name="USER_NO" Mode="In" Type="String" />
+            <Parameter Name="SD_DATE" Mode="In" Type="DateTime" />
+            <Parameter Name="ALLOW_STATUS" Mode="In" Type="String" />
+            <Parameter Name="SD_DRIVE" Mode="In" Type="String" />
+            <Parameter Name="SD_FOLDER" Mode="In" Type="String" />
+            <Parameter Name="SD_NOTE" Mode="In" Type="String" />
+            <Parameter Name="REQ_AUTH" Mode="In" Type="String" />
+            <Parameter Name="SD_REQUESTER" Mode="In" Type="String" />
+            <Parameter Name="REQ_STATUS" Mode="In" Type="String" />
+          </FunctionImport>
         </EntityContainer>
         <EntityType Name="View_inc_status">
           <Key>
@@ -2516,6 +2541,7 @@ warning 6002: The table/view 'IT_ASSET_SERVER.dbo.View_sw_assets' does not have 
           <Property Name="USER_POSITION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="USER_DEPARTMENT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="USER_ROLE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="USER_EMAIL_APPROVE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="View_pc_standards">
           <Key>
@@ -3579,6 +3605,7 @@ warning 6002: The table/view 'IT_ASSET_SERVER.dbo.View_sw_assets' does not have 
           <EntitySetMapping Name="tbl_user">
             <EntityTypeMapping TypeName="IT_ASSET_MANAGEMENTModel.tbl_user">
               <MappingFragment StoreEntitySet="tbl_user">
+                <ScalarProperty Name="USER_EMAIL_APPROVE" ColumnName="USER_EMAIL_APPROVE" />
                 <ScalarProperty Name="USER_ROLE" ColumnName="USER_ROLE" />
                 <ScalarProperty Name="USER_DEPARTMENT" ColumnName="USER_DEPARTMENT" />
                 <ScalarProperty Name="USER_POSITION" ColumnName="USER_POSITION" />
@@ -3907,6 +3934,7 @@ warning 6002: The table/view 'IT_ASSET_SERVER.dbo.View_sw_assets' does not have 
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="AddReqShareDrive" FunctionName="IT_ASSET_MANAGEMENTModel.Store.AddReqShareDrive" />
           </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

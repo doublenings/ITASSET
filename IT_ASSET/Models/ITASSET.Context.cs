@@ -248,5 +248,46 @@ namespace IT_ASSET.Models
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("AddReqAF1", aF_CODE, uSER_NOParameter, aF_DATEParameter, aLLOW_STATUSParameter, aF_SITEParameter, aF_FOLDERParameter, aF_STATUSParameter, aF_NOTEParameter, aF_REQUESTERParameter, rEQ_STATUSParameter);
         }
+    
+        public virtual int AddReqShareDrive(ObjectParameter sD_CODE, string uSER_NO, Nullable<System.DateTime> sD_DATE, string aLLOW_STATUS, string sD_DRIVE, string sD_FOLDER, string sD_NOTE, string rEQ_AUTH, string sD_REQUESTER, string rEQ_STATUS)
+        {
+            var uSER_NOParameter = uSER_NO != null ?
+                new ObjectParameter("USER_NO", uSER_NO) :
+                new ObjectParameter("USER_NO", typeof(string));
+    
+            var sD_DATEParameter = sD_DATE.HasValue ?
+                new ObjectParameter("SD_DATE", sD_DATE) :
+                new ObjectParameter("SD_DATE", typeof(System.DateTime));
+    
+            var aLLOW_STATUSParameter = aLLOW_STATUS != null ?
+                new ObjectParameter("ALLOW_STATUS", aLLOW_STATUS) :
+                new ObjectParameter("ALLOW_STATUS", typeof(string));
+    
+            var sD_DRIVEParameter = sD_DRIVE != null ?
+                new ObjectParameter("SD_DRIVE", sD_DRIVE) :
+                new ObjectParameter("SD_DRIVE", typeof(string));
+    
+            var sD_FOLDERParameter = sD_FOLDER != null ?
+                new ObjectParameter("SD_FOLDER", sD_FOLDER) :
+                new ObjectParameter("SD_FOLDER", typeof(string));
+    
+            var sD_NOTEParameter = sD_NOTE != null ?
+                new ObjectParameter("SD_NOTE", sD_NOTE) :
+                new ObjectParameter("SD_NOTE", typeof(string));
+    
+            var rEQ_AUTHParameter = rEQ_AUTH != null ?
+                new ObjectParameter("REQ_AUTH", rEQ_AUTH) :
+                new ObjectParameter("REQ_AUTH", typeof(string));
+    
+            var sD_REQUESTERParameter = sD_REQUESTER != null ?
+                new ObjectParameter("SD_REQUESTER", sD_REQUESTER) :
+                new ObjectParameter("SD_REQUESTER", typeof(string));
+    
+            var rEQ_STATUSParameter = rEQ_STATUS != null ?
+                new ObjectParameter("REQ_STATUS", rEQ_STATUS) :
+                new ObjectParameter("REQ_STATUS", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("AddReqShareDrive", sD_CODE, uSER_NOParameter, sD_DATEParameter, aLLOW_STATUSParameter, sD_DRIVEParameter, sD_FOLDERParameter, sD_NOTEParameter, rEQ_AUTHParameter, sD_REQUESTERParameter, rEQ_STATUSParameter);
+        }
     }
 }

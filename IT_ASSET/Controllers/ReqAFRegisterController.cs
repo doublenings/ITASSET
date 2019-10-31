@@ -94,10 +94,11 @@ namespace IT_ASSET.Controllers
 
 
                     var email = Session["USER_EMAIL"].ToString();
+                    var approve = Session["USER_EMAIL_APPROVE"].ToString();
                     MailMessage mm = new MailMessage();
-                    mm.To.Add("testuser@pranda.co.th");
+                    mm.To.Add(approve);
                     mm.From = new MailAddress(email);
-                    mm.Subject = "แบบฟอร์มการขอสิทธิ ALFRESCO";
+                    mm.Subject = "แบบฟอร์มการขอและยกเลิกสิทธิใช้ระบบ ALFRESCO";
 
                     mm.IsBodyHtml = true;
                     mm.Body = GetFormattedMessageHTML();

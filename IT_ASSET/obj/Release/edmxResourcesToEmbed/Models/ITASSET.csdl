@@ -757,6 +757,18 @@
     <EntitySet Name="tbl_req_auth" EntityType="IT_ASSET_MANAGEMENTModel.tbl_req_auth" />
     <EntitySet Name="tbl_req_sd" EntityType="IT_ASSET_MANAGEMENTModel.tbl_req_sd" />
     <EntitySet Name="View_req_sd" EntityType="IT_ASSET_MANAGEMENTModel.View_req_sd" />
+    <FunctionImport Name="AddReqShareDrive">
+      <Parameter Name="SD_CODE" Mode="InOut" Type="String" />
+      <Parameter Name="USER_NO" Mode="In" Type="String" />
+      <Parameter Name="SD_DATE" Mode="In" Type="DateTime" />
+      <Parameter Name="ALLOW_STATUS" Mode="In" Type="String" />
+      <Parameter Name="SD_DRIVE" Mode="In" Type="String" />
+      <Parameter Name="SD_FOLDER" Mode="In" Type="String" />
+      <Parameter Name="SD_NOTE" Mode="In" Type="String" />
+      <Parameter Name="REQ_AUTH" Mode="In" Type="String" />
+      <Parameter Name="SD_REQUESTER" Mode="In" Type="String" />
+      <Parameter Name="REQ_STATUS" Mode="In" Type="String" />
+    </FunctionImport>
   </EntityContainer>
   <EntityType Name="View_inc_status">
     <Key>
@@ -884,6 +896,7 @@
     <Property Name="USER_POSITION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="USER_DEPARTMENT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="USER_ROLE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="USER_EMAIL_APPROVE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="View_pc_standards">
     <Key>

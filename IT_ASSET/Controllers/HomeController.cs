@@ -40,12 +40,14 @@ namespace IT_ASSET.Controllers
                         Session["USER_EMAIL"] = obj.USER_EMAIL.ToString();
                         Session["USER_EXTENSION"] = obj.USER_EXTENSION.ToString();
                         Session["USER_ROLE"] = obj.USER_ROLE.ToString();
-                       
+                        Session["USER_EMAIL_APPROVE"] = obj.USER_EMAIL_APPROVE.ToString();
+
 
                         return RedirectToAction("Index", "IncStatus");
                     }
                     else
                     {
+                        
                         ViewData["message"] = "Login Failed !";
 
                     }
