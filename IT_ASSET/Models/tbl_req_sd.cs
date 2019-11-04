@@ -11,11 +11,13 @@ namespace IT_ASSET.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class tbl_req_sd
     {
         public int SD_ID { get; set; }
         public string SD_CODE { get; set; }
+        
         public string USER_NO { get; set; }
         public Nullable<System.DateTime> SD_DATE { get; set; }
         public string ALLOW_STATUS { get; set; }
@@ -40,9 +42,9 @@ namespace IT_ASSET.Models
         public string USER_UPDATE { get; set; }
         public Nullable<System.DateTime> CREATE_DATE { get; set; }
         public Nullable<System.DateTime> UPDATE_DATE { get; set; }
-        public string AF_IT_COMMENT { get; set; }
-        public string AF_IT_COMMENTER { get; set; }
-        public string AF_IT_MANAGER { get; set; }
-        public Nullable<System.DateTime> AF_IT_DATE { get; set; }
+        public string SD_IT_COMMENT { get; set; }
+        public string SD_IT_COMMENTER { get; set; }
+        public string SD_IT_MANAGER { get; set; }
+        public Nullable<System.DateTime> SD_IT_DATE { get; set; }
     }
 }

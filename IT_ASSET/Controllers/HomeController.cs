@@ -47,8 +47,8 @@ namespace IT_ASSET.Controllers
                     }
                     else
                     {
-                        
-                        ViewData["message"] = "Login Failed !";
+
+                        ViewBag.Message = "LOGIN FAILED!";
 
                     }
 

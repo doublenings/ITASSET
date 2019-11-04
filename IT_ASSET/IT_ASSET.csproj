@@ -493,6 +493,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ITASSET.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\sharedrive.cs" />
     <Compile Include="Models\tbl_assesories.cs">
       <DependentUpon>ITASSET.tt</DependentUpon>
     </Compile>
@@ -648,6 +649,9 @@
       <DependentUpon>ITASSET.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\View_req_sd.cs">
+      <DependentUpon>ITASSET.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\View_req_sd_follow.cs">
       <DependentUpon>ITASSET.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\View_staff_member.cs">
@@ -7823,6 +7827,10 @@
     <Content Include="Views\ReqSD\Details.cshtml" />
     <Content Include="Views\ReqSD\Edit.cshtml" />
     <Content Include="Views\ReqSD\Index.cshtml" />
+    <Content Include="Views\ReqSD\IndexSD.cshtml" />
+    <Content Include="Views\ReqSD\DetailsSD.cshtml" />
+    <Content Include="Views\ReqSD\DetailsSD_Print.cshtml" />
+    <Content Include="Views\ReqSD\Report.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

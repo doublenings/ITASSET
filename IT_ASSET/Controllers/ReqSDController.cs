@@ -9,6 +9,7 @@ using System.Net.Mail;
 using System.Web;
 using System.Web.Mvc;
 using IT_ASSET.Models;
+using Rotativa;
 
 namespace IT_ASSET.Controllers
 {
@@ -22,7 +23,10 @@ namespace IT_ASSET.Controllers
         {
             return View(db.View_req_sd.OrderByDescending(s => s.SD_CODE).ToList());
         }
-
+        public ActionResult IndexSD()
+        {
+            return View(db.View_req_sd_follow.OrderByDescending(s => s.SD_CODE).ToList());
+        }
         // GET: ReqSD/Details/5
         public ActionResult Details(string id)
         {
@@ -36,6 +40,44 @@ namespace IT_ASSET.Controllers
                 return HttpNotFound();
             }
             return View(tbl_req_sd);
+        }
+
+        public ActionResult DetailsSD(string id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            View_req_sd_follow View_req_sd_follow = db.View_req_sd_follow.Find(id);
+            if (View_req_sd_follow == null)
+            {
+                return HttpNotFound();
+            }
+            return View(View_req_sd_follow);
+        }
+        public ActionResult DetailsSD_Print(string id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            View_req_sd_follow View_req_sd_follow = db.View_req_sd_follow.Find(id);
+            if (View_req_sd_follow == null)
+            {
+                return HttpNotFound();
+            }
+            return View(View_req_sd_follow);
+        }
+        public ActionResult PrintPartialViewToPdf(string id)
+        {
+            using (IT_ASSET_MANAGEMENTEntities db = new IT_ASSET_MANAGEMENTEntities())
+            {
+                View_req_sd_follow customer = db.View_req_sd_follow.FirstOrDefault(c => c.SD_CODE == id);
+
+                var report = new PartialViewAsPdf("~/Views/ReqSD/DetailsSD_Print.cshtml", customer);
+                return report;
+            }
+
         }
 
         // GET: ReqSD/Create
@@ -231,6 +273,39 @@ namespace IT_ASSET.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+        public ActionResult Report()
+
+        {
+            Response.ClearContent();
+            Response.ContentType = "application/fore-download";
+            Response.AddHeader("content-disposition", " attachment; Filename=" + "REPORT_ShareDrive" + DateTime.Now.ToString("ddMMyyyy") + ".xls");
+            Response.Write("<html xmlns:x=\"urn:schemas-microsoft-com:office:excel\">");
+            Response.Write("<head>");
+            Response.Write("<META http-equiv=\"content-Type\" content=\"text/html; charset=utf-8\">");
+            Response.Write("<!--[if gte mso 9]><xml>");
+            Response.Write("<x:ExcelWorkbook>");
+            Response.Write("<x:ExcelWorksheets>");
+            Response.Write("<x:ExcelWorksheet>");
+            Response.Write("<x:Name>Report Data</x:Name>");
+            Response.Write("<x:WorksheetOptions>");
+            Response.Write("<x:Print>");
+            Response.Write("<x:ValidprinterInfo/>");
+            Response.Write("<x:Print>");
+            Response.Write("<x:WorksheetOptions>");
+            Response.Write("<x:ExcelWorksheet>");
+            Response.Write("<x:ExcelWorksheets>");
+            Response.Write("<x:ExcelWorkbook>");
+            Response.Write("</xml>");
+            Response.Write("<![endif] --> ");
+
+
+            View("~/Views/ReqSD/Report.cshtml", db.View_req_sd_follow.ToList()).ExecuteResult(this.ControllerContext);
+            Response.Flush();
+            Response.End();
+            return View();
+
+
         }
     }
 }

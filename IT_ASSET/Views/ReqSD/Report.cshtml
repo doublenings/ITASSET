@@ -1,0 +1,135 @@
+﻿@model IEnumerable<IT_ASSET.Models.View_req_sd_follow>
+
+@{
+    Layout = null;
+}
+
+<h2 align="lg">แบบฟอร์มการขอและยกเลิกรหัสผู้ใช้ เพื่อการกำหนดเข้าสู่ Share Drive </h2>
+
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+<table class="table table-bordered table-hover text-nowrap fixed">
+
+    <tr>
+        <th><center>เลขเอกสาร</center></th>
+
+        <th>รหัสพนักงาน</th>
+        <th>ชื่อ-สกุล</th>
+        <th>สิทธิการใช้งาน</th>
+        <th>สถานะของงาน</th>
+        <th>วันที่แจ้ง</th>
+        <th>Site</th>
+        <th>Folder</th>
+        <th>สถานะสิทธิ</th>
+        <th>รหัสพนักงานผู้แจ้ง</th>
+        <th>ชื่อผู้แจ้ง</th>
+        <th>ชื่อผู้อนุมัติ</th>
+        <th>วันที่อนุมัติ</th>
+        <th>ผู้เปิดงาน</th>
+        <th>ชื่อผู้เปิดงาน</th>
+        <th>วันเปิดงาน</th>
+        <th>ผู้ดำเนินงาน</th>
+        <th>ชื่อผู้ดำเนินงาน</th>
+        <th>วันดำเนินงาน</th>
+        <th>ผู้ปิดงาน</th>
+        <th>ชื่อผู้ปิดงาน</th>
+        <th>วันปิดงาน</th>
+    </tr>
+
+
+    @foreach (var item in Model)
+    {
+
+        <tr>
+
+            <td>
+                <center>  @Html.DisplayFor(modelItem => item.SD_CODE)</center>
+            </td>
+            <td>
+                <center>  @Html.DisplayFor(modelItem => item.USER_NO)</center>
+            </td>
+            <td>
+                <center>@Html.DisplayFor(modelItem => item.USER_NAME)</center>
+            </td>
+
+            <td>
+                <center>@Html.DisplayFor(modelItem => item.ALLOW_DESC)</center>
+            </td>
+
+            <td>
+                <center> @Html.DisplayFor(modelItem => item.STA_DESC)</center>
+            </td>
+            <td>
+                <center> @Html.DisplayFor(modelItem => item.SD_DATE)</center>
+            </td>
+
+            <td>
+                <center>@Html.DisplayFor(modelItem => item.SD_DRIVE)</center>
+            </td>
+            <td>
+                <center>@Html.DisplayFor(modelItem => item.SD_FOLDER)</center>
+            </td>
+            <td>
+                <center>@Html.DisplayFor(modelItem => item.AUTH_DESC)</center>
+            </td>
+
+            <td>
+                <center>@Html.DisplayFor(modelItem => item.SD_REQUESTER)</center>
+            </td>
+
+            <td>
+                <center>@Html.DisplayFor(modelItem => item.REQUESTER_NAME)</center>
+            </td>
+            <td>
+                <center>@Html.DisplayFor(modelItem => item.APPROVE_NAME)</center>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SD_APPROVE_DATE)
+            </td>
+            <td>
+                <center>@Html.DisplayFor(modelItem => item.SD_OPEN_BY)</center>
+            </td>
+            <td>
+                <center> @Html.DisplayFor(modelItem => item.OPEN_NAME)</center>
+                 @Html.DisplayFor(modelItem => item.OPEN_SURNAME)
+            </td>
+
+            <td>
+                <center>@Html.DisplayFor(modelItem => item.SD_OPEN_DATE)</center>
+            </td>
+            <td>
+                <center>@Html.DisplayFor(modelItem => item.SD_ASSIGN_TO)</center>
+            </td>
+            <td>
+                <center> @Html.DisplayFor(modelItem => item.ASSIGN_NAME)</center>
+                @Html.DisplayFor(modelItem => item.ASSIGN_SURNAME)
+            </td>
+
+            <td>
+                <center>@Html.DisplayFor(modelItem => item.SD_ASSIGN_DATE)</center>
+            </td>
+
+
+            <td>
+                <center> @Html.DisplayFor(modelItem => item.SD_CLOSE)</center>
+            </td>
+            <td>
+                <center> @Html.DisplayFor(modelItem => item.CLOSE_NAME)</center>
+            </td>
+
+
+            <td>
+                <center>  @Html.DisplayFor(modelItem => item.AF_CLOSE_DATE)</center>
+            </td>
+
+
+
+
+        </tr>
+
+    }
+
+
+</table>
+
