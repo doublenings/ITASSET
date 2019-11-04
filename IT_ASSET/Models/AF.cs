@@ -10,17 +10,17 @@ namespace IT_ASSET.Models
     {
         public int AF_ID { get; set; }
         public string AF_CODE { get; set; }
-        [Required(ErrorMessage = "* กรุณากรอกรหัสพนักงาน")]
+        [Required(ErrorMessage = "* กรุณากรอกรหัสพนักงานผู้ขอสิทธิ")]
         [Display(Name = "USER_NO: ")]
         public string USER_NO { get; set; }
         public Nullable<System.DateTime> AF_DATE { get; set; }
         [Required(ErrorMessage = "* กรุณากรอกสิทธิการใช้งาน")]
         [Display(Name = "Allow_STATUS: ")]
         public string ALLOW_STATUS { get; set; }
-        [Required(ErrorMessage = "* กรุณากรอกSite")]
+        [Required(ErrorMessage = "* กรุณากรอก Site")]
         [Display(Name = "AF_Site: ")]
         public string AF_SITE { get; set; }
-        [Required(ErrorMessage = "* กรุณากรอกFolder")]
+        [Required(ErrorMessage = "* กรุณากรอก Folder")]
         [Display(Name = "AF_Folder: ")]
         public string AF_FOLDER { get; set; }
         public string AF_STATUS { get; set; }

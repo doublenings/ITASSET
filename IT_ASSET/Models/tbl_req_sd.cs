@@ -11,13 +11,11 @@ namespace IT_ASSET.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class tbl_req_sd
     {
         public int SD_ID { get; set; }
         public string SD_CODE { get; set; }
-        
         public string USER_NO { get; set; }
         public Nullable<System.DateTime> SD_DATE { get; set; }
         public string ALLOW_STATUS { get; set; }

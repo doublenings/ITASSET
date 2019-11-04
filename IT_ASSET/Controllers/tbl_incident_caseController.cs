@@ -83,7 +83,7 @@ namespace IT_ASSET.Controllers
             if (ModelState.IsValid)
             {
                 db.Entry(tbl_incident_case).State = EntityState.Modified;
-                db.SaveChanges();
+                _ = db.SaveChanges();
                 return RedirectToAction("Index");
             }
             ViewData["INC_STATUS"] = new SelectList(db.tbl_Incident_status, "INC_STATUS", "STA_DESCRIPTION");

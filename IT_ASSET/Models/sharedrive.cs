@@ -10,7 +10,7 @@ namespace IT_ASSET.Models
     {
         public int SD_ID { get; set; }
         public string SD_CODE { get; set; }
-        [Required(ErrorMessage = "* กรุณากรอกรหัสพนักงาน")]
+        [Required(ErrorMessage = "* กรุณากรอกรหัสพนักงานผู้ขอสิทธิ")]
         [Display(Name = "USER_NO: ")]
         public string USER_NO { get; set; }
         public Nullable<System.DateTime> SD_DATE { get; set; }
@@ -24,6 +24,8 @@ namespace IT_ASSET.Models
         [Display(Name = "SD_Folder: ")]
         public string SD_FOLDER { get; set; }
         public string SD_NOTE { get; set; }
+        [Required(ErrorMessage = "* กรุณากรอก สถานะสิทธิ")]
+        [Display(Name = "REQ_AUTH: ")]
         public string REQ_AUTH { get; set; }
         public string SD_REQUESTER { get; set; }
         public string SD_APPROVE_OWNER { get; set; }

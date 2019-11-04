@@ -7825,12 +7825,12 @@
     <Content Include="Views\ReqSD\Create.cshtml" />
     <Content Include="Views\ReqSD\Delete.cshtml" />
     <Content Include="Views\ReqSD\Details.cshtml" />
-    <Content Include="Views\ReqSD\Edit.cshtml" />
     <Content Include="Views\ReqSD\Index.cshtml" />
     <Content Include="Views\ReqSD\IndexSD.cshtml" />
     <Content Include="Views\ReqSD\DetailsSD.cshtml" />
     <Content Include="Views\ReqSD\DetailsSD_Print.cshtml" />
     <Content Include="Views\ReqSD\Report.cshtml" />
+    <Content Include="Views\ReqSD\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

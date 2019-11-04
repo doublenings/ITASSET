@@ -19,7 +19,7 @@ namespace IT_ASSET.Controllers
         string connectionString = "Data Source= COMP05\\SQLEXPRESS;Initial Catalog=IT_ASSET_SERVER;Integrated Security=True";
 
         // GET: ReqSD
-        public ActionResult Index()
+        public ActionResult Index(int? i, string search)
         {
             return View(db.View_req_sd.OrderByDescending(s => s.SD_CODE).ToList());
         }
@@ -94,7 +94,7 @@ namespace IT_ASSET.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(tbl_req_sd tbl_req_sd)
+        public ActionResult Create(sharedrive tbl_req_sd)
         {
             if (ModelState.IsValid)
             {
@@ -192,40 +192,12 @@ namespace IT_ASSET.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit(tbl_req_sd tbl_req_sd)
         {
- if (ModelState.IsValid)
+             if (ModelState.IsValid)
             {
                 db.Entry(tbl_req_sd).State = EntityState.Modified;
                 db.SaveChanges();
-                ViewBag.EmpCount = tbl_req_sd.SD_CODE.ToString();
-                var email = Session["USER_EMAIL"].ToString();
-                MailMessage mm = new MailMessage();
-                mm.To.Add("ITservice@pranda.co.th");
-                mm.From = new MailAddress(email);
-                mm.Subject = "แบบฟอร์มการขอและยกเลิกรหัสผู้ใช้ เพื่อกำหนดเข้าสู่ Share Drive";
-
-                mm.IsBodyHtml = true;
-                mm.Body = GetFormattedMessageIT();
-
-                SmtpClient smtp = new SmtpClient();
-                smtp.Host = "mail01.pranda.co.th";
-                smtp.Port = 25;
-                smtp.EnableSsl = false;
-                smtp.UseDefaultCredentials = true;
-                smtp.Credentials = new System.Net.NetworkCredential();
-
-                System.Net.ServicePointManager.ServerCertificateValidationCallback = delegate (object s,
-                    System.Security.Cryptography.X509Certificates.X509Certificate certificate,
-                    System.Security.Cryptography.X509Certificates.X509Chain chain,
-                    System.Net.Security.SslPolicyErrors sslPolicyErrors)
-                {
-                    return true;
-                };
-
-                smtp.Send(mm);
-                return RedirectToAction("Index");
+                return RedirectToAction("IndexSD");
             }
-        
-           
             return View(tbl_req_sd);
         }
         private string GetFormattedMessageIT()
