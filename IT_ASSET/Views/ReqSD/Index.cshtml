@@ -1,5 +1,6 @@
-﻿@model IEnumerable<IT_ASSET.Models.View_req_sd>
-
+﻿@model IPagedList<IT_ASSET.Models.View_req_sd>
+@using PagedList.Mvc;
+@using PagedList;
 @{
     ViewBag.Title = "Index";
 }
@@ -15,7 +16,8 @@
         <div class="pull-right col-md-12 col-md-6">
             <form class="pull-right" role="search">
                 <div class="input-group pull-right">
-                    @Html.TextBox("Search", null, new { @class = "form-control", @placeholder = "เลขที่เอกสาร/รหัสพนักงานผู้ขอสิทธิ/รหัสพนักงานผู้แจ้ง" })
+                    @Html.TextBox("Search", null, new { @class = "form-control", @placeholder = "เลขที่เอกสาร/รหัสพนักงานผู้ขอสิทธิ/ชื่อผู้ขอสิทธิ/รหัสพนักงานผู้แจ้ง" })
+
                     <div class="input-group-btn">
                         <button class="btn btn-default pull-right" type="submit"><i class="glyphicon glyphicon-search"></i></button>
                     </div>
@@ -23,6 +25,7 @@
             </form>
         </div>
     </div>
+
 
 }
 <table class="table table-bordered table-hover text-nowrap">
@@ -63,7 +66,7 @@
                 <td></td>
             }
             <td>
-                <a href="@Url.Action("Details", "ReqSD", new { id = item.SD_CODE })" style="color:black;"> @Html.DisplayFor(modelItem => item.SD_CODE)</a>
+                <a href="@Url.Action("Details", "ReqSD", new { id = item.SD_CODE })" style="color:black;text-decoration: underline;"> @Html.DisplayFor(modelItem => item.SD_CODE)</a>
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.SD_DATE)
@@ -99,3 +102,4 @@
     }
 
 </table>
+@Html.PagedListPager(Model, i => Url.Action("Index", "ReqSD", new { i }))

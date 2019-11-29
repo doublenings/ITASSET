@@ -19,7 +19,7 @@ namespace IT_ASSET.Controllers
     {
         private IT_ASSET_MANAGEMENTEntities db = new IT_ASSET_MANAGEMENTEntities();
         ViewModel viewModel = new ViewModel();
-        string connectionString = "Data Source= COMP05\\SQLEXPRESS;Initial Catalog=IT_ASSET_SERVER;Integrated Security=True";
+        string connectionString = "Data Source= serverjob;Initial Catalog=IT_ASSET_SERVER;Integrated Security=True";
 
         // GET: IncStatus
         public ActionResult Index(int? i,string search)
@@ -27,7 +27,7 @@ namespace IT_ASSET.Controllers
             
             var status = db.tbl_incident_case.Include(c => c.INC_STATUS);
            
-            return View(db.View_inc_status.OrderByDescending(s => s.INC_CODE).Where(s => s.INC_TOPIC.Contains(search) || s.INC_CODE.Contains(search) || s.INC_REQUESTER.Contains(search)|| search == null).ToList().ToPagedList(i ?? 1, 12));
+            return View(db.View_inc_status.OrderByDescending(s => s.INC_DATE).Where(s => s.INC_TOPIC.Contains(search) || s.INC_CODE.Contains(search) || s.INC_REQUESTER.Contains(search) || s.USER_NAME.Contains(search) || search == null).ToList().ToPagedList(i ?? 1, 15));
         }
 
         // GET: IncStatus/Details/5

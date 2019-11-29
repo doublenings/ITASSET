@@ -4,112 +4,113 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
-<table class="table table-bordered table-hover">
-    <tbody>
-        <tr>
-            <td>
-                <b>เลขที่เอกสาร</b>
-            </td>
-            <td>
-                @Html.DisplayFor(model => model.SD_CODE)
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <b>รหัสพนักงานของผู้ขอสิทธิ</b>
-            </td>
-            <td>
-                @Html.DisplayFor(model => model.USER_NO)
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <b>ชื่อพนักงานของผู้ขอสิทธิ</b>
-            </td>
-            <td>
-                @Html.DisplayFor(model => model.USER_NAME)
-            </td>
-        </tr>
+    <h3 style="text-align:center;">รายละเอียดการขอและยกเลิกรหัสผู้ใช้ เพื่อการกำหนดเข้าสู่ Share Drive</h3>
+<hr />
+    <table class="table table-bordered table-striped">
+        <tbody>
+            <tr>
+                <td>
+                    <b>เลขที่เอกสาร</b>
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.SD_CODE)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <b>รหัสพนักงานของผู้ขอสิทธิ</b>
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.USER_NO)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <b>ชื่อพนักงานของผู้ขอสิทธิ</b>
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.USER_NAME)
+                </td>
+            </tr>
 
-        <tr>
-            <td>
-                <b>วันที่แจ้ง</b>
-            </td>
-            <td>
-                @Html.DisplayFor(model => model.SD_DATE)
-            </td>
-        <tr>
-            <td>
-                <b>สิทธิการใช้งาน</b>
-            </td>
-            <td>
-                @Html.DisplayFor(model => model.ALLOW_DESC)
-            </td>
+            <tr>
+                <td>
+                    <b>วันที่แจ้ง</b>
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.SD_DATE)
+                </td>
+            <tr>
+                <td>
+                    <b>สิทธิการใช้งาน</b>
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.ALLOW_DESC)
+                </td>
 
-        <tr>
-            <td>
-                <b>Drive</b>
-            <td>
-                @Html.DisplayFor(model => model.SD_DRIVE)
-            </td>
-        <tr>
-            <td>
-                <b>Folder</b>
-            </td>
-            <td>
-                @Html.DisplayFor(model => model.SD_FOLDER)
-            </td>
-        <tr>
-            <td>
-                <b>สิทธิ</b>
-            </td>
-            <td>
-                @Html.DisplayFor(model => model.AUTH_DESC)
-            </td>
-        <tr>
-            <td>
-                <b>หมายเหตุ</b>
-            </td>
-            <td>
-                @Html.DisplayFor(model => model.SD_NOTE)
-            </td>
-        <tr>
-            <td>
-                <b>รหัสพนักงานผู้แจ้ง</b>
-            </td>
-            <td>
-                @Html.DisplayFor(model => model.SD_REQUESTER)
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <b>ชื่อผู้แจ้ง </b>
-            </td>
-            <td>
-                @Html.DisplayFor(model => model.REQUESTER_NAME)
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <b>  เบอร์ผู้แจ้ง </b>
-            </td>
-            <td>
-                @Html.DisplayFor(model => model.REQUESTER_EXTENSION)
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <b>สถานะของงาน</b>
-            </td>
-            <td>
-                @Html.DisplayFor(model => model.STA_DESC)
-            </td>
-        </tr>
+            <tr>
+                <td>
+                    <b>Drive</b>
+                <td>
+                    @Html.DisplayFor(model => model.SD_DRIVE)
+                </td>
+            <tr>
+                <td>
+                    <b>Folder</b>
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.SD_FOLDER)
+                </td>
+            <tr>
+                <td>
+                    <b>สิทธิ</b>
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.AUTH_DESC)
+                </td>
+            <tr>
+                <td>
+                    <b>หมายเหตุ</b>
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.SD_NOTE)
+                </td>
+            <tr>
+                <td>
+                    <b>รหัสพนักงานผู้แจ้ง</b>
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.SD_REQUESTER)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <b>ชื่อผู้แจ้ง </b>
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.REQUESTER_NAME)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <b>  เบอร์ผู้แจ้ง </b>
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.REQUESTER_EXTENSION)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <b>สถานะของงาน</b>
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.STA_DESC)
+                </td>
+            </tr>
 
 
-</table>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.SD_CODE }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+    </table>
+
+<div>
+    <input type="button" class="btn btn-primary" value="กลับไปหน้ารายการ" onclick="location.href='@Url.Action("Index", "ReqSD")'" />
+</div>

@@ -15,7 +15,7 @@
         <div class="pull-right col-md-12 col-md-6">
             <form class="pull-right" role="search">
                 <div class="input-group pull-right">
-                    @Html.TextBox("Search", null, new { @class = "form-control", @placeholder = "เลขที่เอกสาร/รหัสพนักงานผู้ขอสิทธิ/รหัสพนักงานผู้แจ้ง"  })
+                    @Html.TextBox("Search", null, new { @class = "form-control", @placeholder = "เลขที่เอกสาร/รหัสพนักงานผู้ขอสิทธิ/ชื่อผู้ขอสิทธิ/รหัสพนักงานผู้แจ้ง"  })
                     <div class="input-group-btn">
                         <button class="btn btn-default pull-right" type="submit"><i class="glyphicon glyphicon-search"></i></button>
                     </div>
@@ -62,7 +62,7 @@
                     <td></td>
                 }
                 <td>
-                    <a href="@Url.Action("Details", "ReqAFRegister", new { id = item.AF_CODE })" style="color:black;"> @Html.DisplayFor(modelItem => item.AF_CODE)</a>
+                    <a href="@Url.Action("Details", "ReqAFRegister", new { id = item.AF_CODE })" style="color:black;text-decoration: underline;"> @Html.DisplayFor(modelItem => item.AF_CODE)</a>
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.AF_DATE)

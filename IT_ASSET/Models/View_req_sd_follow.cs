@@ -68,9 +68,9 @@ namespace IT_ASSET.Models
         public string REQ_STATUS { get; set; }
         public string STA_DESC { get; set; }
         public string SD_CLOSE { get; set; }
+        public Nullable<System.DateTime> SD_CLOSE_DATE { get; set; }
         public string CLOSE_NAME { get; set; }
         public string CLOSE_SURNAME { get; set; }
-        public Nullable<System.DateTime> AF_CLOSE_DATE { get; set; }
         public string SD_IT_COMMENT { get; set; }
         public string SD_IT_COMMENTER { get; set; }
         public string SD_IT_MANAGER { get; set; }

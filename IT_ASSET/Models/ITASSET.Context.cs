@@ -79,9 +79,12 @@ namespace IT_ASSET.Models
         public virtual DbSet<tbl_req_allow_status> tbl_req_allow_status { get; set; }
         public virtual DbSet<View_req_af_follow> View_req_af_follow { get; set; }
         public virtual DbSet<tbl_req_auth> tbl_req_auth { get; set; }
-        public virtual DbSet<tbl_req_sd> tbl_req_sd { get; set; }
         public virtual DbSet<View_req_sd> View_req_sd { get; set; }
+        public virtual DbSet<tbl_req_mini> tbl_req_mini { get; set; }
+        public virtual DbSet<tbl_req_sd> tbl_req_sd { get; set; }
         public virtual DbSet<View_req_sd_follow> View_req_sd_follow { get; set; }
+        public virtual DbSet<View_req_mini> View_req_mini { get; set; }
+        public virtual DbSet<View_req_mini_follow> View_req_mini_follow { get; set; }
     
         public virtual int AddIncident(ObjectParameter iNC_CODE, Nullable<System.DateTime> iNC_DATE, string iNC_REQUESTER, string iNC_TOPIC, string iNC_STATUS, string iNC_DESCRIPTION)
         {
@@ -289,6 +292,47 @@ namespace IT_ASSET.Models
                 new ObjectParameter("REQ_STATUS", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("AddReqShareDrive", sD_CODE, uSER_NOParameter, sD_DATEParameter, aLLOW_STATUSParameter, sD_DRIVEParameter, sD_FOLDERParameter, sD_NOTEParameter, rEQ_AUTHParameter, sD_REQUESTERParameter, rEQ_STATUSParameter);
+        }
+    
+        public virtual int AddReqMini(ObjectParameter mINI_CODE, string uSER_NO, Nullable<System.DateTime> mINI_DATE, string aLLOW_STATUS, string mINI_SAMPLE, string mINI_PROTO, string mINI_INFORM, string mINI_CHM, string mINI_REQUESTER, string rEQ_STATUS)
+        {
+            var uSER_NOParameter = uSER_NO != null ?
+                new ObjectParameter("USER_NO", uSER_NO) :
+                new ObjectParameter("USER_NO", typeof(string));
+    
+            var mINI_DATEParameter = mINI_DATE.HasValue ?
+                new ObjectParameter("MINI_DATE", mINI_DATE) :
+                new ObjectParameter("MINI_DATE", typeof(System.DateTime));
+    
+            var aLLOW_STATUSParameter = aLLOW_STATUS != null ?
+                new ObjectParameter("ALLOW_STATUS", aLLOW_STATUS) :
+                new ObjectParameter("ALLOW_STATUS", typeof(string));
+    
+            var mINI_SAMPLEParameter = mINI_SAMPLE != null ?
+                new ObjectParameter("MINI_SAMPLE", mINI_SAMPLE) :
+                new ObjectParameter("MINI_SAMPLE", typeof(string));
+    
+            var mINI_PROTOParameter = mINI_PROTO != null ?
+                new ObjectParameter("MINI_PROTO", mINI_PROTO) :
+                new ObjectParameter("MINI_PROTO", typeof(string));
+    
+            var mINI_INFORMParameter = mINI_INFORM != null ?
+                new ObjectParameter("MINI_INFORM", mINI_INFORM) :
+                new ObjectParameter("MINI_INFORM", typeof(string));
+    
+            var mINI_CHMParameter = mINI_CHM != null ?
+                new ObjectParameter("MINI_CHM", mINI_CHM) :
+                new ObjectParameter("MINI_CHM", typeof(string));
+    
+            var mINI_REQUESTERParameter = mINI_REQUESTER != null ?
+                new ObjectParameter("MINI_REQUESTER", mINI_REQUESTER) :
+                new ObjectParameter("MINI_REQUESTER", typeof(string));
+    
+            var rEQ_STATUSParameter = rEQ_STATUS != null ?
+                new ObjectParameter("REQ_STATUS", rEQ_STATUS) :
+                new ObjectParameter("REQ_STATUS", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("AddReqMini", mINI_CODE, uSER_NOParameter, mINI_DATEParameter, aLLOW_STATUSParameter, mINI_SAMPLEParameter, mINI_PROTOParameter, mINI_INFORMParameter, mINI_CHMParameter, mINI_REQUESTERParameter, rEQ_STATUSParameter);
         }
     }
 }

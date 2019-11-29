@@ -1,13 +1,26 @@
-﻿body {
+﻿html,body {
     font-family: 'Sarabun', sans-serif;
     line-height: 2.0;
-    font-size: 20px;
+    font-size: 16px;
+    height: 100%;
 }
 .h2{
     text-align:center;
 }
+h4{
+    font-size:16px;
+}
 .container {
     font-family: 'Sarabun', sans-serif;
-    font-size:20px;
+   
 }
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    text-align: center;
+}
+
 

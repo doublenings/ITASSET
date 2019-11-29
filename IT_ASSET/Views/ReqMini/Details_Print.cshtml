@@ -1,0 +1,200 @@
+﻿@model IT_ASSET.Models.View_req_mini_follow
+
+@{
+    ViewBag.Title = "Details_Print";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="~/Content/Style.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Sarabun&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+<body>
+    <p style="text-align:right">Printed: @DateTime.Now.ToShortDateString()</p>
+    <div class="container">
+
+        <div class="row bg-faded">
+            <div class="col-4 mx-auto text-center">
+                <img src="~/Content/img/Logo-01.png" width="120" height="120"> <!-- center this image within the column -->
+            </div>
+        </div>
+
+
+        <h2 style="text-align:center;">แบบฟอร์มการขอและยกเลิกสิทธิ การใช้เครื่อง PDJMINI02 </h2>
+        <hr />
+        <div class="col-md-4">
+            <b>    เลขเอกสาร  </b>&nbsp; &nbsp; &nbsp; &nbsp;
+            @Html.DisplayFor(model => model.MINI_CODE)&nbsp; &nbsp; &nbsp; &nbsp;
+            <b>    สิทธิการใช้งาน  </b>&nbsp; &nbsp; &nbsp; &nbsp;
+            @Html.DisplayFor(model => model.ALLOW_DESC)&nbsp; &nbsp; &nbsp; &nbsp;
+        </div>
+        <div class="col-md-4">
+            <b>    รหัสพนักงาน   </b>&nbsp; &nbsp; &nbsp; &nbsp;
+            <span>
+                @Html.DisplayFor(model => model.USER_NO)&nbsp; &nbsp; &nbsp; &nbsp;
+            </span>
+        </div>
+        <div class="col-md-4">
+            <b>     ชื่อ-สกุล (ภาษาไทย)   </b>&nbsp; &nbsp; &nbsp; &nbsp;
+            <span>
+                @Html.DisplayFor(model => model.USER_NAME)&nbsp; &nbsp; &nbsp; &nbsp;
+            </span>
+            <b>    ชื่อ-สกุล (ภาษาอังกฤษ)  </b>&nbsp; &nbsp; &nbsp; &nbsp;
+            <span>
+                @Html.DisplayFor(model => model.USER_NAME_EN)&nbsp; &nbsp; &nbsp; &nbsp;
+            </span>
+        </div>
+        <div class="col-md-4">
+
+            <b>    ตำแหน่ง  </b>&nbsp; &nbsp; &nbsp; &nbsp;
+            <span>
+                @Html.DisplayFor(model => model.USER_POSITION)&nbsp; &nbsp; &nbsp; &nbsp;
+            </span>
+
+            <b>      ฝ่าย </b>&nbsp; &nbsp; &nbsp; &nbsp;
+            <span>
+                @Html.DisplayFor(model => model.USER_DEPARTMENT)&nbsp; &nbsp; &nbsp; &nbsp;
+            </span>
+            <b>      เบอร์ติดต่อ  </b>&nbsp; &nbsp; &nbsp; &nbsp;
+            <span>
+                @Html.DisplayFor(model => model.USER_EXTENSION)
+            </span>
+        </div>
+        <hr />
+        <table class="table table-bordered">
+            <tr style="background-color:antiquewhite">
+                <th>ประเภทสิทธิ</th>
+                <th>Sample$ on 'Pdjmini02' (S:) </th>
+                <th>Proto$ on 'Pdjmini02' (T:)</th>
+                <th>PrototypeInfrom$ on 'Pdjmini02'</th>
+                <th>CHM$ on 'Pdjmini02'</th>
+            </tr>
+            <tr>
+                <td>@Html.DisplayFor(model => model.ALLOW_DESC)</td>
+                <td>@Html.DisplayFor(model => model.MINI_SAMPLE)</td>
+                <td>@Html.DisplayFor(model => model.MINI_PROTO)</td>
+                <td>@Html.DisplayFor(model => model.MINI_INFORM)</td>
+                <td>@Html.DisplayFor(model => model.MINI_CHM)</td>
+
+            </tr>
+
+        </table>
+        <div class="container">
+            <div class="col-md-12 col-md-12">
+
+                <b>ชื่อผู้แจ้ง</b>&nbsp; &nbsp; &nbsp; &nbsp;
+                <span>
+                    @Html.DisplayFor(model => model.REQUESTER_NAME)&nbsp; &nbsp; &nbsp; &nbsp;
+                </span>
+            </div>
+            <div class="col-md-12 col-md-12">
+                <b>วันที่แจ้ง </b>&nbsp; &nbsp; &nbsp; &nbsp;
+                <span>
+                    @Html.DisplayFor(model => model.MINI_DATE)&nbsp; &nbsp; &nbsp; &nbsp;
+                </span>
+            </div>
+            <div class="col-md-12 col-md-12">
+                <b>เบอร์โทร</b>&nbsp; &nbsp; &nbsp; &nbsp;
+                <span>
+                    @Html.DisplayFor(model => model.REQUESTER_EXTENSION)
+                </span>
+            </div>
+            <br />
+            <div class="col-md-12 col-md-12">
+
+                <b>ผู้อนุมัติ</b>&nbsp; &nbsp; &nbsp; &nbsp;
+                <span>
+                    @Html.DisplayFor(model => model.APPROVE_NAME)&nbsp; &nbsp; &nbsp; &nbsp; (ผู้จัดการฝ่ายขึ้นไป)&nbsp; &nbsp; &nbsp; &nbsp;
+                </span>
+            </div>
+            <div class="col-md-12 col-md-12">
+                <b>วันที่แจ้ง </b>&nbsp; &nbsp; &nbsp; &nbsp;
+                <span>
+                    @Html.DisplayFor(model => model.MINI_APPROVE_DATE)&nbsp; &nbsp; &nbsp; &nbsp;
+                </span>
+            </div>
+            <div class="col-md-12 col-md-12">
+                <b>เบอร์โทร</b>&nbsp; &nbsp; &nbsp; &nbsp;
+                <span>
+                    @Html.DisplayFor(model => model.APPROVE_EXTENSION)
+                </span>
+            </div>
+        </div>
+        <br/>
+        <div class="col-md-12 col-md-12">
+
+            <b>อนุมัติโดย</b>&nbsp; &nbsp; &nbsp; &nbsp;
+            <span>
+                @Html.DisplayFor(model => model.OWNER_NAME)&nbsp; &nbsp; &nbsp; &nbsp; ผู้ช่วยกรรมการผู้จัดการ(สายผลิต)&nbsp; &nbsp; &nbsp; &nbsp;
+            </span>
+        </div>
+        <div class="col-md-12 col-md-12">
+            <b>วันที่แจ้ง </b>&nbsp; &nbsp; &nbsp; &nbsp;
+            <span>
+                @Html.DisplayFor(model => model.MINI_APPROVE_OWNER_DATE)&nbsp; &nbsp; &nbsp; &nbsp;
+            </span>
+        </div>
+        <div class="col-md-12 col-md-12">
+            <b>เบอร์โทร</b>&nbsp; &nbsp; &nbsp; &nbsp;
+            <span>
+                @Html.DisplayFor(model => model.OWNER_EXTENSION)
+            </span>
+        </div>
+    </div>
+        <hr />
+        <div class="container">
+            <h4>ส่วนนี้เฉพาะฝ่ายเทคโนโลยีสารสนเทศเท่านั้น</h4>
+            <div class="col-md-12 col-md-12">
+
+                <b>รับแจ้งโดย : </b>&nbsp; &nbsp; &nbsp; &nbsp;
+                <span>
+                    @Html.DisplayFor(model => model.OPEN_NAME)&nbsp; &nbsp;
+                    @Html.DisplayFor(model => model.OPEN_SURNAME)
+                </span>
+            </div>
+            <div class="col-md-12 col-md-12">
+                <b>วันที่ </b>&nbsp; &nbsp; &nbsp; &nbsp;
+                <span>
+                    @Html.DisplayFor(model => model.MINI_OPEN_DATE)&nbsp; &nbsp; &nbsp; &nbsp;
+                </span>
+            </div>
+            <div class="col-md-12 col-md-12">
+                <b>ดำเนินการโดย : </b>&nbsp; &nbsp; &nbsp; &nbsp;
+                <span>
+                    @Html.DisplayFor(model => model.ASSIGN_NAME)&nbsp; &nbsp;
+                    @Html.DisplayFor(model => model.ASSIGN_SURNAME)
+                </span>
+            </div>
+            <div class="col-md-12 col-md-12">
+                <b>วันที่</b>&nbsp; &nbsp; &nbsp; &nbsp;
+                <span>
+                    @Html.DisplayFor(model => model.MINI_ASSIGN_DATE)
+                </span>
+            </div>
+            <div class="col-md-12 col-md-12">
+                <b>รับทราบโดย : </b>&nbsp; &nbsp; &nbsp; &nbsp;
+                <span>
+                    @Html.DisplayFor(model => model.MINI_IT_MANAGER)
+                </span>
+            </div>
+        </div>
+
+    </div>
+    <br>
+    <div class="footer">
+        <img src="~/Content/img/Tagline-01.png" width="100%" />
+    </div>
+    
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+
+</html>

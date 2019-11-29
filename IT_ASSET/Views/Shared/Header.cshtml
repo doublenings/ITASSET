@@ -19,8 +19,9 @@
                   
                     @if (Session["USER_NO"] != null)
                     {
-                        <span style="color:white">
-                            @Session["USER_NAME"].ToString() |
+                        <span style="color:white"><i class="fa fa-user"></i>
+                            @Session["USER_NAME"].ToString() | &nbsp;
+                        <i class="fa fa-sign-out"></i>
                             <a style="position:relative; color:white" href="@Url.Action("Login", "Home", null)">Logout</a>
                         </span>
 

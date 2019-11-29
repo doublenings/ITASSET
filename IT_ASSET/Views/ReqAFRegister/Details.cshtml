@@ -4,10 +4,10 @@
     ViewBag.Title = "Details";
 }
 
-<h2>รายละเอียดติดตามการขอสิทธิ ALFRESCO</h2>
+<h3 style="text-align:center;">รายละเอียดติดตามการขอสิทธิ ALFRESCO</h3>
 <hr />
 
-<table class="table table-bordered table-hover">
+<table class="table table-bordered table-striped">
     <tbody>
         <tr>
             <td>
@@ -93,8 +93,8 @@
             </td>
         </tr>
 
-     
-      
+
+
         <tr>
             <td>
                 <b>สถานะของงาน</b>
@@ -103,10 +103,10 @@
                 @Html.DisplayFor(model => model.STA_DESC)
             </td>
         </tr>
-       
-       
+
+
 </table>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.AF_CODE }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+
+<div>
+    <input type="button" class="btn btn-primary" value="กลับไปหน้ารายการ" onclick="location.href='@Url.Action("Index", "ReqAFRegister")'" />
+</div>

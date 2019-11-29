@@ -417,6 +417,41 @@ warning 6002: The table/view 'IT_ASSET_SERVER.dbo.tbl_configure' does not have a
           <Property Name="REQ_AUTH" Type="nvarchar" MaxLength="2" Nullable="false" />
           <Property Name="AUTH_DESC" Type="nvarchar" MaxLength="10" />
         </EntityType>
+        <EntityType Name="tbl_req_mini">
+          <Key>
+            <PropertyRef Name="MINI_CODE" />
+          </Key>
+          <Property Name="MINI_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MINI_CODE" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="USER_NO" Type="nvarchar" MaxLength="10" />
+          <Property Name="MINI_DATE" Type="datetime" />
+          <Property Name="ALLOW_STATUS" Type="nvarchar" MaxLength="2" />
+          <Property Name="MINI_SAMPLE" Type="nvarchar" MaxLength="10" />
+          <Property Name="MINI_PROTO" Type="nvarchar" MaxLength="10" />
+          <Property Name="MINI_INFORM" Type="nvarchar" MaxLength="10" />
+          <Property Name="MINI_CHM" Type="nvarchar" MaxLength="10" />
+          <Property Name="MINI_REQUESTER" Type="nvarchar" MaxLength="6" />
+          <Property Name="MINI_APPROVE_OWNER" Type="nvarchar" MaxLength="6" />
+          <Property Name="MINI_APPROVE_OWNER_DATE" Type="datetime" />
+          <Property Name="MINI_APPROVE" Type="nvarchar" MaxLength="6" />
+          <Property Name="MINI_APPROVE_DATE" Type="datetime" />
+          <Property Name="MINI_OPEN_BY" Type="nvarchar" MaxLength="6" />
+          <Property Name="MINI_OPEN_DATE" Type="datetime" />
+          <Property Name="MINI_ASSIGN_TO" Type="nvarchar" MaxLength="6" />
+          <Property Name="MINI_ASSIGN_DATE" Type="datetime" />
+          <Property Name="MINI_SUBMIT_DATE" Type="datetime" />
+          <Property Name="MINI_CLOSE" Type="nvarchar" MaxLength="6" />
+          <Property Name="MINI_CLOSE_DATE" Type="datetime" />
+          <Property Name="REQ_STATUS" Type="nvarchar" MaxLength="2" />
+          <Property Name="USER_CREATE" Type="nvarchar" MaxLength="100" />
+          <Property Name="USER_UPDATE" Type="nvarchar" MaxLength="100" />
+          <Property Name="CREATE_DATE" Type="datetime" />
+          <Property Name="UPDATE_DATE" Type="datetime" />
+          <Property Name="MINI_IT_COMMENT" Type="nvarchar(max)" />
+          <Property Name="MINI_IT_COMMENTER" Type="nvarchar" MaxLength="50" />
+          <Property Name="MINI_IT_MANAGER" Type="nvarchar" MaxLength="50" />
+          <Property Name="MINI_IT_DATE" Type="datetime" />
+        </EntityType>
         <EntityType Name="tbl_req_sd">
           <Key>
             <PropertyRef Name="SD_CODE" />
@@ -441,7 +476,7 @@ warning 6002: The table/view 'IT_ASSET_SERVER.dbo.tbl_configure' does not have a
           <Property Name="SD_ASSIGN_DATE" Type="datetime" />
           <Property Name="SD_SUBMIT_DATE" Type="datetime" />
           <Property Name="SD_CLOSE" Type="nvarchar" MaxLength="6" />
-          <Property Name="AF_CLOSE_DATE" Type="datetime" />
+          <Property Name="SD_CLOSE_DATE" Type="datetime" />
           <Property Name="REQ_STATUS" Type="nvarchar" MaxLength="2" />
           <Property Name="USER_CREATE" Type="nvarchar" MaxLength="100" />
           <Property Name="USER_UPDATE" Type="nvarchar" MaxLength="100" />
@@ -999,6 +1034,110 @@ warning 6002: The table/view 'IT_ASSET_SERVER.dbo.View_req_af_register' does not
           <Property Name="APPROVE_ROLE" Type="nvarchar" MaxLength="10" />
         </EntityType>
         <!--Errors Found During Generation:
+warning 6002: The table/view 'IT_ASSET_SERVER.dbo.View_req_mini' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="View_req_mini">
+          <Key>
+            <PropertyRef Name="MINI_CODE" />
+          </Key>
+          <Property Name="MINI_CODE" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="USER_NO" Type="nvarchar" MaxLength="10" />
+          <Property Name="USER_NAME" Type="nvarchar" MaxLength="100" />
+          <Property Name="USER_NAME_EN" Type="nvarchar" MaxLength="100" />
+          <Property Name="USER_POSITION" Type="nvarchar" MaxLength="50" />
+          <Property Name="USER_DEPARTMENT" Type="nvarchar" MaxLength="50" />
+          <Property Name="USER_EXTENSION" Type="nvarchar" MaxLength="15" />
+          <Property Name="USER_EMAIL" Type="nvarchar" MaxLength="50" />
+          <Property Name="USER_EMAIL_APPROVE" Type="nvarchar" MaxLength="50" />
+          <Property Name="MINI_DATE" Type="datetime" />
+          <Property Name="ALLOW_STATUS" Type="nvarchar" MaxLength="2" />
+          <Property Name="ALLOW_DESC" Type="nvarchar" MaxLength="50" />
+          <Property Name="MINI_SAMPLE" Type="nvarchar" MaxLength="10" />
+          <Property Name="MINI_PROTO" Type="nvarchar" MaxLength="10" />
+          <Property Name="MINI_INFORM" Type="nvarchar" MaxLength="10" />
+          <Property Name="MINI_CHM" Type="nvarchar" MaxLength="10" />
+          <Property Name="MINI_REQUESTER" Type="nvarchar" MaxLength="6" />
+          <Property Name="REQUESTER_NAME" Type="nvarchar" MaxLength="100" />
+          <Property Name="REQUESTER_EN_NAME" Type="nvarchar" MaxLength="100" />
+          <Property Name="REQUESTER_POSITION" Type="nvarchar" MaxLength="50" />
+          <Property Name="REQUESTER_DEPARTMENT" Type="nvarchar" MaxLength="50" />
+          <Property Name="REQUESTER_EXTENSION" Type="nvarchar" MaxLength="15" />
+          <Property Name="REQUESTER_EMAIL" Type="nvarchar" MaxLength="50" />
+          <Property Name="REQUESTER_EMAIL_APPROVE" Type="nvarchar" MaxLength="50" />
+          <Property Name="MINI_APPROVE_OWNER" Type="nvarchar" MaxLength="6" />
+          <Property Name="MINI_APPROVE_OWNER_DATE" Type="datetime" />
+          <Property Name="MINI_APPROVE" Type="nvarchar" MaxLength="6" />
+          <Property Name="MINI_APPROVE_DATE" Type="datetime" />
+          <Property Name="REQ_STATUS" Type="nvarchar" MaxLength="2" />
+          <Property Name="STA_DESC" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'IT_ASSET_SERVER.dbo.View_req_mini_follow' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="View_req_mini_follow">
+          <Key>
+            <PropertyRef Name="MINI_CODE" />
+          </Key>
+          <Property Name="MINI_CODE" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="USER_NO" Type="nvarchar" MaxLength="10" />
+          <Property Name="USER_NAME" Type="nvarchar" MaxLength="100" />
+          <Property Name="USER_NAME_EN" Type="nvarchar" MaxLength="100" />
+          <Property Name="USER_POSITION" Type="nvarchar" MaxLength="50" />
+          <Property Name="USER_DEPARTMENT" Type="nvarchar" MaxLength="50" />
+          <Property Name="USER_EXTENSION" Type="nvarchar" MaxLength="15" />
+          <Property Name="USER_EMAIL" Type="nvarchar" MaxLength="50" />
+          <Property Name="USER_EMAIL_APPROVE" Type="nvarchar" MaxLength="50" />
+          <Property Name="MINI_DATE" Type="datetime" />
+          <Property Name="ALLOW_STATUS" Type="nvarchar" MaxLength="2" />
+          <Property Name="MINI_SAMPLE" Type="nvarchar" MaxLength="10" />
+          <Property Name="MINI_PROTO" Type="nvarchar" MaxLength="10" />
+          <Property Name="MINI_INFORM" Type="nvarchar" MaxLength="10" />
+          <Property Name="MINI_CHM" Type="nvarchar" MaxLength="10" />
+          <Property Name="MINI_REQUESTER" Type="nvarchar" MaxLength="6" />
+          <Property Name="REQUESTER_NAME" Type="nvarchar" MaxLength="100" />
+          <Property Name="REQUESTER_EN_NAME" Type="nvarchar" MaxLength="100" />
+          <Property Name="REQUESTER_POSITION" Type="nvarchar" MaxLength="50" />
+          <Property Name="REQUESTER_DEPARTMENT" Type="nvarchar" MaxLength="50" />
+          <Property Name="REQUESTER_EXTENSION" Type="nvarchar" MaxLength="15" />
+          <Property Name="REQUESTER_EMAIL" Type="nvarchar" MaxLength="50" />
+          <Property Name="REQUESTER_EMAIL_APPROVE" Type="nvarchar" MaxLength="50" />
+          <Property Name="MINI_APPROVE_OWNER" Type="nvarchar" MaxLength="6" />
+          <Property Name="OWNER_NAME" Type="nvarchar" MaxLength="100" />
+          <Property Name="OWNER_EN_NAME" Type="nvarchar" MaxLength="100" />
+          <Property Name="OWNER_POSITION" Type="nvarchar" MaxLength="50" />
+          <Property Name="OWNER_DEPARTMENT" Type="nvarchar" MaxLength="50" />
+          <Property Name="OWNER_EXTENSION" Type="nvarchar" MaxLength="15" />
+          <Property Name="OWNER_EMAIL" Type="nvarchar" MaxLength="50" />
+          <Property Name="OWNER_EMAIL_APPROVE" Type="nvarchar" MaxLength="50" />
+          <Property Name="MINI_APPROVE_OWNER_DATE" Type="datetime" />
+          <Property Name="MINI_APPROVE" Type="nvarchar" MaxLength="6" />
+          <Property Name="APPROVE_NAME" Type="nvarchar" MaxLength="100" />
+          <Property Name="APPROVE_EN_NAME" Type="nvarchar" MaxLength="100" />
+          <Property Name="APPROVE_POSITION" Type="nvarchar" MaxLength="50" />
+          <Property Name="APPROVE_DEPARTMENT" Type="nvarchar" MaxLength="50" />
+          <Property Name="APPROVE_EXTENSION" Type="nvarchar" MaxLength="15" />
+          <Property Name="APPROVE_EMAIL" Type="nvarchar" MaxLength="50" />
+          <Property Name="APPROVE_EMAIL_APPROVE" Type="nvarchar" MaxLength="50" />
+          <Property Name="MINI_APPROVE_DATE" Type="datetime" />
+          <Property Name="MINI_OPEN_BY" Type="nvarchar" MaxLength="6" />
+          <Property Name="OPEN_NAME" Type="nvarchar" MaxLength="50" />
+          <Property Name="OPEN_SURNAME" Type="nvarchar" MaxLength="50" />
+          <Property Name="MINI_OPEN_DATE" Type="datetime" />
+          <Property Name="MINI_ASSIGN_TO" Type="nvarchar" MaxLength="6" />
+          <Property Name="ASSIGN_NAME" Type="nvarchar" MaxLength="50" />
+          <Property Name="ASSIGN_SURNAME" Type="nvarchar" MaxLength="50" />
+          <Property Name="MINI_ASSIGN_DATE" Type="datetime" />
+          <Property Name="MINI_CLOSE" Type="nvarchar" MaxLength="6" />
+          <Property Name="CLOSE_NAME" Type="nvarchar" MaxLength="50" />
+          <Property Name="CLOSE_SURNAME" Type="nvarchar" MaxLength="50" />
+          <Property Name="MINI_CLOSE_DATE" Type="datetime" />
+          <Property Name="REQ_STATUS" Type="nvarchar" MaxLength="2" />
+          <Property Name="MINI_IT_COMMENT" Type="nvarchar(max)" />
+          <Property Name="MINI_IT_COMMENTER" Type="nvarchar" MaxLength="50" />
+          <Property Name="MINI_IT_MANAGER" Type="nvarchar" MaxLength="50" />
+          <Property Name="MINI_IT_DATE" Type="datetime" />
+          <Property Name="STA_DESC" Type="nvarchar" MaxLength="50" />
+          <Property Name="ALLOW_DESC" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
 warning 6002: The table/view 'IT_ASSET_SERVER.dbo.View_req_sd' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="View_req_sd">
           <Key>
@@ -1094,9 +1233,9 @@ warning 6002: The table/view 'IT_ASSET_SERVER.dbo.View_req_sd_follow' does not h
           <Property Name="REQ_STATUS" Type="nvarchar" MaxLength="2" />
           <Property Name="STA_DESC" Type="nvarchar" MaxLength="50" />
           <Property Name="SD_CLOSE" Type="nvarchar" MaxLength="6" />
+          <Property Name="SD_CLOSE_DATE" Type="datetime" />
           <Property Name="CLOSE_NAME" Type="nvarchar" MaxLength="50" />
           <Property Name="CLOSE_SURNAME" Type="nvarchar" MaxLength="50" />
-          <Property Name="AF_CLOSE_DATE" Type="datetime" />
           <Property Name="SD_IT_COMMENT" Type="nvarchar(max)" />
           <Property Name="SD_IT_COMMENTER" Type="nvarchar" MaxLength="50" />
           <Property Name="SD_IT_MANAGER" Type="nvarchar" MaxLength="50" />
@@ -1208,6 +1347,18 @@ warning 6002: The table/view 'IT_ASSET_SERVER.dbo.View_sw_assets' does not have 
           <Parameter Name="AF_REQUESTER" Type="nvarchar" Mode="In" />
           <Parameter Name="REQ_STATUS" Type="nvarchar" Mode="In" />
         </Function>
+        <Function Name="AddReqMini" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="MINI_CODE" Type="nvarchar" Mode="InOut" />
+          <Parameter Name="USER_NO" Type="nvarchar" Mode="In" />
+          <Parameter Name="MINI_DATE" Type="datetime" Mode="In" />
+          <Parameter Name="ALLOW_STATUS" Type="nvarchar" Mode="In" />
+          <Parameter Name="MINI_SAMPLE" Type="nvarchar" Mode="In" />
+          <Parameter Name="MINI_PROTO" Type="nvarchar" Mode="In" />
+          <Parameter Name="MINI_INFORM" Type="nvarchar" Mode="In" />
+          <Parameter Name="MINI_CHM" Type="nvarchar" Mode="In" />
+          <Parameter Name="MINI_REQUESTER" Type="nvarchar" Mode="In" />
+          <Parameter Name="REQ_STATUS" Type="nvarchar" Mode="In" />
+        </Function>
         <Function Name="AddReqShareDrive" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="SD_CODE" Type="nvarchar" Mode="InOut" />
           <Parameter Name="USER_NO" Type="nvarchar" Mode="In" />
@@ -1246,6 +1397,7 @@ warning 6002: The table/view 'IT_ASSET_SERVER.dbo.View_sw_assets' does not have 
           <EntitySet Name="tbl_req_af_status" EntityType="Self.tbl_req_af_status" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbl_req_allow_status" EntityType="Self.tbl_req_allow_status" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbl_req_auth" EntityType="Self.tbl_req_auth" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_req_mini" EntityType="Self.tbl_req_mini" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbl_req_sd" EntityType="Self.tbl_req_sd" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbl_req_status" EntityType="Self.tbl_req_status" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbl_req_types" EntityType="Self.tbl_req_types" Schema="dbo" store:Type="Tables" />
@@ -1609,6 +1761,104 @@ warning 6002: The table/view 'IT_ASSET_SERVER.dbo.View_sw_assets' does not have 
     [View_req_af_register].[APPROVE_ROLE] AS [APPROVE_ROLE]
     FROM [dbo].[View_req_af_register] AS [View_req_af_register]</DefiningQuery>
           </EntitySet>
+          <EntitySet Name="View_req_mini" EntityType="Self.View_req_mini" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [View_req_mini].[MINI_CODE] AS [MINI_CODE], 
+    [View_req_mini].[USER_NO] AS [USER_NO], 
+    [View_req_mini].[USER_NAME] AS [USER_NAME], 
+    [View_req_mini].[USER_NAME_EN] AS [USER_NAME_EN], 
+    [View_req_mini].[USER_POSITION] AS [USER_POSITION], 
+    [View_req_mini].[USER_DEPARTMENT] AS [USER_DEPARTMENT], 
+    [View_req_mini].[USER_EXTENSION] AS [USER_EXTENSION], 
+    [View_req_mini].[USER_EMAIL] AS [USER_EMAIL], 
+    [View_req_mini].[USER_EMAIL_APPROVE] AS [USER_EMAIL_APPROVE], 
+    [View_req_mini].[MINI_DATE] AS [MINI_DATE], 
+    [View_req_mini].[ALLOW_STATUS] AS [ALLOW_STATUS], 
+    [View_req_mini].[ALLOW_DESC] AS [ALLOW_DESC], 
+    [View_req_mini].[MINI_SAMPLE] AS [MINI_SAMPLE], 
+    [View_req_mini].[MINI_PROTO] AS [MINI_PROTO], 
+    [View_req_mini].[MINI_INFORM] AS [MINI_INFORM], 
+    [View_req_mini].[MINI_CHM] AS [MINI_CHM], 
+    [View_req_mini].[MINI_REQUESTER] AS [MINI_REQUESTER], 
+    [View_req_mini].[REQUESTER_NAME] AS [REQUESTER_NAME], 
+    [View_req_mini].[REQUESTER_EN_NAME] AS [REQUESTER_EN_NAME], 
+    [View_req_mini].[REQUESTER_POSITION] AS [REQUESTER_POSITION], 
+    [View_req_mini].[REQUESTER_DEPARTMENT] AS [REQUESTER_DEPARTMENT], 
+    [View_req_mini].[REQUESTER_EXTENSION] AS [REQUESTER_EXTENSION], 
+    [View_req_mini].[REQUESTER_EMAIL] AS [REQUESTER_EMAIL], 
+    [View_req_mini].[REQUESTER_EMAIL_APPROVE] AS [REQUESTER_EMAIL_APPROVE], 
+    [View_req_mini].[MINI_APPROVE_OWNER] AS [MINI_APPROVE_OWNER], 
+    [View_req_mini].[MINI_APPROVE_OWNER_DATE] AS [MINI_APPROVE_OWNER_DATE], 
+    [View_req_mini].[MINI_APPROVE] AS [MINI_APPROVE], 
+    [View_req_mini].[MINI_APPROVE_DATE] AS [MINI_APPROVE_DATE], 
+    [View_req_mini].[REQ_STATUS] AS [REQ_STATUS], 
+    [View_req_mini].[STA_DESC] AS [STA_DESC]
+    FROM [dbo].[View_req_mini] AS [View_req_mini]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="View_req_mini_follow" EntityType="Self.View_req_mini_follow" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [View_req_mini_follow].[MINI_CODE] AS [MINI_CODE], 
+    [View_req_mini_follow].[USER_NO] AS [USER_NO], 
+    [View_req_mini_follow].[USER_NAME] AS [USER_NAME], 
+    [View_req_mini_follow].[USER_NAME_EN] AS [USER_NAME_EN], 
+    [View_req_mini_follow].[USER_POSITION] AS [USER_POSITION], 
+    [View_req_mini_follow].[USER_DEPARTMENT] AS [USER_DEPARTMENT], 
+    [View_req_mini_follow].[USER_EXTENSION] AS [USER_EXTENSION], 
+    [View_req_mini_follow].[USER_EMAIL] AS [USER_EMAIL], 
+    [View_req_mini_follow].[USER_EMAIL_APPROVE] AS [USER_EMAIL_APPROVE], 
+    [View_req_mini_follow].[MINI_DATE] AS [MINI_DATE], 
+    [View_req_mini_follow].[ALLOW_STATUS] AS [ALLOW_STATUS], 
+    [View_req_mini_follow].[MINI_SAMPLE] AS [MINI_SAMPLE], 
+    [View_req_mini_follow].[MINI_PROTO] AS [MINI_PROTO], 
+    [View_req_mini_follow].[MINI_INFORM] AS [MINI_INFORM], 
+    [View_req_mini_follow].[MINI_CHM] AS [MINI_CHM], 
+    [View_req_mini_follow].[MINI_REQUESTER] AS [MINI_REQUESTER], 
+    [View_req_mini_follow].[REQUESTER_NAME] AS [REQUESTER_NAME], 
+    [View_req_mini_follow].[REQUESTER_EN_NAME] AS [REQUESTER_EN_NAME], 
+    [View_req_mini_follow].[REQUESTER_POSITION] AS [REQUESTER_POSITION], 
+    [View_req_mini_follow].[REQUESTER_DEPARTMENT] AS [REQUESTER_DEPARTMENT], 
+    [View_req_mini_follow].[REQUESTER_EXTENSION] AS [REQUESTER_EXTENSION], 
+    [View_req_mini_follow].[REQUESTER_EMAIL] AS [REQUESTER_EMAIL], 
+    [View_req_mini_follow].[REQUESTER_EMAIL_APPROVE] AS [REQUESTER_EMAIL_APPROVE], 
+    [View_req_mini_follow].[MINI_APPROVE_OWNER] AS [MINI_APPROVE_OWNER], 
+    [View_req_mini_follow].[OWNER_NAME] AS [OWNER_NAME], 
+    [View_req_mini_follow].[OWNER_EN_NAME] AS [OWNER_EN_NAME], 
+    [View_req_mini_follow].[OWNER_POSITION] AS [OWNER_POSITION], 
+    [View_req_mini_follow].[OWNER_DEPARTMENT] AS [OWNER_DEPARTMENT], 
+    [View_req_mini_follow].[OWNER_EXTENSION] AS [OWNER_EXTENSION], 
+    [View_req_mini_follow].[OWNER_EMAIL] AS [OWNER_EMAIL], 
+    [View_req_mini_follow].[OWNER_EMAIL_APPROVE] AS [OWNER_EMAIL_APPROVE], 
+    [View_req_mini_follow].[MINI_APPROVE_OWNER_DATE] AS [MINI_APPROVE_OWNER_DATE], 
+    [View_req_mini_follow].[MINI_APPROVE] AS [MINI_APPROVE], 
+    [View_req_mini_follow].[APPROVE_NAME] AS [APPROVE_NAME], 
+    [View_req_mini_follow].[APPROVE_EN_NAME] AS [APPROVE_EN_NAME], 
+    [View_req_mini_follow].[APPROVE_POSITION] AS [APPROVE_POSITION], 
+    [View_req_mini_follow].[APPROVE_DEPARTMENT] AS [APPROVE_DEPARTMENT], 
+    [View_req_mini_follow].[APPROVE_EXTENSION] AS [APPROVE_EXTENSION], 
+    [View_req_mini_follow].[APPROVE_EMAIL] AS [APPROVE_EMAIL], 
+    [View_req_mini_follow].[APPROVE_EMAIL_APPROVE] AS [APPROVE_EMAIL_APPROVE], 
+    [View_req_mini_follow].[MINI_APPROVE_DATE] AS [MINI_APPROVE_DATE], 
+    [View_req_mini_follow].[MINI_OPEN_BY] AS [MINI_OPEN_BY], 
+    [View_req_mini_follow].[OPEN_NAME] AS [OPEN_NAME], 
+    [View_req_mini_follow].[OPEN_SURNAME] AS [OPEN_SURNAME], 
+    [View_req_mini_follow].[MINI_OPEN_DATE] AS [MINI_OPEN_DATE], 
+    [View_req_mini_follow].[MINI_ASSIGN_TO] AS [MINI_ASSIGN_TO], 
+    [View_req_mini_follow].[ASSIGN_NAME] AS [ASSIGN_NAME], 
+    [View_req_mini_follow].[ASSIGN_SURNAME] AS [ASSIGN_SURNAME], 
+    [View_req_mini_follow].[MINI_ASSIGN_DATE] AS [MINI_ASSIGN_DATE], 
+    [View_req_mini_follow].[MINI_CLOSE] AS [MINI_CLOSE], 
+    [View_req_mini_follow].[CLOSE_NAME] AS [CLOSE_NAME], 
+    [View_req_mini_follow].[CLOSE_SURNAME] AS [CLOSE_SURNAME], 
+    [View_req_mini_follow].[MINI_CLOSE_DATE] AS [MINI_CLOSE_DATE], 
+    [View_req_mini_follow].[REQ_STATUS] AS [REQ_STATUS], 
+    [View_req_mini_follow].[MINI_IT_COMMENT] AS [MINI_IT_COMMENT], 
+    [View_req_mini_follow].[MINI_IT_COMMENTER] AS [MINI_IT_COMMENTER], 
+    [View_req_mini_follow].[MINI_IT_MANAGER] AS [MINI_IT_MANAGER], 
+    [View_req_mini_follow].[MINI_IT_DATE] AS [MINI_IT_DATE], 
+    [View_req_mini_follow].[STA_DESC] AS [STA_DESC], 
+    [View_req_mini_follow].[ALLOW_DESC] AS [ALLOW_DESC]
+    FROM [dbo].[View_req_mini_follow] AS [View_req_mini_follow]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="View_req_sd" EntityType="Self.View_req_sd" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [View_req_sd].[SD_CODE] AS [SD_CODE], 
@@ -1698,9 +1948,9 @@ warning 6002: The table/view 'IT_ASSET_SERVER.dbo.View_sw_assets' does not have 
     [View_req_sd_follow].[REQ_STATUS] AS [REQ_STATUS], 
     [View_req_sd_follow].[STA_DESC] AS [STA_DESC], 
     [View_req_sd_follow].[SD_CLOSE] AS [SD_CLOSE], 
+    [View_req_sd_follow].[SD_CLOSE_DATE] AS [SD_CLOSE_DATE], 
     [View_req_sd_follow].[CLOSE_NAME] AS [CLOSE_NAME], 
     [View_req_sd_follow].[CLOSE_SURNAME] AS [CLOSE_SURNAME], 
-    [View_req_sd_follow].[AF_CLOSE_DATE] AS [AF_CLOSE_DATE], 
     [View_req_sd_follow].[SD_IT_COMMENT] AS [SD_IT_COMMENT], 
     [View_req_sd_follow].[SD_IT_COMMENTER] AS [SD_IT_COMMENTER], 
     [View_req_sd_follow].[SD_IT_MANAGER] AS [SD_IT_MANAGER], 
@@ -2533,7 +2783,6 @@ warning 6002: The table/view 'IT_ASSET_SERVER.dbo.View_sw_assets' does not have 
           <EntitySet Name="tbl_req_allow_status" EntityType="IT_ASSET_MANAGEMENTModel.tbl_req_allow_status" />
           <EntitySet Name="View_req_af_follow" EntityType="IT_ASSET_MANAGEMENTModel.View_req_af_follow" />
           <EntitySet Name="tbl_req_auth" EntityType="IT_ASSET_MANAGEMENTModel.tbl_req_auth" />
-          <EntitySet Name="tbl_req_sd" EntityType="IT_ASSET_MANAGEMENTModel.tbl_req_sd" />
           <EntitySet Name="View_req_sd" EntityType="IT_ASSET_MANAGEMENTModel.View_req_sd" />
           <FunctionImport Name="AddReqShareDrive">
             <Parameter Name="SD_CODE" Mode="InOut" Type="String" />
@@ -2547,7 +2796,23 @@ warning 6002: The table/view 'IT_ASSET_SERVER.dbo.View_sw_assets' does not have 
             <Parameter Name="SD_REQUESTER" Mode="In" Type="String" />
             <Parameter Name="REQ_STATUS" Mode="In" Type="String" />
           </FunctionImport>
+          <EntitySet Name="tbl_req_mini" EntityType="IT_ASSET_MANAGEMENTModel.tbl_req_mini" />
+          <FunctionImport Name="AddReqMini">
+            <Parameter Name="MINI_CODE" Mode="InOut" Type="String" />
+            <Parameter Name="USER_NO" Mode="In" Type="String" />
+            <Parameter Name="MINI_DATE" Mode="In" Type="DateTime" />
+            <Parameter Name="ALLOW_STATUS" Mode="In" Type="String" />
+            <Parameter Name="MINI_SAMPLE" Mode="In" Type="String" />
+            <Parameter Name="MINI_PROTO" Mode="In" Type="String" />
+            <Parameter Name="MINI_INFORM" Mode="In" Type="String" />
+            <Parameter Name="MINI_CHM" Mode="In" Type="String" />
+            <Parameter Name="MINI_REQUESTER" Mode="In" Type="String" />
+            <Parameter Name="REQ_STATUS" Mode="In" Type="String" />
+          </FunctionImport>
+          <EntitySet Name="tbl_req_sd" EntityType="IT_ASSET_MANAGEMENTModel.tbl_req_sd" />
           <EntitySet Name="View_req_sd_follow" EntityType="IT_ASSET_MANAGEMENTModel.View_req_sd_follow" />
+          <EntitySet Name="View_req_mini" EntityType="IT_ASSET_MANAGEMENTModel.View_req_mini" />
+          <EntitySet Name="View_req_mini_follow" EntityType="IT_ASSET_MANAGEMENTModel.View_req_mini_follow" />
         </EntityContainer>
         <EntityType Name="View_inc_status">
           <Key>
@@ -2910,41 +3175,6 @@ warning 6002: The table/view 'IT_ASSET_SERVER.dbo.View_sw_assets' does not have 
           <Property Name="REQ_AUTH" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
           <Property Name="AUTH_DESC" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityType Name="tbl_req_sd">
-          <Key>
-            <PropertyRef Name="SD_CODE" />
-          </Key>
-          <Property Name="SD_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="SD_CODE" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="USER_NO" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
-          <Property Name="SD_DATE" Type="DateTime" Precision="3" />
-          <Property Name="ALLOW_STATUS" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
-          <Property Name="SD_DRIVE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="SD_FOLDER" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="SD_NOTE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="REQ_AUTH" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
-          <Property Name="SD_REQUESTER" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
-          <Property Name="SD_APPROVE_OWNER" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
-          <Property Name="SD_APPROVE_OWNER_DATE" Type="DateTime" Precision="3" />
-          <Property Name="SD_APPROVE" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
-          <Property Name="SD_APPROVE_DATE" Type="DateTime" Precision="3" />
-          <Property Name="SD_OPEN_BY" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
-          <Property Name="SD_OPEN_DATE" Type="DateTime" Precision="3" />
-          <Property Name="SD_ASSIGN_TO" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
-          <Property Name="SD_ASSIGN_DATE" Type="DateTime" Precision="3" />
-          <Property Name="SD_SUBMIT_DATE" Type="DateTime" Precision="3" />
-          <Property Name="SD_CLOSE" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
-          <Property Name="AF_CLOSE_DATE" Type="DateTime" Precision="3" />
-          <Property Name="REQ_STATUS" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
-          <Property Name="USER_CREATE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="USER_UPDATE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="CREATE_DATE" Type="DateTime" Precision="3" />
-          <Property Name="UPDATE_DATE" Type="DateTime" Precision="3" />
-          <Property Name="SD_IT_COMMENT" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="SD_IT_COMMENTER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="SD_IT_MANAGER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="SD_IT_DATE" Type="DateTime" Precision="3" />
-        </EntityType>
         <EntityType Name="View_req_sd">
           <Key>
             <PropertyRef Name="SD_CODE" />
@@ -2978,6 +3208,76 @@ warning 6002: The table/view 'IT_ASSET_SERVER.dbo.View_sw_assets' does not have 
           <Property Name="SD_APPROVE_DATE" Type="DateTime" Precision="3" />
           <Property Name="REQ_STATUS" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
           <Property Name="STA_DESC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tbl_req_mini">
+          <Key>
+            <PropertyRef Name="MINI_CODE" />
+          </Key>
+          <Property Name="MINI_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MINI_CODE" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="USER_NO" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="MINI_DATE" Type="DateTime" Precision="3" />
+          <Property Name="ALLOW_STATUS" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="MINI_SAMPLE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="MINI_PROTO" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="MINI_INFORM" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="MINI_CHM" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="MINI_REQUESTER" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="MINI_APPROVE_OWNER" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="MINI_APPROVE_OWNER_DATE" Type="DateTime" Precision="3" />
+          <Property Name="MINI_APPROVE" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="MINI_APPROVE_DATE" Type="DateTime" Precision="3" />
+          <Property Name="MINI_OPEN_BY" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="MINI_OPEN_DATE" Type="DateTime" Precision="3" />
+          <Property Name="MINI_ASSIGN_TO" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="MINI_ASSIGN_DATE" Type="DateTime" Precision="3" />
+          <Property Name="MINI_SUBMIT_DATE" Type="DateTime" Precision="3" />
+          <Property Name="MINI_CLOSE" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="MINI_CLOSE_DATE" Type="DateTime" Precision="3" />
+          <Property Name="REQ_STATUS" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="USER_CREATE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="USER_UPDATE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CREATE_DATE" Type="DateTime" Precision="3" />
+          <Property Name="UPDATE_DATE" Type="DateTime" Precision="3" />
+          <Property Name="MINI_IT_COMMENT" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MINI_IT_COMMENTER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MINI_IT_MANAGER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MINI_IT_DATE" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tbl_req_sd">
+          <Key>
+            <PropertyRef Name="SD_CODE" />
+          </Key>
+          <Property Name="SD_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SD_CODE" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="USER_NO" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="SD_DATE" Type="DateTime" Precision="3" />
+          <Property Name="ALLOW_STATUS" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="SD_DRIVE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SD_FOLDER" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="SD_NOTE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="REQ_AUTH" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="SD_REQUESTER" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="SD_APPROVE_OWNER" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="SD_APPROVE_OWNER_DATE" Type="DateTime" Precision="3" />
+          <Property Name="SD_APPROVE" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="SD_APPROVE_DATE" Type="DateTime" Precision="3" />
+          <Property Name="SD_OPEN_BY" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="SD_OPEN_DATE" Type="DateTime" Precision="3" />
+          <Property Name="SD_ASSIGN_TO" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="SD_ASSIGN_DATE" Type="DateTime" Precision="3" />
+          <Property Name="SD_SUBMIT_DATE" Type="DateTime" Precision="3" />
+          <Property Name="SD_CLOSE" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="SD_CLOSE_DATE" Type="DateTime" Precision="3" />
+          <Property Name="REQ_STATUS" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="USER_CREATE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="USER_UPDATE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CREATE_DATE" Type="DateTime" Precision="3" />
+          <Property Name="UPDATE_DATE" Type="DateTime" Precision="3" />
+          <Property Name="SD_IT_COMMENT" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SD_IT_COMMENTER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SD_IT_MANAGER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SD_IT_DATE" Type="DateTime" Precision="3" />
         </EntityType>
         <EntityType Name="View_req_sd_follow">
           <Key>
@@ -3037,13 +3337,113 @@ warning 6002: The table/view 'IT_ASSET_SERVER.dbo.View_sw_assets' does not have 
           <Property Name="REQ_STATUS" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
           <Property Name="STA_DESC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="SD_CLOSE" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="SD_CLOSE_DATE" Type="DateTime" Precision="3" />
           <Property Name="CLOSE_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="CLOSE_SURNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="AF_CLOSE_DATE" Type="DateTime" Precision="3" />
           <Property Name="SD_IT_COMMENT" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="SD_IT_COMMENTER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="SD_IT_MANAGER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="SD_IT_DATE" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="View_req_mini">
+          <Key>
+            <PropertyRef Name="MINI_CODE" />
+          </Key>
+          <Property Name="MINI_CODE" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="USER_NO" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="USER_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="USER_NAME_EN" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="USER_POSITION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="USER_DEPARTMENT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="USER_EXTENSION" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="USER_EMAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="USER_EMAIL_APPROVE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MINI_DATE" Type="DateTime" Precision="3" />
+          <Property Name="ALLOW_STATUS" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="ALLOW_DESC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MINI_SAMPLE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="MINI_PROTO" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="MINI_INFORM" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="MINI_CHM" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="MINI_REQUESTER" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="REQUESTER_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="REQUESTER_EN_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="REQUESTER_POSITION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="REQUESTER_DEPARTMENT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="REQUESTER_EXTENSION" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="REQUESTER_EMAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="REQUESTER_EMAIL_APPROVE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MINI_APPROVE_OWNER" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="MINI_APPROVE_OWNER_DATE" Type="DateTime" Precision="3" />
+          <Property Name="MINI_APPROVE" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="MINI_APPROVE_DATE" Type="DateTime" Precision="3" />
+          <Property Name="REQ_STATUS" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="STA_DESC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="View_req_mini_follow">
+          <Key>
+            <PropertyRef Name="MINI_CODE" />
+          </Key>
+          <Property Name="MINI_CODE" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="USER_NO" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="USER_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="USER_NAME_EN" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="USER_POSITION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="USER_DEPARTMENT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="USER_EXTENSION" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="USER_EMAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="USER_EMAIL_APPROVE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MINI_DATE" Type="DateTime" Precision="3" />
+          <Property Name="ALLOW_STATUS" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="MINI_SAMPLE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="MINI_PROTO" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="MINI_INFORM" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="MINI_CHM" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="MINI_REQUESTER" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="REQUESTER_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="REQUESTER_EN_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="REQUESTER_POSITION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="REQUESTER_DEPARTMENT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="REQUESTER_EXTENSION" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="REQUESTER_EMAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="REQUESTER_EMAIL_APPROVE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MINI_APPROVE_OWNER" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="OWNER_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="OWNER_EN_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="OWNER_POSITION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OWNER_DEPARTMENT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OWNER_EXTENSION" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="OWNER_EMAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OWNER_EMAIL_APPROVE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MINI_APPROVE_OWNER_DATE" Type="DateTime" Precision="3" />
+          <Property Name="MINI_APPROVE" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="APPROVE_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="APPROVE_EN_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="APPROVE_POSITION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="APPROVE_DEPARTMENT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="APPROVE_EXTENSION" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="APPROVE_EMAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="APPROVE_EMAIL_APPROVE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MINI_APPROVE_DATE" Type="DateTime" Precision="3" />
+          <Property Name="MINI_OPEN_BY" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="OPEN_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OPEN_SURNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MINI_OPEN_DATE" Type="DateTime" Precision="3" />
+          <Property Name="MINI_ASSIGN_TO" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="ASSIGN_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ASSIGN_SURNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MINI_ASSIGN_DATE" Type="DateTime" Precision="3" />
+          <Property Name="MINI_CLOSE" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="CLOSE_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CLOSE_SURNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MINI_CLOSE_DATE" Type="DateTime" Precision="3" />
+          <Property Name="REQ_STATUS" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="MINI_IT_COMMENT" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MINI_IT_COMMENTER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MINI_IT_MANAGER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MINI_IT_DATE" Type="DateTime" Precision="3" />
+          <Property Name="STA_DESC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ALLOW_DESC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -4063,42 +4463,6 @@ warning 6002: The table/view 'IT_ASSET_SERVER.dbo.View_sw_assets' does not have 
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="tbl_req_sd">
-            <EntityTypeMapping TypeName="IT_ASSET_MANAGEMENTModel.tbl_req_sd">
-              <MappingFragment StoreEntitySet="tbl_req_sd">
-                <ScalarProperty Name="SD_IT_DATE" ColumnName="SD_IT_DATE" />
-                <ScalarProperty Name="SD_IT_MANAGER" ColumnName="SD_IT_MANAGER" />
-                <ScalarProperty Name="SD_IT_COMMENTER" ColumnName="SD_IT_COMMENTER" />
-                <ScalarProperty Name="SD_IT_COMMENT" ColumnName="SD_IT_COMMENT" />
-                <ScalarProperty Name="UPDATE_DATE" ColumnName="UPDATE_DATE" />
-                <ScalarProperty Name="CREATE_DATE" ColumnName="CREATE_DATE" />
-                <ScalarProperty Name="USER_UPDATE" ColumnName="USER_UPDATE" />
-                <ScalarProperty Name="USER_CREATE" ColumnName="USER_CREATE" />
-                <ScalarProperty Name="REQ_STATUS" ColumnName="REQ_STATUS" />
-                <ScalarProperty Name="AF_CLOSE_DATE" ColumnName="AF_CLOSE_DATE" />
-                <ScalarProperty Name="SD_CLOSE" ColumnName="SD_CLOSE" />
-                <ScalarProperty Name="SD_SUBMIT_DATE" ColumnName="SD_SUBMIT_DATE" />
-                <ScalarProperty Name="SD_ASSIGN_DATE" ColumnName="SD_ASSIGN_DATE" />
-                <ScalarProperty Name="SD_ASSIGN_TO" ColumnName="SD_ASSIGN_TO" />
-                <ScalarProperty Name="SD_OPEN_DATE" ColumnName="SD_OPEN_DATE" />
-                <ScalarProperty Name="SD_OPEN_BY" ColumnName="SD_OPEN_BY" />
-                <ScalarProperty Name="SD_APPROVE_DATE" ColumnName="SD_APPROVE_DATE" />
-                <ScalarProperty Name="SD_APPROVE" ColumnName="SD_APPROVE" />
-                <ScalarProperty Name="SD_APPROVE_OWNER_DATE" ColumnName="SD_APPROVE_OWNER_DATE" />
-                <ScalarProperty Name="SD_APPROVE_OWNER" ColumnName="SD_APPROVE_OWNER" />
-                <ScalarProperty Name="SD_REQUESTER" ColumnName="SD_REQUESTER" />
-                <ScalarProperty Name="REQ_AUTH" ColumnName="REQ_AUTH" />
-                <ScalarProperty Name="SD_NOTE" ColumnName="SD_NOTE" />
-                <ScalarProperty Name="SD_FOLDER" ColumnName="SD_FOLDER" />
-                <ScalarProperty Name="SD_DRIVE" ColumnName="SD_DRIVE" />
-                <ScalarProperty Name="ALLOW_STATUS" ColumnName="ALLOW_STATUS" />
-                <ScalarProperty Name="SD_DATE" ColumnName="SD_DATE" />
-                <ScalarProperty Name="USER_NO" ColumnName="USER_NO" />
-                <ScalarProperty Name="SD_CODE" ColumnName="SD_CODE" />
-                <ScalarProperty Name="SD_ID" ColumnName="SD_ID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="View_req_sd">
             <EntityTypeMapping TypeName="IT_ASSET_MANAGEMENTModel.View_req_sd">
               <MappingFragment StoreEntitySet="View_req_sd">
@@ -4135,6 +4499,79 @@ warning 6002: The table/view 'IT_ASSET_SERVER.dbo.View_sw_assets' does not have 
             </EntityTypeMapping>
           </EntitySetMapping>
           <FunctionImportMapping FunctionImportName="AddReqShareDrive" FunctionName="IT_ASSET_MANAGEMENTModel.Store.AddReqShareDrive" />
+          <EntitySetMapping Name="tbl_req_mini">
+            <EntityTypeMapping TypeName="IT_ASSET_MANAGEMENTModel.tbl_req_mini">
+              <MappingFragment StoreEntitySet="tbl_req_mini">
+                <ScalarProperty Name="MINI_IT_DATE" ColumnName="MINI_IT_DATE" />
+                <ScalarProperty Name="MINI_IT_MANAGER" ColumnName="MINI_IT_MANAGER" />
+                <ScalarProperty Name="MINI_IT_COMMENTER" ColumnName="MINI_IT_COMMENTER" />
+                <ScalarProperty Name="MINI_IT_COMMENT" ColumnName="MINI_IT_COMMENT" />
+                <ScalarProperty Name="UPDATE_DATE" ColumnName="UPDATE_DATE" />
+                <ScalarProperty Name="CREATE_DATE" ColumnName="CREATE_DATE" />
+                <ScalarProperty Name="USER_UPDATE" ColumnName="USER_UPDATE" />
+                <ScalarProperty Name="USER_CREATE" ColumnName="USER_CREATE" />
+                <ScalarProperty Name="REQ_STATUS" ColumnName="REQ_STATUS" />
+                <ScalarProperty Name="MINI_CLOSE_DATE" ColumnName="MINI_CLOSE_DATE" />
+                <ScalarProperty Name="MINI_CLOSE" ColumnName="MINI_CLOSE" />
+                <ScalarProperty Name="MINI_SUBMIT_DATE" ColumnName="MINI_SUBMIT_DATE" />
+                <ScalarProperty Name="MINI_ASSIGN_DATE" ColumnName="MINI_ASSIGN_DATE" />
+                <ScalarProperty Name="MINI_ASSIGN_TO" ColumnName="MINI_ASSIGN_TO" />
+                <ScalarProperty Name="MINI_OPEN_DATE" ColumnName="MINI_OPEN_DATE" />
+                <ScalarProperty Name="MINI_OPEN_BY" ColumnName="MINI_OPEN_BY" />
+                <ScalarProperty Name="MINI_APPROVE_DATE" ColumnName="MINI_APPROVE_DATE" />
+                <ScalarProperty Name="MINI_APPROVE" ColumnName="MINI_APPROVE" />
+                <ScalarProperty Name="MINI_APPROVE_OWNER_DATE" ColumnName="MINI_APPROVE_OWNER_DATE" />
+                <ScalarProperty Name="MINI_APPROVE_OWNER" ColumnName="MINI_APPROVE_OWNER" />
+                <ScalarProperty Name="MINI_REQUESTER" ColumnName="MINI_REQUESTER" />
+                <ScalarProperty Name="MINI_CHM" ColumnName="MINI_CHM" />
+                <ScalarProperty Name="MINI_INFORM" ColumnName="MINI_INFORM" />
+                <ScalarProperty Name="MINI_PROTO" ColumnName="MINI_PROTO" />
+                <ScalarProperty Name="MINI_SAMPLE" ColumnName="MINI_SAMPLE" />
+                <ScalarProperty Name="ALLOW_STATUS" ColumnName="ALLOW_STATUS" />
+                <ScalarProperty Name="MINI_DATE" ColumnName="MINI_DATE" />
+                <ScalarProperty Name="USER_NO" ColumnName="USER_NO" />
+                <ScalarProperty Name="MINI_CODE" ColumnName="MINI_CODE" />
+                <ScalarProperty Name="MINI_ID" ColumnName="MINI_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="AddReqMini" FunctionName="IT_ASSET_MANAGEMENTModel.Store.AddReqMini" />
+          <EntitySetMapping Name="tbl_req_sd">
+            <EntityTypeMapping TypeName="IT_ASSET_MANAGEMENTModel.tbl_req_sd">
+              <MappingFragment StoreEntitySet="tbl_req_sd">
+                <ScalarProperty Name="SD_IT_DATE" ColumnName="SD_IT_DATE" />
+                <ScalarProperty Name="SD_IT_MANAGER" ColumnName="SD_IT_MANAGER" />
+                <ScalarProperty Name="SD_IT_COMMENTER" ColumnName="SD_IT_COMMENTER" />
+                <ScalarProperty Name="SD_IT_COMMENT" ColumnName="SD_IT_COMMENT" />
+                <ScalarProperty Name="UPDATE_DATE" ColumnName="UPDATE_DATE" />
+                <ScalarProperty Name="CREATE_DATE" ColumnName="CREATE_DATE" />
+                <ScalarProperty Name="USER_UPDATE" ColumnName="USER_UPDATE" />
+                <ScalarProperty Name="USER_CREATE" ColumnName="USER_CREATE" />
+                <ScalarProperty Name="REQ_STATUS" ColumnName="REQ_STATUS" />
+                <ScalarProperty Name="SD_CLOSE_DATE" ColumnName="SD_CLOSE_DATE" />
+                <ScalarProperty Name="SD_CLOSE" ColumnName="SD_CLOSE" />
+                <ScalarProperty Name="SD_SUBMIT_DATE" ColumnName="SD_SUBMIT_DATE" />
+                <ScalarProperty Name="SD_ASSIGN_DATE" ColumnName="SD_ASSIGN_DATE" />
+                <ScalarProperty Name="SD_ASSIGN_TO" ColumnName="SD_ASSIGN_TO" />
+                <ScalarProperty Name="SD_OPEN_DATE" ColumnName="SD_OPEN_DATE" />
+                <ScalarProperty Name="SD_OPEN_BY" ColumnName="SD_OPEN_BY" />
+                <ScalarProperty Name="SD_APPROVE_DATE" ColumnName="SD_APPROVE_DATE" />
+                <ScalarProperty Name="SD_APPROVE" ColumnName="SD_APPROVE" />
+                <ScalarProperty Name="SD_APPROVE_OWNER_DATE" ColumnName="SD_APPROVE_OWNER_DATE" />
+                <ScalarProperty Name="SD_APPROVE_OWNER" ColumnName="SD_APPROVE_OWNER" />
+                <ScalarProperty Name="SD_REQUESTER" ColumnName="SD_REQUESTER" />
+                <ScalarProperty Name="REQ_AUTH" ColumnName="REQ_AUTH" />
+                <ScalarProperty Name="SD_NOTE" ColumnName="SD_NOTE" />
+                <ScalarProperty Name="SD_FOLDER" ColumnName="SD_FOLDER" />
+                <ScalarProperty Name="SD_DRIVE" ColumnName="SD_DRIVE" />
+                <ScalarProperty Name="ALLOW_STATUS" ColumnName="ALLOW_STATUS" />
+                <ScalarProperty Name="SD_DATE" ColumnName="SD_DATE" />
+                <ScalarProperty Name="USER_NO" ColumnName="USER_NO" />
+                <ScalarProperty Name="SD_CODE" ColumnName="SD_CODE" />
+                <ScalarProperty Name="SD_ID" ColumnName="SD_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="View_req_sd_follow">
             <EntityTypeMapping TypeName="IT_ASSET_MANAGEMENTModel.View_req_sd_follow">
               <MappingFragment StoreEntitySet="View_req_sd_follow">
@@ -4142,9 +4579,9 @@ warning 6002: The table/view 'IT_ASSET_SERVER.dbo.View_sw_assets' does not have 
                 <ScalarProperty Name="SD_IT_MANAGER" ColumnName="SD_IT_MANAGER" />
                 <ScalarProperty Name="SD_IT_COMMENTER" ColumnName="SD_IT_COMMENTER" />
                 <ScalarProperty Name="SD_IT_COMMENT" ColumnName="SD_IT_COMMENT" />
-                <ScalarProperty Name="AF_CLOSE_DATE" ColumnName="AF_CLOSE_DATE" />
                 <ScalarProperty Name="CLOSE_SURNAME" ColumnName="CLOSE_SURNAME" />
                 <ScalarProperty Name="CLOSE_NAME" ColumnName="CLOSE_NAME" />
+                <ScalarProperty Name="SD_CLOSE_DATE" ColumnName="SD_CLOSE_DATE" />
                 <ScalarProperty Name="SD_CLOSE" ColumnName="SD_CLOSE" />
                 <ScalarProperty Name="STA_DESC" ColumnName="STA_DESC" />
                 <ScalarProperty Name="REQ_STATUS" ColumnName="REQ_STATUS" />
@@ -4199,6 +4636,108 @@ warning 6002: The table/view 'IT_ASSET_SERVER.dbo.View_sw_assets' does not have 
                 <ScalarProperty Name="USER_NAME" ColumnName="USER_NAME" />
                 <ScalarProperty Name="USER_NO" ColumnName="USER_NO" />
                 <ScalarProperty Name="SD_CODE" ColumnName="SD_CODE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="View_req_mini">
+            <EntityTypeMapping TypeName="IT_ASSET_MANAGEMENTModel.View_req_mini">
+              <MappingFragment StoreEntitySet="View_req_mini">
+                <ScalarProperty Name="STA_DESC" ColumnName="STA_DESC" />
+                <ScalarProperty Name="REQ_STATUS" ColumnName="REQ_STATUS" />
+                <ScalarProperty Name="MINI_APPROVE_DATE" ColumnName="MINI_APPROVE_DATE" />
+                <ScalarProperty Name="MINI_APPROVE" ColumnName="MINI_APPROVE" />
+                <ScalarProperty Name="MINI_APPROVE_OWNER_DATE" ColumnName="MINI_APPROVE_OWNER_DATE" />
+                <ScalarProperty Name="MINI_APPROVE_OWNER" ColumnName="MINI_APPROVE_OWNER" />
+                <ScalarProperty Name="REQUESTER_EMAIL_APPROVE" ColumnName="REQUESTER_EMAIL_APPROVE" />
+                <ScalarProperty Name="REQUESTER_EMAIL" ColumnName="REQUESTER_EMAIL" />
+                <ScalarProperty Name="REQUESTER_EXTENSION" ColumnName="REQUESTER_EXTENSION" />
+                <ScalarProperty Name="REQUESTER_DEPARTMENT" ColumnName="REQUESTER_DEPARTMENT" />
+                <ScalarProperty Name="REQUESTER_POSITION" ColumnName="REQUESTER_POSITION" />
+                <ScalarProperty Name="REQUESTER_EN_NAME" ColumnName="REQUESTER_EN_NAME" />
+                <ScalarProperty Name="REQUESTER_NAME" ColumnName="REQUESTER_NAME" />
+                <ScalarProperty Name="MINI_REQUESTER" ColumnName="MINI_REQUESTER" />
+                <ScalarProperty Name="MINI_CHM" ColumnName="MINI_CHM" />
+                <ScalarProperty Name="MINI_INFORM" ColumnName="MINI_INFORM" />
+                <ScalarProperty Name="MINI_PROTO" ColumnName="MINI_PROTO" />
+                <ScalarProperty Name="MINI_SAMPLE" ColumnName="MINI_SAMPLE" />
+                <ScalarProperty Name="ALLOW_DESC" ColumnName="ALLOW_DESC" />
+                <ScalarProperty Name="ALLOW_STATUS" ColumnName="ALLOW_STATUS" />
+                <ScalarProperty Name="MINI_DATE" ColumnName="MINI_DATE" />
+                <ScalarProperty Name="USER_EMAIL_APPROVE" ColumnName="USER_EMAIL_APPROVE" />
+                <ScalarProperty Name="USER_EMAIL" ColumnName="USER_EMAIL" />
+                <ScalarProperty Name="USER_EXTENSION" ColumnName="USER_EXTENSION" />
+                <ScalarProperty Name="USER_DEPARTMENT" ColumnName="USER_DEPARTMENT" />
+                <ScalarProperty Name="USER_POSITION" ColumnName="USER_POSITION" />
+                <ScalarProperty Name="USER_NAME_EN" ColumnName="USER_NAME_EN" />
+                <ScalarProperty Name="USER_NAME" ColumnName="USER_NAME" />
+                <ScalarProperty Name="USER_NO" ColumnName="USER_NO" />
+                <ScalarProperty Name="MINI_CODE" ColumnName="MINI_CODE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="View_req_mini_follow">
+            <EntityTypeMapping TypeName="IT_ASSET_MANAGEMENTModel.View_req_mini_follow">
+              <MappingFragment StoreEntitySet="View_req_mini_follow">
+                <ScalarProperty Name="ALLOW_DESC" ColumnName="ALLOW_DESC" />
+                <ScalarProperty Name="STA_DESC" ColumnName="STA_DESC" />
+                <ScalarProperty Name="MINI_IT_DATE" ColumnName="MINI_IT_DATE" />
+                <ScalarProperty Name="MINI_IT_MANAGER" ColumnName="MINI_IT_MANAGER" />
+                <ScalarProperty Name="MINI_IT_COMMENTER" ColumnName="MINI_IT_COMMENTER" />
+                <ScalarProperty Name="MINI_IT_COMMENT" ColumnName="MINI_IT_COMMENT" />
+                <ScalarProperty Name="REQ_STATUS" ColumnName="REQ_STATUS" />
+                <ScalarProperty Name="MINI_CLOSE_DATE" ColumnName="MINI_CLOSE_DATE" />
+                <ScalarProperty Name="CLOSE_SURNAME" ColumnName="CLOSE_SURNAME" />
+                <ScalarProperty Name="CLOSE_NAME" ColumnName="CLOSE_NAME" />
+                <ScalarProperty Name="MINI_CLOSE" ColumnName="MINI_CLOSE" />
+                <ScalarProperty Name="MINI_ASSIGN_DATE" ColumnName="MINI_ASSIGN_DATE" />
+                <ScalarProperty Name="ASSIGN_SURNAME" ColumnName="ASSIGN_SURNAME" />
+                <ScalarProperty Name="ASSIGN_NAME" ColumnName="ASSIGN_NAME" />
+                <ScalarProperty Name="MINI_ASSIGN_TO" ColumnName="MINI_ASSIGN_TO" />
+                <ScalarProperty Name="MINI_OPEN_DATE" ColumnName="MINI_OPEN_DATE" />
+                <ScalarProperty Name="OPEN_SURNAME" ColumnName="OPEN_SURNAME" />
+                <ScalarProperty Name="OPEN_NAME" ColumnName="OPEN_NAME" />
+                <ScalarProperty Name="MINI_OPEN_BY" ColumnName="MINI_OPEN_BY" />
+                <ScalarProperty Name="MINI_APPROVE_DATE" ColumnName="MINI_APPROVE_DATE" />
+                <ScalarProperty Name="APPROVE_EMAIL_APPROVE" ColumnName="APPROVE_EMAIL_APPROVE" />
+                <ScalarProperty Name="APPROVE_EMAIL" ColumnName="APPROVE_EMAIL" />
+                <ScalarProperty Name="APPROVE_EXTENSION" ColumnName="APPROVE_EXTENSION" />
+                <ScalarProperty Name="APPROVE_DEPARTMENT" ColumnName="APPROVE_DEPARTMENT" />
+                <ScalarProperty Name="APPROVE_POSITION" ColumnName="APPROVE_POSITION" />
+                <ScalarProperty Name="APPROVE_EN_NAME" ColumnName="APPROVE_EN_NAME" />
+                <ScalarProperty Name="APPROVE_NAME" ColumnName="APPROVE_NAME" />
+                <ScalarProperty Name="MINI_APPROVE" ColumnName="MINI_APPROVE" />
+                <ScalarProperty Name="MINI_APPROVE_OWNER_DATE" ColumnName="MINI_APPROVE_OWNER_DATE" />
+                <ScalarProperty Name="OWNER_EMAIL_APPROVE" ColumnName="OWNER_EMAIL_APPROVE" />
+                <ScalarProperty Name="OWNER_EMAIL" ColumnName="OWNER_EMAIL" />
+                <ScalarProperty Name="OWNER_EXTENSION" ColumnName="OWNER_EXTENSION" />
+                <ScalarProperty Name="OWNER_DEPARTMENT" ColumnName="OWNER_DEPARTMENT" />
+                <ScalarProperty Name="OWNER_POSITION" ColumnName="OWNER_POSITION" />
+                <ScalarProperty Name="OWNER_EN_NAME" ColumnName="OWNER_EN_NAME" />
+                <ScalarProperty Name="OWNER_NAME" ColumnName="OWNER_NAME" />
+                <ScalarProperty Name="MINI_APPROVE_OWNER" ColumnName="MINI_APPROVE_OWNER" />
+                <ScalarProperty Name="REQUESTER_EMAIL_APPROVE" ColumnName="REQUESTER_EMAIL_APPROVE" />
+                <ScalarProperty Name="REQUESTER_EMAIL" ColumnName="REQUESTER_EMAIL" />
+                <ScalarProperty Name="REQUESTER_EXTENSION" ColumnName="REQUESTER_EXTENSION" />
+                <ScalarProperty Name="REQUESTER_DEPARTMENT" ColumnName="REQUESTER_DEPARTMENT" />
+                <ScalarProperty Name="REQUESTER_POSITION" ColumnName="REQUESTER_POSITION" />
+                <ScalarProperty Name="REQUESTER_EN_NAME" ColumnName="REQUESTER_EN_NAME" />
+                <ScalarProperty Name="REQUESTER_NAME" ColumnName="REQUESTER_NAME" />
+                <ScalarProperty Name="MINI_REQUESTER" ColumnName="MINI_REQUESTER" />
+                <ScalarProperty Name="MINI_CHM" ColumnName="MINI_CHM" />
+                <ScalarProperty Name="MINI_INFORM" ColumnName="MINI_INFORM" />
+                <ScalarProperty Name="MINI_PROTO" ColumnName="MINI_PROTO" />
+                <ScalarProperty Name="MINI_SAMPLE" ColumnName="MINI_SAMPLE" />
+                <ScalarProperty Name="ALLOW_STATUS" ColumnName="ALLOW_STATUS" />
+                <ScalarProperty Name="MINI_DATE" ColumnName="MINI_DATE" />
+                <ScalarProperty Name="USER_EMAIL_APPROVE" ColumnName="USER_EMAIL_APPROVE" />
+                <ScalarProperty Name="USER_EMAIL" ColumnName="USER_EMAIL" />
+                <ScalarProperty Name="USER_EXTENSION" ColumnName="USER_EXTENSION" />
+                <ScalarProperty Name="USER_DEPARTMENT" ColumnName="USER_DEPARTMENT" />
+                <ScalarProperty Name="USER_POSITION" ColumnName="USER_POSITION" />
+                <ScalarProperty Name="USER_NAME_EN" ColumnName="USER_NAME_EN" />
+                <ScalarProperty Name="USER_NAME" ColumnName="USER_NAME" />
+                <ScalarProperty Name="USER_NO" ColumnName="USER_NO" />
+                <ScalarProperty Name="MINI_CODE" ColumnName="MINI_CODE" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -1,16 +1,17 @@
-﻿@model IEnumerable<IT_ASSET.Models.View_req_sd_follow>
-
+﻿@model IPagedList<IT_ASSET.Models.View_req_sd_follow>
+@using PagedList.Mvc;
+@using PagedList;
 @{
     ViewBag.Title = "IndexSD";
 }
 
-<h2>ติดตามการร้องขอและยกเลิกสิทธิ ALFRESCO</h2>
+    <h3 style="text-align:center">ติดตามการขอและยกเลิกรหัสผู้ใช้ เพื่อการกำหนดเข้าสู่ Share Drive</h3>
 <div class="col-md-12 pull-left" style="font-size:16px;color:red;">
     <input type="button" class="btn  btn-warning" value="Report" onclick="location.href='@Url.Action("Report", "ReqSD")'" />
     <div class="pull-right col-md-12 col-md-6">
         <form class="pull-right" role="search">
             <div class="input-group pull-right">
-                @Html.TextBox("Search", null, new { @class = "form-control", @placeholder = "เลขที่เอกสาร/รหัสพนักงานผู้ขอสิทธิ/รหัสพนักงานผู้แจ้ง" })
+                @Html.TextBox("Search", null, new { @class = "form-control", @placeholder = "เลขที่เอกสาร/รหัสพนักงานผู้ขอสิทธิ/ชื่อผู้ขอสิทธิ/รหัสพนักงานผู้แจ้ง" })
                 <div class="input-group-btn">
                     <button class="btn btn-default pull-right" type="submit"><i class="glyphicon glyphicon-search"></i></button>
                 </div>
@@ -58,9 +59,7 @@
             <th>
                 วันที่ของผู้อนุมัติจากเจ้าของเอกสาร
             </th>
-            <th>
-                สถานะของงาน
-            </th>
+
             <th>
                 ชื่อ-สกุลผู้อนุมัติ (ผู้จัดการฝ่ายขึ้นไป)
             </th>
@@ -68,91 +67,68 @@
                 วันที่อนุมัติ (ผู้จัดการฝ่ายขึ้นไป)
             </th>
             <th>
-                ชื่อ-สกุลผู้เปิดงาน(ส่วนไอที)
-            </th>
-            <th>
-                วันที่เปิดงาน(ส่วนไอที)
-            </th>
-            <th>
-                ชื่อ-สกุลผู้รับงาน(ส่วนไอที)
-            </th>
-
-            <th>
-                วันที่รับงาน(ส่วนไอที)
+                สถานะของงาน
             </th>
         </tr>
     </thead>
 
     @foreach (var item in Model)
     {
-        <tr>
-            <td>
-                <a href="@Url.Action("DetailsSD", "ReqSD", new { id = item.SD_CODE })" style="color:black;">  @Html.DisplayFor(modelItem => item.SD_CODE)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.USER_NO)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.USER_NAME)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SD_DATE)
-            </td>
+<tr>
+    <td>
+        <a href="@Url.Action("DetailsSD", "ReqSD", new { id = item.SD_CODE })" style="color:black;text-decoration: underline;">  @Html.DisplayFor(modelItem => item.SD_CODE)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.USER_NO)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.USER_NAME)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.SD_DATE)
+    </td>
 
-            <td>
-                @Html.DisplayFor(modelItem => item.ALLOW_DESC)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SD_DRIVE)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SD_FOLDER)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.AUTH_DESC)
-            </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ALLOW_DESC)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.SD_DRIVE)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.SD_FOLDER)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.AUTH_DESC)
+    </td>
 
-            <td>
-                @Html.DisplayFor(modelItem => item.SD_NOTE)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.REQUESTER_NAME)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.OWNER_POSITION)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SD_APPROVE_OWNER_DATE)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.STA_DESC)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.APPROVE_NAME)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SD_APPROVE_DATE)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.OPEN_NAME)
-                @Html.DisplayFor(modelItem => item.OPEN_SURNAME)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SD_OPEN_DATE)
-            </td>
-           
-            <td>
-                @Html.DisplayFor(modelItem => item.ASSIGN_NAME)
-                @Html.DisplayFor(modelItem => item.ASSIGN_SURNAME)
-            </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.SD_NOTE)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.REQUESTER_NAME)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.OWNER_POSITION)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.SD_APPROVE_OWNER_DATE)
+    </td>
 
-            <td>
-                @Html.DisplayFor(modelItem => item.SD_ASSIGN_DATE)
-            </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.APPROVE_NAME)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.SD_APPROVE_DATE)
+    </td>
+    
+    <td>
+        @Html.DisplayFor(modelItem => item.STA_DESC)
+    </td>
 
 
-
-        </tr>
+</tr>
     }
 
 </table>
+
+@Html.PagedListPager(Model, i => Url.Action("IndexSD", "ReqSD", new { i }))

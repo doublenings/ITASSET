@@ -34,7 +34,7 @@ namespace IT_ASSET.Models
         public Nullable<System.DateTime> SD_ASSIGN_DATE { get; set; }
         public Nullable<System.DateTime> SD_SUBMIT_DATE { get; set; }
         public string SD_CLOSE { get; set; }
-        public Nullable<System.DateTime> AF_CLOSE_DATE { get; set; }
+        public Nullable<System.DateTime> SD_CLOSE_DATE { get; set; }
         public string REQ_STATUS { get; set; }
         public string USER_CREATE { get; set; }
         public string USER_UPDATE { get; set; }

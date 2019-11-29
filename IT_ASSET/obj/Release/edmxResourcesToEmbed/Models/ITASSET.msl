@@ -1013,42 +1013,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="tbl_req_sd">
-      <EntityTypeMapping TypeName="IT_ASSET_MANAGEMENTModel.tbl_req_sd">
-        <MappingFragment StoreEntitySet="tbl_req_sd">
-          <ScalarProperty Name="SD_IT_DATE" ColumnName="SD_IT_DATE" />
-          <ScalarProperty Name="SD_IT_MANAGER" ColumnName="SD_IT_MANAGER" />
-          <ScalarProperty Name="SD_IT_COMMENTER" ColumnName="SD_IT_COMMENTER" />
-          <ScalarProperty Name="SD_IT_COMMENT" ColumnName="SD_IT_COMMENT" />
-          <ScalarProperty Name="UPDATE_DATE" ColumnName="UPDATE_DATE" />
-          <ScalarProperty Name="CREATE_DATE" ColumnName="CREATE_DATE" />
-          <ScalarProperty Name="USER_UPDATE" ColumnName="USER_UPDATE" />
-          <ScalarProperty Name="USER_CREATE" ColumnName="USER_CREATE" />
-          <ScalarProperty Name="REQ_STATUS" ColumnName="REQ_STATUS" />
-          <ScalarProperty Name="AF_CLOSE_DATE" ColumnName="AF_CLOSE_DATE" />
-          <ScalarProperty Name="SD_CLOSE" ColumnName="SD_CLOSE" />
-          <ScalarProperty Name="SD_SUBMIT_DATE" ColumnName="SD_SUBMIT_DATE" />
-          <ScalarProperty Name="SD_ASSIGN_DATE" ColumnName="SD_ASSIGN_DATE" />
-          <ScalarProperty Name="SD_ASSIGN_TO" ColumnName="SD_ASSIGN_TO" />
-          <ScalarProperty Name="SD_OPEN_DATE" ColumnName="SD_OPEN_DATE" />
-          <ScalarProperty Name="SD_OPEN_BY" ColumnName="SD_OPEN_BY" />
-          <ScalarProperty Name="SD_APPROVE_DATE" ColumnName="SD_APPROVE_DATE" />
-          <ScalarProperty Name="SD_APPROVE" ColumnName="SD_APPROVE" />
-          <ScalarProperty Name="SD_APPROVE_OWNER_DATE" ColumnName="SD_APPROVE_OWNER_DATE" />
-          <ScalarProperty Name="SD_APPROVE_OWNER" ColumnName="SD_APPROVE_OWNER" />
-          <ScalarProperty Name="SD_REQUESTER" ColumnName="SD_REQUESTER" />
-          <ScalarProperty Name="REQ_AUTH" ColumnName="REQ_AUTH" />
-          <ScalarProperty Name="SD_NOTE" ColumnName="SD_NOTE" />
-          <ScalarProperty Name="SD_FOLDER" ColumnName="SD_FOLDER" />
-          <ScalarProperty Name="SD_DRIVE" ColumnName="SD_DRIVE" />
-          <ScalarProperty Name="ALLOW_STATUS" ColumnName="ALLOW_STATUS" />
-          <ScalarProperty Name="SD_DATE" ColumnName="SD_DATE" />
-          <ScalarProperty Name="USER_NO" ColumnName="USER_NO" />
-          <ScalarProperty Name="SD_CODE" ColumnName="SD_CODE" />
-          <ScalarProperty Name="SD_ID" ColumnName="SD_ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="View_req_sd">
       <EntityTypeMapping TypeName="IT_ASSET_MANAGEMENTModel.View_req_sd">
         <MappingFragment StoreEntitySet="View_req_sd">
@@ -1085,6 +1049,79 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <FunctionImportMapping FunctionImportName="AddReqShareDrive" FunctionName="IT_ASSET_MANAGEMENTModel.Store.AddReqShareDrive" />
+    <EntitySetMapping Name="tbl_req_mini">
+      <EntityTypeMapping TypeName="IT_ASSET_MANAGEMENTModel.tbl_req_mini">
+        <MappingFragment StoreEntitySet="tbl_req_mini">
+          <ScalarProperty Name="MINI_IT_DATE" ColumnName="MINI_IT_DATE" />
+          <ScalarProperty Name="MINI_IT_MANAGER" ColumnName="MINI_IT_MANAGER" />
+          <ScalarProperty Name="MINI_IT_COMMENTER" ColumnName="MINI_IT_COMMENTER" />
+          <ScalarProperty Name="MINI_IT_COMMENT" ColumnName="MINI_IT_COMMENT" />
+          <ScalarProperty Name="UPDATE_DATE" ColumnName="UPDATE_DATE" />
+          <ScalarProperty Name="CREATE_DATE" ColumnName="CREATE_DATE" />
+          <ScalarProperty Name="USER_UPDATE" ColumnName="USER_UPDATE" />
+          <ScalarProperty Name="USER_CREATE" ColumnName="USER_CREATE" />
+          <ScalarProperty Name="REQ_STATUS" ColumnName="REQ_STATUS" />
+          <ScalarProperty Name="MINI_CLOSE_DATE" ColumnName="MINI_CLOSE_DATE" />
+          <ScalarProperty Name="MINI_CLOSE" ColumnName="MINI_CLOSE" />
+          <ScalarProperty Name="MINI_SUBMIT_DATE" ColumnName="MINI_SUBMIT_DATE" />
+          <ScalarProperty Name="MINI_ASSIGN_DATE" ColumnName="MINI_ASSIGN_DATE" />
+          <ScalarProperty Name="MINI_ASSIGN_TO" ColumnName="MINI_ASSIGN_TO" />
+          <ScalarProperty Name="MINI_OPEN_DATE" ColumnName="MINI_OPEN_DATE" />
+          <ScalarProperty Name="MINI_OPEN_BY" ColumnName="MINI_OPEN_BY" />
+          <ScalarProperty Name="MINI_APPROVE_DATE" ColumnName="MINI_APPROVE_DATE" />
+          <ScalarProperty Name="MINI_APPROVE" ColumnName="MINI_APPROVE" />
+          <ScalarProperty Name="MINI_APPROVE_OWNER_DATE" ColumnName="MINI_APPROVE_OWNER_DATE" />
+          <ScalarProperty Name="MINI_APPROVE_OWNER" ColumnName="MINI_APPROVE_OWNER" />
+          <ScalarProperty Name="MINI_REQUESTER" ColumnName="MINI_REQUESTER" />
+          <ScalarProperty Name="MINI_CHM" ColumnName="MINI_CHM" />
+          <ScalarProperty Name="MINI_INFORM" ColumnName="MINI_INFORM" />
+          <ScalarProperty Name="MINI_PROTO" ColumnName="MINI_PROTO" />
+          <ScalarProperty Name="MINI_SAMPLE" ColumnName="MINI_SAMPLE" />
+          <ScalarProperty Name="ALLOW_STATUS" ColumnName="ALLOW_STATUS" />
+          <ScalarProperty Name="MINI_DATE" ColumnName="MINI_DATE" />
+          <ScalarProperty Name="USER_NO" ColumnName="USER_NO" />
+          <ScalarProperty Name="MINI_CODE" ColumnName="MINI_CODE" />
+          <ScalarProperty Name="MINI_ID" ColumnName="MINI_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="AddReqMini" FunctionName="IT_ASSET_MANAGEMENTModel.Store.AddReqMini" />
+    <EntitySetMapping Name="tbl_req_sd">
+      <EntityTypeMapping TypeName="IT_ASSET_MANAGEMENTModel.tbl_req_sd">
+        <MappingFragment StoreEntitySet="tbl_req_sd">
+          <ScalarProperty Name="SD_IT_DATE" ColumnName="SD_IT_DATE" />
+          <ScalarProperty Name="SD_IT_MANAGER" ColumnName="SD_IT_MANAGER" />
+          <ScalarProperty Name="SD_IT_COMMENTER" ColumnName="SD_IT_COMMENTER" />
+          <ScalarProperty Name="SD_IT_COMMENT" ColumnName="SD_IT_COMMENT" />
+          <ScalarProperty Name="UPDATE_DATE" ColumnName="UPDATE_DATE" />
+          <ScalarProperty Name="CREATE_DATE" ColumnName="CREATE_DATE" />
+          <ScalarProperty Name="USER_UPDATE" ColumnName="USER_UPDATE" />
+          <ScalarProperty Name="USER_CREATE" ColumnName="USER_CREATE" />
+          <ScalarProperty Name="REQ_STATUS" ColumnName="REQ_STATUS" />
+          <ScalarProperty Name="SD_CLOSE_DATE" ColumnName="SD_CLOSE_DATE" />
+          <ScalarProperty Name="SD_CLOSE" ColumnName="SD_CLOSE" />
+          <ScalarProperty Name="SD_SUBMIT_DATE" ColumnName="SD_SUBMIT_DATE" />
+          <ScalarProperty Name="SD_ASSIGN_DATE" ColumnName="SD_ASSIGN_DATE" />
+          <ScalarProperty Name="SD_ASSIGN_TO" ColumnName="SD_ASSIGN_TO" />
+          <ScalarProperty Name="SD_OPEN_DATE" ColumnName="SD_OPEN_DATE" />
+          <ScalarProperty Name="SD_OPEN_BY" ColumnName="SD_OPEN_BY" />
+          <ScalarProperty Name="SD_APPROVE_DATE" ColumnName="SD_APPROVE_DATE" />
+          <ScalarProperty Name="SD_APPROVE" ColumnName="SD_APPROVE" />
+          <ScalarProperty Name="SD_APPROVE_OWNER_DATE" ColumnName="SD_APPROVE_OWNER_DATE" />
+          <ScalarProperty Name="SD_APPROVE_OWNER" ColumnName="SD_APPROVE_OWNER" />
+          <ScalarProperty Name="SD_REQUESTER" ColumnName="SD_REQUESTER" />
+          <ScalarProperty Name="REQ_AUTH" ColumnName="REQ_AUTH" />
+          <ScalarProperty Name="SD_NOTE" ColumnName="SD_NOTE" />
+          <ScalarProperty Name="SD_FOLDER" ColumnName="SD_FOLDER" />
+          <ScalarProperty Name="SD_DRIVE" ColumnName="SD_DRIVE" />
+          <ScalarProperty Name="ALLOW_STATUS" ColumnName="ALLOW_STATUS" />
+          <ScalarProperty Name="SD_DATE" ColumnName="SD_DATE" />
+          <ScalarProperty Name="USER_NO" ColumnName="USER_NO" />
+          <ScalarProperty Name="SD_CODE" ColumnName="SD_CODE" />
+          <ScalarProperty Name="SD_ID" ColumnName="SD_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="View_req_sd_follow">
       <EntityTypeMapping TypeName="IT_ASSET_MANAGEMENTModel.View_req_sd_follow">
         <MappingFragment StoreEntitySet="View_req_sd_follow">
@@ -1092,9 +1129,9 @@
           <ScalarProperty Name="SD_IT_MANAGER" ColumnName="SD_IT_MANAGER" />
           <ScalarProperty Name="SD_IT_COMMENTER" ColumnName="SD_IT_COMMENTER" />
           <ScalarProperty Name="SD_IT_COMMENT" ColumnName="SD_IT_COMMENT" />
-          <ScalarProperty Name="AF_CLOSE_DATE" ColumnName="AF_CLOSE_DATE" />
           <ScalarProperty Name="CLOSE_SURNAME" ColumnName="CLOSE_SURNAME" />
           <ScalarProperty Name="CLOSE_NAME" ColumnName="CLOSE_NAME" />
+          <ScalarProperty Name="SD_CLOSE_DATE" ColumnName="SD_CLOSE_DATE" />
           <ScalarProperty Name="SD_CLOSE" ColumnName="SD_CLOSE" />
           <ScalarProperty Name="STA_DESC" ColumnName="STA_DESC" />
           <ScalarProperty Name="REQ_STATUS" ColumnName="REQ_STATUS" />
@@ -1149,6 +1186,108 @@
           <ScalarProperty Name="USER_NAME" ColumnName="USER_NAME" />
           <ScalarProperty Name="USER_NO" ColumnName="USER_NO" />
           <ScalarProperty Name="SD_CODE" ColumnName="SD_CODE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_req_mini">
+      <EntityTypeMapping TypeName="IT_ASSET_MANAGEMENTModel.View_req_mini">
+        <MappingFragment StoreEntitySet="View_req_mini">
+          <ScalarProperty Name="STA_DESC" ColumnName="STA_DESC" />
+          <ScalarProperty Name="REQ_STATUS" ColumnName="REQ_STATUS" />
+          <ScalarProperty Name="MINI_APPROVE_DATE" ColumnName="MINI_APPROVE_DATE" />
+          <ScalarProperty Name="MINI_APPROVE" ColumnName="MINI_APPROVE" />
+          <ScalarProperty Name="MINI_APPROVE_OWNER_DATE" ColumnName="MINI_APPROVE_OWNER_DATE" />
+          <ScalarProperty Name="MINI_APPROVE_OWNER" ColumnName="MINI_APPROVE_OWNER" />
+          <ScalarProperty Name="REQUESTER_EMAIL_APPROVE" ColumnName="REQUESTER_EMAIL_APPROVE" />
+          <ScalarProperty Name="REQUESTER_EMAIL" ColumnName="REQUESTER_EMAIL" />
+          <ScalarProperty Name="REQUESTER_EXTENSION" ColumnName="REQUESTER_EXTENSION" />
+          <ScalarProperty Name="REQUESTER_DEPARTMENT" ColumnName="REQUESTER_DEPARTMENT" />
+          <ScalarProperty Name="REQUESTER_POSITION" ColumnName="REQUESTER_POSITION" />
+          <ScalarProperty Name="REQUESTER_EN_NAME" ColumnName="REQUESTER_EN_NAME" />
+          <ScalarProperty Name="REQUESTER_NAME" ColumnName="REQUESTER_NAME" />
+          <ScalarProperty Name="MINI_REQUESTER" ColumnName="MINI_REQUESTER" />
+          <ScalarProperty Name="MINI_CHM" ColumnName="MINI_CHM" />
+          <ScalarProperty Name="MINI_INFORM" ColumnName="MINI_INFORM" />
+          <ScalarProperty Name="MINI_PROTO" ColumnName="MINI_PROTO" />
+          <ScalarProperty Name="MINI_SAMPLE" ColumnName="MINI_SAMPLE" />
+          <ScalarProperty Name="ALLOW_DESC" ColumnName="ALLOW_DESC" />
+          <ScalarProperty Name="ALLOW_STATUS" ColumnName="ALLOW_STATUS" />
+          <ScalarProperty Name="MINI_DATE" ColumnName="MINI_DATE" />
+          <ScalarProperty Name="USER_EMAIL_APPROVE" ColumnName="USER_EMAIL_APPROVE" />
+          <ScalarProperty Name="USER_EMAIL" ColumnName="USER_EMAIL" />
+          <ScalarProperty Name="USER_EXTENSION" ColumnName="USER_EXTENSION" />
+          <ScalarProperty Name="USER_DEPARTMENT" ColumnName="USER_DEPARTMENT" />
+          <ScalarProperty Name="USER_POSITION" ColumnName="USER_POSITION" />
+          <ScalarProperty Name="USER_NAME_EN" ColumnName="USER_NAME_EN" />
+          <ScalarProperty Name="USER_NAME" ColumnName="USER_NAME" />
+          <ScalarProperty Name="USER_NO" ColumnName="USER_NO" />
+          <ScalarProperty Name="MINI_CODE" ColumnName="MINI_CODE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_req_mini_follow">
+      <EntityTypeMapping TypeName="IT_ASSET_MANAGEMENTModel.View_req_mini_follow">
+        <MappingFragment StoreEntitySet="View_req_mini_follow">
+          <ScalarProperty Name="ALLOW_DESC" ColumnName="ALLOW_DESC" />
+          <ScalarProperty Name="STA_DESC" ColumnName="STA_DESC" />
+          <ScalarProperty Name="MINI_IT_DATE" ColumnName="MINI_IT_DATE" />
+          <ScalarProperty Name="MINI_IT_MANAGER" ColumnName="MINI_IT_MANAGER" />
+          <ScalarProperty Name="MINI_IT_COMMENTER" ColumnName="MINI_IT_COMMENTER" />
+          <ScalarProperty Name="MINI_IT_COMMENT" ColumnName="MINI_IT_COMMENT" />
+          <ScalarProperty Name="REQ_STATUS" ColumnName="REQ_STATUS" />
+          <ScalarProperty Name="MINI_CLOSE_DATE" ColumnName="MINI_CLOSE_DATE" />
+          <ScalarProperty Name="CLOSE_SURNAME" ColumnName="CLOSE_SURNAME" />
+          <ScalarProperty Name="CLOSE_NAME" ColumnName="CLOSE_NAME" />
+          <ScalarProperty Name="MINI_CLOSE" ColumnName="MINI_CLOSE" />
+          <ScalarProperty Name="MINI_ASSIGN_DATE" ColumnName="MINI_ASSIGN_DATE" />
+          <ScalarProperty Name="ASSIGN_SURNAME" ColumnName="ASSIGN_SURNAME" />
+          <ScalarProperty Name="ASSIGN_NAME" ColumnName="ASSIGN_NAME" />
+          <ScalarProperty Name="MINI_ASSIGN_TO" ColumnName="MINI_ASSIGN_TO" />
+          <ScalarProperty Name="MINI_OPEN_DATE" ColumnName="MINI_OPEN_DATE" />
+          <ScalarProperty Name="OPEN_SURNAME" ColumnName="OPEN_SURNAME" />
+          <ScalarProperty Name="OPEN_NAME" ColumnName="OPEN_NAME" />
+          <ScalarProperty Name="MINI_OPEN_BY" ColumnName="MINI_OPEN_BY" />
+          <ScalarProperty Name="MINI_APPROVE_DATE" ColumnName="MINI_APPROVE_DATE" />
+          <ScalarProperty Name="APPROVE_EMAIL_APPROVE" ColumnName="APPROVE_EMAIL_APPROVE" />
+          <ScalarProperty Name="APPROVE_EMAIL" ColumnName="APPROVE_EMAIL" />
+          <ScalarProperty Name="APPROVE_EXTENSION" ColumnName="APPROVE_EXTENSION" />
+          <ScalarProperty Name="APPROVE_DEPARTMENT" ColumnName="APPROVE_DEPARTMENT" />
+          <ScalarProperty Name="APPROVE_POSITION" ColumnName="APPROVE_POSITION" />
+          <ScalarProperty Name="APPROVE_EN_NAME" ColumnName="APPROVE_EN_NAME" />
+          <ScalarProperty Name="APPROVE_NAME" ColumnName="APPROVE_NAME" />
+          <ScalarProperty Name="MINI_APPROVE" ColumnName="MINI_APPROVE" />
+          <ScalarProperty Name="MINI_APPROVE_OWNER_DATE" ColumnName="MINI_APPROVE_OWNER_DATE" />
+          <ScalarProperty Name="OWNER_EMAIL_APPROVE" ColumnName="OWNER_EMAIL_APPROVE" />
+          <ScalarProperty Name="OWNER_EMAIL" ColumnName="OWNER_EMAIL" />
+          <ScalarProperty Name="OWNER_EXTENSION" ColumnName="OWNER_EXTENSION" />
+          <ScalarProperty Name="OWNER_DEPARTMENT" ColumnName="OWNER_DEPARTMENT" />
+          <ScalarProperty Name="OWNER_POSITION" ColumnName="OWNER_POSITION" />
+          <ScalarProperty Name="OWNER_EN_NAME" ColumnName="OWNER_EN_NAME" />
+          <ScalarProperty Name="OWNER_NAME" ColumnName="OWNER_NAME" />
+          <ScalarProperty Name="MINI_APPROVE_OWNER" ColumnName="MINI_APPROVE_OWNER" />
+          <ScalarProperty Name="REQUESTER_EMAIL_APPROVE" ColumnName="REQUESTER_EMAIL_APPROVE" />
+          <ScalarProperty Name="REQUESTER_EMAIL" ColumnName="REQUESTER_EMAIL" />
+          <ScalarProperty Name="REQUESTER_EXTENSION" ColumnName="REQUESTER_EXTENSION" />
+          <ScalarProperty Name="REQUESTER_DEPARTMENT" ColumnName="REQUESTER_DEPARTMENT" />
+          <ScalarProperty Name="REQUESTER_POSITION" ColumnName="REQUESTER_POSITION" />
+          <ScalarProperty Name="REQUESTER_EN_NAME" ColumnName="REQUESTER_EN_NAME" />
+          <ScalarProperty Name="REQUESTER_NAME" ColumnName="REQUESTER_NAME" />
+          <ScalarProperty Name="MINI_REQUESTER" ColumnName="MINI_REQUESTER" />
+          <ScalarProperty Name="MINI_CHM" ColumnName="MINI_CHM" />
+          <ScalarProperty Name="MINI_INFORM" ColumnName="MINI_INFORM" />
+          <ScalarProperty Name="MINI_PROTO" ColumnName="MINI_PROTO" />
+          <ScalarProperty Name="MINI_SAMPLE" ColumnName="MINI_SAMPLE" />
+          <ScalarProperty Name="ALLOW_STATUS" ColumnName="ALLOW_STATUS" />
+          <ScalarProperty Name="MINI_DATE" ColumnName="MINI_DATE" />
+          <ScalarProperty Name="USER_EMAIL_APPROVE" ColumnName="USER_EMAIL_APPROVE" />
+          <ScalarProperty Name="USER_EMAIL" ColumnName="USER_EMAIL" />
+          <ScalarProperty Name="USER_EXTENSION" ColumnName="USER_EXTENSION" />
+          <ScalarProperty Name="USER_DEPARTMENT" ColumnName="USER_DEPARTMENT" />
+          <ScalarProperty Name="USER_POSITION" ColumnName="USER_POSITION" />
+          <ScalarProperty Name="USER_NAME_EN" ColumnName="USER_NAME_EN" />
+          <ScalarProperty Name="USER_NAME" ColumnName="USER_NAME" />
+          <ScalarProperty Name="USER_NO" ColumnName="USER_NO" />
+          <ScalarProperty Name="MINI_CODE" ColumnName="MINI_CODE" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

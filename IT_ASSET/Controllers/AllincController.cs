@@ -22,7 +22,7 @@ namespace IT_ASSET.Controllers
         public ActionResult Index(int? i,string search)
         {
            
-            return View(db.View_incident_all.OrderByDescending(s => s.INC_DATE).Where(s => s.INC_CODE.Contains(search) || s.INC_TOPIC.Contains(search) || s.INC_REQUESTER.Contains(search)|| search == null).ToList().ToPagedList(i ?? 1, 12)) ;
+            return View(db.View_incident_all.OrderByDescending(s => s.INC_DATE).Where(s => s.INC_CODE.Contains(search) || s.INC_TOPIC.Contains(search) || s.INC_REQUESTER.Contains(search) || s.USER_NAME.Contains(search) || search == null).ToList().ToPagedList(i ?? 1, 15)) ;
         }
 
         // GET: Allinc/Details/5

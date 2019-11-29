@@ -9,6 +9,7 @@ using System.Net.Mail;
 using System.Web;
 using System.Web.Mvc;
 using IT_ASSET.Models;
+using PagedList;
 using Rotativa;
 
 namespace IT_ASSET.Controllers
@@ -16,16 +17,16 @@ namespace IT_ASSET.Controllers
     public class ReqSDController : Controller
     {
         private IT_ASSET_MANAGEMENTEntities db = new IT_ASSET_MANAGEMENTEntities();
-        string connectionString = "Data Source= COMP05\\SQLEXPRESS;Initial Catalog=IT_ASSET_SERVER;Integrated Security=True";
+        string connectionString = "Data Source= serverjob;Initial Catalog=IT_ASSET_SERVER;Integrated Security=True";
 
         // GET: ReqSD
         public ActionResult Index(int? i, string search)
         {
-            return View(db.View_req_sd.OrderByDescending(s => s.SD_CODE).ToList());
+            return View(db.View_req_sd.OrderByDescending(s => s.SD_DATE).Where(s => s.SD_CODE.Contains(search) || s.USER_NO.Contains(search) || s.USER_NAME.Contains(search) || s.SD_REQUESTER.Contains(search) || search == null ).ToList().ToPagedList(i ?? 1, 15));
         }
-        public ActionResult IndexSD()
+        public ActionResult IndexSD(int? i, string search)
         {
-            return View(db.View_req_sd_follow.OrderByDescending(s => s.SD_CODE).ToList());
+            return View(db.View_req_sd_follow.OrderByDescending(s => s.SD_APPROVE_DATE).Where(s => s.SD_CODE.Contains(search) || s.USER_NO.Contains(search) || s.USER_NAME.Contains(search) || s.SD_REQUESTER.Contains(search) || search == null).ToList().ToPagedList(i ?? 1, 15));
         }
         // GET: ReqSD/Details/5
         public ActionResult Details(string id)
@@ -84,8 +85,6 @@ namespace IT_ASSET.Controllers
         public ActionResult Create()
         {
             ViewData["ALLOW_STATUS"] = new SelectList(db.tbl_req_allow_status, "ALLOW_STATUS", "ALLOW_DESC");
-           
-
             return View();
         }
 
@@ -120,13 +119,16 @@ namespace IT_ASSET.Controllers
                     con.Close();
 
                     ViewBag.EmpCount = cmd.Parameters["@SD_CODE"].Value.ToString();
+                    ViewBag.Drive = cmd.Parameters["@SD_DRIVE"].Value.ToString();
+                    ViewBag.Requester = cmd.Parameters["@USER_NO"].Value.ToString();
+                    ViewBag.Date = cmd.Parameters["@SD_DATE"].Value.ToString();
 
                     var email = Session["USER_EMAIL"].ToString();
                     var approve = Session["USER_EMAIL_APPROVE"].ToString();
                     MailMessage mm = new MailMessage();
                     mm.To.Add(approve);
                     mm.From = new MailAddress(email);
-                    mm.Subject = "แบบฟอร์มการขอสิทธิ ALFRESCO";
+                    mm.Subject = "แบบฟอร์มการขอและยกเลิกรหัสผู้ใช้ เพื่อการกำหนดเข้าสู่ Share Drive";
 
                     mm.IsBodyHtml = true;
                     mm.Body = GetFormattedMessageHTML();
@@ -157,13 +159,17 @@ namespace IT_ASSET.Controllers
 
             return View(tbl_req_sd);
         }
-        private string GetFormattedMessageHTML()
+        public string GetFormattedMessageHTML()
         {
             var link = "สามารถกดอนุมัติได้จาก <a href=https://localhost:44321/ >คลิกที่นี่" + "</a>";
+
             return "<b> เรียนผู้จัดการฝ่าย  </b>" + "</br>" +
-                "การขอสิทธิ ALFRESCO : " + Session["USER_NAME"].ToString() + "<br />" +
-                 "รหัสพนักงาน : " + Session["USER_NO"].ToString() + "<br />" +
-                 "เลขที่เอกสาร : " + ViewBag.EmpCount + "<br />" +
+                "แบบฟอร์มการขอและยกเลิกรหัสผู้ใช้ เพื่อการกำหนดเข้าสู่ Share Drive : " + "<br />" +
+                "เลขที่เอกสาร : " + ViewBag.EmpCount + "<br />" +
+               "รหัสพนักงานผู้แจ้ง : " + Session["USER_NO"].ToString() + "<br />" +
+                "ชื่อผู้แจ้ง : "+ Session["USER_NAME"].ToString() + "<br />" +
+                "วันที่แจ้ง : " + ViewBag.Date + "<br />" +
+              "รหัสพนักงานผู้ขอสิทธิ : " + ViewBag.Requester + "<br />" +
                  link + "<br />" +
                  "สามารถติดต่อสอบถาม ติดต่อเบอร์" + " " + Session["USER_EXTENSION"].ToString() + "<br/>" +
                  "<p>" + "จึงเรียนมาเพื่อทราบ" + "</p>";
@@ -196,19 +202,47 @@ namespace IT_ASSET.Controllers
             {
                 db.Entry(tbl_req_sd).State = EntityState.Modified;
                 db.SaveChanges();
+                ViewBag.EmpCount = tbl_req_sd.SD_CODE.ToString();
+                var email = Session["USER_EMAIL"].ToString();
+                MailMessage mm = new MailMessage();
+                mm.To.Add("ITservice@pranda.co.th");
+                mm.From = new MailAddress(email);
+                mm.Subject = "แบบฟอร์มการขอและยกเลิกรหัสผู้ใช้ เพื่อการกำหนดเข้าสู่ Share Drive";
+
+                mm.IsBodyHtml = true;
+                mm.Body = GetFormattedMessageIT();
+
+                SmtpClient smtp = new SmtpClient();
+                smtp.Host = "mail01.pranda.co.th";
+                smtp.Port = 25;
+                smtp.EnableSsl = false;
+                smtp.UseDefaultCredentials = true;
+                smtp.Credentials = new System.Net.NetworkCredential();
+
+                System.Net.ServicePointManager.ServerCertificateValidationCallback = delegate (object s,
+                    System.Security.Cryptography.X509Certificates.X509Certificate certificate,
+                    System.Security.Cryptography.X509Certificates.X509Chain chain,
+                    System.Net.Security.SslPolicyErrors sslPolicyErrors)
+                {
+                    return true;
+                };
+
+                smtp.Send(mm);
                 return RedirectToAction("IndexSD");
             }
             return View(tbl_req_sd);
         }
-        private string GetFormattedMessageIT()
+        public string GetFormattedMessageIT()
         {
+            
             return "<b> เรียน IT SUPPORT </b>" + "</br>" +
-                "การขอสิทธิ ALFRESCO : " + Session["USER_NAME"].ToString() + "<br />" +
-                 "รหัสพนักงาน : " + Session["USER_NO"].ToString() + "<br />" +
-                 "เลขที่เอกสาร : " + ViewBag.EmpCount + "<br />" +
+              "แบบฟอร์มการขอและยกเลิกรหัสผู้ใช้ เพื่อการกำหนดเข้าสู่ Share Drive : " + "<br />" +
+                "เลขที่เอกสาร : " + ViewBag.EmpCount + "<br />" +
+               "รหัสพนักงานผู้แจ้ง : " + Session["USER_NO"].ToString() + "<br />" +
+                "ชื่อผู้แจ้ง : " + Session["USER_NAME"].ToString() + "<br />" +
                  "ได้รับการอนุมัติจากผุ้จัดการฝ่ายเรียบร้อยแล้ว" + "<br/>" +
                  "สามารถติดต่อสอบถาม ติดต่อเบอร์" + " " + Session["USER_EXTENSION"].ToString() + "<br/>" +
-                 "<p>" + "จึงเรียนมาเพื่อทราบ" + "</p>";
+                 "<p>" + "จึงเรียนมาเพื่อทราบ" + "</p>" ;
 
         }
 

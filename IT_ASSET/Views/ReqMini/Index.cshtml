@@ -1,0 +1,114 @@
+﻿@model IPagedList<IT_ASSET.Models.View_req_mini>
+@using PagedList.Mvc;
+@using PagedList;
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h3 style="text-align:center">แบบฟอร์มการขอและยกเลิกการใช้เครื่อง PDJMINI02 </h3>
+
+
+
+@using (Html.BeginForm("Index", "ReqMini"))
+{
+    <div class="col-md-12 pull-left" style="font-size:16px;color:red;">
+        @Html.ActionLink(" ", "Create", null, new { @class = "btn btn-danger btn-sm glyphicon glyphicon-plus" })
+        ลงทะเบียน
+        <div class="pull-right col-md-12 col-md-6">
+            <form class="pull-right" role="search">
+                <div class="input-group pull-right">
+                    @Html.TextBox("Search", null, new { @class = "form-control", @placeholder = "เลขที่เอกสาร/รหัสพนักงานผู้ขอสิทธิ/ชื่อผู้ขอสิทธิ/รหัสพนักงานผู้แจ้ง" })
+
+                    <div class="input-group-btn">
+                        <button class="btn btn-default pull-right" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+}
+<table class="table table-bordered table-hover text-nowrap">
+    <thead class="headTable" style="background-color:#50575D; color:white">
+        <tr>
+            @if (Session["USER_ROLE"].ToString() == "MANAGER")
+            {
+                <th>อนุมัติ</th>
+            }
+            else
+            {
+                <th></th>
+            }
+          
+            <th>เลขที่เอกสาร</th>
+           
+            <th>วันที่แจ้ง</th>
+            <th>รหัสพนักงานผุ้ขอสิทธิ</th>
+            <th>ชื่อผุ้ขอสิทธิ</th>
+
+            <th>สิทธิการใช้งาน</th>
+            <th>Sample$ on 'PDJMINI02'(S:)</th>
+            <th>Proto$ on 'PDJMINI02'(T:)</th>
+            <th>PrototypepeInform$ on 'PDJMINI02'</th>
+            <th>CHM$ on 'PDJMINI02'</th>
+            <th>รหัสพนักงานผู้แจ้ง</th>
+            <th>ชื่อผู้แจ้ง</th>
+            <th>สถานะของงาน</th>
+        </tr>
+    </thead>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            @if (Session["USER_ROLE"].ToString() == "MANAGER")
+            {
+                <td>@Html.ActionLink(" ", "Edit", new { id = item.MINI_CODE }, new { @class = "btn-success btn-sm fa fa-check", @style = "color:white;" })</td>
+            }
+            else
+            {
+                <td></td>
+            }
+            <td>
+                <a href="@Url.Action("Details", "ReqMini", new { id = item.MINI_CODE })" style="color:black;text-decoration: underline;"> @Html.DisplayFor(modelItem => item.MINI_CODE)</a>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MINI_DATE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.USER_NO)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.USER_NAME)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ALLOW_DESC)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MINI_SAMPLE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MINI_PROTO)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MINI_INFORM)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MINI_CHM)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MINI_REQUESTER)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.REQUESTER_NAME)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.STA_DESC)
+            </td>
+
+        </tr>
+    }
+
+</table>
+@Html.PagedListPager(Model, i => Url.Action("Index", "ReqMini", new { i }))

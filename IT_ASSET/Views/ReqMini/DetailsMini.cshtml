@@ -1,0 +1,217 @@
+﻿@model IT_ASSET.Models.View_req_mini_follow
+
+@{
+    ViewBag.Title = "DetailsMini";
+}
+
+<h3 style="text-align:center;">รายละเอียดติดตามการขอและยกเลิกสิทธิการใช้ในเครื่อง PDJMINI02 </h3>
+<hr />
+<table class="table table-bordered table-striped">
+    <tbody>
+        <tr>
+            <td>
+                <b>เลขที่เอกสาร</b>
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.MINI_CODE)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>รหัสพนักงานของผู้ขอสิทธิ</b>
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.USER_NO)
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <b>วันที่แจ้ง</b>
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.MINI_DATE)
+            </td>
+        <tr>
+            <td>
+                <b>สิทธิการใช้งาน</b>
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.ALLOW_DESC)
+            </td>
+
+        <tr>
+            <td>
+                <b>Sample$ on 'Pdjmini02' (S:) </b>
+            <td>
+                @Html.DisplayFor(model => model.MINI_SAMPLE)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>Proto$ on 'Pdjmini02' (T:)</b>
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.MINI_PROTO)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>PrototypeInfrom$ on 'Pdjmini02</b>
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.MINI_INFORM)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>CHM$ on 'Pdjmini02</b>
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.MINI_CHM)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>รหัสพนักงานผู้แจ้ง</b>
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.MINI_REQUESTER)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>ชื่อผู้แจ้ง </b>
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.REQUESTER_NAME)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>  เบอร์ผู้แจ้ง </b>
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.REQUESTER_EXTENSION)
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <b>รหัสพนักงานของผู้อนุมัติจากเจ้าของเอกสาร</b>
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.MINI_APPROVE_OWNER)
+            </td>
+        <tr>
+        <tr>
+            <td>
+                <b>วันที่อนุมัติจากเจ้าของเอกสาร</b>
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.MINI_APPROVE_OWNER_DATE)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>รหัสพนักงานผู้อนุมัติ (ผู้จัดการฝ่ายขึ้นไป)</b>
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.MINI_APPROVE)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>วันที่อนุมัติ (ผู้จัดการฝ่ายขึ้นไป)</b>
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.MINI_APPROVE_DATE)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>ชื่อ-สกุลพนักงานผู้อนุมัติ (ผู้จัดการฝ่ายขึ้นไป)</b>
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.APPROVE_NAME)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>ตำแหน่งพนักงานผู้อนุมัติ (ผู้จัดการฝ่ายขึ้นไป)</b>
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.APPROVE_POSITION)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>เบอร์ติดต่อภายในพนักงานผู้อนุมัติ (ผู้จัดการฝ่ายขึ้นไป)</b>
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.APPROVE_EXTENSION)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>สถานะของงาน</b>
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.STA_DESC)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b> รหัสพนักงานผู้เปิดงาน(ส่วนไอที)</b>
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.MINI_OPEN_BY)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>ชื่อ-สกุลผู้เปิดงาน(ส่วนไอที)</b>
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.OPEN_NAME)
+                @Html.DisplayFor(model => model.OPEN_SURNAME)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>วันที่เปิดงาน(ส่วนไอที)</b>
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.MINI_OPEN_DATE)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>รหัสพนักงานผู้รับงาน(ส่วนไอที)</b>
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.MINI_ASSIGN_TO)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b> วันที่รับงาน(ส่วนไอที)</b>
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.MINI_ASSIGN_DATE)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>ชื่อ-สกุลผู้รับงาน(ส่วนไอที)</b>
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.ASSIGN_NAME)
+                @Html.DisplayFor(model => model.ASSIGN_SURNAME)
+
+            </td>
+        </tr>
+
+</table>
+@Html.ActionLink("ย้อนกลับ", "IndexMini", "ReqMini", "ReqMini", new { @class = "btn btn-primary" })
+@Html.ActionLink(" Print", "PrintPartialViewToPdf", null, new { id = Model.MINI_CODE }, new { target = "_blank", @class = "btn btn-success glyphicon glyphicon-print" })

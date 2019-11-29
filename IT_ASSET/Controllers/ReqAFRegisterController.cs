@@ -21,15 +21,15 @@ namespace IT_ASSET.Controllers
     public class ReqAFRegisterController : Controller
     {
         private IT_ASSET_MANAGEMENTEntities db = new IT_ASSET_MANAGEMENTEntities();
-        string connectionString = "Data Source= COMP05\\SQLEXPRESS;Initial Catalog=IT_ASSET_SERVER;Integrated Security=True";
+        string connectionString = "Data Source= serverjob;Initial Catalog=IT_ASSET_SERVER;Integrated Security=True";
         // GET: ReqAFRegister
         public ActionResult Index(int? i, string search)
         {
-            return View(db.View_req_af_register.OrderByDescending(s => s.AF_CODE).Where(s => s.AF_CODE.Contains(search) || s.USER_NO.Contains(search)|| s.AF_REQUESTER.Contains(search)|| search == null).ToList().ToPagedList(i ?? 1, 12));
+            return View(db.View_req_af_register.OrderByDescending(s => s.AF_DATE).Where(s => s.AF_CODE.Contains(search) || s.USER_NO.Contains(search) || s.USER_NAME.Contains(search) || s.AF_REQUESTER.Contains(search)|| search == null).ToList().ToPagedList(i ?? 1, 15));
         }
         public ActionResult IndexAF(int? i, string search)
         {
-            return View(db.View_req_af_follow.OrderByDescending(s => s.AF_CODE).Where(s => s.AF_CODE.Contains(search) || s.USER_NO.Contains(search) || s.AF_REQUESTER.Contains(search) || search == null).ToList().ToPagedList(i ?? 1, 12));
+            return View(db.View_req_af_follow.OrderByDescending(s => s.AF_APPROVE_DATE).Where(s => s.AF_CODE.Contains(search) || s.USER_NO.Contains(search) || s.USER_NAME.Contains(search) || s.AF_REQUESTER.Contains(search) || search == null).ToList().ToPagedList(i ?? 1, 15));
         }
 
 
@@ -134,9 +134,11 @@ namespace IT_ASSET.Controllers
         {
             var link = "สามารถกดอนุมัติได้จาก <a href=https://localhost:44321/ >คลิกที่นี่"+"</a>";
             return "<b> เรียนผู้จัดการฝ่าย  </b>" + "</br>" +
-                "การขอสิทธิ ALFRESCO : " + Session["USER_NAME"].ToString() + "<br />" +
-                 "รหัสพนักงาน : " + Session["USER_NO"].ToString() + "<br />" +
-                 "เลขที่เอกสาร : " + ViewBag.EmpCount + "<br />" +
+                "เลขที่เอกสาร : " + ViewBag.EmpCount + "<br />" +
+               "รหัสพนักงานผู้แจ้ง : " + Session["USER_NO"].ToString() + "<br />" +
+                "ชื่อผู้แจ้ง : " + Session["USER_NAME"].ToString() + "<br />" +
+                "วันที่แจ้ง : " + ViewBag.Date + "<br />" +
+              "รหัสพนักงานผู้ขอสิทธิ : " + ViewBag.Requester + "<br />" +
                  link + "<br />" +
                  "สามารถติดต่อสอบถาม ติดต่อเบอร์" + " " + Session["USER_EXTENSION"].ToString() + "<br/>" +
                  "<p>" + "จึงเรียนมาเพื่อทราบ" + "</p>";
@@ -147,8 +149,9 @@ namespace IT_ASSET.Controllers
         {
             return "<b> เรียน IT SUPPORT </b>" + "</br>" +
                 "การขอสิทธิ ALFRESCO : " + Session["USER_NAME"].ToString() + "<br />" +
-                 "รหัสพนักงาน : " + Session["USER_NO"].ToString() + "<br />" +
                  "เลขที่เอกสาร : " + ViewBag.EmpCount + "<br />" +
+               "รหัสพนักงานผู้แจ้ง : " + Session["USER_NO"].ToString() + "<br />" +
+                "ชื่อผู้แจ้ง : " + Session["USER_NAME"].ToString() + "<br />" +
                  "ได้รับการอนุมัติจากผุ้จัดการฝ่ายเรียบร้อยแล้ว" + "<br/>" +
                  "สามารถติดต่อสอบถาม ติดต่อเบอร์" + " " + Session["USER_EXTENSION"].ToString() + "<br/>" +
                  "<p>" + "จึงเรียนมาเพื่อทราบ" + "</p>";

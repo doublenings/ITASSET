@@ -1,0 +1,126 @@
+﻿@model IT_ASSET.Models.View_req_mini
+
+@{
+    ViewBag.Title = "Details";
+}
+
+
+<h3 style="text-align:center;">รายละเอียดติดตามการขอและยกเลิกสิทธิการใช้ในเครื่อง PDJMINI02 </h3>
+<hr />
+<div>
+
+
+    <table class="table table-bordered table-striped">
+
+        <tbody>
+
+            <tr>
+                <td>
+                    <b>เลขที่เอกสาร</b>
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.MINI_CODE)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <b>รหัสพนักงานของผู้ขอสิทธิ</b>
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.USER_NO)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <b>ชื่อพนักงานของผู้ขอสิทธิ</b>
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.USER_NAME)
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <b>วันที่แจ้ง</b>
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.MINI_DATE)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <b>สิทธิการใช้งาน</b>
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.ALLOW_DESC)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <b>Sample$ on 'Pdjmini02' (S:) </b>
+                <td>
+                    @Html.DisplayFor(model => model.MINI_SAMPLE)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <b>Proto$ on 'Pdjmini02' (T:)</b>
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.MINI_PROTO)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <b>PrototypeInfrom$ on 'Pdjmini02</b>
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.MINI_INFORM)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <b>CHM$ on 'Pdjmini02</b>
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.MINI_CHM)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <b>รหัสพนักงานผู้แจ้ง</b>
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.MINI_REQUESTER)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <b>ชื่อผู้แจ้ง </b>
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.REQUESTER_NAME)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <b>  เบอร์ผู้แจ้ง </b>
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.REQUESTER_EXTENSION)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <b>สถานะของงาน</b>
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.STA_DESC)
+                </td>
+            </tr>
+    </table>
+
+</div>
+<div>
+    <input type="button" class="btn btn-primary" value="กลับไปหน้ารายการ" onclick="location.href='@Url.Action("Index", "ReqMini")'" />
+</div>

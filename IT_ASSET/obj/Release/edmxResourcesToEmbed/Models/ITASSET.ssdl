@@ -412,6 +412,41 @@ warning 6002: The table/view 'IT_ASSET_SERVER.dbo.tbl_configure' does not have a
     <Property Name="REQ_AUTH" Type="nvarchar" MaxLength="2" Nullable="false" />
     <Property Name="AUTH_DESC" Type="nvarchar" MaxLength="10" />
   </EntityType>
+  <EntityType Name="tbl_req_mini">
+    <Key>
+      <PropertyRef Name="MINI_CODE" />
+    </Key>
+    <Property Name="MINI_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MINI_CODE" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="USER_NO" Type="nvarchar" MaxLength="10" />
+    <Property Name="MINI_DATE" Type="datetime" />
+    <Property Name="ALLOW_STATUS" Type="nvarchar" MaxLength="2" />
+    <Property Name="MINI_SAMPLE" Type="nvarchar" MaxLength="10" />
+    <Property Name="MINI_PROTO" Type="nvarchar" MaxLength="10" />
+    <Property Name="MINI_INFORM" Type="nvarchar" MaxLength="10" />
+    <Property Name="MINI_CHM" Type="nvarchar" MaxLength="10" />
+    <Property Name="MINI_REQUESTER" Type="nvarchar" MaxLength="6" />
+    <Property Name="MINI_APPROVE_OWNER" Type="nvarchar" MaxLength="6" />
+    <Property Name="MINI_APPROVE_OWNER_DATE" Type="datetime" />
+    <Property Name="MINI_APPROVE" Type="nvarchar" MaxLength="6" />
+    <Property Name="MINI_APPROVE_DATE" Type="datetime" />
+    <Property Name="MINI_OPEN_BY" Type="nvarchar" MaxLength="6" />
+    <Property Name="MINI_OPEN_DATE" Type="datetime" />
+    <Property Name="MINI_ASSIGN_TO" Type="nvarchar" MaxLength="6" />
+    <Property Name="MINI_ASSIGN_DATE" Type="datetime" />
+    <Property Name="MINI_SUBMIT_DATE" Type="datetime" />
+    <Property Name="MINI_CLOSE" Type="nvarchar" MaxLength="6" />
+    <Property Name="MINI_CLOSE_DATE" Type="datetime" />
+    <Property Name="REQ_STATUS" Type="nvarchar" MaxLength="2" />
+    <Property Name="USER_CREATE" Type="nvarchar" MaxLength="100" />
+    <Property Name="USER_UPDATE" Type="nvarchar" MaxLength="100" />
+    <Property Name="CREATE_DATE" Type="datetime" />
+    <Property Name="UPDATE_DATE" Type="datetime" />
+    <Property Name="MINI_IT_COMMENT" Type="nvarchar(max)" />
+    <Property Name="MINI_IT_COMMENTER" Type="nvarchar" MaxLength="50" />
+    <Property Name="MINI_IT_MANAGER" Type="nvarchar" MaxLength="50" />
+    <Property Name="MINI_IT_DATE" Type="datetime" />
+  </EntityType>
   <EntityType Name="tbl_req_sd">
     <Key>
       <PropertyRef Name="SD_CODE" />
@@ -436,7 +471,7 @@ warning 6002: The table/view 'IT_ASSET_SERVER.dbo.tbl_configure' does not have a
     <Property Name="SD_ASSIGN_DATE" Type="datetime" />
     <Property Name="SD_SUBMIT_DATE" Type="datetime" />
     <Property Name="SD_CLOSE" Type="nvarchar" MaxLength="6" />
-    <Property Name="AF_CLOSE_DATE" Type="datetime" />
+    <Property Name="SD_CLOSE_DATE" Type="datetime" />
     <Property Name="REQ_STATUS" Type="nvarchar" MaxLength="2" />
     <Property Name="USER_CREATE" Type="nvarchar" MaxLength="100" />
     <Property Name="USER_UPDATE" Type="nvarchar" MaxLength="100" />
@@ -993,6 +1028,110 @@ warning 6002: The table/view 'IT_ASSET_SERVER.dbo.View_req_af_register' does not
     <Property Name="APPROVE_ROLE" Type="nvarchar" MaxLength="10" />
   </EntityType>
   <!--Errors Found During Generation:
+warning 6002: The table/view 'IT_ASSET_SERVER.dbo.View_req_mini' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_req_mini">
+    <Key>
+      <PropertyRef Name="MINI_CODE" />
+    </Key>
+    <Property Name="MINI_CODE" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="USER_NO" Type="nvarchar" MaxLength="10" />
+    <Property Name="USER_NAME" Type="nvarchar" MaxLength="100" />
+    <Property Name="USER_NAME_EN" Type="nvarchar" MaxLength="100" />
+    <Property Name="USER_POSITION" Type="nvarchar" MaxLength="50" />
+    <Property Name="USER_DEPARTMENT" Type="nvarchar" MaxLength="50" />
+    <Property Name="USER_EXTENSION" Type="nvarchar" MaxLength="15" />
+    <Property Name="USER_EMAIL" Type="nvarchar" MaxLength="50" />
+    <Property Name="USER_EMAIL_APPROVE" Type="nvarchar" MaxLength="50" />
+    <Property Name="MINI_DATE" Type="datetime" />
+    <Property Name="ALLOW_STATUS" Type="nvarchar" MaxLength="2" />
+    <Property Name="ALLOW_DESC" Type="nvarchar" MaxLength="50" />
+    <Property Name="MINI_SAMPLE" Type="nvarchar" MaxLength="10" />
+    <Property Name="MINI_PROTO" Type="nvarchar" MaxLength="10" />
+    <Property Name="MINI_INFORM" Type="nvarchar" MaxLength="10" />
+    <Property Name="MINI_CHM" Type="nvarchar" MaxLength="10" />
+    <Property Name="MINI_REQUESTER" Type="nvarchar" MaxLength="6" />
+    <Property Name="REQUESTER_NAME" Type="nvarchar" MaxLength="100" />
+    <Property Name="REQUESTER_EN_NAME" Type="nvarchar" MaxLength="100" />
+    <Property Name="REQUESTER_POSITION" Type="nvarchar" MaxLength="50" />
+    <Property Name="REQUESTER_DEPARTMENT" Type="nvarchar" MaxLength="50" />
+    <Property Name="REQUESTER_EXTENSION" Type="nvarchar" MaxLength="15" />
+    <Property Name="REQUESTER_EMAIL" Type="nvarchar" MaxLength="50" />
+    <Property Name="REQUESTER_EMAIL_APPROVE" Type="nvarchar" MaxLength="50" />
+    <Property Name="MINI_APPROVE_OWNER" Type="nvarchar" MaxLength="6" />
+    <Property Name="MINI_APPROVE_OWNER_DATE" Type="datetime" />
+    <Property Name="MINI_APPROVE" Type="nvarchar" MaxLength="6" />
+    <Property Name="MINI_APPROVE_DATE" Type="datetime" />
+    <Property Name="REQ_STATUS" Type="nvarchar" MaxLength="2" />
+    <Property Name="STA_DESC" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'IT_ASSET_SERVER.dbo.View_req_mini_follow' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_req_mini_follow">
+    <Key>
+      <PropertyRef Name="MINI_CODE" />
+    </Key>
+    <Property Name="MINI_CODE" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="USER_NO" Type="nvarchar" MaxLength="10" />
+    <Property Name="USER_NAME" Type="nvarchar" MaxLength="100" />
+    <Property Name="USER_NAME_EN" Type="nvarchar" MaxLength="100" />
+    <Property Name="USER_POSITION" Type="nvarchar" MaxLength="50" />
+    <Property Name="USER_DEPARTMENT" Type="nvarchar" MaxLength="50" />
+    <Property Name="USER_EXTENSION" Type="nvarchar" MaxLength="15" />
+    <Property Name="USER_EMAIL" Type="nvarchar" MaxLength="50" />
+    <Property Name="USER_EMAIL_APPROVE" Type="nvarchar" MaxLength="50" />
+    <Property Name="MINI_DATE" Type="datetime" />
+    <Property Name="ALLOW_STATUS" Type="nvarchar" MaxLength="2" />
+    <Property Name="MINI_SAMPLE" Type="nvarchar" MaxLength="10" />
+    <Property Name="MINI_PROTO" Type="nvarchar" MaxLength="10" />
+    <Property Name="MINI_INFORM" Type="nvarchar" MaxLength="10" />
+    <Property Name="MINI_CHM" Type="nvarchar" MaxLength="10" />
+    <Property Name="MINI_REQUESTER" Type="nvarchar" MaxLength="6" />
+    <Property Name="REQUESTER_NAME" Type="nvarchar" MaxLength="100" />
+    <Property Name="REQUESTER_EN_NAME" Type="nvarchar" MaxLength="100" />
+    <Property Name="REQUESTER_POSITION" Type="nvarchar" MaxLength="50" />
+    <Property Name="REQUESTER_DEPARTMENT" Type="nvarchar" MaxLength="50" />
+    <Property Name="REQUESTER_EXTENSION" Type="nvarchar" MaxLength="15" />
+    <Property Name="REQUESTER_EMAIL" Type="nvarchar" MaxLength="50" />
+    <Property Name="REQUESTER_EMAIL_APPROVE" Type="nvarchar" MaxLength="50" />
+    <Property Name="MINI_APPROVE_OWNER" Type="nvarchar" MaxLength="6" />
+    <Property Name="OWNER_NAME" Type="nvarchar" MaxLength="100" />
+    <Property Name="OWNER_EN_NAME" Type="nvarchar" MaxLength="100" />
+    <Property Name="OWNER_POSITION" Type="nvarchar" MaxLength="50" />
+    <Property Name="OWNER_DEPARTMENT" Type="nvarchar" MaxLength="50" />
+    <Property Name="OWNER_EXTENSION" Type="nvarchar" MaxLength="15" />
+    <Property Name="OWNER_EMAIL" Type="nvarchar" MaxLength="50" />
+    <Property Name="OWNER_EMAIL_APPROVE" Type="nvarchar" MaxLength="50" />
+    <Property Name="MINI_APPROVE_OWNER_DATE" Type="datetime" />
+    <Property Name="MINI_APPROVE" Type="nvarchar" MaxLength="6" />
+    <Property Name="APPROVE_NAME" Type="nvarchar" MaxLength="100" />
+    <Property Name="APPROVE_EN_NAME" Type="nvarchar" MaxLength="100" />
+    <Property Name="APPROVE_POSITION" Type="nvarchar" MaxLength="50" />
+    <Property Name="APPROVE_DEPARTMENT" Type="nvarchar" MaxLength="50" />
+    <Property Name="APPROVE_EXTENSION" Type="nvarchar" MaxLength="15" />
+    <Property Name="APPROVE_EMAIL" Type="nvarchar" MaxLength="50" />
+    <Property Name="APPROVE_EMAIL_APPROVE" Type="nvarchar" MaxLength="50" />
+    <Property Name="MINI_APPROVE_DATE" Type="datetime" />
+    <Property Name="MINI_OPEN_BY" Type="nvarchar" MaxLength="6" />
+    <Property Name="OPEN_NAME" Type="nvarchar" MaxLength="50" />
+    <Property Name="OPEN_SURNAME" Type="nvarchar" MaxLength="50" />
+    <Property Name="MINI_OPEN_DATE" Type="datetime" />
+    <Property Name="MINI_ASSIGN_TO" Type="nvarchar" MaxLength="6" />
+    <Property Name="ASSIGN_NAME" Type="nvarchar" MaxLength="50" />
+    <Property Name="ASSIGN_SURNAME" Type="nvarchar" MaxLength="50" />
+    <Property Name="MINI_ASSIGN_DATE" Type="datetime" />
+    <Property Name="MINI_CLOSE" Type="nvarchar" MaxLength="6" />
+    <Property Name="CLOSE_NAME" Type="nvarchar" MaxLength="50" />
+    <Property Name="CLOSE_SURNAME" Type="nvarchar" MaxLength="50" />
+    <Property Name="MINI_CLOSE_DATE" Type="datetime" />
+    <Property Name="REQ_STATUS" Type="nvarchar" MaxLength="2" />
+    <Property Name="MINI_IT_COMMENT" Type="nvarchar(max)" />
+    <Property Name="MINI_IT_COMMENTER" Type="nvarchar" MaxLength="50" />
+    <Property Name="MINI_IT_MANAGER" Type="nvarchar" MaxLength="50" />
+    <Property Name="MINI_IT_DATE" Type="datetime" />
+    <Property Name="STA_DESC" Type="nvarchar" MaxLength="50" />
+    <Property Name="ALLOW_DESC" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
 warning 6002: The table/view 'IT_ASSET_SERVER.dbo.View_req_sd' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="View_req_sd">
     <Key>
@@ -1088,9 +1227,9 @@ warning 6002: The table/view 'IT_ASSET_SERVER.dbo.View_req_sd_follow' does not h
     <Property Name="REQ_STATUS" Type="nvarchar" MaxLength="2" />
     <Property Name="STA_DESC" Type="nvarchar" MaxLength="50" />
     <Property Name="SD_CLOSE" Type="nvarchar" MaxLength="6" />
+    <Property Name="SD_CLOSE_DATE" Type="datetime" />
     <Property Name="CLOSE_NAME" Type="nvarchar" MaxLength="50" />
     <Property Name="CLOSE_SURNAME" Type="nvarchar" MaxLength="50" />
-    <Property Name="AF_CLOSE_DATE" Type="datetime" />
     <Property Name="SD_IT_COMMENT" Type="nvarchar(max)" />
     <Property Name="SD_IT_COMMENTER" Type="nvarchar" MaxLength="50" />
     <Property Name="SD_IT_MANAGER" Type="nvarchar" MaxLength="50" />
@@ -1202,6 +1341,18 @@ warning 6002: The table/view 'IT_ASSET_SERVER.dbo.View_sw_assets' does not have 
     <Parameter Name="AF_REQUESTER" Type="nvarchar" Mode="In" />
     <Parameter Name="REQ_STATUS" Type="nvarchar" Mode="In" />
   </Function>
+  <Function Name="AddReqMini" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MINI_CODE" Type="nvarchar" Mode="InOut" />
+    <Parameter Name="USER_NO" Type="nvarchar" Mode="In" />
+    <Parameter Name="MINI_DATE" Type="datetime" Mode="In" />
+    <Parameter Name="ALLOW_STATUS" Type="nvarchar" Mode="In" />
+    <Parameter Name="MINI_SAMPLE" Type="nvarchar" Mode="In" />
+    <Parameter Name="MINI_PROTO" Type="nvarchar" Mode="In" />
+    <Parameter Name="MINI_INFORM" Type="nvarchar" Mode="In" />
+    <Parameter Name="MINI_CHM" Type="nvarchar" Mode="In" />
+    <Parameter Name="MINI_REQUESTER" Type="nvarchar" Mode="In" />
+    <Parameter Name="REQ_STATUS" Type="nvarchar" Mode="In" />
+  </Function>
   <Function Name="AddReqShareDrive" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="SD_CODE" Type="nvarchar" Mode="InOut" />
     <Parameter Name="USER_NO" Type="nvarchar" Mode="In" />
@@ -1240,6 +1391,7 @@ warning 6002: The table/view 'IT_ASSET_SERVER.dbo.View_sw_assets' does not have 
     <EntitySet Name="tbl_req_af_status" EntityType="Self.tbl_req_af_status" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tbl_req_allow_status" EntityType="Self.tbl_req_allow_status" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tbl_req_auth" EntityType="Self.tbl_req_auth" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_req_mini" EntityType="Self.tbl_req_mini" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tbl_req_sd" EntityType="Self.tbl_req_sd" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tbl_req_status" EntityType="Self.tbl_req_status" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tbl_req_types" EntityType="Self.tbl_req_types" Schema="dbo" store:Type="Tables" />
@@ -1603,6 +1755,104 @@ warning 6002: The table/view 'IT_ASSET_SERVER.dbo.View_sw_assets' does not have 
     [View_req_af_register].[APPROVE_ROLE] AS [APPROVE_ROLE]
     FROM [dbo].[View_req_af_register] AS [View_req_af_register]</DefiningQuery>
     </EntitySet>
+    <EntitySet Name="View_req_mini" EntityType="Self.View_req_mini" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [View_req_mini].[MINI_CODE] AS [MINI_CODE], 
+    [View_req_mini].[USER_NO] AS [USER_NO], 
+    [View_req_mini].[USER_NAME] AS [USER_NAME], 
+    [View_req_mini].[USER_NAME_EN] AS [USER_NAME_EN], 
+    [View_req_mini].[USER_POSITION] AS [USER_POSITION], 
+    [View_req_mini].[USER_DEPARTMENT] AS [USER_DEPARTMENT], 
+    [View_req_mini].[USER_EXTENSION] AS [USER_EXTENSION], 
+    [View_req_mini].[USER_EMAIL] AS [USER_EMAIL], 
+    [View_req_mini].[USER_EMAIL_APPROVE] AS [USER_EMAIL_APPROVE], 
+    [View_req_mini].[MINI_DATE] AS [MINI_DATE], 
+    [View_req_mini].[ALLOW_STATUS] AS [ALLOW_STATUS], 
+    [View_req_mini].[ALLOW_DESC] AS [ALLOW_DESC], 
+    [View_req_mini].[MINI_SAMPLE] AS [MINI_SAMPLE], 
+    [View_req_mini].[MINI_PROTO] AS [MINI_PROTO], 
+    [View_req_mini].[MINI_INFORM] AS [MINI_INFORM], 
+    [View_req_mini].[MINI_CHM] AS [MINI_CHM], 
+    [View_req_mini].[MINI_REQUESTER] AS [MINI_REQUESTER], 
+    [View_req_mini].[REQUESTER_NAME] AS [REQUESTER_NAME], 
+    [View_req_mini].[REQUESTER_EN_NAME] AS [REQUESTER_EN_NAME], 
+    [View_req_mini].[REQUESTER_POSITION] AS [REQUESTER_POSITION], 
+    [View_req_mini].[REQUESTER_DEPARTMENT] AS [REQUESTER_DEPARTMENT], 
+    [View_req_mini].[REQUESTER_EXTENSION] AS [REQUESTER_EXTENSION], 
+    [View_req_mini].[REQUESTER_EMAIL] AS [REQUESTER_EMAIL], 
+    [View_req_mini].[REQUESTER_EMAIL_APPROVE] AS [REQUESTER_EMAIL_APPROVE], 
+    [View_req_mini].[MINI_APPROVE_OWNER] AS [MINI_APPROVE_OWNER], 
+    [View_req_mini].[MINI_APPROVE_OWNER_DATE] AS [MINI_APPROVE_OWNER_DATE], 
+    [View_req_mini].[MINI_APPROVE] AS [MINI_APPROVE], 
+    [View_req_mini].[MINI_APPROVE_DATE] AS [MINI_APPROVE_DATE], 
+    [View_req_mini].[REQ_STATUS] AS [REQ_STATUS], 
+    [View_req_mini].[STA_DESC] AS [STA_DESC]
+    FROM [dbo].[View_req_mini] AS [View_req_mini]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View_req_mini_follow" EntityType="Self.View_req_mini_follow" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [View_req_mini_follow].[MINI_CODE] AS [MINI_CODE], 
+    [View_req_mini_follow].[USER_NO] AS [USER_NO], 
+    [View_req_mini_follow].[USER_NAME] AS [USER_NAME], 
+    [View_req_mini_follow].[USER_NAME_EN] AS [USER_NAME_EN], 
+    [View_req_mini_follow].[USER_POSITION] AS [USER_POSITION], 
+    [View_req_mini_follow].[USER_DEPARTMENT] AS [USER_DEPARTMENT], 
+    [View_req_mini_follow].[USER_EXTENSION] AS [USER_EXTENSION], 
+    [View_req_mini_follow].[USER_EMAIL] AS [USER_EMAIL], 
+    [View_req_mini_follow].[USER_EMAIL_APPROVE] AS [USER_EMAIL_APPROVE], 
+    [View_req_mini_follow].[MINI_DATE] AS [MINI_DATE], 
+    [View_req_mini_follow].[ALLOW_STATUS] AS [ALLOW_STATUS], 
+    [View_req_mini_follow].[MINI_SAMPLE] AS [MINI_SAMPLE], 
+    [View_req_mini_follow].[MINI_PROTO] AS [MINI_PROTO], 
+    [View_req_mini_follow].[MINI_INFORM] AS [MINI_INFORM], 
+    [View_req_mini_follow].[MINI_CHM] AS [MINI_CHM], 
+    [View_req_mini_follow].[MINI_REQUESTER] AS [MINI_REQUESTER], 
+    [View_req_mini_follow].[REQUESTER_NAME] AS [REQUESTER_NAME], 
+    [View_req_mini_follow].[REQUESTER_EN_NAME] AS [REQUESTER_EN_NAME], 
+    [View_req_mini_follow].[REQUESTER_POSITION] AS [REQUESTER_POSITION], 
+    [View_req_mini_follow].[REQUESTER_DEPARTMENT] AS [REQUESTER_DEPARTMENT], 
+    [View_req_mini_follow].[REQUESTER_EXTENSION] AS [REQUESTER_EXTENSION], 
+    [View_req_mini_follow].[REQUESTER_EMAIL] AS [REQUESTER_EMAIL], 
+    [View_req_mini_follow].[REQUESTER_EMAIL_APPROVE] AS [REQUESTER_EMAIL_APPROVE], 
+    [View_req_mini_follow].[MINI_APPROVE_OWNER] AS [MINI_APPROVE_OWNER], 
+    [View_req_mini_follow].[OWNER_NAME] AS [OWNER_NAME], 
+    [View_req_mini_follow].[OWNER_EN_NAME] AS [OWNER_EN_NAME], 
+    [View_req_mini_follow].[OWNER_POSITION] AS [OWNER_POSITION], 
+    [View_req_mini_follow].[OWNER_DEPARTMENT] AS [OWNER_DEPARTMENT], 
+    [View_req_mini_follow].[OWNER_EXTENSION] AS [OWNER_EXTENSION], 
+    [View_req_mini_follow].[OWNER_EMAIL] AS [OWNER_EMAIL], 
+    [View_req_mini_follow].[OWNER_EMAIL_APPROVE] AS [OWNER_EMAIL_APPROVE], 
+    [View_req_mini_follow].[MINI_APPROVE_OWNER_DATE] AS [MINI_APPROVE_OWNER_DATE], 
+    [View_req_mini_follow].[MINI_APPROVE] AS [MINI_APPROVE], 
+    [View_req_mini_follow].[APPROVE_NAME] AS [APPROVE_NAME], 
+    [View_req_mini_follow].[APPROVE_EN_NAME] AS [APPROVE_EN_NAME], 
+    [View_req_mini_follow].[APPROVE_POSITION] AS [APPROVE_POSITION], 
+    [View_req_mini_follow].[APPROVE_DEPARTMENT] AS [APPROVE_DEPARTMENT], 
+    [View_req_mini_follow].[APPROVE_EXTENSION] AS [APPROVE_EXTENSION], 
+    [View_req_mini_follow].[APPROVE_EMAIL] AS [APPROVE_EMAIL], 
+    [View_req_mini_follow].[APPROVE_EMAIL_APPROVE] AS [APPROVE_EMAIL_APPROVE], 
+    [View_req_mini_follow].[MINI_APPROVE_DATE] AS [MINI_APPROVE_DATE], 
+    [View_req_mini_follow].[MINI_OPEN_BY] AS [MINI_OPEN_BY], 
+    [View_req_mini_follow].[OPEN_NAME] AS [OPEN_NAME], 
+    [View_req_mini_follow].[OPEN_SURNAME] AS [OPEN_SURNAME], 
+    [View_req_mini_follow].[MINI_OPEN_DATE] AS [MINI_OPEN_DATE], 
+    [View_req_mini_follow].[MINI_ASSIGN_TO] AS [MINI_ASSIGN_TO], 
+    [View_req_mini_follow].[ASSIGN_NAME] AS [ASSIGN_NAME], 
+    [View_req_mini_follow].[ASSIGN_SURNAME] AS [ASSIGN_SURNAME], 
+    [View_req_mini_follow].[MINI_ASSIGN_DATE] AS [MINI_ASSIGN_DATE], 
+    [View_req_mini_follow].[MINI_CLOSE] AS [MINI_CLOSE], 
+    [View_req_mini_follow].[CLOSE_NAME] AS [CLOSE_NAME], 
+    [View_req_mini_follow].[CLOSE_SURNAME] AS [CLOSE_SURNAME], 
+    [View_req_mini_follow].[MINI_CLOSE_DATE] AS [MINI_CLOSE_DATE], 
+    [View_req_mini_follow].[REQ_STATUS] AS [REQ_STATUS], 
+    [View_req_mini_follow].[MINI_IT_COMMENT] AS [MINI_IT_COMMENT], 
+    [View_req_mini_follow].[MINI_IT_COMMENTER] AS [MINI_IT_COMMENTER], 
+    [View_req_mini_follow].[MINI_IT_MANAGER] AS [MINI_IT_MANAGER], 
+    [View_req_mini_follow].[MINI_IT_DATE] AS [MINI_IT_DATE], 
+    [View_req_mini_follow].[STA_DESC] AS [STA_DESC], 
+    [View_req_mini_follow].[ALLOW_DESC] AS [ALLOW_DESC]
+    FROM [dbo].[View_req_mini_follow] AS [View_req_mini_follow]</DefiningQuery>
+    </EntitySet>
     <EntitySet Name="View_req_sd" EntityType="Self.View_req_sd" store:Type="Views" store:Schema="dbo">
       <DefiningQuery>SELECT 
     [View_req_sd].[SD_CODE] AS [SD_CODE], 
@@ -1692,9 +1942,9 @@ warning 6002: The table/view 'IT_ASSET_SERVER.dbo.View_sw_assets' does not have 
     [View_req_sd_follow].[REQ_STATUS] AS [REQ_STATUS], 
     [View_req_sd_follow].[STA_DESC] AS [STA_DESC], 
     [View_req_sd_follow].[SD_CLOSE] AS [SD_CLOSE], 
+    [View_req_sd_follow].[SD_CLOSE_DATE] AS [SD_CLOSE_DATE], 
     [View_req_sd_follow].[CLOSE_NAME] AS [CLOSE_NAME], 
     [View_req_sd_follow].[CLOSE_SURNAME] AS [CLOSE_SURNAME], 
-    [View_req_sd_follow].[AF_CLOSE_DATE] AS [AF_CLOSE_DATE], 
     [View_req_sd_follow].[SD_IT_COMMENT] AS [SD_IT_COMMENT], 
     [View_req_sd_follow].[SD_IT_COMMENTER] AS [SD_IT_COMMENTER], 
     [View_req_sd_follow].[SD_IT_MANAGER] AS [SD_IT_MANAGER], 
